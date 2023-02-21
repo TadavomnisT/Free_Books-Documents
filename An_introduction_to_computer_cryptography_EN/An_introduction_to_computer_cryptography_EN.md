@@ -63,8 +63,62 @@ Decryption / Decipher
 1.2
 Why is cryptography such an important matter?
 
-1.3
-A few quotes on cryptography
+**1.3
+A few quotes on cryptography**
+
+“ _Cryptography shifts the balance of power from those with a
+monopoly on violence to those who comprehend mathematics and security
+design.”_
+
+—
+Jacob Appelbaum
+
+“ _Cryptography
+is the ultimate form of non-violent direct action.”_
+
+—
+Julian Assange
+
+“ _One must acknowledge with cryptography no amount of violence
+will ever solve a math problem.”_
+
+—
+Jacob Appelbaum
+
+“ _There
+are two kinds of cryptography in this world: cryptography that will
+stop your kid sister from reading your files, and cryptography that
+will stop major governments from reading your files.”_
+
+—
+Bruce Schneier
+
+“ _Cryptography
+is the essential building block of independence for organisations on
+the internet, just like armies are the essential building blocks of
+states, because otherwise one state just takes over another.”_
+
+—
+Julian Assange
+
+“ _When cryptography is outlawed, bayl bhgynjf jvyy unir cevinpl.”_
+
+—
+John Perry Barlow
+
+“ _Bitcoin
+was created to serve a highly political intent, a free and uncensored
+network where all can participate with equal access.”_
+
+—
+Amir Taaki
+
+“ _Privacy
+is an inherent human right, and a requirement for maintaining the
+human condition with dignity and respect.”_
+
+—
+Bruce Schneier
 
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
