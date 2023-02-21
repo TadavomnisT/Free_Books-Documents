@@ -39,9 +39,10 @@ approaches in order to formulate data mathematically to hide the
 plain data within a math problem. This will lead us into privacy and
 security. In this book I intend to introduce computer cryptography
 from the scratch, and explain it’s concepts from the absolute
-basics. I am not an expert in this line of work nor academicly \*\* ,
-but I experienced cryptography in practice, and I hope to be able to
-share my limited knowledge with others by means of this book.
+basics. I am not an expert in this line of work nor academically
+inclined, but I experienced cryptography in practice, and I hope to
+be able to share my limited knowledge with others by means of this
+book.
 
 Behrad.B
 
@@ -63,7 +64,7 @@ Decryption / Decipher
 Why is cryptography such an important matter?
 
 1.3
-A few qoutes on cryptography
+A few quotes on cryptography
 
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -81,6 +82,9 @@ Obfuscation
 2.4
 Steganography
 
+2.5
+Compression
+
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Chapter
@@ -94,6 +98,9 @@ Simple asymmetric encryption examples
 
 3.3
 AES?
+
+3.4
+DES?
 
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -124,7 +131,7 @@ SHA
 
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Chapter** **6** **:** **ElCV? curves**
+**Chapter** **6** **:** **Elliptic Curve** **s**
 
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -139,7 +146,7 @@ SSL
 
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Chapter** **9** **:** **Crypto** **Curencies**
+**Chapter** **9** **:** **Cryptocurrency**
 
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
