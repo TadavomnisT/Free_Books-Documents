@@ -14,5 +14,5 @@ The instruction to use the script on any other ODF(.odt) format is like this:
 
 ```bash
 chmod +x build.sh
-build.sh An_introduction_to_computer_cryptography_EN.odt
+./build.sh An_introduction_to_computer_cryptography_EN.odt
 ```
