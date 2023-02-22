@@ -51,8 +51,286 @@ Behrad.B
 **Chapter
 1: What is cryptography?**
 
-1.1
-What is the concept of cryptography?
+**1.1
+What is the concept of cryptography?**
+
+The
+main purpose in cryptography is to hide a data in a way that no one
+can see it, except the person who knows a key. It is important to say
+that cryptography is totally different from an authentication system.
+Let’s see an example of cryptography.
+
+Suppose
+we have a data called “Plain Data”:
+
+Plain
+text:
+
+```
+<b><span style="background: #ff8000">Data is a precious thing and will last longer than the systems themselves. - Tim Berners Lee</span></b>
+```
+
+Now,
+we intend to do something to it that hides this plain data, so we
+replace every letter with 3 letters after that in alphabet. So the
+Mapping of the letters will be like this:
+
+**Plain letter**
+
+**Replacement**
+
+A
+
+D
+
+B
+
+E
+
+C
+
+F
+
+D
+
+G
+
+E
+
+H
+
+F
+
+I
+
+G
+
+J
+
+H
+
+K
+
+I
+
+L
+
+J
+
+M
+
+K
+
+N
+
+L
+
+O
+
+M
+
+P
+
+N
+
+Q
+
+O
+
+R
+
+P
+
+S
+
+Q
+
+T
+
+R
+
+U
+
+S
+
+V
+
+T
+
+W
+
+U
+
+X
+
+V
+
+Y
+
+W
+
+Z
+
+X
+
+A
+
+Y
+
+B
+
+Z
+
+C
+
+So
+we come up with this text after replacing those letters that we call
+it “Cipher Data”:
+
+Cipher
+text:
+
+```
+<b><span style="background: #ff8000">Gdwd lv d suhflrxv wklqj dqg zloo odvw orqjhu wkdq wkh vbvwhpv wkhpvhoyhv. - Wlp Ehuqhuv Ohh</span></b>
+```
+
+This
+process is called **Encrypting** or **Ciphering** a plain-data.
+Take a look at cipher-data, can you understand what is that without
+knowing the process? A piece of information that indicates the what
+process done to plain-text to become cipher-text (or simply encrypt
+it), is called the **Encryption-Key**. After all these things, a
+Person who knows the Key, can Decrypt or Decipher the cipher-data:
+
+Key:
+
+Replace
+every letter with 3 letters before that in alphabet.
+
+Cipher
+text:
+
+```
+<b><span style="background: #ff8000">Gdwd lv d suhflrxv wklqj dqg zloo odvw orqjhu wkdq wkh vbvwhpv wkhpvhoyhv. - Wlp Ehuqhuv Ohh</span></b>
+```
+
+Cipher letter
+
+Replacement
+
+D
+
+A
+
+E
+
+B
+
+F
+
+C
+
+G
+
+D
+
+H
+
+E
+
+I
+
+F
+
+J
+
+G
+
+K
+
+H
+
+L
+
+I
+
+M
+
+J
+
+N
+
+K
+
+O
+
+L
+
+P
+
+M
+
+Q
+
+N
+
+R
+
+O
+
+S
+
+P
+
+T
+
+Q
+
+U
+
+R
+
+V
+
+S
+
+W
+
+T
+
+X
+
+U
+
+Y
+
+V
+
+Z
+
+W
+
+A
+
+X
+
+B
+
+Y
+
+C
+
+Z
+
+Deciphered
+text (Plain text):
+
+```
+<b><span style="background: #ff8000">Data is a precious thing and will last longer than the systems themselves. - Tim Berners Lee</span></b>
+```
+
+Now
+that was the definition of Cryptography!
 
 1.1.1
 Encryption / Cipher
@@ -216,7 +494,7 @@ SSL
 
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**R** **eference** **s** **:**
+**References:**
 
 \\_\\_\\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 

@@ -5,7 +5,7 @@
 	<title></title>
 	<meta name="generator" content="LibreOffice 6.4.5.2 (Linux)"/>
 	<meta name="created" content="2023-02-15T14:43:27.874279969"/>
-	<meta name="changed" content="2023-02-21T16:53:01.180709692"/>
+	<meta name="changed" content="2023-02-22T17:06:24.137044487"/>
 	<style type="text/css">
 		@page { size: 8.5in 11in; margin: 0.79in }
 		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
@@ -92,9 +92,544 @@ book.</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 
 </p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">1.1
-What is the concept of cryptography?</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><b>1.1
+What is the concept of cryptography?</b></p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">The
+main purpose in cryptography is to hide a data in a way that no one
+can see it, except the person who knows a key. It is important to say
+that cryptography is totally different from an authentication system.
+Let’s see an example of cryptography.</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">Suppose
+we have a data called “Plain Data”:</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+Plain
+text:</p>
+<pre><b><span style="background: #ff8000">Data is a precious thing and will last longer than the systems themselves. - Tim Berners Lee</span></b></pre><p align="justify" style="margin-bottom: 0in; line-height: 100%">
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">Now,
+we intend to do something to it that hides this plain data, so we
+replace every letter with 3 letters after that in alphabet. So the
+Mapping of the letters will be like this:</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<table width="192" cellpadding="2" cellspacing="0">
+	<col width="83"/>
+
+	<col width="101"/>
+
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			<b>Plain letter</b></p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			<b>Replacement</b></p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			A</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			D</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			B</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			E</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			C</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			F</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			D</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			G</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			E</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			H</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			F</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			I</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			G</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			J</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			H</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			K</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			I</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			L</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			J</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			M</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			K</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			N</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			L</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			O</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			M</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			P</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			N</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			Q</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			O</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			R</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			P</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			S</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			Q</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			T</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			R</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			U</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			S</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			V</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			T</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			W</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			U</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			X</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			V</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			Y</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			W</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			Z</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			X</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			A</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			Y</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			B</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="83" height="13" style="border: none; padding: 0in"><p align="center">
+			Z</p>
+		</td>
+		<td width="101" style="border: none; padding: 0in"><p align="center">
+			C</p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">So
+we come up with this text after replacing those letters that we call
+it “Cipher Data”:</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">Cipher
+text:</p>
+<pre style="text-align: justify"><b><span style="background: #ff8000">Gdwd lv d suhflrxv wklqj dqg zloo odvw orqjhu wkdq wkh vbvwhpv wkhpvhoyhv. - Wlp Ehuqhuv Ohh</span></b></pre><p align="justify" style="margin-bottom: 0in; line-height: 100%">
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">This
+process is called <b>Encrypting</b> or <b>Ciphering</b> a plain-data.
+Take a look at cipher-data, can you understand what is that without
+knowing the process? A piece of information that indicates the what
+process done to plain-text to become cipher-text (or simply encrypt
+it), is called the <b>Encryption-Key</b>. After all these things, a
+Person who knows the Key, can Decrypt or Decipher the cipher-data:</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">Key:</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><span style="background: #ffff00">Replace
+every letter with 3 letters before that in alphabet.</span></p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">Cipher
+text:</p>
+<pre style="text-align: justify"><b><span style="background: #ff8000">Gdwd lv d suhflrxv wklqj dqg zloo odvw orqjhu wkdq wkh vbvwhpv wkhpvhoyhv. - Wlp Ehuqhuv Ohh</span></b></pre><p align="justify" style="margin-bottom: 0in; line-height: 100%">
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<table width="204" cellpadding="2" cellspacing="0">
+	<col width="104"/>
+
+	<col width="92"/>
+
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			Cipher letter</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			Replacement</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			D</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			A</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			E</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			B</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			F</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			C</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			G</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			D</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			H</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			E</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			I</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			F</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			J</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			G</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			K</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			H</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			L</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			I</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			M</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			J</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			N</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			K</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			O</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			L</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			P</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			M</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			Q</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			N</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			R</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			O</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			S</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			P</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			T</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			Q</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			U</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			R</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			V</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			S</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			W</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			T</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			X</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			U</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			Y</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			V</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			Z</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			W</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			A</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			X</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			B</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			Y</p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="104" height="13" style="border: none; padding: 0in"><p align="center">
+			C</p>
+		</td>
+		<td width="92" style="border: none; padding: 0in"><p align="center">
+			Z</p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">Deciphered
+text (Plain text):</p>
+<pre style="text-align: justify"><b><span style="background: #ff8000">Data is a precious thing and will last longer than the systems themselves. - Tim Berners Lee</span></b></pre><p align="justify" style="margin-bottom: 0in; line-height: 100%">
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">Now
+that was the definition of Cryptography!</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+<br/>
 
 </p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%">1.1.1
@@ -332,7 +867,7 @@ ________________________________________________________________________________
 <br/>
 
 </p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%"><b>R</b><b>eference</b><b>s</b><b>:</b></p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><b>References:</b></p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 
 </p>
