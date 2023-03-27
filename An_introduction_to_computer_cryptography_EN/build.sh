@@ -18,9 +18,9 @@ if ! type "libreoffice" > /dev/null;
     exit
 fi
 
-if ! type "html2md" > /dev/null;
+if ! type "pandoc" > /dev/null;
   then
-    echo "[*]ERROR: \`html2md\` is not installed."
+    echo "[*]ERROR: \`pandoc\` is not installed."
     exit
 fi
 
@@ -38,6 +38,6 @@ libreoffice --convert-to html "$1";
 
 echo "[*] Created ${1%.*}.html";
 
-html2md -i "${1%.*}.html" > "${1%.*}.md";
+pandoc -t gfm "${1%.*}.odt" > "${1%.*}.md";
 
 echo "[*] Created ${1%.*}.md";
