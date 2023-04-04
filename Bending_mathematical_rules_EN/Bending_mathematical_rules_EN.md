@@ -22,6 +22,17 @@ Free Documentation License".
 
 Introduction:
 
+Join me on a journey into the fascinating world of mathematics. My aim
+is to discover unbreakable rules and push their limits by bending them
+as much as possible. I strive to achieve the impossible, challenging the
+notion that some things cannot be done. Through my exploration, I seek
+to uncover patterns and reveal the hidden magic beneath the numbers and
+eventually questioning the fundamental principles of mathematics. In
+this book, we will challenge the rumor that math is merely an abstract
+concept or something that's poorly taught in schools. However, be
+warned, once you step a foot in world of math, you may become addicted
+to the wonders of it:3
+
 Behrad.B
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
