@@ -24,7 +24,7 @@ Introduction:
 
 Join me on a journey into the fascinating world of mathematics. My aim
 is to discover unbreakable rules and push their limits by bending them
-as much as possible. I strive to achieve the impossible, challenging the
+as much as possible. I intend to achieve the impossible, challenging the
 notion that some things cannot be done. Through my exploration, I seek
 to uncover patterns and reveal the hidden magic beneath the numbers and
 eventually questioning the fundamental principles of mathematics. In
@@ -37,7 +37,47 @@ Behrad.B
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Chapter 1: 
+Chapter 1: The impossible possibility 
+
+Personal Note (TS 1680799322):
+
+Mathematics is probably dangerous and daunting, but to me, it offers a
+way out. I require a challenge that seems impossible to achieve in order
+to survive. Ordinary tasks do not satisfy me as they are too easily
+done, and therefore appear inferior. I am not special or exceptional,
+yet I need a purpose that is challenging enough to keep me motivated.
+Limitations are something I despise, which is why I always seek
+limitless concepts. I have an insane theory that the value of a person
+can only be measured by the worth of their goals and actions. Although I
+cannot recall if this notion is mine or if I heard it elsewhere due to
+memory issues from some incident, I know it makes perfect sense to me.
+If an individual's aspirations are limited, then their significance is
+restricted. It may seem arrogant to express this observation in such a
+manner, but that’s the only way that works with me. I cannot lie. Since
+the incident, telling the truth has become essential to me. If I do not
+say what I believe is accurate, I feel as though I will explode\! As a
+result, I ended up almost alone since friendships with me rarely last
+longer than a few months. Obviously, being truthful does not necessarily
+make one likable. However, I accept this reality and have gotten used to
+it, even if it does not make me popular. After the so-called incident
+that I repeatedly mention, I spent almost eight months alone in a room,
+and it changed me. Although my personal challenges are not significant,
+what truly matters is that they left me with no choice but to take a
+path that led me to use things like mathematics and science to
+illustrate a clearer picture of reality. Allow me to explain how it all
+began...
+
+Let’s wind the clock back a few years, where we find me holed up in a
+room staring at a wall, trying to deal with my PTSD. As a young boy, I
+had survived a major accident that was entirely my fault, leaving me
+feeling incompetent and useless. I felt incredibly worthless and
+“good-for-nothing,” so I began to contemplate ways to give up on life
+altogether. Despite being surrounded by these thoughts for several days,
+as humans, we are biologically programmed to persevere and survive.
+Consequently, my confused brain began searching for ways to escape this
+dark state of mind, so I knew that I needed to convince myself that I
+was deserving of a chance at life and had the potential to achieve great
+things.
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
