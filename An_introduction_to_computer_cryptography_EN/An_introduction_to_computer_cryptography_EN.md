@@ -41,12 +41,17 @@ Chapter 1: What is cryptography?
 
 1.1 What is the concept of cryptography?
 
-The main purpose in cryptography is to hide a data in a way that no one
-can see it, except the person who knows a key. It is important to say
-that cryptography is totally different from an authentication system.
-Let’s see an example of cryptography.
+The main purpose in cryptography is to hide a data\[1\] in a way that no
+one can see it, except the person who knows a key. It is important to
+say that cryptography is totally different from an authentication
+system. Let’s see an example of cryptography.
 
 Suppose we have a data called “Plain Data”:
+
+Note\[1\]: A data can be anything, <span id="anchor"></span>a concept, a
+word, a speech, anything that can be expressed with a special rule based
+on mathematics. In the field of computers, we may mean anything by data
+, files, information, etc.
 
   
 Plain text:
@@ -97,11 +102,11 @@ Gdwd lv d suhflrxv wklqj dqg zloo odvw orqjhu wkdq wkh vbvwhpv
 wkhpvhoyhv. - Wlp Ehuqhuv Ohh
 
 This process is called **Encrypting** or **Ciphering** a plain-data.
-Take a look at cipher-data, can you understand what is that without
+Take a look at cipher-data, could you understand what is that without
 knowing the process? A piece of information that indicates the what
 process done to plain-text to become cipher-text (or simply encrypt it),
 is called the **Encryption-Key**. After all these things, a Person who
-knows the Key, can Decrypt or Decipher the cipher-data:
+knows the Key, can **Decrypt** or **Decipher** the cipher-data:
 
 Key:
 
@@ -147,7 +152,7 @@ Deciphered text (Plain text):
 Data is a precious thing and will last longer than the systems
 themselves. - Tim Berners Lee
 
-Now that was the definition of Cryptography\!
+And that was a simple definition of Cryptography\!
 
   
 
@@ -226,27 +231,27 @@ Chapter 3: What is Symmetric Cryptography?
 
 3.4 DES?
 
+3.5 One Time Pad
+
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Chapter 4: What is Asymmetric Cryptography?
 
-3.1 What is asymmetric cryptography and why it’s needed?
+4.1 What is asymmetric cryptography and why it’s needed?
 
-3.2 Diffie-Hellman
+4.2 Diffie-Hellman
 
-3.3 RSA?
+4.3 RSA?
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Chapter 5: Cryptographic hash**
 
-3.1 What is a Cryptographic hash?
+5.1 What is a Cryptographic hash?
 
-3.2 MD5
+5.2 MD5
 
-3.3 SHA
-
-3.4 One Time Pad
+5.3 SHA
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -261,7 +266,7 @@ Chapter 6: Elliptic Curves
   
 **Chapter 8:  Cryptography in practice**
 
-7.1 SSL
+8.1 SSL
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 

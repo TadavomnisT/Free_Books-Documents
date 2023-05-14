@@ -5,7 +5,7 @@
 	<title></title>
 	<meta name="generator" content="LibreOffice 6.4.5.2 (Linux)"/>
 	<meta name="created" content="2023-02-15T14:43:27.874279969"/>
-	<meta name="changed" content="2023-03-27T15:54:27.230883709"/>
+	<meta name="changed" content="2023-05-14T17:39:01.113214350"/>
 	<style type="text/css">
 		@page { size: 8.5in 11in; margin: 0.79in }
 		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
@@ -96,12 +96,24 @@ What is the concept of cryptography?</b></p>
 
 </p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%">The
-main purpose in cryptography is to hide a data in a way that no one
-can see it, except the person who knows a key. It is important to say
-that cryptography is totally different from an authentication system.
-Let’s see an example of cryptography.</p>
+main purpose in cryptography is to hide a data[1] in a way that no
+one can see it, except the person who knows a key. It is important to
+say that cryptography is totally different from an authentication
+system. Let’s see an example of cryptography.</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%">Suppose
 we have a data called “Plain Data”:</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><a name="tw-target-text"></a>
+Note[1]: A data can be anything, <span lang="en-US">a concept, a
+word, a speech, anything that can be expressed with a special rule
+based on mathematics. In the field of computers, we may mean anything
+</span><span lang="en-US">by data </span><span lang="en-US">, files,
+information, etc.</span></p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 Plain
 text:</p>
@@ -367,11 +379,12 @@ text:</p>
 </p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%">This
 process is called <b>Encrypting</b> or <b>Ciphering</b> a plain-data.
-Take a look at cipher-data, can you understand what is that without
+Take a look at cipher-data, could you understand what is that without
 knowing the process? A piece of information that indicates the what
 process done to plain-text to become cipher-text (or simply encrypt
 it), is called the <b>Encryption-Key</b>. After all these things, a
-Person who knows the Key, can Decrypt or Decipher the cipher-data:</p>
+Person who knows the Key, can <b>Decrypt</b> or <b>Decipher</b> the
+cipher-data:</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 
 </p>
@@ -624,8 +637,8 @@ text (Plain text):</p>
 <br/>
 
 </p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">Now
-that was the definition of Cryptography!</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">And
+that was a simple definition of Cryptography!</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 <br/>
 
@@ -772,6 +785,8 @@ Simple asymmetric encryption examples</p>
 AES?</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%">3.4
 DES?</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">3.5
+One Time Pad</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 
 </p>
@@ -787,11 +802,11 @@ DES?</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 
 </p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">3.1
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">4.1
 What is asymmetric cryptography and why it’s needed?</p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">3.2
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">4.2
 Diffie-Hellman</p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">3.3
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">4.3
 RSA?</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 
@@ -802,14 +817,15 @@ RSA?</p>
 </p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><b>Chapter
 </b><b>5</b><b>: </b><b>Cryptographic hash</b></p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">3.1
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">5.1
 What is a Cryptographic hash?</p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">3.2
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">5.2
 MD5</p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">3.3
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">5.3
 SHA</p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">3.4
-One Time Pad</p>
+<p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%">__________________________________________________________________________________</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 
@@ -829,7 +845,7 @@ One Time Pad</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 <b>Chapter
 </b><b>8</b><b>: </b><b> </b><b>Cryptography </b><b>in practice</b></p>
-<p align="justify" style="margin-bottom: 0in; line-height: 100%">7.1
+<p align="justify" style="margin-bottom: 0in; line-height: 100%">8.1
 SSL</p>
 <p align="justify" style="margin-bottom: 0in; line-height: 100%"><br/>
 
