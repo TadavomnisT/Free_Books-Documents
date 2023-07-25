@@ -17,7 +17,7 @@ duckduckgo.com
 
 الان این روزها نتیجه های کوئریش خیلی خوب تر شده و از کلداستارت خارج شده...✅
 
-=+=+=+=+=+=+=+=+=+=+=+=+
+ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 
 
 داک‌داک‌گو ادعا میکنه که امنه ، اما این ادعا چقدر درسته؟
@@ -36,10 +36,11 @@ duckduckgo.com
 
 
 متشکله از:
-```
-https://www.google.com/search?q=sexy&source=hp&ei=wa_RY82SNvaF9u8PldmHiAo&iflsig=AK50M_UAAAAAY9G90THrRx6jWHO0jz3MWt69cLMM37MN&ved=0ahUKEwiN9-CA5eP8AhX2gv0HHZXsAaEQ4dUDCAc&uact=5&oq=sexy&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUILhCABDIFCC4QgAQyBQguEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgsILhCABBDHARDRAzoICC4QgAQQ1AJQAFjuC2DTlwFoAXAAeACAAcACiAHdCJIBBTItMi4ymAEAoAEB&sclient=gws-wiz‍‍
-```
-‍‍‍‍
+
+
+`https://www.google.com/search?q=sexy&source=hp&ei=wa_RY82SNvaF9u8PldmHiAo&iflsig=AK50M_UAAAAAY9G90THrRx6jWHO0jz3MWt69cLMM37MN&ved=0ahUKEwiN9-CA5eP8AhX2gv0HHZXsAaEQ4dUDCAc&uact=5&oq=sexy&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUILhCABDIFCC4QgAQyBQguEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgsILhCABBDHARDRAzoICC4QgAQQ1AJQAFjuC2DTlwFoAXAAeACAAcACiAHdCJIBBTItMi4ymAEAoAEB&sclient=gws-wiz‍‍`
+
+
 1- پارامتر کوئری :
 `q=sexy`
 
@@ -52,12 +53,15 @@ https://www.google.com/search?q=sexy&source=hp&ei=wa_RY82SNvaF9u8PldmHiAo&iflsig
 حالا کم کم داره پارامتر های مشکوک نمایان میشه :)) این ie تایم استمپ دقیـــــــــــــــــــــــــــق زمانی هست که شما سرچ کردی... در هیبت انکد شده! حتی طبق افسانه ها توش میلی‌ثانیه هم نوشته شده!
 من دیکدش میکنم، و لینک مقاله دیکد کردن + سورسکدش رو آخر میفرستم:
 
-`var_dump(
+‍```
+var_dump(
     time(),
     ei_decode("wa_RY82SNvaF9u8PldmHiAo")
-);`
+);
+```
 
-`int(1674687414)
+```
+int(1674687414)
 array(4) {
   [0]=>
   int(1670492097)
@@ -67,8 +71,8 @@ array(4) {
   int(4261249782)
   [3]=>
   int(2701257877)
-}`
-
+}
+```
 
 همونطور که میبینید در قیاس با تایم استمپ فعلی کاملا منطقیه...
 و اما پارامتر های دیگه چیستن؟! میلی‌ثانیه؟ تاخیر؟ سرعت تایپ انگشتان من؟! به راستی چی هستن؟؟؟ از گوگل بپرسید نه از من... بخواید که یه داکیومنت کلریفای شده از همه اینها بده بیرون...
@@ -124,6 +128,7 @@ https://moz.com/blog/inside-googles-ved-parameter
 
 
 POST
+
 `https://www.google.com/gen_204?atyp=i&ei=wa_RY82SNvaF9u8PldmHiAo&ct=slh&v=t1&im=M&pv=0.9109014057876286&me=12:1674686414028,V,0,0,0,0:1029,h,1,1,o:2121,h,1,1,i:532,h,1,1,o:12,h,1,1,i:475,h,1,1,o:3,h,1,1,i:9,h,1,1,o:3,h,1,1,i:102,h,1,1,o:7,h,1,1,i:396,V,0,0,1920,456:126,R,1,1,0,0,1908,456:0,G,1,1,1000,188:26,V,0,0,1920,456,1:0,R,1,1,0,0,1908,456:1077,B,659:3402,e,H&zx=1674686423348`
 
 
@@ -135,6 +140,7 @@ POST
 یعنی اگر من بخوام روی یکی از نتیجه ها کلیک کنم ، هایپر لینکی که من رو ریدایرکت میده ، مستقیما نمیره سمت داکیومنت مدنظر... بلکه اول میره سمت سرور گوگل ، بهش میگه که این طرف که اونو سرچ کرده بود ، اینقدر زمان رو فکر کرد و اسکرول کرد و با این سرعت روی فلان نتیجه کلیک کرد:))
 
 چطوری؟ اینطوری:
+
 `https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjzhvCK5eP8AhWv_rsIHT6PDWkQFnoECBgQAQ&url=https%3A%2F%2Fwww.merriam-webster.com%2Fdictionary%2Fsexy&usg=AOvVaw036M2DCas1W3nQB6UEeT4n`
 
 این دیگه تحلیلش به عهده خودتون*-* 
@@ -162,7 +168,7 @@ POST
 
 البته توی پستهاش اطلاعات بیشتری هست… ولی شما خودتون تحلیل بفرمائین.
 
-=+=+=+=+=+=+=+=+=+=+=+=+=+
+ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 
 
 مساله بعدی مهم این که برخلاف گوگل یا دیگر خبیثان، هایپرلینکا مستقیم میرن به نتیجه...
@@ -189,7 +195,8 @@ https://github.com/duckduckgo
 
 https://deedpolloffice.com/blog/articles/decoding-ei-parameter
 
-`function ei_decode($ei)
+```
+function ei_decode($ei)
 {
     // Copyright 2013 Deed Poll Office Ltd, UK <https://deedpolloffice.com>
     // Licensed under Apache Licence v2.0 <http://apache.org/licenses/LICENSE-2.0>
@@ -215,7 +222,9 @@ https://deedpolloffice.com/blog/articles/decoding-ei-parameter
         $ret[$j + 1] = $val;
     }
     return $ret;
-}`
+}
+```
+ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 
 منابع:
 
