@@ -11,9 +11,9 @@ ____________________________________________
 
 ### Articles:
 ##### English:
-* Name here... 
+* [What is Tadavomnism?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/1-what-is-Tadavomnism) (mini-article)
 
 ##### Persian:
-* Name here...
+*  [از چه سرچ انجینی استفاده کنیم؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr)
 
 ____
