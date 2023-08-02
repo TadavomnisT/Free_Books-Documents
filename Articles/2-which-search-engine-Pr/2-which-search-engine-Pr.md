@@ -228,7 +228,13 @@ function ei_decode($ei)
 ```
 ____________________________________
 
-منابع:
+## کپی رایت:
+
+این یک کتاب آزاد و متن‌باز است تحت مجوز GFDL1-3، بنابراین اجازه داده شده است که این سند را با شرایط مجوز GNU Free Documentation License کپی، توزیع و/یا تغییر دهید.
+
+____________________________________
+
+## منابع:
 
 https://github.com/duckduckgo
 https://help.duckduckgo.com/privacy/t/
@@ -239,5 +245,3 @@ https://stackoverflow.com/questions/70866734/what-does-the-ved-parameter-in-a-go
 https://cs50.stackexchange.com/questions/38839/cs50w-project-0-im-feeling-lucky
 https://deedpolloffice.com/blog/articles/decoding-ei-parameter
 https://stackoverflow.com/questions/18584386/what-does-ei-mean-in-the-google-homepage-url-https-www-google-co-in-gws-rd#20753179 
-
-
