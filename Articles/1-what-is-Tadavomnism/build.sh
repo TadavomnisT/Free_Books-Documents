@@ -41,3 +41,7 @@ echo "[*] Created ${1%.*}.html";
 pandoc -t gfm "${1%.*}.odt" > "${1%.*}.md";
 
 echo "[*] Created ${1%.*}.md";
+
+pandoc -w mediawiki "${1%.*}.md" -o "${1%.*}.mediawiki";
+
+echo "[*] Created ${1%.*}.mediawiki";
