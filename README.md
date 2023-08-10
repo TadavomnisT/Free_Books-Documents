@@ -16,5 +16,7 @@ ____________________________________________
 
 ##### Persian:
 *  [از چه سرچ انجینی استفاده کنیم؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr)
-
+*  [فرق بین XSS و XSRF چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr)
+      *  [حمله XSS چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr)
+      *  [حمله XSRF چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr)
 ____
