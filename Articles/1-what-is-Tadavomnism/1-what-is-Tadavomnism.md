@@ -8,6 +8,14 @@ Tadavomnism was firstly introduced by Behrad.B who calls himself first Tadavomni
 "Tadavomnism Community" is also the name of an organization founded by Behrad.B in 2021 which is known to be a free independent community-based organization, with open-source projects (*See URL for more information:
 *<https://github.com/Tadavomnism>).
 
-____________________________________
+
 
 **Note**: This was for fun:3
+
+____________________________________
+
+## Copyright:
+
+This is a free and open-source article under the license of GFDL1-3, so permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License.
+
+____________________________________
