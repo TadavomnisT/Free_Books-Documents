@@ -36,16 +36,21 @@ Includes:
 
 `https://www.google.com/search?q=sexy&source=hp&ei=wa_RY82SNvaF9u8PldmHiAo&iflsig=AK50M_UAAAAAY9G90THrRx6jWHO0jz3MWt69cLMM37MN&ved=0ahUKEwiN9-CA5eP8AhX2gv0HHZXsAaEQ4dUDCAc&uact=5&oq=sexy&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUILhCABDIFCC4QgAQyBQguEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgsILhCABBDHARDRAzoICC4QgAQQ1AJQAFjuC2DTlwFoAXAAeACAAcACiAHdCJIBBTItMi4ymAEAoAEB&sclient=gws-wiz‍‍`
 
+
 1- Query Parameter:
 `q=sexy`
+
 
 2- Source Parameter:
 `source=hp`
 
+
 This is where you submitted the query, here "hp" stands for home page. It informs the server that this person has opened our website and performed a search on it's home-page. It didn't come from a browser URL-bar or a plugin or anything else.
+
 
 3- EI Parameter:
 `ei=wa_RY82SNvaF9u8PldmHiAo`
+
 
 Now slowly suspicious parameters are appearing:)) This "ei" is a timestamp, the exact time when you made the search... encoded in a way! It even includes milliseconds according to the old tales!
 I will decode it for you, and share the link of the article which explains decoding this parameter along with its source code later in this document:
@@ -83,7 +88,7 @@ Honestly, I don't account for all Google's movements under the hood of browser, 
 Note 2: I explained CSRF and its family somewhere before, I'll find it and make an article about it and put it here... (XEDIT)
 
 
-5- Parameter ved
+5- ved parameter
 
 `ved=0ahUKEwiN9-CA5eP8AhX2gv0HHZXsAaEQ4dUDCAc`
 
@@ -100,11 +105,14 @@ https://moz.com/blog/inside-googles-ved-parameter
 6- uact parameter
 `uact=5`
 
+
 7- oq parameter
 `oq=sexy`
 
+
 8- gs_lcp parameter
 `gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUILhCABDIFCC4QgAQyBQguEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgsILhCABBDHARDRAzoICC4QgAQQ1AJQAFjuC2DTlwFoAXAAeACAAcACiAHdCJIBBTItMi4ymAEAoAEB`
+
 
 9- sclient parameter
 `sclient=gws-wiz`
@@ -156,6 +164,7 @@ Check it out, 25 requests were sent and recieved... That's about 1/3 of Google's
 Check the URL header!
 
 `https://duckduckgo.com/?q=sexy&t=h_&ia=definition`
+
 
 1- Query parameter
 `q=sexy`
@@ -244,5 +253,3 @@ https://stackoverflow.com/questions/70866734/what-does-the-ved-parameter-in-a-go
 https://cs50.stackexchange.com/questions/38839/cs50w-project-0-im-feeling-lucky
 https://deedpolloffice.com/blog/articles/decoding-ei-parameter
 https://stackoverflow.com/questions/18584386/what-does-ei-mean-in-the-google-homepage-url-https-www-google-co-in-gws-rd#20753179 
-
-

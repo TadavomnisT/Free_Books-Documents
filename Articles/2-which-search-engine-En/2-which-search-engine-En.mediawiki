@@ -67,7 +67,7 @@ As you can see, compared to the current timestamp – that I’m writing this ar
 
 What is this? Honestly, I don’t account for all Google’s movements under the hood of browser, and the further we go, the more suspicious the situation becomes. But I heard from someone that this parameter, “iflsig”, is a kind of trick to counteract the CSRF mechanism in order to resolve redirect notices. It’s a token that expires after a few minutes… But for more details, ask Google :) Note 2: I explained CSRF and its family somewhere before, I’ll find it and make an article about it and put it here… (XEDIT)
 
-5- Parameter ved
+5- ved parameter
 
 <code>ved=0ahUKEwiN9-CA5eP8AhX2gv0HHZXsAaEQ4dUDCAc</code>
 
