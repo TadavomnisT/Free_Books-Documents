@@ -203,6 +203,10 @@ So, CSRF/XSRF is a technique that involves forging a request related to another 
 
 CSRF/XSRF is a technique that involves forging a request related to another domain and ultimately altering values and XSS means injecting JavaScript code into a website.
 
+== Copyright: ==
+
+This is a free and open-source article under the license of GFDL1-3, so permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License.
+
 == Resources: ==
 
 https://en.wikipedia.org/wiki/Cross-site_scripting
