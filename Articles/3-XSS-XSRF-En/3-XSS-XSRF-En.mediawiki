@@ -209,12 +209,9 @@ This is a free and open-source article under the license of GFDL1-3, so permissi
 
 == Resources: ==
 
-https://en.wikipedia.org/wiki/Cross-site_scripting
-
-https://en.wikipedia.org/wiki/Cross-site_request_forgery
-
-https://www.youtube.com/watch?v=EoaDgUgS6QA
-
-https://www.youtube.com/watch?v=eWEgUcHPle0
+* https://en.wikipedia.org/wiki/Cross-site_scripting
+* https://en.wikipedia.org/wiki/Cross-site_request_forgery
+* https://www.youtube.com/watch?v=EoaDgUgS6QA
+* https://www.youtube.com/watch?v=eWEgUcHPle0
 
 The last two videos are brilliant.
