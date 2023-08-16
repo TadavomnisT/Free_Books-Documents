@@ -223,18 +223,15 @@ __________________________________
 
 سی-سرف یعنی یک دامین ، رکوئستی که مربوط به دامین دیگری هست رو جعل میکنه و نهایتا مقادیری رو تغییر میده و ایکس اس اس هم یعنی تزریق هر نوع جاوااسکریپتی در یک وبسایت.
 
-## کپی رایت:
+## کپی رایت
 
-این یک کتاب آزاد و متن‌باز تحت مجوز GFDL1-3 می‌باشد، بنابراین اجازه کپی، توزیع و/یا تغییر این سند با شرایط مجوز GNU Free Documentation License داده شده است.
+این یک مقاله آزاد و متن‌باز تحت مجوز GFDL1-3 می‌باشد، بنابراین اجازه کپی، توزیع و/یا تغییر این سند با شرایط مجوز GNU Free Documentation License داده شده است.
 
-## منابع:
+## منابع
 
-https://en.wikipedia.org/wiki/Cross-site_scripting
-
-https://en.wikipedia.org/wiki/Cross-site_request_forgery
-
-https://www.youtube.com/watch?v=EoaDgUgS6QA
-
-https://www.youtube.com/watch?v=eWEgUcHPle0
+* https://en.wikipedia.org/wiki/Cross-site_scripting
+* https://en.wikipedia.org/wiki/Cross-site_request_forgery
+* https://www.youtube.com/watch?v=EoaDgUgS6QA
+* https://www.youtube.com/watch?v=eWEgUcHPle0
 
 دو ویدیو آخر بسیار عالی هستن.
