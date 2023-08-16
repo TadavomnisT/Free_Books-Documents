@@ -233,23 +233,19 @@ function ei_decode($ei)
     return $ret;
 }
 ```
-____________________________________
 
 ## Copyright:
 
 This is a free and open-source article under the license of GFDL1-3, so permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License.
 
-____________________________________
-
 ## Refrences:
 
-
-https://github.com/duckduckgo
-https://help.duckduckgo.com/privacy/t/
-https://help.duckduckgo.com/duckduckgo-help-pages/settings/params/
-http://stackoverflow.com/questions/2659952/ddg#2659995
-https://stackoverflow.com/questions/69660435/what-are-the-components-of-a-google-com-url-string
-https://stackoverflow.com/questions/70866734/what-does-the-ved-parameter-in-a-google-search-refer-to
-https://cs50.stackexchange.com/questions/38839/cs50w-project-0-im-feeling-lucky
-https://deedpolloffice.com/blog/articles/decoding-ei-parameter
-https://stackoverflow.com/questions/18584386/what-does-ei-mean-in-the-google-homepage-url-https-www-google-co-in-gws-rd#20753179 
+* https://github.com/duckduckgo
+* https://help.duckduckgo.com/privacy/t/
+* https://help.duckduckgo.com/duckduckgo-help-pages/settings/params/
+* http://stackoverflow.com/questions/2659952/ddg#2659995
+* https://stackoverflow.com/questions/69660435/what-are-the-components-of-a-google-com-url-string
+* https://stackoverflow.com/questions/70866734/what-does-the-ved-parameter-in-a-google-search-refer-to
+* https://cs50.stackexchange.com/questions/38839/cs50w-project-0-im-feeling-lucky
+* https://deedpolloffice.com/blog/articles/decoding-ei-parameter
+* https://stackoverflow.com/questions/18584386/what-does-ei-mean-in-the-google-homepage-url-https-www-google-co-in-gws-rd#20753179 
