@@ -22,4 +22,7 @@ ____________________________________________
 *  [فرق بین XSS و XSRF چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr)
       *  [حمله XSS چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr)
       *  [حمله XSRF چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr)
-____
+*  [مقایسه سرعت خوندن/نوشتن RAM و HDD](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr)
+      *  [رم چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr)
+      *  [هارددیسک چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr)
+      *  [چرا میگیم هارد دیسک به طور متوسط 100,000 بار از رم کند تره؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr)
