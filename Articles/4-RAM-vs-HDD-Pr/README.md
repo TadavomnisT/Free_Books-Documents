@@ -354,17 +354,12 @@ ______________________________________
 https://www.youtube.com/watch?v=3owqvmMf6No
 
 
-یکسری نقل قول مرتبط با این موضوع:
-
-![Qoute](Files/11.jpg)
-
-_https://superuser.com/questions/1173675/how-much-faster-is-memory-ram-compared-to-ssd-for-random-access_
+یکسری لینک پرسش و پاسخ مرتبط با این موضوع:
 
 
-![Qoute](Files/12.jpg)
-
-_https://stackoverflow.com/questions/1371400/how-much-faster-is-the-memory-usually-than-the-disk_
-_https://queue.acm.org/detail.cfm?id=1563874_
+* _https://superuser.com/questions/1173675/how-much-faster-is-memory-ram-compared-to-ssd-for-random-access_
+* _https://stackoverflow.com/questions/1371400/how-much-faster-is-the-memory-usually-than-the-disk_
+* _https://queue.acm.org/detail.cfm?id=1563874_
 
 
 

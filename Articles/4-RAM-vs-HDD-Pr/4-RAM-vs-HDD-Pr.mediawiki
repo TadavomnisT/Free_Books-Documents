@@ -275,15 +275,11 @@ RAM vs HDD
 
 https://www.youtube.com/watch?v=3owqvmMf6No
 
-یکسری نقل قول مرتبط با این موضوع:
+یکسری لینک پرسش و پاسخ مرتبط با این موضوع:
 
-[[File:Files/11.jpg|thumb|none|alt=Qoute|Qoute]]
-
-''https://superuser.com/questions/1173675/how-much-faster-is-memory-ram-compared-to-ssd-for-random-access''
-
-[[File:Files/12.jpg|thumb|none|alt=Qoute|Qoute]]
-
-''https://stackoverflow.com/questions/1371400/how-much-faster-is-the-memory-usually-than-the-disk'' ''https://queue.acm.org/detail.cfm?id=1563874''
+* ''https://superuser.com/questions/1173675/how-much-faster-is-memory-ram-compared-to-ssd-for-random-access''
+* ''https://stackoverflow.com/questions/1371400/how-much-faster-is-the-memory-usually-than-the-disk''
+* ''https://queue.acm.org/detail.cfm?id=1563874''
 
 و تمام، هارددیسک بطور متوسط 100000 بار از رم کند تره:))
 
