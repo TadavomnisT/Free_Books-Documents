@@ -323,6 +323,95 @@ int main() {
 
     return 0;
 }</source>
+این قطعه کد زمان اجرا و میزان رم مصرفی مربوط به یک قطعه کد خاص رو اندازه‌گیری میکنه، اون قطعه کد خاص، سگمنت زیر هست که به اندازه دقیقاً 1 گیگابایت (1073741824 بایت) فضای رم رو تخصیص میده به یک آرایه از نوع کرکتر، اگه بخوام به زبان ساده بگم این قطعه کد که میبینید، دقیقاً 1 گیگابایت اطلاعات رو روی رم ذخیره میکنه:
+
+<source lang="cpp">char* arr = new char[1073741824];
+for(int i = 0; i < 1073741824 ; i++)
+    arr[i] = 'A';</source>
+با اجرای این کد، میتونیم با یه تقریب خوبی بسنجیم که ذخیره کردن 1 گیگابایت از اطلاعات روی مموری بصورت دسترسی تصادفی (Random Access) چه مقدار زمانی طول میکشه و اینکه چقدر از مموری (RAM) استفاده میشه (منطقاً دقیقاً باید 1 گیگابایت استفاده بشه). این کد کزمان اجرای اون قطعه سگمنت مذکور رو یک بار با اساتفاده از کلاکها توی کتابخونه ctime میسنجه و بار دیگر با استفاده از کتابخونه chrono. بدین ترتیب ما میتونیم بگیرم زمان خروجی ما نسبتا دقیق هست، یادتون باشه که اینکلود کردن iostream توی این کامپایلر من خودش کتابخونه ctime رو هم به کد اضافه میکنه، اگه توی کامپایلر شما این قضه کار نکرد، حتما کتابخونه رو دستی اینکلود کنین:
+
+<code>#include &lt;ctime&gt;</code>
+
+بیاین کد رو اجرا کنیم تا ببینیم پاسخ چیه، من روی یه ماشین لینوکس هستم، پس کد رو با <code>g++ RAM_test.cpp</code> کامپایل میکنم و با <code>./a.out</code> اجرا میکنم.
+
+نکته: همیـــشه یادتون باشه که در اینجور آزمایشها و مقایسه ها، انجام آزمایش (اجرای کد) رو حداقل 3 بار در شرایط مختلف تکرار کنید و متوسط کلی رو بعنوان پاسخ در نظر بگیرید، در هر لحظه توی یک ماشین کامپیوتری هزارن پراسس دیگر وجود دارن که با ریسورسها در حال تعامل هستن، رفتار این پراسس ها ممکنه در زمانهای متفاوت، تأثیری روی نتیجه آزمایش شما هم بذاره.
+
+اجرای کد:
+
+<source lang="shell">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ RAM_test.cpp
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out         
+Execution Time (Based on ctime): 2473.45 ms
+Execution Time (Based on chrono): 2473.63 ms
+Memory Usage: 1046788 KB
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+Execution Time (Based on ctime): 2431.39 ms
+Execution Time (Based on chrono): 2431.43 ms
+Memory Usage: 1046736 KB
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+Execution Time (Based on ctime): 2479.17 ms
+Execution Time (Based on chrono): 2479.23 ms
+Memory Usage: 1046820 KB
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+Execution Time (Based on ctime): 2419.52 ms
+Execution Time (Based on chrono): 2419.6 ms
+Memory Usage: 1046648 KB
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+Execution Time (Based on ctime): 2488.15 ms
+Execution Time (Based on chrono): 2488.17 ms
+Memory Usage: 1046788 KB
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+Execution Time (Based on ctime): 2482.35 ms
+Execution Time (Based on chrono): 2482.44 ms
+Memory Usage: 1046800 KB
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+Execution Time (Based on ctime): 2420.21 ms
+Execution Time (Based on chrono): 2420.24 ms
+Memory Usage: 1046788 KB
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+Execution Time (Based on ctime): 2426.54 ms
+Execution Time (Based on chrono): 2426.59 ms
+Memory Usage: 1046768 KB
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+Execution Time (Based on ctime): 2459.44 ms
+Execution Time (Based on chrono): 2459.55 ms
+Memory Usage: 1046784 KB
+                                                                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+Execution Time (Based on ctime): 2474.08 ms
+Execution Time (Based on chrono): 2474.21 ms
+Memory Usage: 1046916 KB
+</source>
+من این کد رو توی 10 بازه زمانی مختلف که سیستم من هر بار درگیر محاسبات متفاوتی بود اجرا کردم، و خروجی به شرح بالا بود، حالا میتونیم یه تخمینی از متوسط زمان داشته باشیم:
+
+<pre class="md">(2473.45+2473.63+2431.39+2431.43+2479.17+2479.23+2419.52+2419.6+2488.15+2488.17+2482.35+2482.44+2420.21+2420.24+2426.54+2426.59+2459.44+2459.55+2474.08+2474.21) / 20 = 49109.39000000001 / 20 = 2455.4695
+
+(1046788+1046736+1046820+1046648+1046788+1046800+1046788+1046768+1046784+1046916) / 10 = 10467836 / 10 = 1046783.6
+
+Therefore:
+
+* Average Execution Time    = 2455.4695 ms
+* Average Memory Usage      = 1046783.6 KB
+</pre>
 
 -----
 
