@@ -425,75 +425,164 @@ for(int i = 0; i < 1073741824 ; i++)
 
 نکته: همیـــشه یادتون باشه که در اینجور آزمایشها و مقایسه ها، انجام آزمایش (اجرای کد) رو حداقل 3 بار در شرایط مختلف تکرار کنید و متوسط کلی رو بعنوان پاسخ در نظر بگیرید، در هر لحظه توی یک ماشین کامپیوتری هزارن پراسس دیگر وجود دارن که با ریسورسها در حال تعامل هستن، رفتار این پراسس ها ممکنه در زمانهای متفاوت، تأثیری روی نتیجه آزمایش شما هم بذاره.
 
+
+نکته2: یه دستور معروف یونیکسی هست به اسم `time` که با اون میتونیم یسکری اطلاعات جانبی راجع به کامندی که ران میکنیم داشته باشیم. من از این پکیج استفاده میکنم که زمانها و سی‌پی‌یو مصرفی حین اجرای برنامه رو مانیتور کنم. بعد از اجرا دقیقاً توضیح میدم معنی این اطلاعات چیه.
+
+
 اجرای کد:
 
 ```bash
 ┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ g++ RAM_test.cpp
-                                                                                                                             
+└─$ g++ RAM_write_test.cpp 
+                                                                                                                   
 ┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out         
-Execution Time (Based on ctime): 2473.45 ms
-Execution Time (Based on chrono): 2473.63 ms
-Memory Usage: 1046788 KB
-                                                                                                                             
-┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out
-Execution Time (Based on ctime): 2431.39 ms
-Execution Time (Based on chrono): 2431.43 ms
-Memory Usage: 1046736 KB
-                                                                                                                             
-┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out
-Execution Time (Based on ctime): 2479.17 ms
-Execution Time (Based on chrono): 2479.23 ms
-Memory Usage: 1046820 KB
-                                                                                                                             
-┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out
-Execution Time (Based on ctime): 2419.52 ms
-Execution Time (Based on chrono): 2419.6 ms
-Memory Usage: 1046648 KB
-                                                                                                                             
-┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out
-Execution Time (Based on ctime): 2488.15 ms
-Execution Time (Based on chrono): 2488.17 ms
-Memory Usage: 1046788 KB
-                                                                                                                             
-┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out
-Execution Time (Based on ctime): 2482.35 ms
-Execution Time (Based on chrono): 2482.44 ms
+└─$ time ./a.out 
+Execution Time (Based on ctime): 2501.88 ms
+Execution Time (Based on chrono): 2501.97 ms
 Memory Usage: 1046800 KB
-                                                                                                                             
+
+real    2.51s
+user    2.36s
+sys     0.14s
+cpu     99%
+                                                                                                                   
 ┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out
-Execution Time (Based on ctime): 2420.21 ms
-Execution Time (Based on chrono): 2420.24 ms
-Memory Usage: 1046788 KB
-                                                                                                                             
+└─$ time ./a.out
+Execution Time (Based on ctime): 2440.13 ms
+Execution Time (Based on chrono): 2440.23 ms
+Memory Usage: 1046864 KB
+
+real    2.45s
+user    2.32s
+sys     0.13s
+cpu     99%
+                                                                                                                   
 ┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out
-Execution Time (Based on ctime): 2426.54 ms
-Execution Time (Based on chrono): 2426.59 ms
-Memory Usage: 1046768 KB
-                                                                                                                             
+└─$ time ./a.out
+Execution Time (Based on ctime): 2446.16 ms
+Execution Time (Based on chrono): 2446.23 ms
+Memory Usage: 1046772 KB
+
+real    2.45s
+user    2.32s
+sys     0.13s
+cpu     99%
+                                                                                                                   
 ┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out
-Execution Time (Based on ctime): 2459.44 ms
-Execution Time (Based on chrono): 2459.55 ms
+└─$ time ./a.out
+Execution Time (Based on ctime): 2444.35 ms
+Execution Time (Based on chrono): 2444.5 ms
+Memory Usage: 1046848 KB
+
+real    2.45s
+user    2.29s
+sys     0.16s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2515.03 ms
+Execution Time (Based on chrono): 2515.09 ms
+Memory Usage: 1046832 KB
+
+real    2.52s
+user    2.39s
+sys     0.13s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2438.22 ms
+Execution Time (Based on chrono): 2438.28 ms
+Memory Usage: 1046844 KB
+
+real    2.45s
+user    2.32s
+sys     0.12s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2493.81 ms
+Execution Time (Based on chrono): 2493.94 ms
 Memory Usage: 1046784 KB
-                                                                                                                             
+
+real    2.50s
+user    2.35s
+sys     0.15s
+cpu     99%
+                                                                                                                   
 ┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
-└─$ ./a.out
-Execution Time (Based on ctime): 2474.08 ms
-Execution Time (Based on chrono): 2474.21 ms
-Memory Usage: 1046916 KB
+└─$ time ./a.out
+Execution Time (Based on ctime): 2501.99 ms
+Execution Time (Based on chrono): 2502.09 ms
+Memory Usage: 1046852 KB
+
+real    2.51s
+user    2.37s
+sys     0.14s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2459.47 ms
+Execution Time (Based on chrono): 2460.05 ms
+Memory Usage: 1046872 KB
+
+real    2.47s
+user    2.32s
+sys     0.15s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2429.63 ms
+Execution Time (Based on chrono): 2429.75 ms
+Memory Usage: 1046772 KB
+
+real    2.43s
+user    2.32s
+sys     0.12s
+cpu     99%
 
 ```
 
 من این کد رو توی 10 بازه زمانی مختلف که سیستم من هر بار درگیر محاسبات متفاوتی بود اجرا کردم و خروجی به شرح بالا بود، همونطور که میبینید زمان اجرا با یه تقریب خاصی در یک رنجه، اما هر بار تغییرات جزئی داره که این نتیجه کارکردهای پارلل سیستم عامل ما هست، بعداً راجع به محاسبات موازی سیستم عامل یه مقاله مینویسم، اما مساله جالب دیگه اینه که میزان مموری مصرفی هم توی هر بار اجرا متفاوت بوده و این کمی عجیب بنظر میرسه… اما میشه تخصصی بررسیش کرد و اون موقع میبینیم که کاملاً معقوله. بررسی تخصصیش از حوصله این مقاله خارجه اما، بطور خیلی خلاصه میتونیم بگیم که کارکرد کد به کارکرد کتابخونه‌ها و توابعی که از سیستم اینکلود کردیم وابسته هست، این توابعی که کال کردیم هر بار اون زیر باک سیستم عامل دیتاهای متفاوتی رو وارد رم میکنن، و همین باعث متفاوت شدن میزان دیتای نشسته روی رم میشه، اما در کل روی رنج 1 گیگابایتی هست که سگمنت مذکور ما مصرف میکنه.
+
+و حالا بریم سراغ توضیحات تخصصی کامند تایم که شامل ریپورتهایی از قبیل real و user و sys و cpu هست و ببینیم اینا چه معنی میدن. 
+
+**زمان Real**
+
+کل زمانی که طول کشیده که پراسس شروع بشه و به اتمام برسه، انگار که با یه کرنومتر بسنجیمش. به زبان تخصصی این زمان شامل همه زمانها میشه، زمان محاسبات و زمانهایی که پراسس منتظر میمونده (بلاک بوده) و زمانهایی که منتظر I/O بوده.
+
+**زمان User**
+
+زمانی هست که سی‌پی‌یو صرف محاسبات برنامه میکنه، و به زبان تخصصی زمانی هست که پراسس روی سی‌پی‌یو نشسته و داره اجرا میشه (بهش میگن user-mode)
+
+**زمان Sys**
+
+زمانی هست که سی‌پی‌یو مشغول تسکهایی بوده که کرنل سیستم عامل بخاطر پراسس داشته انجام میداده، مثلاً مموری الوکیشن و I/O ها… (به این قسمت میگن kernel-mode)
+
+به دو حالت اجرای پراسس ها روی پردازنده اشاره کردم به اسامی یوزر-مود و کرنل-مود. اینا مودهای اجرای برنامه توی سیستمهای یونیکسی یا هر سیستم مموری-پروتکتد دیگری هستن. بین یوزر-مود و کرنل-مود تفاوتهایی وجود داره که من سعی میکنم خیلی خیلی خلاصه توضیح بدم و بعدش منبع بدم که توضیحات تخصصی‌تر و مفصل رو از اونجا مطالعه بفرمائین:
+
+**کرنل-مد/Kernel-mode**
+
+اگه کدی توی این حالت اجرا بشه، اون قطعه کد دسترسی کامل و بدون محدودیتی به سخت‌افزار داره. میتونه هر سیستم کالی رو اجرا کنه، مثل هر اینستراکشنی برای CPU یا تعامل با هر قسمت رم. این بالاترین سطح دسترسیه و در پایین‌ترین لایه اتفاق می‌افته. اگه توی کدهای اجرایی این لایه خرابکاری یا اشکالی پیش بیاد خطرناکه و کل سیستم رو به مخاطره میندازه برای همین کدها و فانکشنهای معتمد سیستم عامل توی این حالت اجرا میشن.
+
+
+**یوزر-مد/User-mode**
+
+توی این حالت بر عکس حالت قبلی، مجری برنامه دسترسی مستقیم به سخت‌افزار نداره و نمیتونه مستقیماً با مجودیتهایی مثل رم و دیسک تعامل کنه، بلکه نیازمند یه API از طرف سیستم عامل هست که با اون تعامل داشته باشه و از اون بخواد که براش اعمالش رو انجام بده. بعداً یه مقاله راجع به مفهوم API مینویسم. بنابرین این حالت امن تره و کد نسبت به سخت‌افزار ایزوله هست و اگر اشکالی پیش بیاد قابل جبرانه. بیشتر کدهایی که توی سیستم انجام میشن روی این مود هستن.
+
+منابع این قسمت:
+
+https://blog.codinghorror.com/understanding-user-and-kernel-mode
+https://askubuntu.com/questions/920920/how-to-interpret-time-real-user-and-sys
+https://stackoverflow.com/questions/1311402/what-is-the-difference-between-user-and-kernel-modes-in-operating-systems
+https://unix.stackexchange.com/questions/53302/why-would-the-real-time-be-much-higher-than-the-user-and-sys-times-combine
+https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1
+
+
 حالا میتونیم یه تخمینی از متوسط زمان داشته باشیم: 
 
 ```md
@@ -540,3 +629,8 @@ ______________________________________
 + Database System Concepts, 6th Edition
 + http://www.foundersatwork.com/steve-wozniak.html
 + https://jadi.net/2014/02/radiogeek-36-wozniak-and-narenji-90
++ https://blog.codinghorror.com/understanding-user-and-kernel-mode
++ https://askubuntu.com/questions/920920/how-to-interpret-time-real-user-and-sys
++ https://stackoverflow.com/questions/1311402/what-is-the-difference-between-user-and-kernel-modes-in-operating-systems
++ https://unix.stackexchange.com/questions/53302/why-would-the-real-time-be-much-higher-than-the-user-and-sys-times-combine
++ https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1
