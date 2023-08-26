@@ -116,6 +116,121 @@ cpu     99%
 
 ";
 
+$string = "
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ HDD_write_test.cpp
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out 
+Execution Time (Based on ctime): 9536.65 ms
+Execution Time (Based on chrono): 9538.49 ms
+Memory Usage: 0 KB
+
+real    9.54s
+user    8.85s
+sys     0.68s
+cpu     99%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out
+Execution Time (Based on ctime): 9530.77 ms
+Execution Time (Based on chrono): 10150.1 ms
+Memory Usage: 0 KB
+
+real    10.15s
+user    8.82s
+sys     0.72s
+cpu     93%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out
+Execution Time (Based on ctime): 9625.24 ms
+Execution Time (Based on chrono): 10063.4 ms
+Memory Usage: 0 KB
+
+real    10.07s
+user    8.99s
+sys     0.64s
+cpu     95%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out
+Execution Time (Based on ctime): 9655.58 ms
+Execution Time (Based on chrono): 9657.09 ms
+Memory Usage: 0 KB
+
+real    9.66s
+user    8.96s
+sys     0.70s
+cpu     99%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out
+Execution Time (Based on ctime): 9479.76 ms
+Execution Time (Based on chrono): 9634.6 ms
+Memory Usage: 0 KB
+
+real    9.64s
+user    8.89s
+sys     0.60s
+cpu     98%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out
+Execution Time (Based on ctime): 9477.25 ms
+Execution Time (Based on chrono): 9641.66 ms
+Memory Usage: 0 KB
+
+real    9.65s
+user    8.92s
+sys     0.56s
+cpu     98%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out
+Execution Time (Based on ctime): 9468.07 ms
+Execution Time (Based on chrono): 9475.96 ms
+Memory Usage: 0 KB
+
+real    9.48s
+user    8.70s
+sys     0.77s
+cpu     99%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out
+Execution Time (Based on ctime): 9761.29 ms
+Execution Time (Based on chrono): 10151.8 ms
+Memory Usage: 0 KB
+
+real    10.16s
+user    9.05s
+sys     0.72s
+cpu     96%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out
+Execution Time (Based on ctime): 9632.74 ms
+Execution Time (Based on chrono): 10079 ms
+Memory Usage: 0 KB
+
+real    10.08s
+user    8.92s
+sys     0.72s
+cpu     95%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && time ./a.out
+Execution Time (Based on ctime): 9536.97 ms
+Execution Time (Based on chrono): 9540.68 ms
+Memory Usage: 0 KB
+
+real    9.55s
+user    8.89s
+sys     0.65s
+cpu     99%
+";
+
 $ctimes     = [];
 $chronos    = [];
 $reals      = [];
