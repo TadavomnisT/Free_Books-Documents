@@ -391,24 +391,216 @@ cpu     99%
 <p><strong>یوزر-مد/User-mode</strong></p><br />
 <p>توی این حالت بر عکس حالت قبلی، مجری برنامه دسترسی مستقیم به سخت‌افزار نداره و نمیتونه مستقیماً با مجودیتهایی مثل رم و دیسک تعامل کنه، بلکه نیازمند یه API از طرف سیستم عامل هست که با اون تعامل داشته باشه و از اون بخواد که براش اعمالش رو انجام بده. بعداً یه مقاله راجع به مفهوم API مینویسم. بنابرین این حالت امن تره و کد نسبت به سخت‌افزار ایزوله هست و اگر اشکالی پیش بیاد قابل جبرانه. بیشتر کدهایی که توی سیستم انجام میشن روی این مود هستن.</p><br />
 <p>منابع این قسمت:</p><br />
-<p><a href="https://blog.codinghorror.com/understanding-user-and-kernel-mode">https://blog.codinghorror.com/understanding-user-and-kernel-mode</a><br />
-<a href="https://askubuntu.com/questions/920920/how-to-interpret-time-real-user-and-sys">https://askubuntu.com/questions/920920/how-to-interpret-time-real-user-and-sys</a><br />
-<a href="https://stackoverflow.com/questions/1311402/what-is-the-difference-between-user-and-kernel-modes-in-operating-systems">https://stackoverflow.com/questions/1311402/what-is-the-difference-between-user-and-kernel-modes-in-operating-systems</a><br />
-<a href="https://unix.stackexchange.com/questions/53302/why-would-the-real-time-be-much-higher-than-the-user-and-sys-times-combine">https://unix.stackexchange.com/questions/53302/why-would-the-real-time-be-much-higher-than-the-user-and-sys-times-combine</a><br />
-<a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1">https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1</a></p><br />
+<ul><br />
+<li><em><a href="https://blog.codinghorror.com/understanding-user-and-kernel-mode">https://blog.codinghorror.com/understanding-user-and-kernel-mode</a></em></li><br />
+<li><em><a href="https://askubuntu.com/questions/920920/how-to-interpret-time-real-user-and-sys">https://askubuntu.com/questions/920920/how-to-interpret-time-real-user-and-sys</a></em></li><br />
+<li><em><a href="https://stackoverflow.com/questions/1311402/what-is-the-difference-between-user-and-kernel-modes-in-operating-systems">https://stackoverflow.com/questions/1311402/what-is-the-difference-between-user-and-kernel-modes-in-operating-systems</a></em></li><br />
+<li><em><a href="https://unix.stackexchange.com/questions/53302/why-would-the-real-time-be-much-higher-than-the-user-and-sys-times-combine">https://unix.stackexchange.com/questions/53302/why-would-the-real-time-be-much-higher-than-the-user-and-sys-times-combine</a></em></li><br />
+<li><em><a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1">https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1</a></em></li><br />
+</ul><br />
 <p>حالا میتونیم یه تخمینی از متوسط زمان داشته باشیم: </p><br />
-<pre><code class="language-md">(2473.45+2473.63+2431.39+2431.43+2479.17+2479.23+2419.52+2419.6+2488.15+2488.17+2482.35+2482.44+2420.21+2420.24+2426.54+2426.59+2459.44+2459.55+2474.08+2474.21) / 20 = 49109.39000000001 / 20 = 2455.4695
+<pre><code class="language-md">
+(2501.88+2440.13+2446.16+2444.35+2515.03+2438.22+2493.81+2501.99+2459.47+2429.63) / 10 = 24670.67 / 10 = 2467.067
+(2501.97+2440.23+2446.23+2444.5+2515.09+2438.28+2493.94+2502.09+2460.05+2429.75) / 10 = 24672.13 / 10 = 2467.213
+(2.51s+2.45s+2.45s+2.45s+2.52s+2.45s+2.50s+2.51s+2.47s+2.43s) / 10 = 24.74 / 10 = 2.474
+(2.36s+2.32s+2.32s+2.29s+2.39s+2.32s+2.35s+2.37s+2.32s+2.32s) / 10 = 23.36 / 10 = 2.336
+(0.14s+0.13s+0.13s+0.16s+0.13s+0.12s+0.15s+0.14s+0.15s+0.12s) / 10 = 1.37 / 10 = 0.137
+(99%+99%+99%+99%+99%+99%+99%+99%+99%+99%) / 10 = 990 / 10 = 99
 
-(1046788+1046736+1046820+1046648+1046788+1046800+1046788+1046768+1046784+1046916) / 10 = 10467836 / 10 = 1046783.6
 
 Therefore:
 
-* Average Execution Time    = 2455.4695 ms
-* Average Memory Usage      = 1046783.6 KB
+* Average Execution Time(Based on ctime): 2467.067 ms
+* Average Execution Time(Based on chrono): 2467.213 ms
+* Average Real Time: 2.474 s
+* Average User Time: 2.336 s
+* Average Sys Time: 0.137 s
+* Average CPU Usage: 99 %
 </code></pre><br />
-<p>همین اوردر زمانی ذخیره سازی دیتا بصورت دسترسی تصادفی روی رم، سرعتی که لازم داریم برای مقایسه رو به ما میده، سرعتش در عمل برابری میکنه با خوندن چیزی از رم بصورت دسترسی تصادفی.</p><br />
-<p>حالا بریم سراغ هارددیسک و ببینیم که خوندن/نوشتن یک گیگابایت از دیتا روی HDD چه مقدار زمان/ریسورس مصرف میکنه. البته در بحث این مقایسه دیگه ریسورسش مد نظر ما نیست، بلکه زمانش برای ما مهمه.</p><br />
+<p>این نتایج رو در ذهن داشته باشین بعداً برای مقایسه بهش برمیگردیم. همین اوردر زمانی ذخیره سازی دیتا بصورت دسترسی تصادفی روی رم، سرعتی که لازم داریم برای مقایسه رو به ما میده، سرعتش در عمل برابری میکنه با خوندن چیزی از رم بصورت دسترسی تصادفی.</p><br />
+<p>حالا بریم سراغ هارددیسک و ببینیم که خوندن/نوشتن یک گیگابایت از دیتا روی HDD چه مقدار زمان/ریسورس مصرف میکنه. البته در بحث این مقایسه دیگه ریسورسش (میزان رم مصرفیش) مد نظر ما نیست، بلکه زمانش برای ما مهمه. وقتی داریم رم رو با دیسک مقایسه میکنیم، دیگه نباید رمی که خود اعمال I/O مصرف میکنن رو بسنجیم.</p><br />
 <p>کد زیر رو در نظر بگیرید:</p><br />
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;sys/resource.h&gt;
+#include &lt;chrono&gt;
+
+using namespace std;
+
+int main() {
+
+    ofstream outfile;
+    char character = 'A';
+
+    // Start execution time
+    clock_t start_1 = clock();
+    auto start_2 = chrono::high_resolution_clock::now();
+
+    // Start memory usage
+    struct rusage usage;
+    getrusage(RUSAGE_SELF, &amp;usage);
+    long memory_usage_start = usage.ru_maxrss; // in kilobytes
+
+    // Code ----------------------------------------------------------
+    outfile.open("output.txt");
+    if (!outfile.is_open()) {
+        cout &lt;&lt; "Error opening file!" &lt;&lt; endl;
+        return 1;
+    }
+    for (int i = 0; i &lt; 1073741824; i++) {
+        outfile &lt;&lt; character;
+    }
+    outfile.close();
+    // ---------------------------------------------------------------
+
+    // Stop measuring memory usage
+    getrusage(RUSAGE_SELF, &amp;usage);
+    long memory_usage_end = usage.ru_maxrss; // in kilobytes
+
+    // Stop measuring execution time
+    clock_t end_1 = clock();
+    auto end_2 = chrono::high_resolution_clock::now();
+    double execution_time_1 = double(end_1 - start_1) / CLOCKS_PER_SEC;
+    chrono::duration&lt;double, milli&gt; execution_time_2 = end_2 - start_2;
+
+    // Printing result
+    cout &lt;&lt; "Execution Time (Based on ctime): " &lt;&lt; execution_time_1 * 1000.0 &lt;&lt; " ms" &lt;&lt; endl;
+    cout &lt;&lt; "Execution Time (Based on chrono): " &lt;&lt; execution_time_2.count() &lt;&lt; " ms" &lt;&lt; endl;
+    cout &lt;&lt; "Memory Usage: " &lt;&lt; memory_usage_end - memory_usage_start &lt;&lt; " KB" &lt;&lt; endl;
+
+    return 0;
+}</code></pre><br />
+<p><a href="./Files/HDD_write_test.cpp">فایل کد</a></p><br />
+<p>این کد یه فایل به اسم output.txt باز میکنه (اگر نباشه میسازه و اگر باشه اوررایت میکنه{به اوررایتش برمیگردم}) و توش 1 گیگابایت داده مینویسه. من به رسم آزمایش 10 بار اجراش میکنم:</p><br />
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ HDD_write_test.cpp
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out 
+Execution Time (Based on ctime): 9536.65 ms
+Execution Time (Based on chrono): 9538.49 ms
+Memory Usage: 0 KB
+
+real    9.54s
+user    8.85s
+sys     0.68s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out
+Execution Time (Based on ctime): 9530.77 ms
+Execution Time (Based on chrono): 10150.1 ms
+Memory Usage: 0 KB
+
+real    10.15s
+user    8.82s
+sys     0.72s
+cpu     93%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out
+Execution Time (Based on ctime): 9625.24 ms
+Execution Time (Based on chrono): 10063.4 ms
+Memory Usage: 0 KB
+
+real    10.07s
+user    8.99s
+sys     0.64s
+cpu     95%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out
+Execution Time (Based on ctime): 9655.58 ms
+Execution Time (Based on chrono): 9657.09 ms
+Memory Usage: 0 KB
+
+real    9.66s
+user    8.96s
+sys     0.70s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out
+Execution Time (Based on ctime): 9479.76 ms
+Execution Time (Based on chrono): 9634.6 ms
+Memory Usage: 0 KB
+
+real    9.64s
+user    8.89s
+sys     0.60s
+cpu     98%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out
+Execution Time (Based on ctime): 9477.25 ms
+Execution Time (Based on chrono): 9641.66 ms
+Memory Usage: 0 KB
+
+real    9.65s
+user    8.92s
+sys     0.56s
+cpu     98%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out
+Execution Time (Based on ctime): 9468.07 ms
+Execution Time (Based on chrono): 9475.96 ms
+Memory Usage: 0 KB
+
+real    9.48s
+user    8.70s
+sys     0.77s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out
+Execution Time (Based on ctime): 9761.29 ms
+Execution Time (Based on chrono): 10151.8 ms
+Memory Usage: 0 KB
+
+real    10.16s
+user    9.05s
+sys     0.72s
+cpu     96%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out
+Execution Time (Based on ctime): 9632.74 ms
+Execution Time (Based on chrono): 10079 ms
+Memory Usage: 0 KB
+
+real    10.08s
+user    8.92s
+sys     0.72s
+cpu     95%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt &amp;&amp; time ./a.out
+Execution Time (Based on ctime): 9536.97 ms
+Execution Time (Based on chrono): 9540.68 ms
+Memory Usage: 0 KB
+
+real    9.55s
+user    8.89s
+sys     0.65s
+cpu     99%</code></pre><br />
+<p>و متوسط نتایج آزمایش به شرح زیره:</p><br />
+<pre><code class="language-md">(9536.65+9530.77+9625.24+9655.58+9479.76+9477.25+9468.07+9761.29+9632.74+9536.97) / 10 = 95704.32 / 10 = 9570.432
+(9538.49+10150.1+10063.4+9657.09+9634.6+9641.66+9475.96+10151.8+10079+9540.68) / 10 = 97932.78 / 10 = 9793.278
+(9.54s+10.15s+10.07s+9.66s+9.64s+9.65s+9.48s+10.16s+10.08s+9.55s) / 10 = 97.98 / 10 = 9.798
+(8.85s+8.82s+8.99s+8.96s+8.89s+8.92s+8.70s+9.05s+8.92s+8.89s) / 10 = 88.99 / 10 = 8.899
+(0.68s+0.72s+0.64s+0.70s+0.60s+0.56s+0.77s+0.72s+0.72s+0.65s) / 10 = 6.76 / 10 = 0.676
+(99%+93%+95%+99%+98%+98%+99%+96%+95%+99%) / 10 = 971 / 10 = 97.1
+
+
+Therefore:
+
+* Average Execution Time(Based on ctime): 9570.432 ms
+* Average Execution Time(Based on chrono): 9793.278 ms
+* Average Real Time: 9.798 s
+* Average User Time: 8.899 s
+* Average Sys Time: 0.676 s
+* Average CPU Usage: 97.1 %</code></pre><br />
 <hr /><br />
 <p>یکسری لینک پرسش و پاسخ مرتبط با این موضوع:</p><br />
 <ul><br />
