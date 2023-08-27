@@ -461,6 +461,282 @@ sys     0.89s
 cpu     54%
 ";
 
+$string = "
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ RAM_copy_test.cpp     
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2676.01 ms
+Execution Time (Based on chrono): 2676.22 ms
+Memory Usage: 1048824 KB
+
+real    5.12s
+user    4.89s
+sys     0.23s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2616.64 ms
+Execution Time (Based on chrono): 2616.71 ms
+Memory Usage: 1048764 KB
+
+real    5.06s
+user    4.85s
+sys     0.20s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2618.32 ms
+Execution Time (Based on chrono): 2618.4 ms
+Memory Usage: 1048712 KB
+
+real    5.02s
+user    4.81s
+sys     0.20s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2616.12 ms
+Execution Time (Based on chrono): 2616.2 ms
+Memory Usage: 1048824 KB
+
+real    5.05s
+user    4.80s
+sys     0.24s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2617.68 ms
+Execution Time (Based on chrono): 2617.75 ms
+Memory Usage: 1048824 KB
+
+real    5.05s
+user    4.88s
+sys     0.17s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2620.01 ms
+Execution Time (Based on chrono): 2620.11 ms
+Memory Usage: 1048824 KB
+
+real    5.06s
+user    4.86s
+sys     0.20s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2620.11 ms
+Execution Time (Based on chrono): 2620.16 ms
+Memory Usage: 1048824 KB
+
+real    5.02s
+user    4.79s
+sys     0.23s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2615.65 ms
+Execution Time (Based on chrono): 2615.84 ms
+Memory Usage: 1048764 KB
+
+real    5.03s
+user    4.78s
+sys     0.25s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2623.07 ms
+Execution Time (Based on chrono): 2623.13 ms
+Memory Usage: 1048780 KB
+
+real    5.03s
+user    4.86s
+sys     0.17s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2616.85 ms
+Execution Time (Based on chrono): 2616.94 ms
+Memory Usage: 1048780 KB
+
+real    5.07s
+user    4.87s
+sys     0.20s
+cpu     99%
+";
+
+$string = "
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ HDD_copy_test.cpp
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 18386.5 ms
+Execution Time (Based on chrono): 25923.6 ms
+Memory Usage: 0 KB
+
+real    25.93s
+user    16.58s
+sys     1.81s
+cpu     70%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && !!
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && time ./a.out
+Execution Time (Based on ctime): 17681.3 ms
+Execution Time (Based on chrono): 23741.9 ms
+Memory Usage: 0 KB
+
+real    23.74s
+user    15.98s
+sys     1.70s
+cpu     74%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && time ./a.out
+Execution Time (Based on ctime): 17245.1 ms
+Execution Time (Based on chrono): 24897.7 ms
+Memory Usage: 0 KB
+
+real    24.90s
+user    15.49s
+sys     1.76s
+cpu     69%
+
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && dd if=/dev/random bs=1024 count=1048576 > output.txt      
+1048576+0 records in
+1048576+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 10.1874 s, 105 MB/s
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && time ./a.out              
+Execution Time (Based on ctime): 19407.6 ms
+Execution Time (Based on chrono): 33033.6 ms
+Memory Usage: 0 KB
+
+real    33.04s
+user    17.42s
+sys     1.99s
+cpu     58%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && dd if=/dev/random bs=1024 count=1048576 > output.txt
+1048576+0 records in
+1048576+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 10.4907 s, 102 MB/s
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && time ./a.out              
+Execution Time (Based on ctime): 20163.5 ms
+Execution Time (Based on chrono): 36565.9 ms
+Memory Usage: 0 KB
+
+real    36.57s
+user    18.03s
+sys     2.13s
+cpu     55%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && dd if=/dev/random bs=1024 count=1048576 > output.txt
+1048576+0 records in
+1048576+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 10.1993 s, 105 MB/s
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && time ./a.out              
+Execution Time (Based on ctime): 20450.9 ms
+Execution Time (Based on chrono): 38170.3 ms
+Memory Usage: 0 KB
+
+real    38.17s
+user    18.30s
+sys     2.15s
+cpu     53%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && dd if=/dev/random bs=1024 count=1048576 > output.txt
+1048576+0 records in
+1048576+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 10.1726 s, 106 MB/s
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && time ./a.out              
+Execution Time (Based on ctime): 20228.9 ms
+Execution Time (Based on chrono): 33791.1 ms
+Memory Usage: 0 KB
+
+real    33.79s
+user    18.12s
+sys     2.11s
+cpu     59%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && dd if=/dev/random bs=1024 count=1048576 > output.txt
+1048576+0 records in
+1048576+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 10.2377 s, 105 MB/s
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && time ./a.out              
+Execution Time (Based on ctime): 20001.4 ms
+Execution Time (Based on chrono): 35478 ms
+Memory Usage: 0 KB
+
+real    35.48s
+user    17.79s
+sys     2.21s
+cpu     56%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && dd if=/dev/random bs=1024 count=1048576 > output.txt
+1048576+0 records in
+1048576+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 10.5428 s, 102 MB/s
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && time ./a.out              
+Execution Time (Based on ctime): 19954.7 ms
+Execution Time (Based on chrono): 34560.4 ms
+Memory Usage: 0 KB
+
+real    34.56s
+user    17.55s
+sys     2.41s
+cpu     57%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm output.txt && dd if=/dev/random bs=1024 count=1048576 > output.txt
+1048576+0 records in
+1048576+0 records out
+1073741824 bytes (1.1 GB, 1.0 GiB) copied, 10.1674 s, 106 MB/s
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ rm /media/user/MyDrive1/output_copy.txt && time ./a.out              
+Execution Time (Based on ctime): 21618.5 ms
+Execution Time (Based on chrono): 39370.6 ms
+Memory Usage: 0 KB
+
+real    39.37s
+user    19.18s
+sys     2.44s
+cpu     54%
+";
+
 $ctimes     = [];
 $chronos    = [];
 $mems       = [];
@@ -478,7 +754,7 @@ foreach (explode( PHP_EOL, trim( $string ) ) as $line) {
         $mems[] = explode( ' ', trim($line) )[2];
     if ( strpos( $line, "real" ) !== false )
         $reals[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
-    if ( strpos( $line, "user" ) !== false && strpos( $line, "dhcp" ) === false )
+    if ( strpos( $line, "user" ) !== false && strpos( $line, "dhcp" ) === false && strpos( $line, "$" ) === false )
         $users[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
     if ( strpos( $line, "sys" ) !== false )
         $syses[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
