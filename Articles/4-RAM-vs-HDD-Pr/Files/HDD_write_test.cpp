@@ -8,7 +8,6 @@ using namespace std;
 int main() {
 
     ofstream outfile;
-
     char character = 'A';
 
     // Start execution time
