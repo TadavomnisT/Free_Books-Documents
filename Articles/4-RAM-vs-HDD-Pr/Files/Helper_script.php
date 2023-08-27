@@ -233,6 +233,7 @@ cpu     99%
 
 $ctimes     = [];
 $chronos    = [];
+$mems       = [];
 $reals      = [];
 $users      = [];
 $syses      = [];
@@ -243,6 +244,8 @@ foreach (explode( PHP_EOL, trim( $string ) ) as $line) {
         $ctimes[] = explode( ' ', trim($line) )[5];
     if ( strpos( $line, "Execution Time (Based on chrono)" ) !== false )
         $chronos[] = explode( ' ', trim($line) )[5];
+    if ( strpos( $line, "Memory Usage" ) !== false )
+        $mems[] = explode( ' ', trim($line) )[2];
     if ( strpos( $line, "real" ) !== false )
         $reals[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
     if ( strpos( $line, "user" ) !== false && strpos( $line, "dhcp" ) === false )
@@ -256,6 +259,7 @@ foreach (explode( PHP_EOL, trim( $string ) ) as $line) {
 
 $sum_ctime = 0;
 $sum_chrono = 0;
+$sum_mem = 0;
 $sum_real = 0;
 $sum_user = 0;
 $sum_sys = 0;
@@ -265,6 +269,7 @@ error_reporting(E_ALL ^ E_WARNING);
 for ($i=0; $i < 10 ; $i++) { 
     $sum_ctime += $ctimes[$i];
     $sum_chrono += $chronos[$i];
+    $sum_mem += $mems[$i];
     $sum_real += $reals[$i];
     $sum_user += $users[$i];
     $sum_sys += $syses[$i];
@@ -276,6 +281,7 @@ error_reporting(E_ALL);
 
 echo "(" . implode( "+", $ctimes ) . ") / 10 = " . $sum_ctime . " / 10 = " . $sum_ctime/10 . PHP_EOL;
 echo "(" . implode( "+", $chronos ) . ") / 10 = " . $sum_chrono . " / 10 = " . $sum_chrono/10 . PHP_EOL;
+echo "(" . implode( "+", $mems ) . ") / 10 = " . $sum_mem . " / 10 = " . $sum_mem/10 . PHP_EOL;
 echo "(" . implode( "+", $reals ) . ") / 10 = " . $sum_real . " / 10 = " . $sum_real/10 . PHP_EOL;
 echo "(" . implode( "+", $users ) . ") / 10 = " . $sum_user . " / 10 = " . $sum_user/10 . PHP_EOL;
 echo "(" . implode( "+", $syses ) . ") / 10 = " . $sum_sys . " / 10 = " . $sum_sys/10 . PHP_EOL;
@@ -289,6 +295,7 @@ echo PHP_EOL;
 
 echo "* Average Execution Time(Based on ctime): " . $sum_ctime/10 . " ms" . PHP_EOL;
 echo "* Average Execution Time(Based on chrono): " . $sum_chrono/10 . " ms" . PHP_EOL;
+echo "* Average Memory Usage: " . $sum_mem/10 . " KB" . PHP_EOL;
 echo "* Average Real Time: " . $sum_real/10 . " s" . PHP_EOL;
 echo "* Average User Time: " . $sum_user/10 . " s" . PHP_EOL;
 echo "* Average Sys Time: " . $sum_sys/10 . " s" . PHP_EOL;
