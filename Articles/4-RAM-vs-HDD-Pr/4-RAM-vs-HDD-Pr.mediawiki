@@ -701,6 +701,339 @@ Therefore:
 * Average User Time: 8.899 s
 * Average Sys Time: 0.676 s
 * Average CPU Usage: 97.1 %</pre>
+خب اینکه تقریباً 5 برابر کند تره! پس اون همه خزعبلات و دک و پز که عای 10 هزار برابر بطور متوسط کند تره چیشد؟! عجله نکنید، بیاین یواش یواش فاکتورهای دخیل رو به آزمایش اضافه کنیم. فرض کنید میخوایم 1 گیگابایت دیتایی که وجود داره رو اوررایت کنیم.
+
+برای سنجش این حرکت داخل رم، من کد رو به این شکل تغییر میدم:
+
+<source lang="cpp">#include <iostream>
+#include <sys/resource.h>
+#include <chrono>
+
+using namespace std;
+
+int main() {
+
+    char* arr = new char[1073741824];
+    for(int i = 0; i < 1073741824 ; i++)
+        arr[i] = 'A';
+
+    // Start execution time
+    clock_t start_1 = clock();
+    auto start_2 = chrono::high_resolution_clock::now();
+
+    // Start memory usage
+    struct rusage usage;
+    getrusage(RUSAGE_SELF, &usage);
+    long memory_usage_start = usage.ru_maxrss; // in kilobytes
+    
+    // Code ----------------------------------------------------------
+    for(int i = 0; i < 1073741824 ; i++)
+        arr[i] = 'B';    
+    // ---------------------------------------------------------------
+    
+    // Stop measuring memory usage
+    getrusage(RUSAGE_SELF, &usage);
+    long memory_usage_end = usage.ru_maxrss; // in kilobytes
+
+    // Stop measuring execution time
+    clock_t end_1 = clock();
+    auto end_2 = chrono::high_resolution_clock::now();
+    double execution_time_1 = double(end_1 - start_1) / CLOCKS_PER_SEC;
+    chrono::duration<double, milli> execution_time_2 = end_2 - start_2;
+
+    // Printing result
+    cout << "Execution Time (Based on ctime): " << execution_time_1 * 1000.0 << " ms" << endl;
+    cout << "Execution Time (Based on chrono): " << execution_time_2.count() << " ms" << endl;
+    cout << "Memory Usage: " << memory_usage_end - memory_usage_start << " KB" << endl;
+
+    return 0;
+}</source>
+[[./Files/RAM_overwrite_test.cpp|فایل کد]]
+
+و اجرا میکنم:
+
+<source lang="bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ RAM_overwrite_test.cpp
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out              
+Execution Time (Based on ctime): 2315.81 ms
+Execution Time (Based on chrono): 2315.86 ms
+Memory Usage: 0 KB
+
+real    4.76s
+user    4.61s
+sys     0.14s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2321.07 ms
+Execution Time (Based on chrono): 2321.15 ms
+Memory Usage: 0 KB
+
+real    4.80s
+user    4.66s
+sys     0.14s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2305.9 ms
+Execution Time (Based on chrono): 2305.95 ms
+Memory Usage: 0 KB
+
+real    4.78s
+user    4.67s
+sys     0.11s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2331.96 ms
+Execution Time (Based on chrono): 2332.03 ms
+Memory Usage: 0 KB
+
+real    4.79s
+user    4.70s
+sys     0.09s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2291.69 ms
+Execution Time (Based on chrono): 2296.94 ms
+Memory Usage: 0 KB
+
+real    4.74s
+user    4.57s
+sys     0.16s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2336.1 ms
+Execution Time (Based on chrono): 2339.92 ms
+Memory Usage: 0 KB
+
+real    4.85s
+user    4.71s
+sys     0.12s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2330.54 ms
+Execution Time (Based on chrono): 2330.6 ms
+Memory Usage: 0 KB
+
+real    4.82s
+user    4.70s
+sys     0.12s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2283.55 ms
+Execution Time (Based on chrono): 2283.58 ms
+Memory Usage: 0 KB
+
+real    4.72s
+user    4.59s
+sys     0.12s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2328.87 ms
+Execution Time (Based on chrono): 2328.91 ms
+Memory Usage: 0 KB
+
+real    4.79s
+user    4.67s
+sys     0.12s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 2295.38 ms
+Execution Time (Based on chrono): 2296.14 ms
+Memory Usage: 0 KB
+
+real    4.75s
+user    4.60s
+sys     0.15s
+cpu     99%</source>
+و متوسط نتیجه:
+
+<pre class="md">(2315.81+2321.07+2305.9+2331.96+2291.69+2336.1+2330.54+2283.55+2328.87+2295.38) / 10 = 23140.87 / 10 = 2314.087
+(2315.86+2321.15+2305.95+2332.03+2296.94+2339.92+2330.6+2283.58+2328.91+2296.14) / 10 = 23151.08 / 10 = 2315.108
+(0+0+0+0+0+0+0+0+0+0) / 10 = 0 / 10 = 0
+(4.76s+4.80s+4.78s+4.79s+4.74s+4.85s+4.82s+4.72s+4.79s+4.75s) / 10 = 47.8 / 10 = 4.78
+(4.61s+4.66s+4.67s+4.70s+4.57s+4.71s+4.70s+4.59s+4.67s+4.60s) / 10 = 46.48 / 10 = 4.648
+(0.14s+0.14s+0.11s+0.09s+0.16s+0.12s+0.12s+0.12s+0.12s+0.15s) / 10 = 1.27 / 10 = 0.127
+(99%+99%+99%+99%+99%+99%+99%+99%+99%+99%) / 10 = 990 / 10 = 99
+
+
+Therefore:
+
+* Average Execution Time(Based on ctime): 2314.087 ms
+* Average Execution Time(Based on chrono): 2315.108 ms
+* Average Memory Usage: 0 KB
+* Average Real Time: 4.78 s
+* Average User Time: 4.648 s
+* Average Sys Time: 0.127 s
+* Average CPU Usage: 99 %</pre>
+همونطور که میبینید زمان اوررایت کردن برابری میکنه با زمان رایت کردن. نکته1: قسمت مد نظر ما برای مقایسه صرفاً زمانی هست که اون سگمنت بخصوص کد یعنی:
+
+<source lang="cpp">for(int i = 0; i < 1073741824 ; i++)
+        arr[i] = 'B'; </source>
+انجام میشده. که در‌واقع میشه:
+
+<pre class="md">* Average Execution Time(Based on ctime): 2314.087 ms
+* Average Execution Time(Based on chrono): 2315.108 ms</pre>
+نکته2: میزان مموری مصرفی این سگمنت کد 0 ریپورت شده چون هیچ مموری الوکیشن جدیدی نداشتیم (در حقیقت داشتیم مثلاً برای شمارنده حلقه فور، ولی اینقدر کوشولو هست که توی اوردر کیلوبایت دیده نشده) – وقتی ما حافظه‌ای نیو نکردیم، و صرفاً قبلی رو اوورایت کردیم مموری یوزیج جدیدی ریپورت نشده. ولی در‌واقع ما با 1 گیگابایت مموری کار کردیم.
+
+حالا بریم سراغ هارددیسک، من از همون کد قبلی استفاده میکنم، منتهی این بار دیگه فایلهای 1 گیگی ساخته شده پیشین رو حذف (rm) نمیکنم تا اوررایت بشن:
+
+<source lang="bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ HDD_write_test.cpp    
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out 
+Execution Time (Based on ctime): 10162.1 ms
+Execution Time (Based on chrono): 16532.7 ms
+Memory Usage: 0 KB
+
+real    16.54s
+user    9.30s
+sys     0.87s
+cpu     61%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 9961.45 ms
+Execution Time (Based on chrono): 19035.1 ms
+Memory Usage: 0 KB
+
+real    19.04s
+user    9.10s
+sys     0.86s
+cpu     52%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 9925.02 ms
+Execution Time (Based on chrono): 19885.7 ms
+Memory Usage: 0 KB
+
+real    19.89s
+user    9.14s
+sys     0.79s
+cpu     49%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 9927.78 ms
+Execution Time (Based on chrono): 20518.4 ms
+Memory Usage: 0 KB
+
+real    20.52s
+user    9.04s
+sys     0.89s
+cpu     48%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 9996.59 ms
+Execution Time (Based on chrono): 17915.4 ms
+Memory Usage: 0 KB
+
+real    17.92s
+user    9.16s
+sys     0.84s
+cpu     55%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 9659.78 ms
+Execution Time (Based on chrono): 19085.9 ms
+Memory Usage: 0 KB
+
+real    19.09s
+user    8.91s
+sys     0.76s
+cpu     50%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 10051.7 ms
+Execution Time (Based on chrono): 19261.9 ms
+Memory Usage: 0 KB
+
+real    19.27s
+user    9.25s
+sys     0.81s
+cpu     52%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 10124.3 ms
+Execution Time (Based on chrono): 19965.3 ms
+Memory Usage: 0 KB
+
+real    19.97s
+user    9.31s
+sys     0.82s
+cpu     50%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 9867.27 ms
+Execution Time (Based on chrono): 19433.7 ms
+Memory Usage: 0 KB
+
+real    19.44s
+user    9.05s
+sys     0.82s
+cpu     50%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+Execution Time (Based on ctime): 9850.91 ms
+Execution Time (Based on chrono): 18046 ms
+Memory Usage: 0 KB
+
+real    18.05s
+user    8.96s
+sys     0.89s
+cpu     54%</source>
+متوسط میگیریم:
+
+<pre class="md">(10162.1+9961.45+9925.02+9927.78+9996.59+9659.78+10051.7+10124.3+9867.27+9850.91) / 10 = 99526.9 / 10 = 9952.69
+(16532.7+19035.1+19885.7+20518.4+17915.4+19085.9+19261.9+19965.3+19433.7+18046) / 10 = 189680.1 / 10 = 18968.01
+(0+0+0+0+0+0+0+0+0+0) / 10 = 0 / 10 = 0
+(16.54s+19.04s+19.89s+20.52s+17.92s+19.09s+19.27s+19.97s+19.44s+18.05s) / 10 = 189.73 / 10 = 18.973
+(9.30s+9.10s+9.14s+9.04s+9.16s+8.91s+9.25s+9.31s+9.05s+8.96s) / 10 = 91.22 / 10 = 9.122
+(0.87s+0.86s+0.79s+0.89s+0.84s+0.76s+0.81s+0.82s+0.82s+0.89s) / 10 = 8.35 / 10 = 0.835
+(61%+52%+49%+48%+55%+50%+52%+50%+50%+54%) / 10 = 521 / 10 = 52.1
+
+
+Therefore:
+
+* Average Execution Time(Based on ctime): 9952.69 ms
+* Average Execution Time(Based on chrono): 18968.01 ms
+* Average Memory Usage: 0 KB
+* Average Real Time: 18.973 s
+* Average User Time: 9.122 s
+* Average Sys Time: 0.835 s
+* Average CPU Usage: 52.1 %</pre>
+اهوع! نتیجه 10 برابر کندتر شد. اما هنوز صبر کنید:)) داستان ادامه داره…
+
+نکته1: به زمان اجرای اولین اوررایت HDD نگاه کنید و به زمان متوسط محاسبه شده نگاه کنید، و متوجه میشین که چرا گفتم هر آزمایش رو باید حداقل چندین بار تکرار کنیم.
+
+نکته2: همونطور که میبینین زمان محاسبه شده توسط chrono خیلی بیشتر (تقریباً دو برابر) زمان محاسبه شده توسط ctime هست و زمان واقعی اجرای اون بلاک کد رو بیان میکنه. اما چرا؟ داستان یچیزی شبیه اون زمانهای real و user و sys هست که توی بحث کامند time گفتم، دلیل علمی اینه که این دو کتابخونه زمان رو به روشهای متفاوتی محاسبه میکنن. Ctime یه کتابخونه مختص زبان سی هست که اینجا با استفاده از فانکشن <code>clock()</code> زمان رو محاسبه میکنه، اما نه زمان دقیق رو، بلکه زمانی رو که CPU صرف محاسبات این پراسس فعلی کرده. اما این گزاره بازم دقیق نیست، یکمی به زبان تخصصی تر میگم، سی‌تایم با استفاده از فانکشن کلاک، تعداد کلاکهایی که CPU حین محاسبات همین برنامه بخصوص زده رو ثبت میکنه، و سپس معادل این کلاکهارو به زمان ثانیه‌ای بیان میکنه. صرفاً یعنی CPU روی این پراسس خاص چند تا کلاک زده، این معنیش اینه که زمانی که ما داشتیم I/O میزدیم و یا منتظر ریسورس یا I/O بلاک بودیم یا منتظر دیگر پراسسها بودیم رو توی محاسباتش دخیل نمیکنه، در صورتی که سنجش میزان زمان I/O اصلاً بخش بزرگی از محاسبات ماست! اما chrono داستانی کاملاً متفاوت داره… کتابخونه chrono زمانی که روی متد های‌رزولوشن (<code>high_resolution_clock</code>) کال میشه، به اصطلاح زمان دقیق ساعت دیواری رو محاسبه میکنه، از نقطه شروع تا نقطه پایان. این زمان شامل اینتراپتها و I/O های داستان هم هست. پس این زمان دقیقی هست که باهاش مقایسه رو انجام میدیم.
+
 
 -----
 
