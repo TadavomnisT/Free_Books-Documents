@@ -1452,9 +1452,329 @@ Therefore:
 * Average User Time: 17.444 s
 * Average Sys Time: 2.071 s
 * Average CPU Usage: 60.5 %</pre>
-اینجا من یه حقه ظریف پیاده‌سازی کردم:)) فقط به زبان تخصصی توضیحش میدم، با کپی کردن سریع توی رنج 20 ثانیه فهمیدم که یه بهینه‌سازی اون زیر در جریانه، ممکنه فایل توسط یه موجودیتی کش شده باشه – سیستم عامل یا ماژولهای API مربوط به I/O – (و میبینیم که در عمل مسائل تئوریک چطوری جلوی واقعی پیدا میکنن) و از اونجایی که آنتروپی فایل خیـــلی پایینه، (چون همش اسکی «A» هست) شاید آزمایش ما متأثر از بهینگی هایی باشه که قبلتر بصورت تئوریک توضیح دادم، برای همین منظور، با دستورات زیر 1 گیگابایت اطلاعات رندوم از آنتروپی سیستم گرفتم به جای فایل Low-entropyمون گذاشتم و دیدیم که زمان بسیار طولانی‌تر شد (حتی تا 20 برابر طولانی تر).
+اینجا من یه حقه ظریف پیاده‌سازی کردم:))
+
+فقط به زبان تخصصی توضیحش میدم، با کپی کردن سریع توی رنج 20 ثانیه فهمیدم که یه بهینه‌سازی اون زیر در جریانه، ممکنه فایل توسط یه موجودیتی کش شده باشه – سیستم عامل یا ماژولهای API مربوط به I/O – (و میبینیم که در عمل مسائل تئوریک چطوری جلوی واقعی پیدا میکنن) و از اونجایی که آنتروپی فایل خیـــلی پایینه، (چون همش اسکی «A» هست) شاید آزمایش ما متأثر از بهینگی هایی باشه که قبلتر بصورت تئوریک توضیح دادم، برای همین منظور، با دستورات زیر 1 گیگابایت اطلاعات رندوم از آنتروپی سیستم گرفتم به جای فایل Low-entropyمون گذاشتم و دیدیم که زمان بسیار طولانی‌تر شد (حتی تا 20 برابر طولانی تر).
 
 <source lang="bash">rm output.txt && dd if=/dev/random bs=1024 count=1048576 > output.txt</source>
+میخوام مقایسه آخرو کنم و تیر خلاصو بزنم و این بازی رو جمعش کنم، برای این منظور مقایسه رو به شمایلی انجام میدیم که چندتا پروسس بطور موازی دارن ریسورس رو مصرف میکنن و مثلاً با هارددیسک یا رم تعامل مستقیم دارن… تا ببینیم وقتی دیوایس ذخیره سازی ما تحت دسترسی مشترکه، چه میزان زمان خدمت دهیش میاد پایین، چه در رم چه در دیسک. از اونچیزایی که توی تئوری گفتیم میدونیم رم براش فرقی نداره و سرعتش خیــــلی متأثر از این موضوع نیست، پس نباید خیلی زیاد کندتر بشه، اما دیسک بخاطر حرکات فیزیکیش، احتمالاً باید بشدت سرعتش نابود بشه، بریم و در عمل ببینیم:
+
+برنامه زیر کارش خوردن رمه! 1 گیگابایت از رمو میگیره و هی پر و خالی میکنه:
+
+<source lang="cpp">#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    cout << "EATING RAM!!!" << endl;
+    while( true )
+    {
+        char* arr = new char[1073741824];
+        for(int i = 0; i < 1073741824 ; i++)
+            arr[i] = 'A';
+        delete arr;
+    }
+
+    return 0;
+}</source>
+[[./Files/RAM_eater_test.cpp|فایل کد]]
+
+من چهارتا پراسس از این برنامه بطور موازی اجرا میکنم:
+
+<source lang="bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ RAM_eater.cpp
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+EATING RAM!!!</source>
+<source lang="bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+EATING RAM!!!</source>
+<source lang="bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+EATING RAM!!!</source>
+<source lang="bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+EATING RAM!!!</source>
+[[File:Files/13.png|thumb|none|alt=Executing RAM-eaters|Executing RAM-eaters]]
+
+و خروجی top وقتی چهارتا پراسس رمخور در حال اجرا هستن:
+
+[[File:Files/14.png|thumb|none|alt=top command result|top command result]]
+
+حالا بطور همزمان با اینها، برنامه اولمون یعنی [[./Files/RAM_write_test.cpp|اینو]] اجرا میکنم:
+
+<source lang="bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ RAM_write_test.cpp -o test.out
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out                   
+Execution Time (Based on ctime): 3638.12 ms
+Execution Time (Based on chrono): 3638.24 ms
+Memory Usage: 1047004 KB
+
+real    3.67s
+user    3.45s
+sys     0.22s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3539.23 ms
+Execution Time (Based on chrono): 3539.71 ms
+Memory Usage: 1046948 KB
+
+real    3.56s
+user    3.36s
+sys     0.20s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3587.88 ms
+Execution Time (Based on chrono): 3588.17 ms
+Memory Usage: 1046956 KB
+
+real    3.63s
+user    3.43s
+sys     0.20s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3629.68 ms
+Execution Time (Based on chrono): 3630.07 ms
+Memory Usage: 1046968 KB
+
+real    3.67s
+user    3.43s
+sys     0.24s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3568.61 ms
+Execution Time (Based on chrono): 3568.84 ms
+Memory Usage: 1046920 KB
+
+real    3.59s
+user    3.39s
+sys     0.21s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3578.81 ms
+Execution Time (Based on chrono): 3578.97 ms
+Memory Usage: 1046828 KB
+
+real    3.61s
+user    3.39s
+sys     0.22s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3585.52 ms
+Execution Time (Based on chrono): 3585.62 ms
+Memory Usage: 1046760 KB
+
+real    3.61s
+user    3.33s
+sys     0.28s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3566.91 ms
+Execution Time (Based on chrono): 3567.07 ms
+Memory Usage: 1046944 KB
+
+real    3.60s
+user    3.37s
+sys     0.22s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3594.36 ms
+Execution Time (Based on chrono): 3594.45 ms
+Memory Usage: 1046972 KB
+
+real    3.63s
+user    3.39s
+sys     0.24s
+cpu     99%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3584.68 ms
+Execution Time (Based on chrono): 3588.76 ms
+Memory Usage: 1046840 KB
+
+real    3.62s
+user    3.35s
+sys     0.27s
+cpu     99%</source>
+و متوسط آزمایش:
+
+<pre class="md">(3638.12+3539.23+3587.88+3629.68+3568.61+3578.81+3585.52+3566.91+3594.36+3584.68) / 10 = 35873.8 / 10 = 3587.38
+(3638.24+3539.71+3588.17+3630.07+3568.84+3578.97+3585.62+3567.07+3594.45+3588.76) / 10 = 35879.9 / 10 = 3587.99
+(1047004+1046948+1046956+1046968+1046920+1046828+1046760+1046944+1046972+1046840) / 10 = 10469140 / 10 = 1046914
+(3.67s+3.56s+3.63s+3.67s+3.59s+3.61s+3.61s+3.60s+3.63s+3.62s) / 10 = 36.19 / 10 = 3.619
+(3.45s+3.36s+3.43s+3.43s+3.39s+3.39s+3.33s+3.37s+3.39s+3.35s) / 10 = 33.89 / 10 = 3.389
+(0.22s+0.20s+0.20s+0.24s+0.21s+0.22s+0.28s+0.22s+0.24s+0.27s) / 10 = 2.3 / 10 = 0.23
+(99%+99%+99%+99%+99%+99%+99%+99%+99%+99%) / 10 = 990 / 10 = 99
+
+
+Therefore:
+
+* Average Execution Time(Based on ctime): 3587.38 ms
+* Average Execution Time(Based on chrono): 3587.99 ms
+* Average Memory Usage: 1046914 KB
+* Average Real Time: 3.619 s
+* Average User Time: 3.389 s
+* Average Sys Time: 0.23 s
+* Average CPU Usage: 99 %</pre>
+میبینیم که متوسط زمان حدوداً 1.5 برابر شده، البته این افزایش زمان لزوماً به معنی کند شدن چیپ رم نیست، ممکنه بخاطر شلوغ شدن باس رم، یا شلوغ شدن ماژول سیستم عاملی رم، یا شلوغ شدن اون API که پراسسا باهاش تعامل میکنن برای تخصیص مموری، یا حتی شلوغ شدن سر پردازنده باشه..! برای اینکه مطمئن بشیم بخاطر پردازنده نیست، آزمایش بالا رو بصورت مالتی‌تردینگ یا چندنخی تکرار میکنم و هر رم-خور رو روی یه هسته جدا میذارم و همچنین پراسس آزمون هم روی یه هسته جدا میذارم (جمعا 5 هسته) به زبان ساده، یه برنامه چندنخی محاسبات نخهای متفاوت رو روی هسته های متفاوت میچینه، با این کار ما مطمئن میشیم کندی سرعت صرفاً بخاطر شلوغی پردازنده نیست….(بعداً راجع به چندنخی یا مالتی پراسسینگ توی یه مقاله مفصل حرف میزنیم.)
+
+برنامه زیر رو در نظر بگیرید:
+
+<source lang="cpp">#include <iostream>
+#include <sys/resource.h>
+#include <chrono>
+#include <thread>
+#include <vector>
+
+using namespace std;
+
+void ram_eater()
+{
+    cout << "A ram-eater started eating!" << endl;
+    while( true )
+    {
+        char* arr = new char[1073741824];
+        for(int i = 0; i < 1073741824 ; i++)
+            arr[i] = 'A';
+        delete arr;
+    }
+}
+
+void test()
+{
+    for( int i = 0; i < 10; i++ )
+    {
+        // Start execution time
+        clock_t start_1 = clock();
+        auto start_2 = chrono::high_resolution_clock::now();
+
+        // Start memory usage
+        struct rusage usage;
+        getrusage(RUSAGE_SELF, &usage);
+        long memory_usage_start = usage.ru_maxrss; // in kilobytes
+        
+        // Code ----------------------------------------------------------
+        char* arr = new char[1073741824];
+        for(int j = 0; j < 1073741824 ; j++)
+            arr[j] = 'A';
+        
+        // ---------------------------------------------------------------
+        
+        // Stop measuring memory usage
+        getrusage(RUSAGE_SELF, &usage);
+        long memory_usage_end = usage.ru_maxrss; // in kilobytes
+
+        // Stop measuring execution time
+        clock_t end_1 = clock();
+        auto end_2 = chrono::high_resolution_clock::now();
+        double execution_time_1 = double(end_1 - start_1) / CLOCKS_PER_SEC;
+        chrono::duration<double, milli> execution_time_2 = end_2 - start_2;
+
+        // Printing result
+        cout << "Execution Time (Based on ctime): " << execution_time_1 * 1000.0 << " ms" << endl;
+        cout << "Execution Time (Based on chrono): " << execution_time_2.count() << " ms" << endl;
+        cout << "Memory Usage: " << memory_usage_end - memory_usage_start << " KB" << endl;
+
+        // Free memory to prevent memory-leak
+        delete arr;
+
+        // Sleep for 10 seconds
+        this_thread::sleep_for(chrono::milliseconds(10000)); 
+    }
+}
+
+int main() {
+    vector<thread> threads;
+
+    threads.emplace_back(ram_eater);
+    threads.emplace_back(ram_eater);
+    threads.emplace_back(ram_eater);
+    threads.emplace_back(ram_eater);
+
+    threads.emplace_back(test);
+
+    // Wait for test to be over
+    threads[4].join();
+
+    return 0;
+}</source>
+[[./Files/RAM_eating_multithreading_test.cpp|فایل کد]]
+
+اجرا:
+
+[[File:Files/15.png|thumb|none|alt=Executing RAM_eating_multithreading_test.cpp|Executing RAM_eating_multithreading_test.cpp]]
+
+<source lang="diff">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ RAM_eating_multithreading_test.cpp
+                                                                             
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out                               
+A ram-eater started eating!
+A ram-eater started eating!
+A ram-eater started eating!
+A ram-eater started eating!
+Execution Time (Based on ctime): 12877.4 ms
+-Execution Time (Based on chrono): 2576.37 ms
+Memory Usage: 4595268 KB
+Execution Time (Based on ctime): 14381.2 ms
+-Execution Time (Based on chrono): 2879.22 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18355.6 ms
+-Execution Time (Based on chrono): 3672.86 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18452.8 ms
+-Execution Time (Based on chrono): 3692.51 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 17189.4 ms
+-Execution Time (Based on chrono): 3442.85 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18136.1 ms
+-Execution Time (Based on chrono): 3625.81 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 17982.1 ms
+-Execution Time (Based on chrono): 3599.67 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18238.8 ms
+-Execution Time (Based on chrono): 3648.24 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18639.8 ms
+-Execution Time (Based on chrono): 3729.46 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18598.2 ms
+-Execution Time (Based on chrono): 3719.59 ms
+Memory Usage: 0 KB
+terminate called without an active exception
+zsh: IOT instruction  ./a.out</source>
+میبینین که روی چند هسته برنامه داره اجرا میشه و از اونجایی که همه چی تحت یه پراسس هست، زمان ctime و میزان مموری مصرفی داده‌های پرتی هستن که بدرد آزمایش ما نمیخورن، فقط زمان chrono که به رنگ قرمز (علامت – مارکداون) مشخص کردم زمان درستی هست که باید توی مقایسه دخیل بشه، متوسط زمان به شرح زیره:
+
+<pre class="md">(2576.37+2879.22+3672.86+3692.51+3442.85+3625.81+3599.67+3648.24+3729.46+3719.59) / 10 = 34586.58 / 10 = 3458.658
+
+Therefore:
+
+* Average Execution Time(Based on chrono): 3458.658 ms</pre>
+متوسط زمان بصورت چندنخی بدست اومد3458.658 میلی‌ثانیه که تقریباً برابر با همون متوسط زمان چندپراسسی یعنی 3587.99 میلی‌ثانیه برابر هست. پس میتونیم ضمن تخصیص 100 میلی ثانیه بطور متوسط به اتلاف وقت پردازنده، با قطعیت بگیم که رم تحت یه سیستم یونیکسی، حین دسترسی مشترک – اونم بصورت مرگبار! - فقط 1.5 برابر کند تر میشه. اینکه گفتم بصورت مرگبار، هر بار مانیتورینگ رم رو توی لاگ htop که فرستادم بینید که متوجه بشین رم چقدر درگیر بوده.
+
 
 -----
 
