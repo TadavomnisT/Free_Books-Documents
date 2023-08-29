@@ -1,5 +1,8 @@
 <?php
 
+define('NUMBER_OF_TESTS', '20');
+
+
 $string = "
 ┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
 └─$ g++ RAM_write_test.cpp 
@@ -852,6 +855,232 @@ sys     0.27s
 cpu     99%
 ";
 
+$string = 
+"
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ HDD_write_test.cpp -o HDD_write.out
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out 
+Execution Time (Based on ctime): 11230.8 ms
+Execution Time (Based on chrono): 25468.1 ms
+Memory Usage: 0 KB
+
+real    25.48s
+user    10.30s
+sys     0.93s
+cpu     44%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 11096.1 ms
+Execution Time (Based on chrono): 20764 ms
+Memory Usage: 0 KB
+
+real    20.77s
+user    10.16s
+sys     0.94s
+cpu     53%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13815.2 ms
+Execution Time (Based on chrono): 32682 ms
+Memory Usage: 0 KB
+
+real    32.68s
+user    12.63s
+sys     1.18s
+cpu     42%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 15544.6 ms
+Execution Time (Based on chrono): 47560 ms
+Memory Usage: 0 KB
+
+real    47.57s
+user    13.91s
+sys     1.64s
+cpu     32%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 16873.7 ms
+Execution Time (Based on chrono): 45354.9 ms
+Memory Usage: 0 KB
+
+real    45.36s
+user    15.25s
+sys     1.63s
+cpu     37%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 15391.3 ms
+Execution Time (Based on chrono): 39712.6 ms
+Memory Usage: 0 KB
+
+real    39.92s
+user    13.94s
+sys     1.46s
+cpu     38%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 14051.7 ms
+Execution Time (Based on chrono): 29361.3 ms
+Memory Usage: 0 KB
+
+real    29.36s
+user    12.61s
+sys     1.44s
+cpu     47%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13137.5 ms
+Execution Time (Based on chrono): 35374 ms
+Memory Usage: 0 KB
+
+real    35.64s
+user    11.94s
+sys     1.21s
+cpu     36%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13510.7 ms
+Execution Time (Based on chrono): 28392.7 ms
+Memory Usage: 0 KB
+
+real    28.40s
+user    12.42s
+sys     1.10s
+cpu     47%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13595 ms
+Execution Time (Based on chrono): 44944.2 ms
+Memory Usage: 0 KB
+
+real    44.95s
+user    12.24s
+sys     1.35s
+cpu     30%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 18275.6 ms
+Execution Time (Based on chrono): 70660.9 ms
+Memory Usage: 0 KB
+
+real    70.66s
+user    16.16s
+sys     2.11s
+cpu     25%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 17255 ms
+Execution Time (Based on chrono): 49479.4 ms
+Memory Usage: 0 KB
+
+real    49.48s
+user    15.43s
+sys     1.82s
+cpu     34%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 15195.9 ms
+Execution Time (Based on chrono): 52613.5 ms
+Memory Usage: 0 KB
+
+real    52.62s
+user    13.64s
+sys     1.56s
+cpu     28%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 14688.6 ms
+Execution Time (Based on chrono): 54965.7 ms
+Memory Usage: 0 KB
+
+real    54.97s
+user    13.33s
+sys     1.36s
+cpu     26%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 18287.1 ms
+Execution Time (Based on chrono): 61944 ms
+Memory Usage: 0 KB
+
+real    61.95s
+user    16.30s
+sys     1.98s
+cpu     29%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 21118.9 ms
+Execution Time (Based on chrono): 70709.4 ms
+Memory Usage: 0 KB
+
+real    70.71s
+user    19.07s
+sys     2.05s
+cpu     29%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 24345 ms
+Execution Time (Based on chrono): 82900.9 ms
+Memory Usage: 0 KB
+
+real    82.90s
+user    21.94s
+sys     2.41s
+cpu     29%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 18640.5 ms
+Execution Time (Based on chrono): 56225.7 ms
+Memory Usage: 0 KB
+
+real    56.23s
+user    16.70s
+sys     1.94s
+cpu     33%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 17671.1 ms
+Execution Time (Based on chrono): 68766 ms
+Memory Usage: 0 KB
+
+real    68.77s
+user    16.09s
+sys     1.58s
+cpu     25%
+                                                                                                                   
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 22847.9 ms
+Execution Time (Based on chrono): 88525.2 ms
+Memory Usage: 0 KB
+
+real    88.53s
+user    20.43s
+sys     2.42s
+cpu     25%
+";
+
 $ctimes     = [];
 $chronos    = [];
 $mems       = [];
@@ -887,7 +1116,7 @@ $sum_sys = 0;
 $sum_cpu = 0;
 
 error_reporting(E_ALL ^ E_WARNING); 
-for ($i=0; $i < 10 ; $i++) { 
+for ($i=0; $i < NUMBER_OF_TESTS ; $i++) { 
     $sum_ctime += $ctimes[$i];
     $sum_chrono += $chronos[$i];
     $sum_mem += $mems[$i];
@@ -900,13 +1129,13 @@ error_reporting(E_ALL);
 
 
 
-echo "(" . implode( "+", $ctimes ) . ") / 10 = " . $sum_ctime . " / 10 = " . $sum_ctime/10 . PHP_EOL;
-echo "(" . implode( "+", $chronos ) . ") / 10 = " . $sum_chrono . " / 10 = " . $sum_chrono/10 . PHP_EOL;
-echo "(" . implode( "+", $mems ) . ") / 10 = " . $sum_mem . " / 10 = " . $sum_mem/10 . PHP_EOL;
-echo "(" . implode( "+", $reals ) . ") / 10 = " . $sum_real . " / 10 = " . $sum_real/10 . PHP_EOL;
-echo "(" . implode( "+", $users ) . ") / 10 = " . $sum_user . " / 10 = " . $sum_user/10 . PHP_EOL;
-echo "(" . implode( "+", $syses ) . ") / 10 = " . $sum_sys . " / 10 = " . $sum_sys/10 . PHP_EOL;
-echo "(" . implode( "+", $cpus ) . ") / 10 = " . $sum_cpu . " / 10 = " . $sum_cpu/10 . PHP_EOL;
+echo "(" . implode( "+", $ctimes ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_ctime . " / ". NUMBER_OF_TESTS ." = " . $sum_ctime/NUMBER_OF_TESTS . PHP_EOL;
+echo "(" . implode( "+", $chronos ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_chrono . " / ". NUMBER_OF_TESTS ." = " . $sum_chrono/NUMBER_OF_TESTS . PHP_EOL;
+echo "(" . implode( "+", $mems ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_mem . " / ". NUMBER_OF_TESTS ." = " . $sum_mem/NUMBER_OF_TESTS . PHP_EOL;
+echo "(" . implode( "+", $reals ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_real . " / ". NUMBER_OF_TESTS ." = " . $sum_real/NUMBER_OF_TESTS . PHP_EOL;
+echo "(" . implode( "+", $users ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_user . " / ". NUMBER_OF_TESTS ." = " . $sum_user/NUMBER_OF_TESTS . PHP_EOL;
+echo "(" . implode( "+", $syses ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_sys . " / ". NUMBER_OF_TESTS ." = " . $sum_sys/NUMBER_OF_TESTS . PHP_EOL;
+echo "(" . implode( "+", $cpus ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_cpu . " / ". NUMBER_OF_TESTS ." = " . $sum_cpu/NUMBER_OF_TESTS . PHP_EOL;
 
 echo PHP_EOL;
 echo PHP_EOL;
@@ -914,13 +1143,13 @@ echo "Therefore:";
 echo PHP_EOL;
 echo PHP_EOL;
 
-echo "* Average Execution Time(Based on ctime): " . $sum_ctime/10 . " ms" . PHP_EOL;
-echo "* Average Execution Time(Based on chrono): " . $sum_chrono/10 . " ms" . PHP_EOL;
-echo "* Average Memory Usage: " . $sum_mem/10 . " KB" . PHP_EOL;
-echo "* Average Real Time: " . $sum_real/10 . " s" . PHP_EOL;
-echo "* Average User Time: " . $sum_user/10 . " s" . PHP_EOL;
-echo "* Average Sys Time: " . $sum_sys/10 . " s" . PHP_EOL;
-echo "* Average CPU Usage: " . $sum_cpu/10 . " %" . PHP_EOL;
+echo "* Average Execution Time(Based on ctime): " . $sum_ctime/NUMBER_OF_TESTS . " ms" . PHP_EOL;
+echo "* Average Execution Time(Based on chrono): " . $sum_chrono/NUMBER_OF_TESTS . " ms" . PHP_EOL;
+echo "* Average Memory Usage: " . $sum_mem/NUMBER_OF_TESTS . " KB" . PHP_EOL;
+echo "* Average Real Time: " . $sum_real/NUMBER_OF_TESTS . " s" . PHP_EOL;
+echo "* Average User Time: " . $sum_user/NUMBER_OF_TESTS . " s" . PHP_EOL;
+echo "* Average Sys Time: " . $sum_sys/NUMBER_OF_TESTS . " s" . PHP_EOL;
+echo "* Average CPU Usage: " . $sum_cpu/NUMBER_OF_TESTS . " %" . PHP_EOL;
 
 
 ?>
