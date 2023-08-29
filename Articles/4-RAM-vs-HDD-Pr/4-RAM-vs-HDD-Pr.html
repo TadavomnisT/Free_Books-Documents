@@ -1646,6 +1646,403 @@ Therefore:
 * Average Execution Time(Based on chrono): 3458.658 ms</code></pre><br />
 <p>متوسط زمان بصورت چندنخی بدست اومد 3458.658 میلی‌ثانیه که تقریباً برابر با همون متوسط زمان چندپراسسی یعنی 3587.99 میلی‌ثانیه برابر هست. پس میتونیم ضمن تخصیص 100 میلی ثانیه بطور متوسط به اتلاف وقت پردازنده، با قطعیت بگیم که رم تحت یه سیستم یونیکسی، حین دسترسی مشترک – اونم بصورت مرگبار! - فقط 1.5 برابر کند تر میشه.<br />
 اینکه گفتم بصورت مرگبار، هر بار مانیتورینگ رم رو توی لاگ htop که فرستادم بینید که متوجه بشین رم چقدر درگیر بوده.</p><br />
+<p>حالا بریم سراغ همین دسترسی مشترک توی هارددیسک، برای این منظور یه برنامه دیسک-خور مینویسیم!:</p><br />
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;signal.h&gt;
+#include &lt;ctime&gt;
+
+using namespace std;
+
+ofstream outfile;
+
+void signalHandler(int signum) {
+    outfile.close();
+    cout &lt;&lt; "Interrupt signal received. File closed." &lt;&lt; endl;
+    exit(signum);
+}
+
+int main() {
+    signal(SIGINT, signalHandler);
+    srand(time(NULL));
+    char character = 'A';
+    string filename = to_string(rand()) + ".txt";
+
+    cout &lt;&lt; "EATING HDD!!!" &lt;&lt; endl;
+
+
+    while (true) {
+
+        outfile.open(filename);
+        if (!outfile.is_open()) {
+            cout &lt;&lt; "Error opening file: " &lt;&lt; filename &lt;&lt; endl;
+            return 1;
+        }
+
+        for (int i = 0; i &lt; 1073741824; i++) {
+            outfile &lt;&lt; character;
+        }
+
+        outfile.close();
+    }
+
+    return 0;
+}</code></pre><br />
+<p><a href="./Files/HDD_eater.cpp">فایل کد</a></p><br />
+<p>یه توضیح مختصری بدم، این برنامه یسری فایل با اسم رندوم میسازه و توی هر کدوم 1 گیگابایت دیتا مینویسه و وقتی فرایند نوشتن تموم شد، دوباره شروع میکنه و از اول مینویسه. این فرایند تا بینهایت ادامه پیدا میکنه مگر اینکه یه سیگنال وقفه برای برنامه ارسال بشه. به محض دریافت وقفه، فایل رو میبنده و برنامه به اتمام میرسه.</p><br />
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ HDD_eater.cpp -o HDD_eater.out
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./HDD_eater.out 
+EATING HDD!!!</code></pre><br />
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./HDD_eater.out 
+EATING HDD!!!</code></pre><br />
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./HDD_eater.out 
+EATING HDD!!!</code></pre><br />
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./HDD_eater.out 
+EATING HDD!!!</code></pre><br />
+<p><img src="Files/16.png" alt="Executing HDD-eaters" /></p><br />
+<p>و حین همین ماجرا، <a href="./Files/HDD_write_test.cpp">این</a> برنامه رو اجرا میکنم:</p><br />
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ HDD_write_test.cpp -o HDD_write.out
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out 
+Execution Time (Based on ctime): 11230.8 ms
+Execution Time (Based on chrono): 25468.1 ms
+Memory Usage: 0 KB
+
+real    25.48s
+user    10.30s
+sys     0.93s
+cpu     44%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 11096.1 ms
+Execution Time (Based on chrono): 20764 ms
+Memory Usage: 0 KB
+
+real    20.77s
+user    10.16s
+sys     0.94s
+cpu     53%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13815.2 ms
+Execution Time (Based on chrono): 32682 ms
+Memory Usage: 0 KB
+
+real    32.68s
+user    12.63s
+sys     1.18s
+cpu     42%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 15544.6 ms
+Execution Time (Based on chrono): 47560 ms
+Memory Usage: 0 KB
+
+real    47.57s
+user    13.91s
+sys     1.64s
+cpu     32%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 16873.7 ms
+Execution Time (Based on chrono): 45354.9 ms
+Memory Usage: 0 KB
+
+real    45.36s
+user    15.25s
+sys     1.63s
+cpu     37%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 15391.3 ms
+Execution Time (Based on chrono): 39712.6 ms
+Memory Usage: 0 KB
+
+real    39.92s
+user    13.94s
+sys     1.46s
+cpu     38%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 14051.7 ms
+Execution Time (Based on chrono): 29361.3 ms
+Memory Usage: 0 KB
+
+real    29.36s
+user    12.61s
+sys     1.44s
+cpu     47%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13137.5 ms
+Execution Time (Based on chrono): 35374 ms
+Memory Usage: 0 KB
+
+real    35.64s
+user    11.94s
+sys     1.21s
+cpu     36%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13510.7 ms
+Execution Time (Based on chrono): 28392.7 ms
+Memory Usage: 0 KB
+
+real    28.40s
+user    12.42s
+sys     1.10s
+cpu     47%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13595 ms
+Execution Time (Based on chrono): 44944.2 ms
+Memory Usage: 0 KB
+
+real    44.95s
+user    12.24s
+sys     1.35s
+cpu     30%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 18275.6 ms
+Execution Time (Based on chrono): 70660.9 ms
+Memory Usage: 0 KB
+
+real    70.66s
+user    16.16s
+sys     2.11s
+cpu     25%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 17255 ms
+Execution Time (Based on chrono): 49479.4 ms
+Memory Usage: 0 KB
+
+real    49.48s
+user    15.43s
+sys     1.82s
+cpu     34%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 15195.9 ms
+Execution Time (Based on chrono): 52613.5 ms
+Memory Usage: 0 KB
+
+real    52.62s
+user    13.64s
+sys     1.56s
+cpu     28%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 14688.6 ms
+Execution Time (Based on chrono): 54965.7 ms
+Memory Usage: 0 KB
+
+real    54.97s
+user    13.33s
+sys     1.36s
+cpu     26%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 18287.1 ms
+Execution Time (Based on chrono): 61944 ms
+Memory Usage: 0 KB
+
+real    61.95s
+user    16.30s
+sys     1.98s
+cpu     29%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 21118.9 ms
+Execution Time (Based on chrono): 70709.4 ms
+Memory Usage: 0 KB
+
+real    70.71s
+user    19.07s
+sys     2.05s
+cpu     29%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 24345 ms
+Execution Time (Based on chrono): 82900.9 ms
+Memory Usage: 0 KB
+
+real    82.90s
+user    21.94s
+sys     2.41s
+cpu     29%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 18640.5 ms
+Execution Time (Based on chrono): 56225.7 ms
+Memory Usage: 0 KB
+
+real    56.23s
+user    16.70s
+sys     1.94s
+cpu     33%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 17671.1 ms
+Execution Time (Based on chrono): 68766 ms
+Memory Usage: 0 KB
+
+real    68.77s
+user    16.09s
+sys     1.58s
+cpu     25%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 22847.9 ms
+Execution Time (Based on chrono): 88525.2 ms
+Memory Usage: 0 KB
+
+real    88.53s
+user    20.43s
+sys     2.42s
+cpu     25%</code></pre><br />
+<pre><code class="language-md">(11230.8+11096.1+13815.2+15544.6+16873.7+15391.3+14051.7+13137.5+13510.7+13595+18275.6+17255+15195.9+14688.6+18287.1+21118.9+24345+18640.5+17671.1+22847.9) / 20 = 326572.2 / 20 = 16328.61
+(25468.1+20764+32682+47560+45354.9+39712.6+29361.3+35374+28392.7+44944.2+70660.9+49479.4+52613.5+54965.7+61944+70709.4+82900.9+56225.7+68766+88525.2) / 20 = 1006404.5 / 20 = 50320.225
+(0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0) / 20 = 0 / 20 = 0
+(25.48s+20.77s+32.68s+47.57s+45.36s+39.92s+29.36s+35.64s+28.40s+44.95s+70.66s+49.48s+52.62s+54.97s+61.95s+70.71s+82.90s+56.23s+68.77s+88.53s) / 20 = 1006.95 / 20 = 50.3475
+(10.30s+10.16s+12.63s+13.91s+15.25s+13.94s+12.61s+11.94s+12.42s+12.24s+16.16s+15.43s+13.64s+13.33s+16.30s+19.07s+21.94s+16.70s+16.09s+20.43s) / 20 = 294.49 / 20 = 14.7245
+(0.93s+0.94s+1.18s+1.64s+1.63s+1.46s+1.44s+1.21s+1.10s+1.35s+2.11s+1.82s+1.56s+1.36s+1.98s+2.05s+2.41s+1.94s+1.58s+2.42s) / 20 = 32.11 / 20 = 1.6055
+(44%+53%+42%+32%+37%+38%+47%+36%+47%+30%+25%+34%+28%+26%+29%+29%+29%+33%+25%+25%) / 20 = 689 / 20 = 34.45
+
+
+Therefore:
+
+* Average Execution Time(Based on ctime): 16328.61 ms
+* Average Execution Time(Based on chrono): 50320.225 ms
+* Average Memory Usage: 0 KB
+* Average Real Time: 50.3475 s
+* Average User Time: 14.7245 s
+* Average Sys Time: 1.6055 s
+* Average CPU Usage: 34.45 %</code></pre><br />
+<p>این نمودار رو نگاه کنین، در 20 آزمایش اول، میزان زمان به این شکل کند تر شده:</p><br />
+<p><img src="Files/17.png" alt="HDD speed chart in 20 tests" /></p><br />
+<table><br />
+<thead><br />
+<tr><br />
+<th>test#</th><br />
+<th>Time</th><br />
+</tr><br />
+</thead><br />
+<tbody><br />
+<tr><br />
+<td>1</td><br />
+<td>25468.1</td><br />
+</tr><br />
+<tr><br />
+<td>2</td><br />
+<td>20764</td><br />
+</tr><br />
+<tr><br />
+<td>3</td><br />
+<td>32682</td><br />
+</tr><br />
+<tr><br />
+<td>4</td><br />
+<td>47560</td><br />
+</tr><br />
+<tr><br />
+<td>5</td><br />
+<td>45354.9</td><br />
+</tr><br />
+<tr><br />
+<td>6</td><br />
+<td>39712.6</td><br />
+</tr><br />
+<tr><br />
+<td>7</td><br />
+<td>29361.3</td><br />
+</tr><br />
+<tr><br />
+<td>8</td><br />
+<td>35374</td><br />
+</tr><br />
+<tr><br />
+<td>9</td><br />
+<td>28392.7</td><br />
+</tr><br />
+<tr><br />
+<td>10</td><br />
+<td>44944.2</td><br />
+</tr><br />
+<tr><br />
+<td>11</td><br />
+<td>70660.9</td><br />
+</tr><br />
+<tr><br />
+<td>12</td><br />
+<td>49479.4</td><br />
+</tr><br />
+<tr><br />
+<td>13</td><br />
+<td>52613.5</td><br />
+</tr><br />
+<tr><br />
+<td>14</td><br />
+<td>54965.7</td><br />
+</tr><br />
+<tr><br />
+<td>15</td><br />
+<td>61944</td><br />
+</tr><br />
+<tr><br />
+<td>16</td><br />
+<td>70709.4</td><br />
+</tr><br />
+<tr><br />
+<td>17</td><br />
+<td>82900.9</td><br />
+</tr><br />
+<tr><br />
+<td>18</td><br />
+<td>56225.7</td><br />
+</tr><br />
+<tr><br />
+<td>19</td><br />
+<td>68766</td><br />
+</tr><br />
+<tr><br />
+<td>20</td><br />
+<td>88525.2</td><br />
+</tr><br />
+</tbody><br />
+</table><br />
+<p>نکته: من این نمودارو با استفاده از نرم‌افزار آزاد LibreOffice کشیدم.</p><br />
+<p>اولاً که چیزی که از نمودار مشهوده، با‌گذشت زمان کندی یه I/O ثابت روی دیسک، حین دسترسی مشترک رشد خطی میکنه، پس میتونیم برونیابی کنیم که با گدشت زمان، زمان نوشتن روی دیسک به این صورت هی کندتر و کندتر میشه، بر خلاف رم که سیر ثابتی رو طی میکنه.</p><br />
+<p>دوماً که میبینیم دیسک تا 50 برابر کند تر عمل کرده، اما انتظار ما این بود که دیسک خیلی خیلی کند تر بشه، اینجا بحث همون بهینه سازی های سیستم عاملی هست. سیستم عامل اجازه نمیده که یه پراسس انحصار I/O رو روی دیسک بصورت کنترات برداره و بقیه پراسسها نتونن از دیسک استفاده کنن، برای همین به نوبت از روی پردازنده برشون میداره و منابع مشترک رو تقسیم میکنه. برای اطلاعات بیشتر میتونین مساله بن‌بست در کامپیوتر (Deadlock) و انحصار متقابل (Mutual exclusion) رو مطالعه کنین. شاید بعداً ازشون حرف زدیم.</p><br />
+<p>سوماً، بهینگی سیستم عاملی تمام مبحث نیست، دیسک-خورهای ما زیاد استاندارد نیستن، چهارتا پراسس هستن که توی سکتورهای متوالی دیسک دارن یه دیتای محدود و ثابتی (که قابل کش شدنه) رو مینویسین و این حرکت رو تکرار میکنن… چی میشه اگه بجای این دیسک-خورها، از یسری دیسک-خور واقعی استفاده کنیم..!</p><br />
 <hr /><br />
 <p>یکسری لینک پرسش و پاسخ مرتبط با این موضوع:</p><br />
 <ul><br />
