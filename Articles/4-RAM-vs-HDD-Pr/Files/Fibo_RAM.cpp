@@ -16,19 +16,21 @@ int main() {
     
     // Code ----------------------------------------------------------
 
-    unsigned long long n = 94, t1 = 0, t2 = 1, nextTerm = 0;
+    unsigned long long n = 94, t1 = 0, t2 = 1, t3 = 0;
 
     if(n == 1)
         cout << t1 << endl;
     else if(n == 2)
         cout << t2 << endl;
     else{
-        for (unsigned long long i = 3; i <= n; ++i) {
-            nextTerm = t1 + t2;
+        unsigned long long counter = 3;
+        while (counter <= n) {
+            t3 = t1 + t2;
             t1 = t2;
-            t2 = nextTerm;
+            t2 = t3;
         }
-        cout << nextTerm << endl;
+        cout << t3 << endl;
+        ++counter;
     }
     
     // ---------------------------------------------------------------
