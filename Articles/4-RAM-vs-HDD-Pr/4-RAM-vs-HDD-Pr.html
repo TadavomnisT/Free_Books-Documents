@@ -2072,7 +2072,60 @@ Therefore:
 <hr /><br />
 <h3>فاز دوم: مقایسه سرعت رم و هارددیسک در کار با داده‌های کوچیک و الوکیشنهای سریع و پیاپی</h3><br />
 <p>توی این فاز میزان زمان یه محاسباتی که بطور معمول برای ذخیره سازی از رم استفاده میکنه رو یک بار روی رم و البته یک بار روی هارددیسک (چجوری؟!) اندازه‌گیری و مقایسه میکنیم. به زبان ساده یعنی سرعت یک محاسبات خاص، که معمولاً روی رم انجام میشه رو مقایسه میکنیم با سرعت همون محاسبات به این شرط که بجای رم برای ذخیره سازی از هارددیسک استفاده کنه!!!</p><br />
-<p>کد زیر رو در نظر بگیرید:</p><br />
+<p>کد زیر رو در نظر بگیرید:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;sys/resource.h&gt;
+#include &lt;chrono&gt;
+using namespace std;
+
+int main() {
+
+    // Start execution time
+    clock_t start_1 = clock();
+    auto start_2 = chrono::high_resolution_clock::now();
+
+    // Start memory usage
+    struct rusage usage;
+    getrusage(RUSAGE_SELF, &amp;usage);
+    long memory_usage_start = usage.ru_maxrss; // in kilobytes
+
+    // Code ----------------------------------------------------------
+
+    unsigned long long n = 94, t1 = 0, t2 = 1, nextTerm = 0;
+
+    if(n == 1)
+        cout &lt;&lt; t1 &lt;&lt; endl;
+    else if(n == 2)
+        cout &lt;&lt; t2 &lt;&lt; endl;
+    else{
+        for (unsigned long long i = 3; i &lt;= n; ++i) {
+            nextTerm = t1 + t2;
+            t1 = t2;
+            t2 = nextTerm;
+        }
+        cout &lt;&lt; nextTerm &lt;&lt; endl;
+    }
+
+    // ---------------------------------------------------------------
+
+    // Stop measuring memory usage
+    getrusage(RUSAGE_SELF, &amp;usage);
+    long memory_usage_end = usage.ru_maxrss; // in kilobytes
+
+    // Stop measuring execution time
+    clock_t end_1 = clock();
+    auto end_2 = chrono::high_resolution_clock::now();
+    double execution_time_1 = double(end_1 - start_1) / CLOCKS_PER_SEC;
+    chrono::duration&lt;double, milli&gt; execution_time_2 = end_2 - start_2;
+
+    // Printing result
+    cout &lt;&lt; "Execution Time (Based on ctime): " &lt;&lt; execution_time_1 * 1000.0 &lt;&lt; " ms" &lt;&lt; endl;
+    cout &lt;&lt; "Execution Time (Based on chrono): " &lt;&lt; execution_time_2.count() &lt;&lt; " ms" &lt;&lt; endl;
+    cout &lt;&lt; "Memory Usage: " &lt;&lt; memory_usage_end - memory_usage_start &lt;&lt; " KB" &lt;&lt; endl;
+
+    return 0;
+}</code></pre><br />
+<p><a href="./Files/Fibo_RAM.cpp">فایل کد</a></p><br />
 <hr /><br />
 <h4>مشخصات ماشین اجرا کننده آزمایشات:</h4><br />
 <p>تا اینجا کدهای مقاله روی یه ماشین استاندارد لینوکسی با مشخصات زیر آزمایش شدن:</p>
