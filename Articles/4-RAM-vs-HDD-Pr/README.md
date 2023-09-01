@@ -4146,9 +4146,255 @@ Therefore:
 * Average CPU Usage: 92.1 %
 ```
 
+فرض کنید همین کد رو مثل قسمت قبلی جوری بنویسیم که متغیرهای اصلیشو فقط روی دیسک ذخیره کنه ،فقط هم مثلاً 3 تا متغیر اصلیشو، نه بیشتر. نه آدرسها، نه رجیسترها، نه فانکشنکالها، نه هیچ چیز دیگه… فقط مقدار 3 متغیر اصلیشو روی هارددیسک ذخیره کنه.
+
+
+```cpp
+#include <iostream>
+#include <sys/resource.h>
+#include <chrono>
+#include <fstream>
+#include <string>
+using namespace std;
+
+void set_unsigned_long_long_variable(string name, unsigned long long var)
+{
+    ofstream outfile(name + ".bin"  , ofstream::binary);
+    if (outfile)
+    {
+        outfile.write(reinterpret_cast<const char*>(&var), sizeof(var));
+        outfile.close();
+    }
+    else cerr << "Error opening file: " << name + ".bin" << endl;
+}
+
+unsigned long long get_unsigned_long_long_variable(string name)
+{
+    unsigned long long var = 0;
+    ifstream infile(name + ".bin", ifstream::binary);
+    if (infile)
+    {
+        infile.read(reinterpret_cast<char*>(&var), sizeof(var));
+        infile.close();
+    }
+    else cerr << "Error opening file: " << name + ".bin" << endl;
+    
+    return var;
+}
+
+int main() {
+
+    // Start execution time
+    clock_t start_1 = clock();
+    auto start_2 = chrono::high_resolution_clock::now();
+
+    // Start memory usage
+    struct rusage usage;
+    getrusage(RUSAGE_SELF, &usage);
+    long memory_usage_start = usage.ru_maxrss; // in kilobytes
+    
+    // Code ----------------------------------------------------------
+
+    set_unsigned_long_long_variable( "n", 100000);
+    set_unsigned_long_long_variable( "counter", get_unsigned_long_long_variable("n"));
+    set_unsigned_long_long_variable( "sum_divable", 0);
+
+    while (get_unsigned_long_long_variable("counter") > 0) {
+        if( get_unsigned_long_long_variable("n") % get_unsigned_long_long_variable("counter") == 0 )
+            set_unsigned_long_long_variable( "sum_divable", get_unsigned_long_long_variable("sum_divable") + 1);
+        set_unsigned_long_long_variable( "counter", get_unsigned_long_long_variable("counter") - 1);
+    }
+    cout << get_unsigned_long_long_variable("sum_divable") << endl;
+
+    // ---------------------------------------------------------------
+    
+    // Stop measuring memory usage
+    getrusage(RUSAGE_SELF, &usage);
+    long memory_usage_end = usage.ru_maxrss; // in kilobytes
+
+    // Stop measuring execution time
+    clock_t end_1 = clock();
+    auto end_2 = chrono::high_resolution_clock::now();
+    double execution_time_1 = double(end_1 - start_1) / CLOCKS_PER_SEC;
+    chrono::duration<double, milli> execution_time_2 = end_2 - start_2;
+
+    // Printing result
+    cout << "Execution Time (Based on ctime): " << execution_time_1 * 1000.0 << " ms" << endl;
+    cout << "Execution Time (Based on chrono): " << execution_time_2.count() << " ms" << endl;
+    cout << "Memory Usage: " << memory_usage_end - memory_usage_start << " KB" << endl;
+
+    return 0;
+}
+```
+
+[فایل کد](./Files/Iteration_HDD.cpp)
+
+بریم اجرا کنیم ببینیم چه فاجعه‌ای رخ میده!
+
+```bash
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ Iteration_HDD.cpp 
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 8134.59 ms
+Execution Time (Based on chrono): 22359.2 ms
+Memory Usage: 0 KB
+
+real    22.36s
+user    1.38s
+sys     6.75s
+cpu     36%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 8427.09 ms
+Execution Time (Based on chrono): 22312.2 ms
+Memory Usage: 0 KB
+
+real    22.31s
+user    1.49s
+sys     6.94s
+cpu     37%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 8167.64 ms
+Execution Time (Based on chrono): 22296.8 ms
+Memory Usage: 0 KB
+
+real    22.30s
+user    1.45s
+sys     6.72s
+cpu     36%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 8040.17 ms
+Execution Time (Based on chrono): 22315.6 ms
+Memory Usage: 0 KB
+
+real    22.32s
+user    1.43s
+sys     6.61s
+cpu     36%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 8921.16 ms
+Execution Time (Based on chrono): 30141.7 ms
+Memory Usage: 0 KB
+
+real    30.14s
+user    1.43s
+sys     7.49s
+cpu     29%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 7915.38 ms
+Execution Time (Based on chrono): 22112.7 ms
+Memory Usage: 0 KB
+
+real    22.12s
+user    1.35s
+sys     6.57s
+cpu     35%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 8791.03 ms
+Execution Time (Based on chrono): 26041.5 ms
+Memory Usage: 0 KB
+
+real    26.04s
+user    1.41s
+sys     7.38s
+cpu     33%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 9897.57 ms
+Execution Time (Based on chrono): 29009.1 ms
+Memory Usage: 0 KB
+
+real    29.01s
+user    1.70s
+sys     8.20s
+cpu     34%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 8693.6 ms
+Execution Time (Based on chrono): 23570.2 ms
+Memory Usage: 0 KB
+
+real    23.57s
+user    1.43s
+sys     7.27s
+cpu     36%
+                                                                                            
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./a.out
+36
+Execution Time (Based on ctime): 9362.56 ms
+Execution Time (Based on chrono): 28498.6 ms
+Memory Usage: 0 KB
+
+real    28.50s
+user    1.74s
+sys     7.62s
+cpu     32%
+```
+
+متوسط زمان آزمایش:
+
+```md
+(8134.59+8427.09+8167.64+8040.17+8921.16+7915.38+8791.03+9897.57+8693.6+9362.56) / 10 = 86350.79 / 10 = 8635.079
+(22359.2+22312.2+22296.8+22315.6+30141.7+22112.7+26041.5+29009.1+23570.2+28498.6) / 10 = 248657.6 / 10 = 24865.76
+(0+0+0+0+0+0+0+0+0+0) / 10 = 0 / 10 = 0
+(22.36s+22.31s+22.30s+22.32s+30.14s+22.12s+26.04s+29.01s+23.57s+28.50s) / 10 = 248.67 / 10 = 24.867
+(1.38s+1.49s+1.45s+1.43s+1.43s+1.35s+1.41s+1.70s+1.43s+1.74s) / 10 = 14.81 / 10 = 1.481
+(6.75s+6.94s+6.72s+6.61s+7.49s+6.57s+7.38s+8.20s+7.27s+7.62s) / 10 = 71.55 / 10 = 7.155
+(36%+37%+36%+36%+29%+35%+33%+34%+36%+32%) / 10 = 344 / 10 = 34.4
+
+
+Therefore:
+
+* Average Execution Time(Based on ctime): 8635.079 ms
+* Average Execution Time(Based on chrono): 24865.76 ms
+* Average Memory Usage: 0 KB
+* Average Real Time: 24.867 s
+* Average User Time: 1.481 s
+* Average Sys Time: 7.155 s
+* Average CPU Usage: 34.4 %
+```
+
+و داریم:
+
+```md
+24865.76 / 1.8654305 = 13329
+```
+یهو رسیدیم به 13 هزار برابر (13329) کندی سرعت!
+
 ______________________________________
 
-#### مشخصات ماشین اجرا کننده آزمایشات:
+حدس من اینه که در این نوع محاسبات و I/O زدنهای پیاپی برای داده‌های کوچولو روی دیسک، کند شدن سرعت محاسبات رشد نمایی میکنه، در صورتی که همین محاسبات رو رم رشد خطی میکنن…
+
+بیاین صحت این حدس رو بسنجیم، من مقادیر مختلف n رو توی همین دوتا برنامه آخر، یعنی این و این تست میکنم و نتیجه رو گزارش میکنم. و البته اعتراف کنم که ممکنه یه کار خبیثانه کنم و این آزمایش آخر رو ببرم روی VPS انجام بدم که دیسک خودم آسیب نبینه...
+
+
+
+**مشخصات ماشین اجرا کننده آزمایشات تا اینجای ماجرا:**
 
 تا اینجا کدهای مقاله روی یه ماشین استاندارد لینوکسی با مشخصات زیر آزمایش شدن:
 
@@ -4290,6 +4536,8 @@ Logical Unit WWN Device Identifier: 50014ee608088121
         Unique ID       : 608088121
 Checksum: correct
 ```
+______________________________________
+
 
 ______________________________________
 
