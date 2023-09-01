@@ -2663,75 +2663,124 @@ cpu     32%
 ";
 
 
-$ctimes     = [];
-$chronos    = [];
-$mems       = [];
-$reals      = [];
-$users      = [];
-$syses      = [];
-$cpus       = [];
 
+// $ctimes     = [];
+// $chronos    = [];
+// $mems       = [];
+// $reals      = [];
+// $users      = [];
+// $syses      = [];
+// $cpus       = [];
+
+// foreach (explode( PHP_EOL, trim( $string ) ) as $line) {
+//     if ( strpos( $line, "Execution Time (Based on ctime)" ) !== false )
+//         $ctimes[] = explode( ' ', trim($line) )[5];
+//     if ( strpos( $line, "Execution Time (Based on chrono)" ) !== false )
+//         $chronos[] = explode( ' ', trim($line) )[5];
+//     if ( strpos( $line, "Memory Usage" ) !== false )
+//         $mems[] = explode( ' ', trim($line) )[2];
+//     if ( strpos( $line, "real" ) !== false )
+//         $reals[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
+//     if ( strpos( $line, "user" ) !== false && strpos( $line, "dhcp" ) === false && strpos( $line, "$" ) === false )
+//         $users[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
+//     if ( strpos( $line, "sys" ) !== false )
+//         $syses[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
+//     if ( strpos( $line, "cpu" ) !== false )
+//         $cpus[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
+// }
+
+
+// $sum_ctime = 0;
+// $sum_chrono = 0;
+// $sum_mem = 0;
+// $sum_real = 0;
+// $sum_user = 0;
+// $sum_sys = 0;
+// $sum_cpu = 0;
+
+// error_reporting(E_ALL ^ E_WARNING); 
+// for ($i=0; $i < NUMBER_OF_TESTS ; $i++) { 
+//     $sum_ctime += $ctimes[$i];
+//     $sum_chrono += $chronos[$i];
+//     $sum_mem += $mems[$i];
+//     $sum_real += $reals[$i];
+//     $sum_user += $users[$i];
+//     $sum_sys += $syses[$i];
+//     $sum_cpu += $cpus[$i];
+// } 
+// error_reporting(E_ALL); 
+
+
+
+// echo "(" . implode( "+", $ctimes ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_ctime . " / ". NUMBER_OF_TESTS ." = " . $sum_ctime/NUMBER_OF_TESTS . PHP_EOL;
+// echo "(" . implode( "+", $chronos ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_chrono . " / ". NUMBER_OF_TESTS ." = " . $sum_chrono/NUMBER_OF_TESTS . PHP_EOL;
+// echo "(" . implode( "+", $mems ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_mem . " / ". NUMBER_OF_TESTS ." = " . $sum_mem/NUMBER_OF_TESTS . PHP_EOL;
+// echo "(" . implode( "+", $reals ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_real . " / ". NUMBER_OF_TESTS ." = " . $sum_real/NUMBER_OF_TESTS . PHP_EOL;
+// echo "(" . implode( "+", $users ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_user . " / ". NUMBER_OF_TESTS ." = " . $sum_user/NUMBER_OF_TESTS . PHP_EOL;
+// echo "(" . implode( "+", $syses ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_sys . " / ". NUMBER_OF_TESTS ." = " . $sum_sys/NUMBER_OF_TESTS . PHP_EOL;
+// echo "(" . implode( "+", $cpus ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_cpu . " / ". NUMBER_OF_TESTS ." = " . $sum_cpu/NUMBER_OF_TESTS . PHP_EOL;
+
+// echo PHP_EOL;
+// echo PHP_EOL;
+// echo "Therefore:";
+// echo PHP_EOL;
+// echo PHP_EOL;
+
+// echo "* Average Execution Time(Based on ctime): " . $sum_ctime/NUMBER_OF_TESTS . " ms" . PHP_EOL;
+// echo "* Average Execution Time(Based on chrono): " . $sum_chrono/NUMBER_OF_TESTS . " ms" . PHP_EOL;
+// echo "* Average Memory Usage: " . $sum_mem/NUMBER_OF_TESTS . " KB" . PHP_EOL;
+// echo "* Average Real Time: " . $sum_real/NUMBER_OF_TESTS . " s" . PHP_EOL;
+// echo "* Average User Time: " . $sum_user/NUMBER_OF_TESTS . " s" . PHP_EOL;
+// echo "* Average Sys Time: " . $sum_sys/NUMBER_OF_TESTS . " s" . PHP_EOL;
+// echo "* Average CPU Usage: " . $sum_cpu/NUMBER_OF_TESTS . " %" . PHP_EOL;
+
+$string = "
+4
+Execution Time (Based on chrono): 0.051927 ms
+
+4
+Execution Time (Based on chrono): 0.052258 ms
+
+4
+Execution Time (Based on chrono): 0.048521 ms
+
+4
+Execution Time (Based on chrono): 0.040079 ms
+
+4
+Execution Time (Based on chrono): 0.036967 ms
+
+4
+Execution Time (Based on chrono): 0.041009 ms
+
+4
+Execution Time (Based on chrono): 0.04798 ms
+
+4
+Execution Time (Based on chrono): 0.032547 ms
+
+4
+Execution Time (Based on chrono): 0.033 ms
+
+4
+Execution Time (Based on chrono): 0.038679 ms
+";
+
+$chronos    = [];
 foreach (explode( PHP_EOL, trim( $string ) ) as $line) {
-    if ( strpos( $line, "Execution Time (Based on ctime)" ) !== false )
-        $ctimes[] = explode( ' ', trim($line) )[5];
     if ( strpos( $line, "Execution Time (Based on chrono)" ) !== false )
         $chronos[] = explode( ' ', trim($line) )[5];
-    if ( strpos( $line, "Memory Usage" ) !== false )
-        $mems[] = explode( ' ', trim($line) )[2];
-    if ( strpos( $line, "real" ) !== false )
-        $reals[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
-    if ( strpos( $line, "user" ) !== false && strpos( $line, "dhcp" ) === false && strpos( $line, "$" ) === false )
-        $users[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
-    if ( strpos( $line, "sys" ) !== false )
-        $syses[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
-    if ( strpos( $line, "cpu" ) !== false )
-        $cpus[] = explode( ' ', trim(preg_replace("/ {2,}/", " ", $line)) )[1];
 }
-
-
-$sum_ctime = 0;
 $sum_chrono = 0;
-$sum_mem = 0;
-$sum_real = 0;
-$sum_user = 0;
-$sum_sys = 0;
-$sum_cpu = 0;
-
 error_reporting(E_ALL ^ E_WARNING); 
 for ($i=0; $i < NUMBER_OF_TESTS ; $i++) { 
-    $sum_ctime += $ctimes[$i];
     $sum_chrono += $chronos[$i];
-    $sum_mem += $mems[$i];
-    $sum_real += $reals[$i];
-    $sum_user += $users[$i];
-    $sum_sys += $syses[$i];
-    $sum_cpu += $cpus[$i];
 } 
 error_reporting(E_ALL); 
-
-
-
-echo "(" . implode( "+", $ctimes ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_ctime . " / ". NUMBER_OF_TESTS ." = " . $sum_ctime/NUMBER_OF_TESTS . PHP_EOL;
 echo "(" . implode( "+", $chronos ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_chrono . " / ". NUMBER_OF_TESTS ." = " . $sum_chrono/NUMBER_OF_TESTS . PHP_EOL;
-echo "(" . implode( "+", $mems ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_mem . " / ". NUMBER_OF_TESTS ." = " . $sum_mem/NUMBER_OF_TESTS . PHP_EOL;
-echo "(" . implode( "+", $reals ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_real . " / ". NUMBER_OF_TESTS ." = " . $sum_real/NUMBER_OF_TESTS . PHP_EOL;
-echo "(" . implode( "+", $users ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_user . " / ". NUMBER_OF_TESTS ." = " . $sum_user/NUMBER_OF_TESTS . PHP_EOL;
-echo "(" . implode( "+", $syses ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_sys . " / ". NUMBER_OF_TESTS ." = " . $sum_sys/NUMBER_OF_TESTS . PHP_EOL;
-echo "(" . implode( "+", $cpus ) . ") / ". NUMBER_OF_TESTS ." = " . $sum_cpu . " / ". NUMBER_OF_TESTS ." = " . $sum_cpu/NUMBER_OF_TESTS . PHP_EOL;
-
-echo PHP_EOL;
 echo PHP_EOL;
 echo "Therefore:";
 echo PHP_EOL;
-echo PHP_EOL;
-
-echo "* Average Execution Time(Based on ctime): " . $sum_ctime/NUMBER_OF_TESTS . " ms" . PHP_EOL;
 echo "* Average Execution Time(Based on chrono): " . $sum_chrono/NUMBER_OF_TESTS . " ms" . PHP_EOL;
-echo "* Average Memory Usage: " . $sum_mem/NUMBER_OF_TESTS . " KB" . PHP_EOL;
-echo "* Average Real Time: " . $sum_real/NUMBER_OF_TESTS . " s" . PHP_EOL;
-echo "* Average User Time: " . $sum_user/NUMBER_OF_TESTS . " s" . PHP_EOL;
-echo "* Average Sys Time: " . $sum_sys/NUMBER_OF_TESTS . " s" . PHP_EOL;
-echo "* Average CPU Usage: " . $sum_cpu/NUMBER_OF_TESTS . " %" . PHP_EOL;
-
 
 ?>
