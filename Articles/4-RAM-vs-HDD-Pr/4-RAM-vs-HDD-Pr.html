@@ -95,6 +95,7 @@
 *Input/Output<br />
 یا به زبان فارسی ساده : خوندنها و نوشتن‌ها</p><br />
 <p>محاسبه این سرعت بشدت کار تخصصی هست و توی این سرعت هزاران فاکتور دخیله، فاکتور هایی که هر کدوم توضیح دادنشون یک کتابه مطلبه و نهایتا اگر تمام فاکتور هارو بتونیم مدلسازی کنیم ، (که خیلی کار سختیه) در سناریو های مختلف ممکنه از 10 هزاربار تا مثلا 500 هزار بار کند تر عمل کنه. که متوسط این سناریو هارو بعنوان آمار بیان میکنن.</p><br />
+<p>در حالت کلی هارددیسک بخاطر حرکات فیزیکی و مکانیکی که داره که با اون حرکات دیتارو ذخیره میکنه از بسیاری از تکنولوژی های دیگه کند تر هست. اگه بخوایم یه مثال توی دنیای واقعی داشته باشیم، بین متخصصین کامپیوتر این مساله به کرات مشاهده شده که استفاده از ماوس برای اینرکشن با کامپیوتر، سرعت استفاده رو بشدت پایین میاره! اگه کاری باشه که شما بتونی با کیبرد انجام بدی، خیلی خیلی خیلی سریع‌تر میتونی با کیبرد انجامش بدی تا اینکه بخوای با ماوس انجامش بدی. این یه اصل مشهوده. دلیل این امر هم این هست که ماوس حرکات فیزیکی زیادی داره، و برای انجام یه کاری باید دست شما چندین بار اسکرول کنه و … اما کیبرد، حرکات فیزیکی رو کمینه میکنه، بخاطر همین سریع تره :) هارددیسک هم یچیزی مثل ماوس میمونه، حالا راجع بهش حرفها خواهیم زد.</p><br />
 <p>یک هارد دیسک ، مثل یک CD یه (چند تا) دیسک داره که میچرخه و یک هد داره (مثل اون دسته سیاهای توی گرامافون) که روی یه مداری که روی شعاع دیسک واقع شده میتونه بالا و پایین بره. به این ترتیب میتونه تمام دیسک رو پردازش کنه.</p><br />
 <p>گیف پایین رو مشاهده بفرمائید:</p><br />
 <p><img src="Files/8.gif" alt="HDD head move" /></p><br />
@@ -4000,7 +4001,7 @@ Therefore:
 <p>یهو رسیدیم به 13 هزار برابر (13329) کندی سرعت!</p><br />
 <hr /><br />
 <p>حدس من اینه که در این نوع محاسبات و I/O زدنهای پیاپی برای داده‌های کوچولو روی دیسک، کند شدن سرعت محاسبات رشد نمایی میکنه، در صورتی که همین محاسبات رو رم رشد خطی میکنن…</p><br />
-<p>بیاین صحت این حدس رو بسنجیم، من مقادیر مختلف n رو توی همین دوتا برنامه آخر، یعنی این و این تست میکنم و نتیجه رو گزارش میکنم. و البته اعتراف کنم که ممکنه یه کار خبیثانه کنم و این آزمایش آخر رو ببرم روی VPS انجام بدم که دیسک خودم آسیب نبینه...</p><br />
+<p>بیاین صحت این حدس رو بسنجیم، من مقادیر مختلف n رو توی همین دوتا برنامه آخر، یعنی <a href="./Files/Iteration_RAM.cpp">Iteration_RAM</a> و <a href="./Files/Iteration_HDD.cpp">Iteration_HDD</a> تست میکنم و نتیجه رو گزارش میکنم. و البته اعتراف کنم که ممکنه یه کار خبیثانه کنم و این آزمایش آخر رو ببرم روی یه VPS انجام بدم که دیسک خودم آسیب نبینه… از طرفی خیلی برای نتیجه مقاله هم خوب هست، چون نتایج آزمایش خیلی overfit نمیشه روی ماشین من.</p><br />
 <p><strong>مشخصات ماشین اجرا کننده آزمایشات تا اینجای ماجرا:</strong></p><br />
 <p>تا اینجا کدهای مقاله روی یه ماشین استاندارد لینوکسی با مشخصات زیر آزمایش شدن:</p>
 <pre><code>OS: Kali GNU/Linux Rolling x86_64
@@ -4131,7 +4132,136 @@ Logical Unit WWN Device Identifier: 50014ee608088121
         Unique ID       : 608088121
 Checksum: correct</code></pre><br />
 <hr /><br />
+<p>بریم سراغ قسمت آخر ماجرا که فان ترین قسمت مقاله هم هست از نظر من^_^<br />
+توی این قسمت میخوایم ازین کارای باحال علمی بکنیم و ببینیم که پیچیدگی زمانی چه‌جوری رشد میکنه، نمودار بکشیم و مقایسه کنیم و از این دک و پزها…</p><br />
+<p>این کد رو به عنوان آخرین کد مقاله در نظر بگیرید:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;chrono&gt;
+#include &lt;fstream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+void set_unsigned_long_long_variable(string name, unsigned long long var)
+{
+    ofstream outfile(name + ".bin"  , ofstream::binary);
+    if (outfile)
+    {
+        outfile.write(reinterpret_cast&lt;const char*&gt;(&amp;var), sizeof(var));
+        outfile.close();
+    }
+    else cerr &lt;&lt; "Error opening file: " &lt;&lt; name + ".bin" &lt;&lt; endl;
+}
+
+unsigned long long get_unsigned_long_long_variable(string name)
+{
+    unsigned long long var = 0;
+    ifstream infile(name + ".bin", ifstream::binary);
+    if (infile)
+    {
+        infile.read(reinterpret_cast&lt;char*&gt;(&amp;var), sizeof(var));
+        infile.close();
+    }
+    else cerr &lt;&lt; "Error opening file: " &lt;&lt; name + ".bin" &lt;&lt; endl;
+
+    return var;
+}
+
+int main(int argc, char** argv)  {
+
+    // Start execution time
+    auto start = chrono::high_resolution_clock::now();
+
+    // Code ----------------------------------------------------------
+
+    if( strcmp(argv[1], "RAM") == 0 )
+    {
+        unsigned long long n = stoull(argv[2]), counter = n, sum_divable = 0;
+        while (counter &gt; 0) {
+            if( n % counter == 0 )
+                ++sum_divable;
+            --counter;
+        }
+        cout &lt;&lt; sum_divable &lt;&lt; endl;
+    }
+    else if( strcmp(argv[1], "HDD") == 0 )
+    {
+        set_unsigned_long_long_variable( "n", stoull(argv[2]) );
+        set_unsigned_long_long_variable( "counter", get_unsigned_long_long_variable("n"));
+        set_unsigned_long_long_variable( "sum_divable", 0);
+        while (get_unsigned_long_long_variable("counter") &gt; 0) {
+            if( get_unsigned_long_long_variable("n") % get_unsigned_long_long_variable("counter") == 0 )
+                set_unsigned_long_long_variable( "sum_divable", get_unsigned_long_long_variable("sum_divable") + 1);
+            set_unsigned_long_long_variable( "counter", get_unsigned_long_long_variable("counter") - 1);
+        }
+        cout &lt;&lt; get_unsigned_long_long_variable("sum_divable") &lt;&lt; endl;
+    }
+    else cout &lt;&lt; "ERROR: Wronge input argument." &lt;&lt; endl;
+
+    // ---------------------------------------------------------------
+
+    // Stop measuring execution time
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration&lt;double, milli&gt; execution_time = end - start;
+
+    // Printing result
+    cout &lt;&lt; "Execution Time (Based on chrono): " &lt;&lt; execution_time.count() &lt;&lt; " ms" &lt;&lt; endl;
+
+    return 0;
+}</code></pre><br />
+<p><a href="./Files/Iteration_test.cpp">فایل کد</a></p><br />
+<p>این کد دقیقاً کد قبلی هست ولی داینامیک نوشته شده، با توجه به ورودی هایی که بعنوان آرگومان از بافر ورودی استاندارد میگیره، کار رو انجام میده،‌میتونه محاسبات رو به تعداد ورودی <code>n</code> روی رم و یا روی هارددیسک انجام بده.</p>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 10; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(0.05557+0.04354+0.037682+0.055058+0.059299+0.040107+0.044795+0.033862+0.03316+0.030346+0.031631+0.039248+0.031442+0.030144+0.031636+0.030273+0.044436+0.035037+0.032099+0.032844+0.029726+0.031982+0.03101+0.034369+0.033597+0.042123+0.03926+0.037468+0.03927+0.042095+0.039197+0.04276+0.043037+0.058996+0.032882+0.034359+0.032656+0.034285+0.031125+0.029796+0.035702+0.030816+0.03118+0.036636+0.029955+0.029841+0.029912+0.047903+0.038854+0.033695) / 50 = 1.856696 / 50 = 0.03713392
+
+Therefore:
+* Average Execution Time(Based on chrono): 0.03713392 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 100; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(0.056729+1.59152+0.048881+0.049231+0.04922+0.043113+0.050367+0.044923+0.042751+0.043592+0.041487+0.039294+0.043805+0.047856+0.040708+0.044756+0.041053+0.040405+0.047841+0.049873+0.040557+0.039935+0.040469+0.042405+0.043633+0.042428+0.040278+0.064401+0.042753+0.049396+0.059291+0.050488+0.045674+0.047207+0.043165+0.041103+0.041197+0.037907+0.0587+0.043548+0.04071+0.04312+0.041312+0.040731+0.041073+0.047526+0.066859+0.057422+0.042882+0.043553) / 50 = 3.837128 / 50 = 0.07674256
+
+Therefore:
+* Average Execution Time(Based on chrono): 0.07674256 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 1000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(0.068803+0.059274+3.0206+0.053834+0.051958+0.051055+0.057953+0.059117+0.042785+0.048859+0.045849+0.042131+0.05188+0.042523+0.049469+0.038819+0.0395+0.041249+0.040282+0.040635+0.037002+0.044957+0.040858+0.038883+0.04276+0.061451+0.042524+0.040479+0.05396+0.041289+0.039723+0.049896+0.041293+0.039501+0.040528+0.049634+0.053361+0.041704+0.044657+0.041357+0.040148+0.045694+0.058381+0.041357+0.040849+0.036245+0.044352+0.043624+0.040995+0.036902) / 50 = 5.260939 / 50 = 0.10521878
+
+Therefore:
+* Average Execution Time(Based on chrono): 0.10521878 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 10000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(0.185036+0.154471+0.165113+0.157347+0.18171+0.132968+0.115558+0.121692+0.121769+0.113374+0.116244+0.149405+0.150177+0.125981+0.123877+0.128397+0.132772+0.172368+0.127196+0.126897+0.12715+0.115237+0.126738+0.133597+0.123583+0.124886+0.118664+0.125119+0.129162+0.115475+0.15031+0.15324+0.128633+0.158191+0.209703+0.123722+0.128189+0.135494+0.127625+0.167394+0.126804+0.124159+0.154155+0.116885+0.14578+0.119057+0.123312+0.11629+0.143316+0.114863) / 50 = 6.809085 / 50 = 0.1361817
+
+Therefore:
+* Average Execution Time(Based on chrono): 0.1361817 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 100000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(2.8513+1.01647+0.976667+0.970932+0.97964+0.995396+0.982495+0.97912+0.966483+0.970715+0.934009+0.950327+0.974002+0.975446+0.986908+0.980763+1.1284+0.982268+0.983068+0.987813+0.993953+1.02334+1.01758+1.11104+0.987194+1.04501+0.979295+0.995212+0.987408+1.01927+1.01664+0.987328+0.973787+0.975659+0.973153+0.978747+0.952589+1.09384+1.37752+1.01558+0.982577+1.0207+0.974533+1.11337+0.985381+1.01944+1.04177+1.0397+1.02442+1.04134) / 50 = 52.319598 / 50 = 1.04639196
+
+Therefore:
+* Average Execution Time(Based on chrono): 1.04639196 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 1000000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(11.7602+11.6177+11.6259+9.55161+9.84909+9.6777+9.83686+9.87394+10.1924+9.75504+9.56854+9.53915+10.2645+9.75044+9.52632+9.57528+10.5565+9.7492+9.98362+13.526+11.1387+11.8642+11.5241+12.129+13.6267+11.4817+10.573+11.2104+11.0466+11.0755+10.6779+12.0456+10.9347+11.2068+11.2398+11.4614+11.3066+10.9896+11.3568+10.9231+10.6759+16.8868+14.999+16.2878+12.3337+12.8563+12.1443+10.4334+10.7875+10.6904) / 50 = 561.68729 / 50 = 11.2337458
+
+Therefore:
+* Average Execution Time(Based on chrono): 11.2337458 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 10000000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(122.437+111.11+116.911+111.118+114.321+112.377+117.222+110.622+110.967+107.209+119.983+117.109+113.132+112.927+117.166+112.409+110.612+121.124+115.648+99.2176+100.546+96.6624+97.9584+95.4014+98.3823+98.5019+98.32+98.3984+95.9734+96.6039+97.2092+98.2006+96.5731+92.4531+93.6754+96.8256+97.0719+92.4971+93.3109+93.8384+92.9399+99.6457+96.2368+90.9912+90.5309+94.4321+97.6597+93.3925+94.4273+97.0904) / 50 = 5149.3715 / 50 = 102.98743
+
+Therefore:
+* Average Execution Time(Based on chrono): 102.98743 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 100000000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(1153.99+1090+927.97+950.748+952.153+934.874+951.585+934.285+931.199+935.237+951.123+946.343+1044.16+1104.66+1060.29+933.39+932.839+943.719+944.238+936.994+952.082+938.932+921.093+929.203+930.171+1018.32+1079.7+1059.41+936.524+948.65+950.927+956.4+955.033+944.512+943.176+933.907+939.347+950.281+1052.11+1087.17+1069.19+952.72+921.658+921.936+932.571+954.542+931.82+944.327+943.054+937.911) / 50 = 48496.474 / 50 = 969.92948
+
+Therefore:
+* Average Execution Time(Based on chrono): 969.92948 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 1000000000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(9929.45+9894.97+9401.29+9779.2+9740.14+9711.45+9411.57+9575.79+9740.8+9762.82+10157.3+9470.99+9807.61+9827.57+9903.24+9546.48+9817.56+9914.88+9835.63+9757.12+9494.87+9768.5+9804.84+9879.44+9978.79+10010.1+9716.13+9654.43+9452.93+9741.28+9716.39+9671.29+9534.45+9422.55+9740.14+9631.31+9571.77+9396.79+9789.33+10178.4+9683.12+9338.5+9541.9+9655.58+9713.08+9510.57+9530.52+9780.9+9780.28+9769.28) / 50 = 485443.32 / 50 = 9708.8664
+
+Therefore:
+* Average Execution Time(Based on chrono): 9708.8664 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 5 ]; do ./a.out RAM 10000000000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(98059.1+98639.7+99670.5+99134.6+99792.6) / 5 = 495296.5 / 5 = 99059.3
+
+Therefore:
+* Average Execution Time(Based on chrono): 99059.3 ms</code></pre><br />
 <hr /><br />
+<p>یکی از نتایج جانبی عملی (Practical Side Results) میتونه این باشه که برای انجام تست پیچیدگی های زمانی، اگه رنجه زمانهای نتیجه کوشولو هستن و هر بار تغییر زیادی میکنن، تعداد تست رو باید ببریم بالا تا به یه تخمین خوبی برسیم و برعکس، اگه رنج زمانهای خروجی خیلی زیاده و تغییر کمی میکنن هر بار، یه تعداد بار کمتری به ما تخمین معقولی رو میده✅</p><br />
 <p>یکسری لینک پرسش و پاسخ مرتبط با این موضوع:</p>
 <ul>
 <li><em><a href="https://superuser.com/questions/1173675/how-much-faster-is-memory-ram-compared-to-ssd-for-random-access">https://superuser.com/questions/1173675/how-much-faster-is-memory-ram-compared-to-ssd-for-random-access</a></em></li>
