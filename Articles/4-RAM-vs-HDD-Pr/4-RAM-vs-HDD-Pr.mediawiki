@@ -4434,6 +4434,47 @@ Therefore:
 
 Therefore:
 * Average Execution Time(Based on chrono): 99059.3 ms</pre>
+<source lang="bash">counter=0; while [ $counter -lt 1 ]; do ./a.out RAM 100000000000; echo ""; counter=$((counter+1)); done</source>
+<pre class="md">144
+Execution Time (Based on chrono): 982447 ms</pre>
+{|
+! Iterations
+! RAM Time Complexity(ms)
+|-
+| 10
+| 0.03713392
+|-
+| 100
+| 0.07674256
+|-
+| 1000
+| 0.10521878
+|-
+| 10000
+| 0.1361817
+|-
+| 100000
+| 1.04639196
+|-
+| 1000000
+| 11.2337458
+|-
+| 10000000
+| 102.98743
+|-
+| 100000000
+| 969.92948
+|-
+| 1000000000
+| 9708.8664
+|-
+| 10000000000
+| 99059.3
+|-
+| 100000000000
+| 982447
+|}
+
 
 -----
 

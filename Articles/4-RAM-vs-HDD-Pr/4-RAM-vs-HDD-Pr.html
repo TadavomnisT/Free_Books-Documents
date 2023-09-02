@@ -4259,7 +4259,64 @@ Therefore:
 <pre><code class="language-md">(98059.1+98639.7+99670.5+99134.6+99792.6) / 5 = 495296.5 / 5 = 99059.3
 
 Therefore:
-* Average Execution Time(Based on chrono): 99059.3 ms</code></pre><br />
+* Average Execution Time(Based on chrono): 99059.3 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 1 ]; do ./a.out RAM 100000000000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">144
+Execution Time (Based on chrono): 982447 ms</code></pre>
+<table>
+<thead>
+<tr>
+<th>Iterations</th>
+<th>RAM Time Complexity(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>0.03713392</td>
+</tr>
+<tr>
+<td>100</td>
+<td>0.07674256</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>0.10521878</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>0.1361817</td>
+</tr>
+<tr>
+<td>100000</td>
+<td>1.04639196</td>
+</tr>
+<tr>
+<td>1000000</td>
+<td>11.2337458</td>
+</tr>
+<tr>
+<td>10000000</td>
+<td>102.98743</td>
+</tr>
+<tr>
+<td>100000000</td>
+<td>969.92948</td>
+</tr>
+<tr>
+<td>1000000000</td>
+<td>9708.8664</td>
+</tr>
+<tr>
+<td>10000000000</td>
+<td>99059.3</td>
+</tr>
+<tr>
+<td>100000000000</td>
+<td>982447</td>
+</tr>
+</tbody>
+</table><br />
 <hr /><br />
 <p>یکی از نتایج جانبی عملی (Practical Side Results) میتونه این باشه که برای انجام تست پیچیدگی های زمانی، اگه رنجه زمانهای نتیجه کوشولو هستن و هر بار تغییر زیادی میکنن، تعداد تست رو باید ببریم بالا تا به یه تخمین خوبی برسیم و برعکس، اگه رنج زمانهای خروجی خیلی زیاده و تغییر کمی میکنن هر بار، یه تعداد بار کمتری به ما تخمین معقولی رو میده✅</p><br />
 <p>یکسری لینک پرسش و پاسخ مرتبط با این موضوع:</p>
