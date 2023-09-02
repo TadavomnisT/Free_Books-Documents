@@ -1,6 +1,6 @@
 <?php
 
-define('NUMBER_OF_TESTS', '10');
+define('NUMBER_OF_TESTS', '5');
 
 
 $string = "
@@ -2735,36 +2735,1952 @@ cpu     32%
 // echo "* Average CPU Usage: " . $sum_cpu/NUMBER_OF_TESTS . " %" . PHP_EOL;
 
 $string = "
-4
-Execution Time (Based on chrono): 0.051927 ms
+
 
 4
-Execution Time (Based on chrono): 0.052258 ms
+Execution Time (Based on chrono): 0.05557 ms
 
 4
-Execution Time (Based on chrono): 0.048521 ms
+Execution Time (Based on chrono): 0.04354 ms
 
 4
-Execution Time (Based on chrono): 0.040079 ms
+Execution Time (Based on chrono): 0.037682 ms
 
 4
-Execution Time (Based on chrono): 0.036967 ms
+Execution Time (Based on chrono): 0.055058 ms
 
 4
-Execution Time (Based on chrono): 0.041009 ms
+Execution Time (Based on chrono): 0.059299 ms
 
 4
-Execution Time (Based on chrono): 0.04798 ms
+Execution Time (Based on chrono): 0.040107 ms
 
 4
-Execution Time (Based on chrono): 0.032547 ms
+Execution Time (Based on chrono): 0.044795 ms
 
 4
-Execution Time (Based on chrono): 0.033 ms
+Execution Time (Based on chrono): 0.033862 ms
 
 4
-Execution Time (Based on chrono): 0.038679 ms
+Execution Time (Based on chrono): 0.03316 ms
+
+4
+Execution Time (Based on chrono): 0.030346 ms
+
+4
+Execution Time (Based on chrono): 0.031631 ms
+
+4
+Execution Time (Based on chrono): 0.039248 ms
+
+4
+Execution Time (Based on chrono): 0.031442 ms
+
+4
+Execution Time (Based on chrono): 0.030144 ms
+
+4
+Execution Time (Based on chrono): 0.031636 ms
+
+4
+Execution Time (Based on chrono): 0.030273 ms
+
+4
+Execution Time (Based on chrono): 0.044436 ms
+
+4
+Execution Time (Based on chrono): 0.035037 ms
+
+4
+Execution Time (Based on chrono): 0.032099 ms
+
+4
+Execution Time (Based on chrono): 0.032844 ms
+
+4
+Execution Time (Based on chrono): 0.029726 ms
+
+4
+Execution Time (Based on chrono): 0.031982 ms
+
+4
+Execution Time (Based on chrono): 0.03101 ms
+
+4
+Execution Time (Based on chrono): 0.034369 ms
+
+4
+Execution Time (Based on chrono): 0.033597 ms
+
+4
+Execution Time (Based on chrono): 0.042123 ms
+
+4
+Execution Time (Based on chrono): 0.03926 ms
+
+4
+Execution Time (Based on chrono): 0.037468 ms
+
+4
+Execution Time (Based on chrono): 0.03927 ms
+
+4
+Execution Time (Based on chrono): 0.042095 ms
+
+4
+Execution Time (Based on chrono): 0.039197 ms
+
+4
+Execution Time (Based on chrono): 0.04276 ms
+
+4
+Execution Time (Based on chrono): 0.043037 ms
+
+4
+Execution Time (Based on chrono): 0.058996 ms
+
+4
+Execution Time (Based on chrono): 0.032882 ms
+
+4
+Execution Time (Based on chrono): 0.034359 ms
+
+4
+Execution Time (Based on chrono): 0.032656 ms
+
+4
+Execution Time (Based on chrono): 0.034285 ms
+
+4
+Execution Time (Based on chrono): 0.031125 ms
+
+4
+Execution Time (Based on chrono): 0.029796 ms
+
+4
+Execution Time (Based on chrono): 0.035702 ms
+
+4
+Execution Time (Based on chrono): 0.030816 ms
+
+4
+Execution Time (Based on chrono): 0.03118 ms
+
+4
+Execution Time (Based on chrono): 0.036636 ms
+
+4
+Execution Time (Based on chrono): 0.029955 ms
+
+4
+Execution Time (Based on chrono): 0.029841 ms
+
+4
+Execution Time (Based on chrono): 0.029912 ms
+
+4
+Execution Time (Based on chrono): 0.047903 ms
+
+4
+Execution Time (Based on chrono): 0.038854 ms
+
+4
+Execution Time (Based on chrono): 0.033695 ms
 ";
+
+$string = "
+
+
+9
+Execution Time (Based on chrono): 0.056729 ms
+
+9
+Execution Time (Based on chrono): 1.59152 ms
+
+9
+Execution Time (Based on chrono): 0.048881 ms
+
+9
+Execution Time (Based on chrono): 0.049231 ms
+
+9
+Execution Time (Based on chrono): 0.04922 ms
+
+9
+Execution Time (Based on chrono): 0.043113 ms
+
+9
+Execution Time (Based on chrono): 0.050367 ms
+
+9
+Execution Time (Based on chrono): 0.044923 ms
+
+9
+Execution Time (Based on chrono): 0.042751 ms
+
+9
+Execution Time (Based on chrono): 0.043592 ms
+
+9
+Execution Time (Based on chrono): 0.041487 ms
+
+9
+Execution Time (Based on chrono): 0.039294 ms
+
+9
+Execution Time (Based on chrono): 0.043805 ms
+
+9
+Execution Time (Based on chrono): 0.047856 ms
+
+9
+Execution Time (Based on chrono): 0.040708 ms
+
+9
+Execution Time (Based on chrono): 0.044756 ms
+
+9
+Execution Time (Based on chrono): 0.041053 ms
+
+9
+Execution Time (Based on chrono): 0.040405 ms
+
+9
+Execution Time (Based on chrono): 0.047841 ms
+
+9
+Execution Time (Based on chrono): 0.049873 ms
+
+9
+Execution Time (Based on chrono): 0.040557 ms
+
+9
+Execution Time (Based on chrono): 0.039935 ms
+
+9
+Execution Time (Based on chrono): 0.040469 ms
+
+9
+Execution Time (Based on chrono): 0.042405 ms
+
+9
+Execution Time (Based on chrono): 0.043633 ms
+
+9
+Execution Time (Based on chrono): 0.042428 ms
+
+9
+Execution Time (Based on chrono): 0.040278 ms
+
+9
+Execution Time (Based on chrono): 0.064401 ms
+
+9
+Execution Time (Based on chrono): 0.042753 ms
+
+9
+Execution Time (Based on chrono): 0.049396 ms
+
+9
+Execution Time (Based on chrono): 0.059291 ms
+
+9
+Execution Time (Based on chrono): 0.050488 ms
+
+9
+Execution Time (Based on chrono): 0.045674 ms
+
+9
+Execution Time (Based on chrono): 0.047207 ms
+
+9
+Execution Time (Based on chrono): 0.043165 ms
+
+9
+Execution Time (Based on chrono): 0.041103 ms
+
+9
+Execution Time (Based on chrono): 0.041197 ms
+
+9
+Execution Time (Based on chrono): 0.037907 ms
+
+9
+Execution Time (Based on chrono): 0.0587 ms
+
+9
+Execution Time (Based on chrono): 0.043548 ms
+
+9
+Execution Time (Based on chrono): 0.04071 ms
+
+9
+Execution Time (Based on chrono): 0.04312 ms
+
+9
+Execution Time (Based on chrono): 0.041312 ms
+
+9
+Execution Time (Based on chrono): 0.040731 ms
+
+9
+Execution Time (Based on chrono): 0.041073 ms
+
+9
+Execution Time (Based on chrono): 0.047526 ms
+
+9
+Execution Time (Based on chrono): 0.066859 ms
+
+9
+Execution Time (Based on chrono): 0.057422 ms
+
+9
+Execution Time (Based on chrono): 0.042882 ms
+
+9
+Execution Time (Based on chrono): 0.043553 ms
+";
+
+$string = "
+
+16
+Execution Time (Based on chrono): 0.068803 ms
+
+16
+Execution Time (Based on chrono): 0.059274 ms
+
+16
+Execution Time (Based on chrono): 3.0206 ms
+
+16
+Execution Time (Based on chrono): 0.053834 ms
+
+16
+Execution Time (Based on chrono): 0.051958 ms
+
+16
+Execution Time (Based on chrono): 0.051055 ms
+
+16
+Execution Time (Based on chrono): 0.057953 ms
+
+16
+Execution Time (Based on chrono): 0.059117 ms
+
+16
+Execution Time (Based on chrono): 0.042785 ms
+
+16
+Execution Time (Based on chrono): 0.048859 ms
+
+16
+Execution Time (Based on chrono): 0.045849 ms
+
+16
+Execution Time (Based on chrono): 0.042131 ms
+
+16
+Execution Time (Based on chrono): 0.05188 ms
+
+16
+Execution Time (Based on chrono): 0.042523 ms
+
+16
+Execution Time (Based on chrono): 0.049469 ms
+
+16
+Execution Time (Based on chrono): 0.038819 ms
+
+16
+Execution Time (Based on chrono): 0.0395 ms
+
+16
+Execution Time (Based on chrono): 0.041249 ms
+
+16
+Execution Time (Based on chrono): 0.040282 ms
+
+16
+Execution Time (Based on chrono): 0.040635 ms
+
+16
+Execution Time (Based on chrono): 0.037002 ms
+
+16
+Execution Time (Based on chrono): 0.044957 ms
+
+16
+Execution Time (Based on chrono): 0.040858 ms
+
+16
+Execution Time (Based on chrono): 0.038883 ms
+
+16
+Execution Time (Based on chrono): 0.04276 ms
+
+16
+Execution Time (Based on chrono): 0.061451 ms
+
+16
+Execution Time (Based on chrono): 0.042524 ms
+
+16
+Execution Time (Based on chrono): 0.040479 ms
+
+16
+Execution Time (Based on chrono): 0.05396 ms
+
+16
+Execution Time (Based on chrono): 0.041289 ms
+
+16
+Execution Time (Based on chrono): 0.039723 ms
+
+16
+Execution Time (Based on chrono): 0.049896 ms
+
+16
+Execution Time (Based on chrono): 0.041293 ms
+
+16
+Execution Time (Based on chrono): 0.039501 ms
+
+16
+Execution Time (Based on chrono): 0.040528 ms
+
+16
+Execution Time (Based on chrono): 0.049634 ms
+
+16
+Execution Time (Based on chrono): 0.053361 ms
+
+16
+Execution Time (Based on chrono): 0.041704 ms
+
+16
+Execution Time (Based on chrono): 0.044657 ms
+
+16
+Execution Time (Based on chrono): 0.041357 ms
+
+16
+Execution Time (Based on chrono): 0.040148 ms
+
+16
+Execution Time (Based on chrono): 0.045694 ms
+
+16
+Execution Time (Based on chrono): 0.058381 ms
+
+16
+Execution Time (Based on chrono): 0.041357 ms
+
+16
+Execution Time (Based on chrono): 0.040849 ms
+
+16
+Execution Time (Based on chrono): 0.036245 ms
+
+16
+Execution Time (Based on chrono): 0.044352 ms
+
+16
+Execution Time (Based on chrono): 0.043624 ms
+
+16
+Execution Time (Based on chrono): 0.040995 ms
+
+16
+Execution Time (Based on chrono): 0.036902 ms
+";
+
+$string = "
+
+
+25
+Execution Time (Based on chrono): 0.185036 ms
+
+25
+Execution Time (Based on chrono): 0.154471 ms
+
+25
+Execution Time (Based on chrono): 0.165113 ms
+
+25
+Execution Time (Based on chrono): 0.157347 ms
+
+25
+Execution Time (Based on chrono): 0.18171 ms
+
+25
+Execution Time (Based on chrono): 0.132968 ms
+
+25
+Execution Time (Based on chrono): 0.115558 ms
+
+25
+Execution Time (Based on chrono): 0.121692 ms
+
+25
+Execution Time (Based on chrono): 0.121769 ms
+
+25
+Execution Time (Based on chrono): 0.113374 ms
+
+25
+Execution Time (Based on chrono): 0.116244 ms
+
+25
+Execution Time (Based on chrono): 0.149405 ms
+
+25
+Execution Time (Based on chrono): 0.150177 ms
+
+25
+Execution Time (Based on chrono): 0.125981 ms
+
+25
+Execution Time (Based on chrono): 0.123877 ms
+
+25
+Execution Time (Based on chrono): 0.128397 ms
+
+25
+Execution Time (Based on chrono): 0.132772 ms
+
+25
+Execution Time (Based on chrono): 0.172368 ms
+
+25
+Execution Time (Based on chrono): 0.127196 ms
+
+25
+Execution Time (Based on chrono): 0.126897 ms
+
+25
+Execution Time (Based on chrono): 0.12715 ms
+
+25
+Execution Time (Based on chrono): 0.115237 ms
+
+25
+Execution Time (Based on chrono): 0.126738 ms
+
+25
+Execution Time (Based on chrono): 0.133597 ms
+
+25
+Execution Time (Based on chrono): 0.123583 ms
+
+25
+Execution Time (Based on chrono): 0.124886 ms
+
+25
+Execution Time (Based on chrono): 0.118664 ms
+
+25
+Execution Time (Based on chrono): 0.125119 ms
+
+25
+Execution Time (Based on chrono): 0.129162 ms
+
+25
+Execution Time (Based on chrono): 0.115475 ms
+
+25
+Execution Time (Based on chrono): 0.15031 ms
+
+25
+Execution Time (Based on chrono): 0.15324 ms
+
+25
+Execution Time (Based on chrono): 0.128633 ms
+
+25
+Execution Time (Based on chrono): 0.158191 ms
+
+25
+Execution Time (Based on chrono): 0.209703 ms
+
+25
+Execution Time (Based on chrono): 0.123722 ms
+
+25
+Execution Time (Based on chrono): 0.128189 ms
+
+25
+Execution Time (Based on chrono): 0.135494 ms
+
+25
+Execution Time (Based on chrono): 0.127625 ms
+
+25
+Execution Time (Based on chrono): 0.167394 ms
+
+25
+Execution Time (Based on chrono): 0.126804 ms
+
+25
+Execution Time (Based on chrono): 0.124159 ms
+
+25
+Execution Time (Based on chrono): 0.154155 ms
+
+25
+Execution Time (Based on chrono): 0.116885 ms
+
+25
+Execution Time (Based on chrono): 0.14578 ms
+
+25
+Execution Time (Based on chrono): 0.119057 ms
+
+25
+Execution Time (Based on chrono): 0.123312 ms
+
+25
+Execution Time (Based on chrono): 0.11629 ms
+
+25
+Execution Time (Based on chrono): 0.143316 ms
+
+25
+Execution Time (Based on chrono): 0.114863 ms
+";
+
+$string = "
+
+
+36
+Execution Time (Based on chrono): 2.8513 ms
+
+36
+Execution Time (Based on chrono): 1.01647 ms
+
+36
+Execution Time (Based on chrono): 0.976667 ms
+
+36
+Execution Time (Based on chrono): 0.970932 ms
+
+36
+Execution Time (Based on chrono): 0.97964 ms
+
+36
+Execution Time (Based on chrono): 0.995396 ms
+
+36
+Execution Time (Based on chrono): 0.982495 ms
+
+36
+Execution Time (Based on chrono): 0.97912 ms
+
+36
+Execution Time (Based on chrono): 0.966483 ms
+
+36
+Execution Time (Based on chrono): 0.970715 ms
+
+36
+Execution Time (Based on chrono): 0.934009 ms
+
+36
+Execution Time (Based on chrono): 0.950327 ms
+
+36
+Execution Time (Based on chrono): 0.974002 ms
+
+36
+Execution Time (Based on chrono): 0.975446 ms
+
+36
+Execution Time (Based on chrono): 0.986908 ms
+
+36
+Execution Time (Based on chrono): 0.980763 ms
+
+36
+Execution Time (Based on chrono): 1.1284 ms
+
+36
+Execution Time (Based on chrono): 0.982268 ms
+
+36
+Execution Time (Based on chrono): 0.983068 ms
+
+36
+Execution Time (Based on chrono): 0.987813 ms
+
+36
+Execution Time (Based on chrono): 0.993953 ms
+
+36
+Execution Time (Based on chrono): 1.02334 ms
+
+36
+Execution Time (Based on chrono): 1.01758 ms
+
+36
+Execution Time (Based on chrono): 1.11104 ms
+
+36
+Execution Time (Based on chrono): 0.987194 ms
+
+36
+Execution Time (Based on chrono): 1.04501 ms
+
+36
+Execution Time (Based on chrono): 0.979295 ms
+
+36
+Execution Time (Based on chrono): 0.995212 ms
+
+36
+Execution Time (Based on chrono): 0.987408 ms
+
+36
+Execution Time (Based on chrono): 1.01927 ms
+
+36
+Execution Time (Based on chrono): 1.01664 ms
+
+36
+Execution Time (Based on chrono): 0.987328 ms
+
+36
+Execution Time (Based on chrono): 0.973787 ms
+
+36
+Execution Time (Based on chrono): 0.975659 ms
+
+36
+Execution Time (Based on chrono): 0.973153 ms
+
+36
+Execution Time (Based on chrono): 0.978747 ms
+
+36
+Execution Time (Based on chrono): 0.952589 ms
+
+36
+Execution Time (Based on chrono): 1.09384 ms
+
+36
+Execution Time (Based on chrono): 1.37752 ms
+
+36
+Execution Time (Based on chrono): 1.01558 ms
+
+36
+Execution Time (Based on chrono): 0.982577 ms
+
+36
+Execution Time (Based on chrono): 1.0207 ms
+
+36
+Execution Time (Based on chrono): 0.974533 ms
+
+36
+Execution Time (Based on chrono): 1.11337 ms
+
+36
+Execution Time (Based on chrono): 0.985381 ms
+
+36
+Execution Time (Based on chrono): 1.01944 ms
+
+36
+Execution Time (Based on chrono): 1.04177 ms
+
+36
+Execution Time (Based on chrono): 1.0397 ms
+
+36
+Execution Time (Based on chrono): 1.02442 ms
+
+36
+Execution Time (Based on chrono): 1.04134 ms
+";
+
+$string = "
+
+
+49
+Execution Time (Based on chrono): 11.7602 ms
+
+49
+Execution Time (Based on chrono): 11.6177 ms
+
+49
+Execution Time (Based on chrono): 11.6259 ms
+
+49
+Execution Time (Based on chrono): 9.55161 ms
+
+49
+Execution Time (Based on chrono): 9.84909 ms
+
+49
+Execution Time (Based on chrono): 9.6777 ms
+
+49
+Execution Time (Based on chrono): 9.83686 ms
+
+49
+Execution Time (Based on chrono): 9.87394 ms
+
+49
+Execution Time (Based on chrono): 10.1924 ms
+
+49
+Execution Time (Based on chrono): 9.75504 ms
+
+49
+Execution Time (Based on chrono): 9.56854 ms
+
+49
+Execution Time (Based on chrono): 9.53915 ms
+
+49
+Execution Time (Based on chrono): 10.2645 ms
+
+49
+Execution Time (Based on chrono): 9.75044 ms
+
+49
+Execution Time (Based on chrono): 9.52632 ms
+
+49
+Execution Time (Based on chrono): 9.57528 ms
+
+49
+Execution Time (Based on chrono): 10.5565 ms
+
+49
+Execution Time (Based on chrono): 9.7492 ms
+
+49
+Execution Time (Based on chrono): 9.98362 ms
+
+49
+Execution Time (Based on chrono): 13.526 ms
+
+49
+Execution Time (Based on chrono): 11.1387 ms
+
+49
+Execution Time (Based on chrono): 11.8642 ms
+
+49
+Execution Time (Based on chrono): 11.5241 ms
+
+49
+Execution Time (Based on chrono): 12.129 ms
+
+49
+Execution Time (Based on chrono): 13.6267 ms
+
+49
+Execution Time (Based on chrono): 11.4817 ms
+
+49
+Execution Time (Based on chrono): 10.573 ms
+
+49
+Execution Time (Based on chrono): 11.2104 ms
+
+49
+Execution Time (Based on chrono): 11.0466 ms
+
+49
+Execution Time (Based on chrono): 11.0755 ms
+
+49
+Execution Time (Based on chrono): 10.6779 ms
+
+49
+Execution Time (Based on chrono): 12.0456 ms
+
+49
+Execution Time (Based on chrono): 10.9347 ms
+
+49
+Execution Time (Based on chrono): 11.2068 ms
+
+49
+Execution Time (Based on chrono): 11.2398 ms
+
+49
+Execution Time (Based on chrono): 11.4614 ms
+
+49
+Execution Time (Based on chrono): 11.3066 ms
+
+49
+Execution Time (Based on chrono): 10.9896 ms
+
+49
+Execution Time (Based on chrono): 11.3568 ms
+
+49
+Execution Time (Based on chrono): 10.9231 ms
+
+49
+Execution Time (Based on chrono): 10.6759 ms
+
+49
+Execution Time (Based on chrono): 16.8868 ms
+
+49
+Execution Time (Based on chrono): 14.999 ms
+
+49
+Execution Time (Based on chrono): 16.2878 ms
+
+49
+Execution Time (Based on chrono): 12.3337 ms
+
+49
+Execution Time (Based on chrono): 12.8563 ms
+
+49
+Execution Time (Based on chrono): 12.1443 ms
+
+49
+Execution Time (Based on chrono): 10.4334 ms
+
+49
+Execution Time (Based on chrono): 10.7875 ms
+
+49
+Execution Time (Based on chrono): 10.6904 ms
+";
+
+$string = "
+
+
+64
+Execution Time (Based on chrono): 122.437 ms
+
+64
+Execution Time (Based on chrono): 111.11 ms
+
+64
+Execution Time (Based on chrono): 116.911 ms
+
+64
+Execution Time (Based on chrono): 111.118 ms
+
+64
+Execution Time (Based on chrono): 114.321 ms
+
+64
+Execution Time (Based on chrono): 112.377 ms
+
+64
+Execution Time (Based on chrono): 117.222 ms
+
+64
+Execution Time (Based on chrono): 110.622 ms
+
+64
+Execution Time (Based on chrono): 110.967 ms
+
+64
+Execution Time (Based on chrono): 107.209 ms
+
+64
+Execution Time (Based on chrono): 119.983 ms
+
+64
+Execution Time (Based on chrono): 117.109 ms
+
+64
+Execution Time (Based on chrono): 113.132 ms
+
+64
+Execution Time (Based on chrono): 112.927 ms
+
+64
+Execution Time (Based on chrono): 117.166 ms
+
+64
+Execution Time (Based on chrono): 112.409 ms
+
+64
+Execution Time (Based on chrono): 110.612 ms
+
+64
+Execution Time (Based on chrono): 121.124 ms
+
+64
+Execution Time (Based on chrono): 115.648 ms
+
+64
+Execution Time (Based on chrono): 99.2176 ms
+
+64
+Execution Time (Based on chrono): 100.546 ms
+
+64
+Execution Time (Based on chrono): 96.6624 ms
+
+64
+Execution Time (Based on chrono): 97.9584 ms
+
+64
+Execution Time (Based on chrono): 95.4014 ms
+
+64
+Execution Time (Based on chrono): 98.3823 ms
+
+64
+Execution Time (Based on chrono): 98.5019 ms
+
+64
+Execution Time (Based on chrono): 98.32 ms
+
+64
+Execution Time (Based on chrono): 98.3984 ms
+
+64
+Execution Time (Based on chrono): 95.9734 ms
+
+64
+Execution Time (Based on chrono): 96.6039 ms
+
+64
+Execution Time (Based on chrono): 97.2092 ms
+
+64
+Execution Time (Based on chrono): 98.2006 ms
+
+64
+Execution Time (Based on chrono): 96.5731 ms
+
+64
+Execution Time (Based on chrono): 92.4531 ms
+
+64
+Execution Time (Based on chrono): 93.6754 ms
+
+64
+Execution Time (Based on chrono): 96.8256 ms
+
+64
+Execution Time (Based on chrono): 97.0719 ms
+
+64
+Execution Time (Based on chrono): 92.4971 ms
+
+64
+Execution Time (Based on chrono): 93.3109 ms
+
+64
+Execution Time (Based on chrono): 93.8384 ms
+
+64
+Execution Time (Based on chrono): 92.9399 ms
+
+64
+Execution Time (Based on chrono): 99.6457 ms
+
+64
+Execution Time (Based on chrono): 96.2368 ms
+
+64
+Execution Time (Based on chrono): 90.9912 ms
+
+64
+Execution Time (Based on chrono): 90.5309 ms
+
+64
+Execution Time (Based on chrono): 94.4321 ms
+
+64
+Execution Time (Based on chrono): 97.6597 ms
+
+64
+Execution Time (Based on chrono): 93.3925 ms
+
+64
+Execution Time (Based on chrono): 94.4273 ms
+
+64
+Execution Time (Based on chrono): 97.0904 ms
+
+
+";
+
+$string = "
+
+
+81
+Execution Time (Based on chrono): 1153.99 ms
+
+81
+Execution Time (Based on chrono): 1090 ms
+
+81
+Execution Time (Based on chrono): 927.97 ms
+
+81
+Execution Time (Based on chrono): 950.748 ms
+
+81
+Execution Time (Based on chrono): 952.153 ms
+
+81
+Execution Time (Based on chrono): 934.874 ms
+
+81
+Execution Time (Based on chrono): 951.585 ms
+
+81
+Execution Time (Based on chrono): 934.285 ms
+
+81
+Execution Time (Based on chrono): 931.199 ms
+
+81
+Execution Time (Based on chrono): 935.237 ms
+
+81
+Execution Time (Based on chrono): 951.123 ms
+
+81
+Execution Time (Based on chrono): 946.343 ms
+
+81
+Execution Time (Based on chrono): 1044.16 ms
+
+81
+Execution Time (Based on chrono): 1104.66 ms
+
+81
+Execution Time (Based on chrono): 1060.29 ms
+
+81
+Execution Time (Based on chrono): 933.39 ms
+
+81
+Execution Time (Based on chrono): 932.839 ms
+
+81
+Execution Time (Based on chrono): 943.719 ms
+
+81
+Execution Time (Based on chrono): 944.238 ms
+
+81
+Execution Time (Based on chrono): 936.994 ms
+
+81
+Execution Time (Based on chrono): 952.082 ms
+
+81
+Execution Time (Based on chrono): 938.932 ms
+
+81
+Execution Time (Based on chrono): 921.093 ms
+
+81
+Execution Time (Based on chrono): 929.203 ms
+
+81
+Execution Time (Based on chrono): 930.171 ms
+
+81
+Execution Time (Based on chrono): 1018.32 ms
+
+81
+Execution Time (Based on chrono): 1079.7 ms
+
+81
+Execution Time (Based on chrono): 1059.41 ms
+
+81
+Execution Time (Based on chrono): 936.524 ms
+
+81
+Execution Time (Based on chrono): 948.65 ms
+
+81
+Execution Time (Based on chrono): 950.927 ms
+
+81
+Execution Time (Based on chrono): 956.4 ms
+
+81
+Execution Time (Based on chrono): 955.033 ms
+
+81
+Execution Time (Based on chrono): 944.512 ms
+
+81
+Execution Time (Based on chrono): 943.176 ms
+
+81
+Execution Time (Based on chrono): 933.907 ms
+
+81
+Execution Time (Based on chrono): 939.347 ms
+
+81
+Execution Time (Based on chrono): 950.281 ms
+
+81
+Execution Time (Based on chrono): 1052.11 ms
+
+81
+Execution Time (Based on chrono): 1087.17 ms
+
+81
+Execution Time (Based on chrono): 1069.19 ms
+
+81
+Execution Time (Based on chrono): 952.72 ms
+
+81
+Execution Time (Based on chrono): 921.658 ms
+
+81
+Execution Time (Based on chrono): 921.936 ms
+
+81
+Execution Time (Based on chrono): 932.571 ms
+
+81
+Execution Time (Based on chrono): 954.542 ms
+
+81
+Execution Time (Based on chrono): 931.82 ms
+
+81
+Execution Time (Based on chrono): 944.327 ms
+
+81
+Execution Time (Based on chrono): 943.054 ms
+
+81
+Execution Time (Based on chrono): 937.911 ms
+
+
+";
+
+$string = "
+100
+Execution Time (Based on chrono): 9929.45 ms
+
+100
+Execution Time (Based on chrono): 9894.97 ms
+
+100
+Execution Time (Based on chrono): 9401.29 ms
+
+100
+Execution Time (Based on chrono): 9779.2 ms
+
+100
+Execution Time (Based on chrono): 9740.14 ms
+
+100
+Execution Time (Based on chrono): 9711.45 ms
+
+100
+Execution Time (Based on chrono): 9411.57 ms
+
+100
+Execution Time (Based on chrono): 9575.79 ms
+
+100
+Execution Time (Based on chrono): 9740.8 ms
+
+100
+Execution Time (Based on chrono): 9762.82 ms
+
+100
+Execution Time (Based on chrono): 10157.3 ms
+
+100
+Execution Time (Based on chrono): 9470.99 ms
+
+100
+Execution Time (Based on chrono): 9807.61 ms
+
+100
+Execution Time (Based on chrono): 9827.57 ms
+
+100
+Execution Time (Based on chrono): 9903.24 ms
+
+100
+Execution Time (Based on chrono): 9546.48 ms
+
+100
+Execution Time (Based on chrono): 9817.56 ms
+
+100
+Execution Time (Based on chrono): 9914.88 ms
+
+100
+Execution Time (Based on chrono): 9835.63 ms
+
+100
+Execution Time (Based on chrono): 9757.12 ms
+
+100
+Execution Time (Based on chrono): 9494.87 ms
+
+100
+Execution Time (Based on chrono): 9768.5 ms
+
+100
+Execution Time (Based on chrono): 9804.84 ms
+
+100
+Execution Time (Based on chrono): 9879.44 ms
+
+100
+Execution Time (Based on chrono): 9978.79 ms
+
+100
+Execution Time (Based on chrono): 10010.1 ms
+
+100
+Execution Time (Based on chrono): 9716.13 ms
+
+100
+Execution Time (Based on chrono): 9654.43 ms
+
+100
+Execution Time (Based on chrono): 9452.93 ms
+
+100
+Execution Time (Based on chrono): 9741.28 ms
+
+100
+Execution Time (Based on chrono): 9716.39 ms
+
+100
+Execution Time (Based on chrono): 9671.29 ms
+
+100
+Execution Time (Based on chrono): 9534.45 ms
+
+100
+Execution Time (Based on chrono): 9422.55 ms
+
+100
+Execution Time (Based on chrono): 9740.14 ms
+
+100
+Execution Time (Based on chrono): 9631.31 ms
+
+100
+Execution Time (Based on chrono): 9571.77 ms
+
+100
+Execution Time (Based on chrono): 9396.79 ms
+
+100
+Execution Time (Based on chrono): 9789.33 ms
+
+100
+Execution Time (Based on chrono): 10178.4 ms
+
+100
+Execution Time (Based on chrono): 9683.12 ms
+
+100
+Execution Time (Based on chrono): 9338.5 ms
+
+100
+Execution Time (Based on chrono): 9541.9 ms
+
+100
+Execution Time (Based on chrono): 9655.58 ms
+
+100
+Execution Time (Based on chrono): 9713.08 ms
+
+100
+Execution Time (Based on chrono): 9510.57 ms
+
+100
+Execution Time (Based on chrono): 9530.52 ms
+
+100
+Execution Time (Based on chrono): 9780.9 ms
+
+100
+Execution Time (Based on chrono): 9780.28 ms
+
+100
+Execution Time (Based on chrono): 9769.28 ms
+";
+
+$string = "
+121
+Execution Time (Based on chrono): 98059.1 ms
+
+121
+Execution Time (Based on chrono): 98639.7 ms
+
+121
+Execution Time (Based on chrono): 99670.5 ms
+
+121
+Execution Time (Based on chrono): 99134.6 ms
+
+121
+Execution Time (Based on chrono): 99792.6 ms
+";
+
+$string = "
+
+
+4
+Execution Time (Based on chrono): 3.84055 ms
+
+4
+Execution Time (Based on chrono): 1.47793 ms
+
+4
+Execution Time (Based on chrono): 1.36111 ms
+
+4
+Execution Time (Based on chrono): 1.18943 ms
+
+4
+Execution Time (Based on chrono): 1.25027 ms
+
+4
+Execution Time (Based on chrono): 1.06003 ms
+
+4
+Execution Time (Based on chrono): 1.15582 ms
+
+4
+Execution Time (Based on chrono): 1.31169 ms
+
+4
+Execution Time (Based on chrono): 0.988887 ms
+
+4
+Execution Time (Based on chrono): 1.08511 ms
+
+4
+Execution Time (Based on chrono): 0.996868 ms
+
+4
+Execution Time (Based on chrono): 1.02288 ms
+
+4
+Execution Time (Based on chrono): 1.15027 ms
+
+4
+Execution Time (Based on chrono): 0.970606 ms
+
+4
+Execution Time (Based on chrono): 1.30461 ms
+
+4
+Execution Time (Based on chrono): 1.24018 ms
+
+4
+Execution Time (Based on chrono): 1.30114 ms
+
+4
+Execution Time (Based on chrono): 1.01147 ms
+
+4
+Execution Time (Based on chrono): 1.1003 ms
+
+4
+Execution Time (Based on chrono): 1.16134 ms
+
+4
+Execution Time (Based on chrono): 1.05386 ms
+
+4
+Execution Time (Based on chrono): 1.00953 ms
+
+4
+Execution Time (Based on chrono): 1.08559 ms
+
+4
+Execution Time (Based on chrono): 1.09392 ms
+
+4
+Execution Time (Based on chrono): 1.02795 ms
+
+4
+Execution Time (Based on chrono): 1.04478 ms
+
+4
+Execution Time (Based on chrono): 1.11548 ms
+
+4
+Execution Time (Based on chrono): 1.02791 ms
+
+4
+Execution Time (Based on chrono): 1.13904 ms
+
+4
+Execution Time (Based on chrono): 1.43361 ms
+
+4
+Execution Time (Based on chrono): 1.41642 ms
+
+4
+Execution Time (Based on chrono): 1.34454 ms
+
+4
+Execution Time (Based on chrono): 1.04273 ms
+
+4
+Execution Time (Based on chrono): 1.10764 ms
+
+4
+Execution Time (Based on chrono): 3.06246 ms
+
+4
+Execution Time (Based on chrono): 1.34444 ms
+
+4
+Execution Time (Based on chrono): 1.09299 ms
+
+4
+Execution Time (Based on chrono): 1.02791 ms
+
+4
+Execution Time (Based on chrono): 0.98998 ms
+
+4
+Execution Time (Based on chrono): 1.40493 ms
+
+4
+Execution Time (Based on chrono): 1.2629 ms
+
+4
+Execution Time (Based on chrono): 1.37666 ms
+
+4
+Execution Time (Based on chrono): 1.1086 ms
+
+4
+Execution Time (Based on chrono): 1.0706 ms
+
+4
+Execution Time (Based on chrono): 1.67073 ms
+
+4
+Execution Time (Based on chrono): 1.05198 ms
+
+4
+Execution Time (Based on chrono): 1.37261 ms
+
+4
+Execution Time (Based on chrono): 1.31193 ms
+
+4
+Execution Time (Based on chrono): 1.34244 ms
+
+4
+Execution Time (Based on chrono): 1.18202 ms
+
+
+";
+
+
+$string = "
+9
+Execution Time (Based on chrono): 10.1258 ms
+
+9
+Execution Time (Based on chrono): 8.54431 ms
+
+9
+Execution Time (Based on chrono): 8.57312 ms
+
+9
+Execution Time (Based on chrono): 9.30554 ms
+
+9
+Execution Time (Based on chrono): 7.19626 ms
+
+9
+Execution Time (Based on chrono): 8.57967 ms
+
+9
+Execution Time (Based on chrono): 7.81807 ms
+
+9
+Execution Time (Based on chrono): 6.76671 ms
+
+9
+Execution Time (Based on chrono): 8.19687 ms
+
+9
+Execution Time (Based on chrono): 11.3563 ms
+
+9
+Execution Time (Based on chrono): 8.76072 ms
+
+9
+Execution Time (Based on chrono): 8.89945 ms
+
+9
+Execution Time (Based on chrono): 7.93218 ms
+
+9
+Execution Time (Based on chrono): 7.15151 ms
+
+9
+Execution Time (Based on chrono): 9.06521 ms
+
+9
+Execution Time (Based on chrono): 8.95591 ms
+
+9
+Execution Time (Based on chrono): 9.04594 ms
+
+9
+Execution Time (Based on chrono): 8.77245 ms
+
+9
+Execution Time (Based on chrono): 9.37136 ms
+
+9
+Execution Time (Based on chrono): 7.49228 ms
+
+9
+Execution Time (Based on chrono): 8.1699 ms
+
+9
+Execution Time (Based on chrono): 7.5217 ms
+
+9
+Execution Time (Based on chrono): 8.37757 ms
+
+9
+Execution Time (Based on chrono): 8.27919 ms
+
+9
+Execution Time (Based on chrono): 9.53812 ms
+
+9
+Execution Time (Based on chrono): 9.14541 ms
+
+9
+Execution Time (Based on chrono): 8.06788 ms
+
+9
+Execution Time (Based on chrono): 7.49188 ms
+
+9
+Execution Time (Based on chrono): 8.24989 ms
+
+9
+Execution Time (Based on chrono): 10.9161 ms
+
+9
+Execution Time (Based on chrono): 8.53771 ms
+
+9
+Execution Time (Based on chrono): 8.61268 ms
+
+9
+Execution Time (Based on chrono): 6.91477 ms
+
+9
+Execution Time (Based on chrono): 8.33953 ms
+
+9
+Execution Time (Based on chrono): 8.44163 ms
+
+9
+Execution Time (Based on chrono): 6.35417 ms
+
+9
+Execution Time (Based on chrono): 6.49716 ms
+
+9
+Execution Time (Based on chrono): 8.86702 ms
+
+9
+Execution Time (Based on chrono): 8.77506 ms
+
+9
+Execution Time (Based on chrono): 9.01159 ms
+
+9
+Execution Time (Based on chrono): 8.56295 ms
+
+9
+Execution Time (Based on chrono): 6.69499 ms
+
+9
+Execution Time (Based on chrono): 8.88008 ms
+
+9
+Execution Time (Based on chrono): 8.89771 ms
+
+9
+Execution Time (Based on chrono): 9.1845 ms
+
+9
+Execution Time (Based on chrono): 8.44426 ms
+
+9
+Execution Time (Based on chrono): 9.3007 ms
+
+9
+Execution Time (Based on chrono): 9.81496 ms
+
+9
+Execution Time (Based on chrono): 8.01047 ms
+
+9
+Execution Time (Based on chrono): 8.43163 ms
+
+
+";
+
+$string = "
+16
+Execution Time (Based on chrono): 83.7239 ms
+
+16
+Execution Time (Based on chrono): 89.2962 ms
+
+16
+Execution Time (Based on chrono): 87.393 ms
+
+16
+Execution Time (Based on chrono): 86.0499 ms
+
+16
+Execution Time (Based on chrono): 82.4329 ms
+
+16
+Execution Time (Based on chrono): 92.4111 ms
+
+16
+Execution Time (Based on chrono): 83.0183 ms
+
+16
+Execution Time (Based on chrono): 93.2184 ms
+
+16
+Execution Time (Based on chrono): 98.6888 ms
+
+16
+Execution Time (Based on chrono): 88.1423 ms
+
+16
+Execution Time (Based on chrono): 93.149 ms
+
+16
+Execution Time (Based on chrono): 104.383 ms
+
+16
+Execution Time (Based on chrono): 94.8324 ms
+
+16
+Execution Time (Based on chrono): 95.2283 ms
+
+16
+Execution Time (Based on chrono): 104.694 ms
+
+16
+Execution Time (Based on chrono): 98.6493 ms
+
+16
+Execution Time (Based on chrono): 92.5682 ms
+
+16
+Execution Time (Based on chrono): 91.8928 ms
+
+16
+Execution Time (Based on chrono): 101.478 ms
+
+16
+Execution Time (Based on chrono): 95.2763 ms
+
+16
+Execution Time (Based on chrono): 96.7348 ms
+
+16
+Execution Time (Based on chrono): 96.7451 ms
+
+16
+Execution Time (Based on chrono): 95.3717 ms
+
+16
+Execution Time (Based on chrono): 96.2584 ms
+
+16
+Execution Time (Based on chrono): 95.0568 ms
+
+16
+Execution Time (Based on chrono): 104.564 ms
+
+16
+Execution Time (Based on chrono): 94.3572 ms
+
+16
+Execution Time (Based on chrono): 92.9837 ms
+
+16
+Execution Time (Based on chrono): 94.5809 ms
+
+16
+Execution Time (Based on chrono): 96.7802 ms
+
+16
+Execution Time (Based on chrono): 95.193 ms
+
+16
+Execution Time (Based on chrono): 94.719 ms
+
+16
+Execution Time (Based on chrono): 94.5504 ms
+
+16
+Execution Time (Based on chrono): 98.0115 ms
+
+16
+Execution Time (Based on chrono): 104.346 ms
+
+16
+Execution Time (Based on chrono): 90.0224 ms
+
+16
+Execution Time (Based on chrono): 89.8571 ms
+
+16
+Execution Time (Based on chrono): 84.6048 ms
+
+16
+Execution Time (Based on chrono): 90.1275 ms
+
+16
+Execution Time (Based on chrono): 89.0622 ms
+
+16
+Execution Time (Based on chrono): 92.2847 ms
+
+16
+Execution Time (Based on chrono): 91.2552 ms
+
+16
+Execution Time (Based on chrono): 89.7745 ms
+
+16
+Execution Time (Based on chrono): 91.942 ms
+
+16
+Execution Time (Based on chrono): 90.7563 ms
+
+16
+Execution Time (Based on chrono): 89.0043 ms
+
+16
+Execution Time (Based on chrono): 94.7468 ms
+
+16
+Execution Time (Based on chrono): 89.3705 ms
+
+16
+Execution Time (Based on chrono): 85.9757 ms
+
+16
+Execution Time (Based on chrono): 95.2816 ms
+
+
+";
+
+$string = "
+
+
+25
+Execution Time (Based on chrono): 878.908 ms
+
+25
+Execution Time (Based on chrono): 868.796 ms
+
+25
+Execution Time (Based on chrono): 868.818 ms
+
+25
+Execution Time (Based on chrono): 868.208 ms
+
+25
+Execution Time (Based on chrono): 921.707 ms
+
+25
+Execution Time (Based on chrono): 945.511 ms
+
+25
+Execution Time (Based on chrono): 940.521 ms
+
+25
+Execution Time (Based on chrono): 901.627 ms
+
+25
+Execution Time (Based on chrono): 872.928 ms
+
+25
+Execution Time (Based on chrono): 876.26 ms
+
+
+";
+
+$string = "
+
+
+36
+Execution Time (Based on chrono): 8944.41 ms
+
+36
+Execution Time (Based on chrono): 9181.89 ms
+
+36
+Execution Time (Based on chrono): 9291.08 ms
+
+36
+Execution Time (Based on chrono): 9176.2 ms
+
+36
+Execution Time (Based on chrono): 9019.04 ms
+
+
+";
+
+$string = "
+
+
+49
+Execution Time (Based on chrono): 93730 ms
+
+49
+Execution Time (Based on chrono): 92787 ms
+
+49
+Execution Time (Based on chrono): 91645.4 ms
+
+49
+Execution Time (Based on chrono): 92535.1 ms
+
+49
+Execution Time (Based on chrono): 94361.4 ms
+
+
+";
+
 
 $chronos    = [];
 foreach (explode( PHP_EOL, trim( $string ) ) as $line) {

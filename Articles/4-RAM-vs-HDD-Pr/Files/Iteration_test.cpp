@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sys/resource.h>
 #include <chrono>
 #include <fstream>
 #include <cstring>
@@ -33,14 +32,8 @@ unsigned long long get_unsigned_long_long_variable(string name)
 int main(int argc, char** argv)  {
 
     // Start execution time
-    clock_t start_1 = clock();
-    auto start_2 = chrono::high_resolution_clock::now();
+    auto start = chrono::high_resolution_clock::now();
 
-    // Start memory usage
-    struct rusage usage;
-    getrusage(RUSAGE_SELF, &usage);
-    long memory_usage_start = usage.ru_maxrss; // in kilobytes
-    
     // Code ----------------------------------------------------------
 
     if( strcmp(argv[1], "RAM") == 0 )
@@ -68,21 +61,13 @@ int main(int argc, char** argv)  {
     else cout << "ERROR: Wronge input argument." << endl;
 
     // ---------------------------------------------------------------
-    
-    // Stop measuring memory usage
-    getrusage(RUSAGE_SELF, &usage);
-    long memory_usage_end = usage.ru_maxrss; // in kilobytes
 
     // Stop measuring execution time
-    clock_t end_1 = clock();
-    auto end_2 = chrono::high_resolution_clock::now();
-    double execution_time_1 = double(end_1 - start_1) / CLOCKS_PER_SEC;
-    chrono::duration<double, milli> execution_time_2 = end_2 - start_2;
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double, milli> execution_time = end - start;
 
     // Printing result
-    cout << "Execution Time (Based on ctime): " << execution_time_1 * 1000.0 << " ms" << endl;
-    cout << "Execution Time (Based on chrono): " << execution_time_2.count() << " ms" << endl;
-    cout << "Memory Usage: " << memory_usage_end - memory_usage_start << " KB" << endl;
+    cout << "Execution Time (Based on chrono): " << execution_time.count() << " ms" << endl;
 
     return 0;
 }
