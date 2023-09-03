@@ -19,13 +19,13 @@
 <p>بریم سراغ داستان اصلی.</p><br />
 <h2>رم چیست؟</h2><br />
 <p>رم – RAM – مخفف Random Access Memory هست یعنی حافظه ای با دسترسی تصادفی، خود این اسم تمام ساختاری که لازم هست راجع به رم بدونیم رو توضیح میده. فرض کنید یه تیکه حافظه گنده دارید که سرعتش نسبتا بالاست (نسبت به تکنولوژیهایی مثل دیسک و ای2پیرام) و شمای انتزاعیش همچین چیزیه:</p><br />
-<p><img src="Files/1.png" alt="Abstract RAM schema" /></p><br />
+<p><img src="Files/Abstract_RAM_schema.png" alt="Abstract RAM schema" /></p><br />
 <p><em>مدل انتزاعی یک رم</em></p><br />
 <p>هر خونه‌ش رو یک بایت فرض کنید، n تا بایت پشت سر هم که میتونید با سرعت نسبتاً بالا توش اطلاعات رو ذخیره کنید. این سرعت بالا به سیستم عامل این امکان رو میده که جایی داشته باشه که با سرعتی معقول اطلاعات محاسبات فعلیش رو ذخیره سازی کنه.</p><br />
 <p>اما چرا سرعتش بالاست؟</p><br />
 <p>از لحاظ پیاده‌سازی سخت افزاری، این حافظه روی یه آرایه دو بعدی مدل شده،‌ مثل یه ماتریس. ساختار «Random Access» این امکان رو ایجاد میکنه که ما به تمام خونه های مختلف حافظه در یک زمان یکسان دسترسی داشته باشیم، اما چطور؟<br />
 بیاین ساختار بلوک منطقی رم رو نگاه کنیم:</p><br />
-<p><img src="Files/2.png" alt="RAM Logical structure" /></p><br />
+<p><img src="Files/RAM_Logical_structure.png" alt="RAM Logical structure" /></p><br />
 <p><em>یک رم 8 بیتی - منبع عکس <a href="https://faculty.etsu.edu/tarnoff/ntes2150/memory/memory.htm">ETSU</a></em></p><br />
 <p>امروزه رم ها از خونه‌های کوشولویی که توی یه آرایه دو بعدی هستن تشکیل شدن. هر رم یک واحد Address-Decoder داره که آدرسی انکد شده در مبنای 2 (باینری) رو دریافت میکنه و اون رو دیکد میکنه که ببینه کدوم سلول حافظه باید انتخاب بشه (برای خوندن/نوشتن).<br />
 توی همین عکس یه واحد منطقی Read/Write داریم که کارش اینه که خبر بده آیا باید چیزی نوشته بشه یا باید چیزی خونده بشه.<br />
@@ -36,7 +36,7 @@
 و این عدد آدرس باینری 1111101000 رو میفرستید به آدرس-دیکودر. آدرس-دیکودر با گیتهای منطقی درونی که داره، با گرفتن  1111101000 به عنوان ورودی، سطر هزارم رم رو انتخاب (select) میکنه و خوندن/نوشتن اتفاق می‌افته.<br />
 دقیقاً فرقش با یه تکنلوژی مثل دیسک همینه...، توی دیسک باید یکسری خونه پیمایش بشن تا برسیم به خونه مد نظر، اما اینجا یه مدار منطقی داریم که آدرس-دیکودر مدار خاصیش رو روشن میکنه. صرفاً اون مدار انتخاب میشه و نه تنها حرکت فیزیکی نداریم (در مقایسه با دیسک) بلکه پیمایش خونه به خونه هم نداریم (در مقایسه با دیگر تکنولوژیها) <br />
 یک آدرس-دیکودر 3 بیتی توی شکل زیر نشون داده شده، حتماً در جریانید که با 3 بیت میشه 2 به توان 3 یعنی 8 حالت مختلف داشته باشیم. پس یه آدرس دیکودر 3 بیتی میتونه 8 خونه از رم رو آدرسدهی کنه و همرو با یک سرعت یکسان انتخاب کنه.</p><br />
-<p><img src="Files/3.png" alt="3-bit Address-Decoder" /></p><br />
+<p><img src="Files/3bit_Address_Decoder.png" alt="3-bit Address-Decoder" /></p><br />
 <p><em>یک آدرس دیکودر 3بیتی با 8 پایانه- منبع عکس <a href="https://codestall.wordpress.com/2017/09/02/532-decoder-design-using-4-38-decoders-and-1-24-decoder-in-verilog/">Codestall</a></em></p><br />
 <p>یک آدرس-دیکودر 10 بیتی هم عین همین ساخته میشه، و میتونه 1024 تا سطر مختلف رو انتخاب کنه، فقط شکلش توی این مقاله جا نمیشه:))</p><br />
 <p>پس این شد معنی ساختار «دسترسی تصادفی» یا «Random Access»، یعنی زمانی که ما یک طراحی سخت‌افزاری داریم که اوردر زمانی دسترسی به هر سلول حافظه ما با بقیه سلولها برابره، این اتفاق با پیاده‌سازی یه گیت منطقی ممکن میشه که بهش میگیم آدرس-دیکودر و توضیحش دادیم.</p><br />
@@ -70,19 +70,19 @@
 پس دیسک به طور کلی توی این حوزه،‌ معمولا لوح گردی هست که حول یه محوی میچرخه و اطلاعات توی شعاع های مختلف اون نوشته میشه.</p><br />
 <p>یه هارددیسک، شامل دیسکهای گرد مغناطیسی هست که اطلاعات توش با مغناطیسه شدن هر ذره کوشولو از دیسک، بصورت باینری نوشته میشه. هارددیسک معمولا از چند تا لایه (پلاتر-platter) تشکیل شده، تعداد این پلاتر ها معمولا بین 1 تا 5 تا هست.<br />
 اگه بصورت یه برش عرضی ببینیم این شکلی میشه:</p><br />
-<p><img src="Files/4.jpg" alt="HDD Platters" /></p><br />
+<p><img src="Files/HDD_Platters.jpg" alt="HDD Platters" /></p><br />
 <p><em>منبع عکس <a href="https://www.compuclever.com/posts/hard-disk-drive-basics/ic306536/">compuclever</a></em></p><br />
 <p>همون برش عرضی بصورت انتزاعی:</p><br />
-<p><img src="Files/5.jpg" alt="HDD Abstract Platters" /></p><br />
+<p><img src="Files/HDD_Abstract_Platters.jpg" alt="HDD Abstract Platters" /></p><br />
 <p><em>منبع عکس: کتاب Database System Concepts, 6th Edition</em></p><br />
 <p>حالا این پلاتر ها، یه سطح مغناطیسی هستن که میتونن با مغناطیسه شدن، 0 و 1 هارو توی خودشون ذخیره کنن.<br />
 این پلاتر، به شکل منطقی (logical) به یسری شعاع های متفاوت تقسیم میشه، که این شعاعها شامل دایره‌های گردی هستن که دیسک رو میسازن، به هر کدوم از این شعاع ها میگن یه ترک- Track<br />
 توی عکس زیر چندین ترک انتزاعی رو میبینید:</p><br />
-<p><img src="Files/6.jpg" alt="HDD Tracks" /></p><br />
+<p><img src="Files/HDD_Tracks.jpg" alt="HDD Tracks" /></p><br />
 <p><em>منبع عکس <a href="https://www.schoolcoders.com/memory-storage/secondary-storage/hdd/">schoolcoders</a></em></p><br />
 <p>خود این ترک به قسمتهای کوچکتری تقسیم میشه، که بهش میگن سکتور- sector<br />
 توی عکس زیر قسمت سکتور رو مشاهده میکنید:</p><br />
-<p><img src="Files/7.jpg" alt="HDD Sectors" /></p><br />
+<p><img src="Files/HDD_Sectors.jpg" alt="HDD Sectors" /></p><br />
 <p><em>منبع عکس <a href="https://slideplayer.com/slide/1517076/">slideplayer</a></em></p><br />
 <p>یه سکتور کوچکترین واحدی توی دیسک هست که نوشته/خونده میشه، معمولا سایز یه سکتور 512 بایت هست...</p><br />
 <p>یه دسته‌ای هم توی یه هارددیسک وجود داره که بهش میگن arm که سرش یه هد (head) داره که عقب جلو میره و خود دسته هه هم میچرخه و این سکتورهارو میخونه یا توشن مینویسه.</p><br />
@@ -98,7 +98,7 @@
 <p>در حالت کلی هارددیسک بخاطر حرکات فیزیکی و مکانیکی که داره که با اون حرکات دیتارو ذخیره میکنه از بسیاری از تکنولوژی های دیگه کند تر هست. اگه بخوایم یه مثال توی دنیای واقعی داشته باشیم، بین متخصصین کامپیوتر این مساله به کرات مشاهده شده که استفاده از ماوس برای اینرکشن با کامپیوتر، سرعت استفاده رو بشدت پایین میاره! اگه کاری باشه که شما بتونی با کیبرد انجام بدی، خیلی خیلی خیلی سریع‌تر میتونی با کیبرد انجامش بدی تا اینکه بخوای با ماوس انجامش بدی. این یه اصل مشهوده. دلیل این امر هم این هست که ماوس حرکات فیزیکی زیادی داره، و برای انجام یه کاری باید دست شما چندین بار اسکرول کنه و … اما کیبرد، حرکات فیزیکی رو کمینه میکنه، بخاطر همین سریع تره :) هارددیسک هم یچیزی مثل ماوس میمونه، حالا راجع بهش حرفها خواهیم زد.</p><br />
 <p>یک هارد دیسک ، مثل یک CD یه (چند تا) دیسک داره که میچرخه و یک هد داره (مثل اون دسته سیاهای توی گرامافون) که روی یه مداری که روی شعاع دیسک واقع شده میتونه بالا و پایین بره. به این ترتیب میتونه تمام دیسک رو پردازش کنه.</p><br />
 <p>گیف پایین رو مشاهده بفرمائید:</p><br />
-<p><img src="Files/8.gif" alt="HDD head move" /></p><br />
+<p><img src="Files/HDD_head_move.gif" alt="HDD head move" /></p><br />
 <p><em>یادم نمیاد منبع گیف کجاست- اگر میدونید خبر بدین!</em></p><br />
 <hr /><br />
 <p>یک سرعتی برای هارد دیسک بیان میشه بعنوان Transfer time که مجموعه کلی‌ای از چند تا سرعت هست وابسته به فاکتور های زیر :</p><br />
@@ -140,7 +140,7 @@
 </ul><br />
 <p>همین دوتا حرکت فیزیکی کافیه تا هارد دیسک بشدت کند باشه و نشه ازش بجای یچیزی مثل رم جهت ذخیره‌سازی سریع اطلاعات محاسبات فعلی استفاده کرد، ولی خوبیش اینه که اطلاعات با قطع شدن برق از بین نمیرن:3</p><br />
 <p>عکس زیرو ببینین:</p><br />
-<p><img src="Files/9.jpg" alt="seek-time vs rotational-latency-time" /></p><br />
+<p><img src="Files/seektime_vs_rotationallatencytime.jpg" alt="seek-time vs rotational-latency-time" /></p><br />
 <p><em>یادم نمیاد منبع این عکس هم کجاست- اگر میدونید خبر بدین!</em></p><br />
 <p>راستیه روتیشنال لیتنسی تایمه،<br />
 زمانی که دیسک باید بیکار وایسته تا دیسک بچرخه و اول سکتور مورد نظر بیاد.</p><br />
@@ -197,7 +197,7 @@
 هیچوقت نمیشه از دیسک بعنوان مموری پردازشی استفاده کرد‌، چون نحوه چینش داده هاش خیلی خیلی سخته...</p><br />
 <p><em>یه مقاله هم راجع به ریکاوری مینویسم؛ اونجا فرگمنت شدن دیسک رو توضیح میدم</em></p><br />
 <p>دیسک فرگمنت شده:</p><br />
-<p><img src="Files/10.jpg" alt="Fragmented HDD" /></p><br />
+<p><img src="Files/Fragmented_HDD.jpg" alt="Fragmented HDD" /></p><br />
 <p>خلاصه که همیشه سرعت هایی که بر آورد میکنید باید بر اساس یک دیسک فرگمنت شده باشه ، که خودش هزاران بار ماجرا رو کندتر میکنه،<br />
 توی RAM ما فرگمنت شدن نداریم یعنی داریم؛ ولی روی سرعت به اون شکل تاثیر نداره - اصلا بیس کارش فرگمنت بودنه، رم همونطور که توضیح دادم به تمام خونه های خودش به یک زمان مساوی «دسترسی تصادفی» دسترسی داره.</p><br />
 <p>خوندن اطلاعات و کار کردن با جداول روی هارددیسک (چیزهایی مثل inode یا mft) کار خیــــلی ریسورس-بر و زمان بریه.</p><br />
@@ -1395,9 +1395,9 @@ EATING RAM!!!</code></pre>
 <pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
 └─$ ./a.out
 EATING RAM!!!</code></pre><br />
-<p><img src="Files/13.png" alt="Executing RAM-eaters" /></p><br />
+<p><img src="Files/Executing_RAMeaters.png" alt="Executing RAM-eaters" /></p><br />
 <p>و خروجی top وقتی چهارتا پراسس رمخور در حال اجرا هستن:</p><br />
-<p><img src="Files/14.png" alt="top command result" /></p><br />
+<p><img src="Files/top_command_result.png" alt="top command result" /></p><br />
 <p>حالا بطور همزمان با اینها، برنامه اولمون یعنی <a href="./Files/RAM_write_test.cpp">اینو</a> اجرا میکنم:</p>
 <pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
 └─$ g++ RAM_write_test.cpp -o test.out
@@ -1615,7 +1615,7 @@ int main() {
 }</code></pre><br />
 <p><a href="./Files/RAM_eating_multithreading_test.cpp">فایل کد</a></p><br />
 <p>اجرا:</p><br />
-<p><img src="Files/15.png" alt="Executing RAM_eating_multithreading_test.cpp" /></p>
+<p><img src="Files/Executing_RAM_eating_multithreading_test.png" alt="Executing RAM_eating_multithreading_test.cpp" /></p>
 <pre><code class="language-diff">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
 └─$ g++ RAM_eating_multithreading_test.cpp
 
@@ -1725,7 +1725,7 @@ EATING HDD!!!</code></pre>
 <pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
 └─$ ./HDD_eater.out 
 EATING HDD!!!</code></pre><br />
-<p><img src="Files/16.png" alt="Executing HDD-eaters" /></p><br />
+<p><img src="Files/Executing_HDDeaters.png" alt="Executing HDD-eaters" /></p><br />
 <p>و حین همین ماجرا، <a href="./Files/HDD_write_test.cpp">این</a> برنامه رو اجرا میکنم:</p>
 <pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
 └─$ g++ HDD_write_test.cpp -o HDD_write.out
@@ -1968,7 +1968,7 @@ Therefore:
 * Average Sys Time: 1.6055 s
 * Average CPU Usage: 34.45 %</code></pre><br />
 <p>این نمودار رو نگاه کنین، در 20 آزمایش اول، میزان زمان به این شکل کند تر شده:</p><br />
-<p><img src="Files/17.png" alt="HDD speed chart in 20 tests" /></p>
+<p><img src="Files/HDD_speed_chart_in_20_tests.png" alt="HDD speed chart in 20 tests" /></p>
 <table>
 <thead>
 <tr>
@@ -4209,7 +4209,8 @@ int main(int argc, char** argv)  {
     return 0;
 }</code></pre><br />
 <p><a href="./Files/Iteration_test.cpp">فایل کد</a></p><br />
-<p>این کد دقیقاً کد قبلی هست ولی داینامیک نوشته شده، با توجه به ورودی هایی که بعنوان آرگومان از بافر ورودی استاندارد میگیره، کار رو انجام میده،‌میتونه محاسبات رو به تعداد ورودی <code>n</code> روی رم و یا روی هارددیسک انجام بده.</p>
+<p>این کد دقیقاً کد قبلی هست ولی داینامیک نوشته شده، با توجه به ورودی هایی که بعنوان آرگومان از بافر ورودی استاندارد میگیره، کار رو انجام میده،‌میتونه محاسبات رو به تعداد ورودی <code>n</code> روی رم و یا روی هارددیسک انجام بده.</p><br />
+<p>من با این کد مقادیر زمانی سپری شده برای محاسبات روی رم / هارددیسک رو روی یه ماشین کولب گوگل تست میکنم:</p>
 <pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out RAM 10; echo ""; counter=$((counter+1)); done</code></pre>
 <pre><code class="language-md">(0.05557+0.04354+0.037682+0.055058+0.059299+0.040107+0.044795+0.033862+0.03316+0.030346+0.031631+0.039248+0.031442+0.030144+0.031636+0.030273+0.044436+0.035037+0.032099+0.032844+0.029726+0.031982+0.03101+0.034369+0.033597+0.042123+0.03926+0.037468+0.03927+0.042095+0.039197+0.04276+0.043037+0.058996+0.032882+0.034359+0.032656+0.034285+0.031125+0.029796+0.035702+0.030816+0.03118+0.036636+0.029955+0.029841+0.029912+0.047903+0.038854+0.033695) / 50 = 1.856696 / 50 = 0.03713392
 
@@ -4317,6 +4318,207 @@ Execution Time (Based on chrono): 982447 ms</code></pre>
 </tr>
 </tbody>
 </table><br />
+<p>با این ماشین، 100 ملیارد پیمایش روی رم صرفاً 16 دقیقه طول میکشه.</p><br />
+<p>حالا بریم سراغ هارد دیسک:</p>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out HDD 10; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(3.84055+1.47793+1.36111+1.18943+1.25027+1.06003+1.15582+1.31169+0.988887+1.08511+0.996868+1.02288+1.15027+0.970606+1.30461+1.24018+1.30114+1.01147+1.1003+1.16134+1.05386+1.00953+1.08559+1.09392+1.02795+1.04478+1.11548+1.02791+1.13904+1.43361+1.41642+1.34454+1.04273+1.10764+3.06246+1.34444+1.09299+1.02791+0.98998+1.40493+1.2629+1.37666+1.1086+1.0706+1.67073+1.05198+1.37261+1.31193+1.34244+1.18202) / 50 = 63.596671 / 50 = 1.27193342
+
+Therefore:
+* Average Execution Time(Based on chrono): 1.27193342 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out HDD 100; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(10.1258+8.54431+8.57312+9.30554+7.19626+8.57967+7.81807+6.76671+8.19687+11.3563+8.76072+8.89945+7.93218+7.15151+9.06521+8.95591+9.04594+8.77245+9.37136+7.49228+8.1699+7.5217+8.37757+8.27919+9.53812+9.14541+8.06788+7.49188+8.24989+10.9161+8.53771+8.61268+6.91477+8.33953+8.44163+6.35417+6.49716+8.86702+8.77506+9.01159+8.56295+6.69499+8.88008+8.89771+9.1845+8.44426+9.3007+9.81496+8.01047+8.43163) / 50 = 424.24087 / 50 = 8.4848174
+
+Therefore:
+* Average Execution Time(Based on chrono): 8.4848174 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 50 ]; do ./a.out HDD 1000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(83.7239+89.2962+87.393+86.0499+82.4329+92.4111+83.0183+93.2184+98.6888+88.1423+93.149+104.383+94.8324+95.2283+104.694+98.6493+92.5682+91.8928+101.478+95.2763+96.7348+96.7451+95.3717+96.2584+95.0568+104.564+94.3572+92.9837+94.5809+96.7802+95.193+94.719+94.5504+98.0115+104.346+90.0224+89.8571+84.6048+90.1275+89.0622+92.2847+91.2552+89.7745+91.942+90.7563+89.0043+94.7468+89.3705+85.9757+95.2816) / 50 = 4660.8444 / 50 = 93.216888
+
+Therefore:
+* Average Execution Time(Based on chrono): 93.216888 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 10 ]; do ./a.out HDD 10000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(878.908+868.796+868.818+868.208+921.707+945.511+940.521+901.627+872.928+876.26) / 10 = 8943.284 / 10 = 894.3284
+
+Therefore:
+* Average Execution Time(Based on chrono): 894.3284 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 5 ]; do ./a.out HDD 100000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(8944.41+9181.89+9291.08+9176.2+9019.04) / 5 = 45612.62 / 5 = 9122.524
+
+Therefore:
+* Average Execution Time(Based on chrono): 9122.524 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 5 ]; do ./a.out HDD 1000000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">(93730+92787+91645.4+92535.1+94361.4) / 5 = 465058.9 / 5 = 93011.78
+
+Therefore:
+* Average Execution Time(Based on chrono): 93011.78 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 1 ]; do ./a.out HDD 10000000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">64
+Execution Time (Based on chrono): 904366 ms</code></pre>
+<pre><code class="language-bash">counter=0; while [ $counter -lt 1 ]; do ./a.out HDD 100000000; echo ""; counter=$((counter+1)); done</code></pre>
+<pre><code class="language-md">81
+Execution Time (Based on chrono): 9.06014e+06 ms</code></pre><br />
+<p>و میدونیم که:</p>
+<pre><code class="language-md">9.06014e+06 = 9060140</code></pre>
+<table>
+<thead>
+<tr>
+<th>Iterations</th>
+<th>HDD Time Complexity(ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>1.27193342</td>
+</tr>
+<tr>
+<td>100</td>
+<td>8.4848174</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>93.216888</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>894.3284</td>
+</tr>
+<tr>
+<td>100000</td>
+<td>9122.524</td>
+</tr>
+<tr>
+<td>1000000</td>
+<td>93011.78</td>
+</tr>
+<tr>
+<td>10000000</td>
+<td>904366</td>
+</tr>
+<tr>
+<td>100000000</td>
+<td>9060140</td>
+</tr>
+<tr>
+<td>1000000000</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>10000000000</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>100000000000</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table><br />
+<p>وقتی که تنها سه متغیرمونو روی دیسک ذخیره کردیم، چه اتفاقی افتاد؟ 100 ملیون پردازشمون حدود 3  ساعت طول کشید و اصلاً نتونستیم به اوردر ملیارد برسیم… این درحالیه که 100 ملیون پردازش روی رم تقریباً 9 ثانیه طول کشیده.</p><br />
+<p>با رفتاری که داریم از رشد زمانی پردازش روی هارددیسک میبینیم، میتونیم برونیابی کنیم که احتمالاً 3 مقداری که نداریم هر بار 10 برابر میشن پس اولی احتمالاً 1 روز و خورده‌ای، دومی 12 روز و سومی باید 125 روز باشه..!</p><br />
+<p>جدول زیر رو مشاهده بفرمائین:</p>
+<table>
+<thead>
+<tr>
+<th>Iterations</th>
+<th>RAM Time Complexity(ms)</th>
+<th>HDD Time Complexity(ms)</th>
+<th>Ratio(HDD/RAM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>0.03713392</td>
+<td>1.27193342</td>
+<td>34.2526030</td>
+</tr>
+<tr>
+<td>100</td>
+<td>0.07674256</td>
+<td>8.4848174</td>
+<td>110.5620844</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>0.10521878</td>
+<td>93.216888</td>
+<td>885.9339368</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>0.1361817</td>
+<td>894.3284</td>
+<td>6567.1701851</td>
+</tr>
+<tr>
+<td>100000</td>
+<td>1.04639196</td>
+<td>9122.524</td>
+<td>8718.0753949</td>
+</tr>
+<tr>
+<td>1000000</td>
+<td>11.2337458</td>
+<td>93011.78</td>
+<td>8279.6764014</td>
+</tr>
+<tr>
+<td>10000000</td>
+<td>102.98743</td>
+<td>904366</td>
+<td>8781.3240897</td>
+</tr>
+<tr>
+<td>100000000</td>
+<td>969.92948</td>
+<td>9060140</td>
+<td>9341.0296179</td>
+</tr>
+<tr>
+<td>1000000000</td>
+<td>9708.8664</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>10000000000</td>
+<td>99059.3</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>100000000000</td>
+<td>982447</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table><br />
+<p>و اگر بخوایم نموداری از رشدش بکشیم، من سه مقدار آخر رو بصورت تخمینی برونیابی میکنم و با کد پایتون زیر نموداری میکشم:</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+iterations = [10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000, 100000000000]
+ram_times = [0.03713392, 0.07674256, 0.10521878, 0.1361817, 1.04639196, 11.2337458, 102.98743, 969.92948, 9708.8664, 99059.3, 982447]
+# hdd_times = [1.27193342, 8.4848174, 93.216888, 894.3284, 9122.524, 93011.78, 904366, 9060140, None, None, None]
+last_hdd_time = 9060140 # Estimate times
+hdd_times = [1.27193342, 8.4848174, 93.216888, 894.3284, 9122.524, 93011.78, 904366, 9060140, last_hdd_time*10, last_hdd_time*100, last_hdd_time*1000]
+
+
+plt.plot(iterations, hdd_times, marker='o', label='HDD Time Complexity')
+plt.plot(iterations, ram_times, marker='o', label='RAM Time Complexity')
+
+plt.xlabel('Iterations')
+plt.ylabel('Time Complexity (ms)')
+plt.title('Points and Lines Plot')
+
+plt.legend()
+
+plt.show()</code></pre><br />
+<p><a href="./Files/Draw_plot.py">فایل کد</a></p><br />
+<p><img src="Files/HDD_vs_RAM_plot_small.png" alt="HDD vs RAM plot small" /></p><br />
+<p><img src="Files/HDD_vs_RAM_plot.png" alt="HDD vs RAM plot" /></p><br />
+<p>همین نمودارو اگه بخوایم بصورت انتزاعی بکشیم، باید یه همچین چیزی باشه:</p><br />
+<p><img src="Files/Abstract_HDD_vs_RAM_plot.png" alt="Abstract HDD vs RAM plot" /></p><br />
+<p>و نهایتاً این نکته رو بگم که شما میتونین همزمانی رو وارد این داستان کنین و یهو از چندده هزار برابر کندی، برسین به چندصد هزار برابر کندی! البته اگر دیسک برای آزمایش دارین..، من همینجا آزمایش رو متوقف میکنم چون نمیخوام دیسکهای مردم رو بسوزونم×ـ×</p><br />
 <hr /><br />
 <p>یکی از نتایج جانبی عملی (Practical Side Results) میتونه این باشه که برای انجام تست پیچیدگی های زمانی، اگه رنجه زمانهای نتیجه کوشولو هستن و هر بار تغییر زیادی میکنن، تعداد تست رو باید ببریم بالا تا به یه تخمین خوبی برسیم و برعکس، اگه رنج زمانهای خروجی خیلی زیاده و تغییر کمی میکنن هر بار، یه تعداد بار کمتری به ما تخمین معقولی رو میده✅</p><br />
 <p>یکسری لینک پرسش و پاسخ مرتبط با این موضوع:</p>
@@ -4327,9 +4529,13 @@ Execution Time (Based on chrono): 982447 ms</code></pre>
 </ul><br />
 <p>و تمام، هارددیسک بطور متوسط 100000 بار از رم کند تره:))</p><br />
 <h2>کارهای آینده</h2><br />
-<p>شما توی مقاله خودتون میتونین روی سناریوهایی کار کنین که کندی بیشتری رو به تصویر بکشین، میتونین از دیسکهای مختلف استفاده کنین یا حتی از کلاسترهای مختلف روی RAID های مختلف استفاده کنین.</p><br />
+<p>شما توی مقاله خودتون میتونین روی سناریوهایی کار کنین که کندی بیشتری رو به تصویر بکشین، میتونین همزمانی رو وارد فاز دوم آزمایش بکنید، میتونین از دیسکهای مختلف استفاده کنین یا حتی از کلاسترهای مختلف روی RAID های مختلف استفاده کنین، همچنین اگر براتون مقدوره میتونین واقعاً بذارین دیسک 125 روز محاسبات کنه که نتیجه مقایسه واقعی باشه:)</p><br />
 <h2>کپی رایت</h2><br />
 <p>این یک مقاله آزاد و متن‌باز تحت مجوز GFDL1-3 می‌باشد، بنابراین اجازه کپی، توزیع و/یا تغییر این سند با شرایط مجوز GNU Free Documentation License داده شده است.</p><br />
+<h2>نویسنده</h2>
+<ul>
+<li>بهراد.ب (behroora@yahoo.com)</li>
+</ul><br />
 <h2>منابع</h2>
 <ul>
 <li><a href="https://faculty.etsu.edu/tarnoff/ntes2150/memory/memory.htm">https://faculty.etsu.edu/tarnoff/ntes2150/memory/memory.htm</a></li>
