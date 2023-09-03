@@ -143,3 +143,28 @@ Any type of information that needs to be written on a disk must be written in th
 
 Depending on the different software formats used to format hard disks, there are various software technologies related to data storage, such as inode and MFT, which we will discuss in other articles later on.
 
+
+
+
+## Comparison of Hard Disk and RAM Speed
+
+Let's ignore all the complexities of implementation, operational details, and stuff related to the operating system and RAM, and focus on the hard-disk for now:
+
+When considering the speed of a hard-disk, we need to take into account the average speed of I/O operations, which means the input/output activities of the hard disk:
+* I/O = Input/Output
+
+Calculating this speed is a highly complex task, and there are thousands of factors involved. Each factor requires an extensive explanation, and ultimately, if we manage to accurately model all of these factors (which is very difficult),  the performance of the hard disk drive (HDD) can vary significantly across various scenarios. It can be as much as 10,000 times slower or even up to 500,000 times slower than RAM. To provide a statistical representation, we often present an average, such as 100,000 times slower.
+
+
+
+Generally, hard disk drives (HDDs) are slower compared to many other technologies because they involve physical and mechanical movements to store data. To give a real-world example, computer experts often observe that using a mouse for interacting with a computer significantly slows down the speed of interaction. If you can accomplish a task using a keyboard, it can be much, much faster than using a mouse. This is a well-known principle. The reason behind this is that the mouse requires a lot of physical movements. For instance, you need to scroll multiple times to perform a task. The keyboard, on the other hand, minimizes physical movements, which makes it faster. The hard disk drive operates in a similar way to a mouse, we will discuss it further.
+
+A hard disk drive consists of one or multiple rotating disks (similar to CDs) and a head (like the needle on a gramaphone) that can move up and down on a circuit placed on the disk's radius. This way, it can process the entire disk.
+
+Take a look at the animation below, showing the phisical movement of an HDD head:
+
+![HDD head move](Files/HDD_head_move.gif)
+
+_I don't remember the source of the GIF - if you know it, let me know!_
+
+______________________________________
