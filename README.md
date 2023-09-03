@@ -17,9 +17,9 @@ ____________________________________________
      * [What is XSS attack?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En#what-is-xss-attack)
      * [What is XSRF attack?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En#what-is-a-csrfxsrf-attack)
 *  [Comparison of RAM and HDD Read/Write Speeds](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En)
-      *  [What is a RAM?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#what-is-ram)
-      *  [hdd](link)
-      *  [Comparison](link)
+      *  [What is a RAM?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#what-is-a-ram)
+      *  [What is a Hard-Disk?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#what-is-a-hard-disk)
+      *  [Comparison of Hard Disk and RAM Speed](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#comparison-of-hard-disk-and-ram-speed)
             * [phase1](link)
             * [phase2](link)
 
