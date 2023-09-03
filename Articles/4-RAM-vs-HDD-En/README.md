@@ -28,7 +28,7 @@ Most of the information presented here regarding hard disk drives is sourced fro
 Now let's move on to the main story.
 
 
-## What is RAM?
+## What is a RAM?
 
 RAM stands for Random Access Memory, which is a type of memory with random access. The name itself explains all the necessary information about RAM that we need to know. Imagine you have a large piece of memory that has relatively high speed (compared to technologies like disks and even things like EEPROMs) and its abstract representation is something like this: 
 
@@ -93,4 +93,53 @@ http://www.foundersatwork.com/steve-wozniak.html
 
 
 And I have almost covered all the technical issues I wanted to discuss regarding RAM. The operating system is responsible for managing RAM. The computer's CPU works with Virtual Addressing, while RAM works with Logical Addressing. In future, I will write a separate article on how the operating system allocates RAM to processes, and another article on how we can access the entire system RAM with it's current cell values.
+
+
+## What is a Hard Disk?
+
+Hard disks are circular plates that store information based on their structure. The first type of disks can be seen in gramophones, where sound vibrations create a spiral groove on a rotating disk. A softer needle moves within the groove to reproduce the sound using vibrations.
+
+Later, magnetic hard disks and optical disks like CDs and DVDs were developed. Magnetic hard disks use magnetization to write information in binary form on round disks. Optical disks use lasers to burn information.
+
+In general, a disk refers to a rotating, circular plate where information is written in different parts of it.
+
+A hard disk consists of magnetic round disks on which information is written by magnetizing each tiny particle in binary form. It typically has multiple layers called platters, with the number of platters usually ranging from 1 to 5.
+
+A cross-sectional view of a hard disk would look like this:
+
+![HDD Platters](Files/HDD_Platters.jpg)
+
+_Image source: [compuclever](https://www.compuclever.com/posts/hard-disk-drive-basics/ic306536/)_
+
+An abstract representation of the cross-sectional view:
+
+![HDD Abstract Platters](Files/HDD_Abstract_Platters.jpg)
+
+_Image source: The Book: Database System Concepts, 6th Edition_
+
+
+The platters of a hard-disk are magnetic surfaces that can store 0s and 1s by being magnetized. These platters are logically divided into different sets of concentric circles, which are composed of circular tracks that form the disk. Each of these concentric circles is referred to as a "track".
+
+
+In the image below, you can observe several abstract tracks:
+
+![HDD Tracks](Files/HDD_Tracks.jpg)
+
+_Image source: [schoolcoders](https://www.schoolcoders.com/memory-storage/secondary-storage/hdd/)_
+
+The track itself is divided into smaller parts called "sectors". You can see the sector portion in the image below:
+
+![HDD Sectors](Files/HDD_Sectors.jpg)
+
+_Image source: [slideplayer](https://slideplayer.com/slide/1517076/)_
+
+A sector is also the smallest unit on a disk that is written/read. Usually, a sector has a size of 512 bytes.
+
+There is also a component in a hard-disk called the "arm", which has a "head" that moves back and forth. The arm itself rotates and reads/writes these sectors.
+
+Naturally, outer tracks (those with larger radius) have more sectors than inner tracks (smaller radii)...
+
+Any type of information that needs to be written on a disk must be written in the form of 0s and 1s, (say true or flase, magnetized or not not-magnetized) encoded in binary format, and given to the arm to be written by the head. The same process applies for reading.
+
+Depending on the different software formats used to format hard disks, there are various software technologies related to data storage, such as inode and MFT, which we will discuss in other articles later on.
 
