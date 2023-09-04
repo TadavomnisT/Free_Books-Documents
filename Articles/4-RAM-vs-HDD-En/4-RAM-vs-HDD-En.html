@@ -1,7 +1,6 @@
 <!DOCTYPE HTML><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta charset="utf-8"/><title>RAM vs HDD</title> <link href="https://tadavomnist.github.io/assets/css/highlightjs.default.min.css" rel="stylesheet"/><style type="text/css">*,pre code,table,table tr{padding:0}hr,html{overflow:hidden}*{box-sizing:border-box;outline:0;margin:0}body,html{position:relative;width:100vw;height:100vh}html{color-scheme:light}body{padding:10px 15px;overflow:hidden auto;overflow-wrap:break-word;word-wrap:break-word;font:16px/1.4 Helvetica,Arial,sans-serif;color:#333}body,html,table tr{background-color:#fff}.highlight pre,code,pre,tt{background-color:#f8f8f8;direction:ltr!important}table tr :is(th,td){border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{position:relative;box-sizing:content-box;font-weight:700;padding:15px 0;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;border:0;border-bottom:1px solid #ddd}a{color:#4183c4}a.absent{color:#c00}ol,ul{padding-left:15px;margin:0 7px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr :is(th,td) :first-child{margin-top:0}table tr :is(th,td) :last-child{margin-bottom:0}img{max-width:100%;pointer-events:none}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;overflow-wrap:break-word;border:1px solid #eaeaea;border-radius:3px}tt{white-space:nowrap}pre code{white-space:pre;border:none}.highlight pre,pre{border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;margin:.8em 0 1em;border-radius:3px;max-width:calc(100% - 2px)}#container{width:960px;margin: 0 auto;}.dark-mode{background-color:#000;color:#fff;}.dark-mode table tr{background-color:#000}.dark-mode table tr:nth-child(2n){background-color:#333}.dark-mode code{background-color:#212121;color:rgb(0,183,255);}.dark-mode pre{background-color:#433f3f !important;}*,*:before,*:after{box-sizing:border-box;}.toggle{cursor:pointer;display:inline-block;}.toggle-switch{display:inline-block;background:#ccc;border-radius:16px;width:58px;height:32px;position:relative;vertical-align:middle;transition:background 0.25s;}.toggle-switch:before,.toggle-switch:after{content:"";}.toggle-switch:before{display:block;background:linear-gradient(to bottom,#fff 0%,#eee 100%);border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,0.25);width:24px;height:24px;position:absolute;top:4px;left:4px;transition:left 0.25s;}.toggle:hover .toggle-switch:before{background:linear-gradient(to bottom,#fff 0%,#fff 100%);box-shadow:0 0 0 1px rgba(0,0,0,0.5);}.toggle-checkbox:checked + .toggle-switch{background:#3e96df;}.toggle-checkbox:checked + .toggle-switch:before{left:30px;}.toggle-checkbox{position:absolute;visibility:hidden;}.toggle-label{margin-left:5px;position:relative;top:2px;}</style></head><body><div id="container"><div id="container"><label class="toggle"><input class="toggle-checkbox" type="checkbox" checked="checked" id="dark-mode-toggle"><div class="toggle-switch"></div><span class="toggle-label">Dark mode</span></label><h1>Comparison of RAM and HDD Read/Write Speeds</h1><br />
 <h2>Abstract</h2><br />
 <p>This article provides a detailed comparison of the speed at which data is read and written on RAM and a hard disk drive (HDD). The underlying technology of both RAM and HDD is explained, followed by a comparison of their average read/write speeds considering technological complexities.</p><br />
-<p>In this article, I will discuss in detail the speed of reading/writing data on RAM and on a hard disk drive (HDD). To do so, I will first explain the underlying technology of both RAM and HDD, and then compare their average read/write speeds due to technological complexities.</p><br />
 <h2>Purpose of Comparing RAM and HDD Speed</h2><br />
 <p>RAM vs HDD</p><br />
 <p>A few years ago, during a discussion on a programming forum, I mentioned that the average read/write speed of a hard disk drive is approximately 100,000 times slower than RAM. This statement seemed strange to many programmers, and not everyone accepted it. To justify my claim, I had to explain the technical aspects of RAM and HDD. </p><br />
@@ -80,4 +79,110 @@
 <p>Take a look at the animation below, showing the phisical movement of an HDD head:</p><br />
 <p><img src="Files/HDD_head_move.gif" alt="HDD head move" /></p><br />
 <p><em>I don't remember the source of the GIF - if you know it, let me know!</em></p><br />
+<hr /><br />
+<p>We measure the speed of a hard disk by <strong>"Transfer time"</strong>, which is a combination of several factors, including:</p><br />
+<ol><br />
+<li>Read/Write speed of the head: This speed itself depends on various factors, and it's quite complex to explain in detail here.</li><br />
+<li>Arm movement speed: Refers to the speed at which the arm moves up and down.</li><br />
+<li>Disk rotation speed: Different hard disks have different rotation speeds.</li><br />
+<li>Track capacity: Represents the size of each track on the disk.</li><br />
+<li>Sector capacity: The capacity of each sector on the disk.</li><br />
+<li>Amount of data requested: The size of the data that needs to be accessed.</li><br />
+<li>Rotational latency:  Refers to the delay caused by disk rotation speed. A brief explanation will be provided here, but for more details, please refer to the introduced book.</li><br />
+<li>Seek time: Represents the delay in positioning the head for accessing specific data.</li><br />
+<li>Hard-disk interleaving: I will provide an explanation for this interesting concept and discuss its difference compared to RAM interleaving.</li><br />
+<li>Read ahead technique: I will provide an explanation for this as well.</li><br />
+<li>Buffer sizes: The capacity of the buffer used in the buffering technique.</li><br />
+<li>Disk scheduling algorithms: This topic could fill an entire 12-volume book! It is challenging to explain it briefly. It covers algorithms such as the "Elevator algorithm" or SCAN and more stuff. Without these scheduling algorithms, the hard disk's performance would be significantly slower.</li><br />
+<li>Storage of the Files (Data Placement): This requires a very detailed explanation. You might have heard of disk fragmentation, which slows down disk speed. I will explain it further.</li><br />
+<li>Storing logs on the hard disk - This aspect will not be discussed in this article.</li><br />
+<li>Caching of requests by the operating system, which goes beyond the scope of our discussion.</li><br />
+<li>Device management, or as Windows folks call it, drive management, is a highly specialized topic that I won't discuss.</li><br />
+<li>... There are so many factors affecting disk speed that if I were to mention all of them, I might never be able to finish this article. To be honest, I'm not familiar with all the details as it is a highly professional field. Experts in file systems can provide better explanations..</li><br />
+</ol><br />
+<p>Now, transfer time, as mentioned earlier, is the sum of all these delays and timings mentioned above.</p><br />
+<hr /><br />
+<p>Now let's move on to the explanation of the factors I mentioned. Let's start with the explanation of the first two ones, which are really cool and important:</p><br />
+<p>RAM is independent of physical movements, but hard disks consume time/energy in physical movement.</p><br />
+<p>Two important physical time consumptions in hard disks:</p><br />
+<p>1- <strong>Rotational latency time</strong><br />
+Hard disks have a time consumption when they rotate disks💿.<br />
+Suppose a piece of data that you want to read or write is not in that specific position/degree of the disk where the arm is currenty positioned, and the disk needs to rotate like 260 degrees to reach that specific position of the data! The time spent on rotating is called rotational latency time.</p><br />
+<p>2- <strong>Seek time</strong><br />
+Disks have another time consumption, which is when the arm of HDD needs to move up and down and precisely position on the corresponding radius to find the sector. It's called seek time.</p><br />
+<p>Just these two physical movements are enough to make the hard disk very slow and prevent it from being used for storing current computing data like RAM. But the good thing is that the data is not lost when power is gone:3</p><br />
+<p>See the image below:</p><br />
+<p><img src="Files/seektime_vs_rotationallatencytime.jpg" alt="seek-time vs rotational-latency-time" /></p><br />
+<p><em>I don't remember the source of image too - let me know if you do!</em></p><br />
+<p>The right one is rotational latency time,<br />
+the time when the disk has to wait and do nothing, while the disk rotates and reaches the desired sector.</p><br />
+<p>On the left is seek time,<br />
+the time when the arm has to move and go to the radius where the desired sector is.</p><br />
+<hr /><br />
+<p><strong>Block Interleaving in Hard Disk:</strong></p><br />
+<p>We have several types of interleaving which are data handling architectures, including:</p>
+<ul>
+<li>
+<p><strong>Bit-interleaved</strong> architecture:
+Means that data is read/written bit by bit in some memory/storage.</p>
+</li>
+<li>
+<p><strong>Byte-interleaved</strong> architecture:
+Means that data is read/written byte by byte in some memory/storage.</p>
+</li>
+<li>
+<p><strong>Block-interleaved</strong> architecture:
+Means that data is read/written in chunks or in other word blocks, in some memory/storage - the block size is determined by the operating systems.</p>
+</li>
+</ul><br />
+<p>So, what's the difference?</p><br />
+<p>Back in the early days of computers, data used to be read/written bit by bit, which is quite inefficient since most data we work with requires at least one byte. That's why byte-interleaved architecture was introduced and used...</p><br />
+<p>Today, It is safe to say that you can't read/write just a single bit of information from/to a disk or any memory like RAM; you have to read/write at least one byte. For example, a Boolean variable (TRUE/FALSE) only requires one bit to represent TRUE or FALSE, but it is allocated with 8 bits because the memory is byte-interleaved :)</p><br />
+<p>Now, in hard disks, block-interleaving has been introduced. When you request a specific byte from the hard disk, it would be inefficient to make the disk rotate and move the arm and head up and down just for one byte! And what if you ask for the next byte afterward? Should the HDD make the disk rotate again to find the next byte?<br />
+The HDD is smarter than that! It retrieves a block of data and give it to you and tells you to fetch as much data as you need from that block. If you need more, just ask!<br />
+For example, it provides 1024 bytes to the operating system, and if the operating system only needs the first byte, it retrieves first byte and drops the rest...<br />
+This concept is not arbitrary; it has been developed for years and tested by thousands of people, who have found out that block-interleaving brings better performance for HDDs compared to byte-interleaving.</p><br />
+<p>Now, let's assume that RAM is byte-interleaved, and the hard disk is block-interleaved.</p><br />
+<p>This difference significantly slows down the HDD compared to RAM.</p><br />
+<hr /><br />
+<p><strong>Read Ahead Technique for Hard Disk:</strong></p><br />
+<p>This is a concept similar to what I explained earlier but quite different!</p><br />
+<p>The read-ahead technique in hard disks is a strategy used to optimize data retrieval and loading times. It involves reading data ahead of time into a buffer or cache before it is actually requested by the system or application.</p><br />
+<p>When the system or application requests the next set of data, it is already available in the cache, eliminating the need for the hard disk to seek and retrieve it from the disk platters. This significantly reduces the access time and improves overall performance, especially in cases where consecutive data blocks are accessed sequentially.</p><br />
+<p>For instance, a hard disk has understanded through years of system's behavior that consecutive sectors may be needed by the user (operating system or application). So, even though the operating system doesn't explicitly request a specific block count, the hard disk provides it in the cache. This means that if those fetched sectors (cached) are needed and used, the OS or application doesn't have to make another system-call, and wait for the request to be directed to the hardware driver, and then wait for disk's motor to be turned on, the storage table to be read again, the sector number to be determined, the head to be moved up and down, and the data to be read magnetically and returned and... 🥴</p><br />
+<hr /><br />
+<p><strong>Buffering Capacity in Computer Science:</strong></p><br />
+<p>Buffering, in computer science, refers to a temporary storage area. The buffering capacity represents the amount of temporary storage allocated for buffering data in a computer system.<br />
+When it comes to HDD buffering, a portion of the computer's RAM is utilized to store data that is fetched from the hard disk. This data is held in the buffer temporarily, allowing it to be processed or accessed more efficiently before being transferred to other parts of the system.<br />
+The buffering capacity differs among different operating systems, and it plays a crucial role in determining the overall speed and efficiency of data processing. Operating system experts should provide better detailed explanation and discussion about buffering and its impact on system performance :3</p><br />
+<hr /><br />
+<p><strong>Hard-Disk Scheduling Algorithms:</strong></p><br />
+<p>There is a common misconception that only one I/O operation can occur on a hard disk at a time. However, in reality, numerous read and write requests are submitted simultaneously when interacting with a hard disk. Thousands of requests are being sent and received. To efficiently handle these requests, sophisticated scheduling algorithms are needed.</p><br />
+<p>Let's consider a scenario where hard-disks have a single arm, head, and disk (we won't focus on multiplatters). When there is only one head and one disk, it becomes necessary to implement optimized scheduling algorithms to efficiently satisfy the given requests. These algorithms can be bloody sophisticated!</p><br />
+<p>Disk scheduling is a highly complex topic. Apart from discussions about the operating system and its software, powerful hardware algorithms are also needed to optimize disk performance.</p><br />
+<p>For example, there is an algorithm called Elevator or SCAN. This algorithm prioritizes certain requests based on the current position of the disk head and the direction of rotation. It aims to minimize head movement and prioritize requests that follow the current path. In the Elevator or SCAN algorithm, when the disk is rotating and the head is on specific sectors, it takes into consideration upcoming requests (let's say three I/O requests after the current one) and performs read/write operations on these sectors. This allows the algorithm to efficiently utilize the current position and avoid ignoring relevant requests. Additionally, while the head is moving in a particular direction, the algorithm does not change the direction of the head and performs read operations on the next request. This may require significant effort and time for HDD. It helps to seamlessly continue processing another request (say the fifth one) on the same track without unnecessary head movements, and then return for another request (say the first one).</p><br />
+<p>It's like an elevator that goes up and is on floor 16, but if someone presses the button on the first floor, it won't go down and pick them up and then go to the 20th floor. Instead, it will pick up the person on the 20th floor and then go to the first floor. In between, if someone else presses the button on the second floor, the elevator will pick them up before the person on the first floor. This algorithm itself can be explained in detail, but let's move on... :))</p><br />
+<p>There are thousands of other algorithms! This is a very extensive optimization topic. ^_^</p><br />
+<p>If these algorithms were not implemented, we would have to wait for 70 years to perform an I/O operation on a disk.</p><br />
+<hr /><br />
+<p><strong>Storage of the Files (Data Placement):</strong></p><br />
+<p>This is perhaps the most important discussion...</p><br />
+<p>You can never use a disk as a processing memory (like RAM) because of its sophisticated data placement...</p><br />
+<p><em>I'm also writing an article about recovery where I explain disk fragmentation.</em></p><br />
+<p>Fragmented Disk:</p><br />
+<p><img src="Files/Fragmented_HDD.jpg" alt="Fragmented HDD" /></p><br />
+<p>File fragmentation occurs when the available disk space is not large enough to fit the entire file in a contiguous manner. As a result, the file is split into fragments (gets scattered) and stored in non-adjacent sectors on the disk. This can lead to inefficient disk usage and slower file access times.</p><br />
+<p>When a fragmented file is accessed, the disk's read/write head needs to move between different locations on the disk to retrieve all the fragments. This physical movement of the read/write head increases the access time, resulting in slower file operations. Fragmentation can significantly impact system performance, especially for larger files or when there are numerous fragmented files on the disk.</p><br />
+<p>A fragmented disk, is a disk full of fragmented files. Over the time most of disks get fragmented due to centain amounts of altering/rewriting/deleting files.</p><br />
+<p>In truth, the speeds that you refer as transfer-time, must always be based on a fragmented disk, which itself slows down the process thousands of times.<br />
+In RAM, we don't have fragmentation, or rather, we do have it, but it doesn't affect speed - A RAM is designed to be fragmented. RAM, as I explained, allows simultaneous access to all its cells ("Random Access").</p><br />
+<p>Reading/Writing data and working with tables on a hard disk (things like inode or MFT) are also highly resource-intensive and time-consuming.</p><br />
+<p>So, in short, the transfer time of the hard disk, which is affected by everything I mentioned along with thousands of other factors, is very slow.<br />
+The physical movement of the disk is so bloody slow that it can be watched by the human eye!</p><br />
+<p>In RAM, the architecture is implemented with logical gates, and its speed depends on the flow of electrons (free electrons).</p><br />
+<p>I found a video that demonstrates a simple representation of how a "Copy and Paste" process works on a hard disk in slow motion.</p><br />
+<p>The physical movements of the hard disk, which can be observed when the HDD box is opened and carefully observed 😬:</p><br />
+<p><a href="https://www.youtube.com/watch?v=3owqvmMf6No">https://www.youtube.com/watch?v=3owqvmMf6No</a></p><br />
+<p>The movement that is visible to the naked eye and can be captured by a camera is definitely much slower than the speed of electron movement :)<br />
+In general, being 100,000 times slower is completely logical, but let's use our programming knowledge and test for ourselves to see how the theory in practice!</p><br />
 <hr /></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
