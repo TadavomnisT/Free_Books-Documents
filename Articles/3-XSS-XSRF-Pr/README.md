@@ -239,3 +239,22 @@ __________________________________
 * https://www.youtube.com/watch?v=eWEgUcHPle0
 
 دو ویدیو آخر بسیار عالی هستن.
+
+## مسائل مرتبط با این مقاله
+
+این مقاله بصورت آزاد و اپن‌سورس در مخزن [کتابها/مقالات آزاد](https://github.com/TadavomnisT/Free_Books-Documents) در لینک زیر در دسترس است:
+* https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr
+* [فرق بین XSS و XSRF چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr)
+    *  [حمله XSS چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr#%D8%AD%D9%85%D9%84%D9%87-xss-%DA%86%DB%8C%D8%B3%D8%AA)
+    *  [حمله XSRF چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr#-%D8%AD%D9%85%D9%84%D9%87-csrfxsrf-%DA%86%DB%8C%D8%B3%D8%AA)
+
+
+نسخه انگلیسی این مقاله:
+* https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En
+* [What is the Difference Between XSS and XSRF?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En)
+    * [What is XSS attack?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En#what-is-xss-attack)
+    * [What is XSRF attack?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En#what-is-a-csrfxsrf-attack)
+
+**هر نوع اشکال علمی، مساله یا بحث مربوط با این مقاله را میتوانید از طریق Issue در ریپازیتوری یا ایمیل مطرح نمایید:**
+* https://github.com/TadavomnisT/Free_Books-Documents/issues
+* behroora@yahoo.com
