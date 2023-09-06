@@ -1,43 +1,43 @@
-<!DOCTYPE HTML><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta charset="utf-8"/><title>XSS vs XSRF</title> <link href="https://tadavomnist.github.io/assets/css/highlightjs.default.min.css" rel="stylesheet"/><style type="text/css">*,pre code,table,table tr{padding:0}hr,html{overflow:hidden}*{box-sizing:border-box;outline:0;margin:0}body,html{position:relative;width:100vw;height:100vh}html{color-scheme:light}body{padding:10px 15px;overflow:hidden auto;overflow-wrap:break-word;word-wrap:break-word;font:16px/1.4 Helvetica,Arial,sans-serif;color:#333}body,html,table tr{background-color:#fff}.highlight pre,code,pre,tt{background-color:#f8f8f8;direction:ltr!important}table tr :is(th,td){border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{position:relative;box-sizing:content-box;font-weight:700;padding:15px 0;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;border:0;border-bottom:1px solid #ddd}a{color:#4183c4}a.absent{color:#c00}ol,ul{padding-left:15px;margin:0 7px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr :is(th,td) :first-child{margin-top:0}table tr :is(th,td) :last-child{margin-bottom:0}img{max-width:100%;pointer-events:none}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;overflow-wrap:break-word;border:1px solid #eaeaea;border-radius:3px}tt{white-space:nowrap}pre code{white-space:pre;border:none}.highlight pre,pre{border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;margin:.8em 0 1em;border-radius:3px;max-width:calc(100% - 2px)}#container{width:960px;margin: 0 auto;}.dark-mode{background-color:#000;color:#fff;}.dark-mode code{background-color:#212121;color:rgb(0,183,255);}.dark-mode pre{background-color:#433f3f !important;}*,*:before,*:after{box-sizing:border-box;}.toggle{cursor:pointer;display:inline-block;}.toggle-switch{display:inline-block;background:#ccc;border-radius:16px;width:58px;height:32px;position:relative;vertical-align:middle;transition:background 0.25s;}.toggle-switch:before,.toggle-switch:after{content:"";}.toggle-switch:before{display:block;background:linear-gradient(to bottom,#fff 0%,#eee 100%);border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,0.25);width:24px;height:24px;position:absolute;top:4px;left:4px;transition:left 0.25s;}.toggle:hover .toggle-switch:before{background:linear-gradient(to bottom,#fff 0%,#fff 100%);box-shadow:0 0 0 1px rgba(0,0,0,0.5);}.toggle-checkbox:checked + .toggle-switch{background:#3e96df;}.toggle-checkbox:checked + .toggle-switch:before{left:30px;}.toggle-checkbox{position:absolute;visibility:hidden;}.toggle-label{margin-left:5px;position:relative;top:2px;}</style></head><body><div id="container"><div id="container"><label class="toggle"><input class="toggle-checkbox" type="checkbox" checked="checked" id="dark-mode-toggle"><div class="toggle-switch"></div><span class="toggle-label">Dark mode</span></label><h1>فرق بین XSS و XSRF چیست؟</h1>
-<h2>چکیده</h2>
+<!DOCTYPE HTML><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta charset="utf-8"/><title>XSS vs XSRF</title> <link href="https://tadavomnist.github.io/assets/css/highlightjs.default.min.css" rel="stylesheet"/><style type="text/css">*,pre code,table,table tr{padding:0}hr,html{overflow:hidden}*{box-sizing:border-box;outline:0;margin:0}body,html{position:relative;width:100vw;height:100vh}html{color-scheme:light}body{padding:10px 15px;overflow:hidden auto;overflow-wrap:break-word;word-wrap:break-word;font:16px/1.4 Helvetica,Arial,sans-serif;color:#333}body,html,table tr{background-color:#fff}.highlight pre,code,pre,tt{background-color:#f8f8f8;direction:ltr!important}table tr :is(th,td){border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{position:relative;box-sizing:content-box;font-weight:700;padding:15px 0;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;border:0;border-bottom:1px solid #ddd}a{color:#4183c4}a.absent{color:#c00}ol,ul{padding-left:15px;margin:0 7px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr :is(th,td) :first-child{margin-top:0}table tr :is(th,td) :last-child{margin-bottom:0}img{max-width:100%;pointer-events:none}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;overflow-wrap:break-word;border:1px solid #eaeaea;border-radius:3px}tt{white-space:nowrap}pre code{white-space:pre;border:none}.highlight pre,pre{border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;margin:.8em 0 1em;border-radius:3px;max-width:calc(100% - 2px)}#container{width:960px;margin: 0 auto;}.dark-mode{background-color:#000;color:#fff;}.dark-mode table tr{background-color:#000}.dark-mode table tr:nth-child(2n){background-color:#333}.dark-mode code{background-color:#212121;color:rgb(0,183,255);}.dark-mode pre{background-color:#433f3f !important;}*,*:before,*:after{box-sizing:border-box;}.toggle{cursor:pointer;display:inline-block;}.toggle-switch{display:inline-block;background:#ccc;border-radius:16px;width:58px;height:32px;position:relative;vertical-align:middle;transition:background 0.25s;}.toggle-switch:before,.toggle-switch:after{content:"";}.toggle-switch:before{display:block;background:linear-gradient(to bottom,#fff 0%,#eee 100%);border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,0.25);width:24px;height:24px;position:absolute;top:4px;left:4px;transition:left 0.25s;}.toggle:hover .toggle-switch:before{background:linear-gradient(to bottom,#fff 0%,#fff 100%);box-shadow:0 0 0 1px rgba(0,0,0,0.5);}.toggle-checkbox:checked + .toggle-switch{background:#3e96df;}.toggle-checkbox:checked + .toggle-switch:before{left:30px;}.toggle-checkbox{position:absolute;visibility:hidden;}.toggle-label{margin-left:5px;position:relative;top:2px;}</style></head><body><div id="container"><div id="container"><label class="toggle"><input class="toggle-checkbox" type="checkbox" id="dark-mode-toggle"><div class="toggle-switch"></div><span class="toggle-label">Dark mode</span></label><h1>فرق بین XSS و XSRF چیست؟</h1><br />
+<h2>چکیده</h2><br />
 <p>دوتا مفهوم سوای از هم داریم ، که خیلیا اینارو باهم اشتباها قاطی میکنن:</p>
 <ul>
 <li>XSS : Cross Site Scripting</li>
 <li>CSRF/XSRF : Cross Site Request Forgery</li>
-</ul>
-<p>من سعی میکنم جدا جدا توضیح بدم ، و بگم چیه...</p>
-<hr />
+</ul><br />
+<p>من سعی میکنم جدا جدا توضیح بدم ، و بگم چیه...</p><br />
+<hr /><br />
 <p>قبل از اینکه شروع کنم یه مفهومی هست که پیشنیازه توضیح بدم، بهش میگن:</p>
 <ul>
 <li>SOP : Same Origin Policy</li>
-</ul>
-<h3>اس او پی SOP چیست؟</h3>
-<p>یه پالیسی (سیاست/قانون/عرف...) هست که توی وب رعایتش میکنن ، اونم اینه که کلاینت/سرور ها رکوئستی رو valid میپندارن و معتبر میدونن که دقیقا از منبع درستش (منبع قبلی) باشه.</p>
-<p>این اعتبار سنجی هم با چک کردن 3 تا چیز مشخص میشه:</p>
-<p>1- پرتکلش همون باشه (مثلا HTTP)</p>
-<p>2- آدرس هاست (دامین) همون باشه</p>
-<p>3- پورت دقیقا همون باشه</p>
+</ul><br />
+<h3>اس او پی SOP چیست؟</h3><br />
+<p>یه پالیسی (سیاست/قانون/عرف...) هست که توی وب رعایتش میکنن ، اونم اینه که کلاینت/سرور ها رکوئستی رو valid میپندارن و معتبر میدونن که دقیقا از منبع درستش (منبع قبلی) باشه.</p><br />
+<p>این اعتبار سنجی هم با چک کردن 3 تا چیز مشخص میشه:</p><br />
+<p>1- پرتکلش همون باشه (مثلا HTTP)</p><br />
+<p>2- آدرس هاست (دامین) همون باشه</p><br />
+<p>3- پورت دقیقا همون باشه</p><br />
 <p>مثلا یکی میاد یه رکوئست رو عوض میکنه به سمت براوزر شما و میگه من گوگلم:</p>
 <pre><code>https://hacker.com:80</code></pre><br />
-<p>براوزر شما از گوگل صحیح رو این میدونه:</p><br />
+<p>براوزر شما از گوگل صحیح رو این میدونه:</p>
 <pre><code>https://google.com:80</code></pre><br />
-<p>حالا میاد چک میکنه:</p><br />
+<p>حالا میاد چک میکنه:</p>
 <pre><code>https://hacker.com:80
 https://google.com:80
 \____/  \______/  \__/
-Protocol  Host    Port</code></pre><br />
-<ul><br />
-<li>پروتکل همونه✅</li><br />
-<li>هاست همون نیست❌</li><br />
-<li>پورت همونه✅</li><br />
+Protocol  Host    Port</code></pre>
+<ul>
+<li>پروتکل همونه✅</li>
+<li>هاست همون نیست❌</li>
+<li>پورت همونه✅</li>
 </ul><br />
 <p>یکی از شرطها برقرار نیست پس ارور:<br />
 Same Origin Policy<br />
 میده و رکوئست دراپ میشه😬</p><br />
-<p>با این پالیسی میشه جلوی خیلی از حمله هارو گرفت ، ولی حملات دیگری هستن که با وجود این پالیسی بازم قابل انجام هستن مثل:</p><br />
-<ul><br />
-<li>XSS</li><br />
-<li>XSRF/CSRF</li><br />
+<p>با این پالیسی میشه جلوی خیلی از حمله هارو گرفت ، ولی حملات دیگری هستن که با وجود این پالیسی بازم قابل انجام هستن مثل:</p>
+<ul>
+<li>XSS</li>
+<li>XSRF/CSRF</li>
 </ul><br />
 <p>که که قراره راجع بهشون حرف بزنیم ✅</p><br />
 <h2>حمله XSS چیست؟</h2><br />
@@ -50,9 +50,9 @@ Same Origin Policy<br />
 <p>و نابود....😬</p><br />
 <p>این روزها پیاده سازیش به این راحتیا نیست...</p><br />
 <p>به هر نوع Javascript injection در یه وبسایت میگن XSS.</p><br />
-<p>ایکس اس اس انواع مختلفی داره:</p><br />
-<ul><br />
-<li>✅Reflected:</li><br />
+<p>ایکس اس اس انواع مختلفی داره:</p>
+<ul>
+<li>✅Reflected:</li>
 </ul><br />
 <p>ایکس-اس-اس بازتابی:</p><br />
 <p>مثلا یه سایتی هست ، یه فرمی داره که هر چی توش بنویسی میره سمت سرور و برمیگرده و بخش از کانتنت HTML صفحه میشه.</p><br />
@@ -61,17 +61,17 @@ Same Origin Policy<br />
 <p>توی فرم هرچی بنویسن و فرم رو سابمیت کنسن ، درخواستت میره و برمیگرده و هرچی توی name نوشته باشین رو نشون میده:<br />
 ‍‍<br />
 <code>‍Your name is : "behrad"</code></p><br />
-<p>اگه من به جای behrad یه کد جاوااسکریپت بزنم ، میره و میاد و اجرا میشه... این میشه بازتابی.</p><br />
-<ul><br />
-<li>✅Stored:</li><br />
+<p>اگه من به جای behrad یه کد جاوااسکریپت بزنم ، میره و میاد و اجرا میشه... این میشه بازتابی.</p>
+<ul>
+<li>✅Stored:</li>
 </ul><br />
-<p>ایکس اس اس ذخیره شده ، زمانی هست که کد مخرب میره توی یه دیتابیسی ذخیره میشه، و از اون به بعد از توی دیتابیس خونده میشه و میاد(شاید به همه مردم زینپس حمله صورت بگیره)</p><br />
-<ul><br />
-<li>✅DOM:</li><br />
+<p>ایکس اس اس ذخیره شده ، زمانی هست که کد مخرب میره توی یه دیتابیسی ذخیره میشه، و از اون به بعد از توی دیتابیس خونده میشه و میاد(شاید به همه مردم زینپس حمله صورت بگیره)</p>
+<ul>
+<li>✅DOM:</li>
 </ul><br />
-<p>یک نوع xss کلاینت ساید هست و زمانی هست که ایکس اس اس رو روی آبجک DOM میزنیم ( تخصصیه) وقتی DOM دست یه اسکریپت مخرب بیفته ، همه چیز صفحه دستش افتاده...</p><br />
-<ul><br />
-<li>✅Mutation:</li><br />
+<p>یک نوع xss کلاینت ساید هست و زمانی هست که ایکس اس اس رو روی آبجک DOM میزنیم ( تخصصیه) وقتی DOM دست یه اسکریپت مخرب بیفته ، همه چیز صفحه دستش افتاده...</p>
+<ul>
+<li>✅Mutation:</li>
 </ul><br />
 <p>زمانی که یه جهشی توی اینپوت کلاینت صورت بگیره...</p><br />
 <p>انواع دیگه هم داره که از حوصله این مقاله خارجه🙂</p><br />
@@ -86,9 +86,9 @@ CSRF/XSRF : Cross Site Request Forgery<br />
 <p><img src="Files/1.jpg" alt="CSRF Schema" /></p><br />
 <p>نکته: این شکل رو از یه ویدیو گرفتم که لینکشو توی قسمت منابع میفرستم.<br />
 من این حمله رو با مثال توضیح میدم.</p><br />
-<p>این حمله به شدت گسترده هست ، ازش میشه هزاران تا مثال زد:</p><br />
-<ul><br />
-<li>مثال</li><br />
+<p>این حمله به شدت گسترده هست ، ازش میشه هزاران تا مثال زد:</p>
+<ul>
+<li>مثال</li>
 </ul><br />
 <p>فرض کنید یه url توی سایت داریم که هر موقع این url رو فراخونی کنیم ، و یه مقدار خاصی رو پست کنیم (HTTP POST) یه اتفاقی می افته... ( مثلا اکانتمون حذف میشه)</p><br />
 <p>یه نوع API ساده طراحی شده... همه هم همینجوری طراحی میکنن..✅</p><br />
@@ -104,7 +104,7 @@ CSRF/XSRF : Cross Site Request Forgery<br />
 <p>چه اتفاقی افتاد؟<br />
 من یک اتک XSRF خوردم و خودم خبر ندارم!</p><br />
 <p>بیاین حمله رو بررسی کنیم.</p><br />
-<p>سورس کد سایت سسکی این بوده:</p><br />
+<p>سورس کد سایت سسکی این بوده:</p>
 <pre><code class="language-html">&lt;img source="sexy.png" &gt;
 &lt;form
 action="mywesite.com/delete_my_acc.php"
@@ -127,17 +127,17 @@ document.getElementById("sexy").submit()
 خب چه فایده... اکانت من پاک شده :)<br />
 هکر چیزی از نتیجه رو ندید.... فقط تیری توی تاریکی در کرد!</p><br />
 <p>این یه مثال خیـــــــــــلی ساده بود...</p><br />
-<p>حمله CSRF</p><br />
-<ul><br />
-<li>رو میشه روی URL زد ..✅</li><br />
-<li>میشه روی پارامترهای GET زد...✅</li><br />
-<li>میشه توی فایلها  زد✅</li><br />
-<li>میشه روی عکس زد✅</li><br />
-<li>میشه توی iframe زد✅</li><br />
-<li>میشه توی POST ✅</li><br />
-<li>میشه روی لینک زد ،✅</li><br />
-<li>میشه روی JS زد✅</li><br />
-<li>میشه خیلی کارا کرد🥴</li><br />
+<p>حمله CSRF</p>
+<ul>
+<li>رو میشه روی URL زد ..✅</li>
+<li>میشه روی پارامترهای GET زد...✅</li>
+<li>میشه توی فایلها  زد✅</li>
+<li>میشه روی عکس زد✅</li>
+<li>میشه توی iframe زد✅</li>
+<li>میشه توی POST ✅</li>
+<li>میشه روی لینک زد ،✅</li>
+<li>میشه روی JS زد✅</li>
+<li>میشه خیلی کارا کرد🥴</li>
 </ul><br />
 <p>من به همین جا بسنده میکنم...</p><br />
 <hr /><br />
@@ -145,11 +145,15 @@ document.getElementById("sexy").submit()
 <p>سی-سرف یعنی یک دامین ، رکوئستی که مربوط به دامین دیگری هست رو جعل میکنه و نهایتا مقادیری رو تغییر میده و ایکس اس اس هم یعنی تزریق هر نوع جاوااسکریپتی در یک وبسایت.</p><br />
 <h2>کپی رایت</h2><br />
 <p>این یک مقاله آزاد و متن‌باز تحت مجوز GFDL1-3 می‌باشد، بنابراین اجازه کپی، توزیع و/یا تغییر این سند با شرایط مجوز GNU Free Documentation License داده شده است.</p><br />
-<h2>منابع</h2><br />
-<ul><br />
-<li><a href="https://en.wikipedia.org/wiki/Cross-site_scripting">https://en.wikipedia.org/wiki/Cross-site_scripting</a></li><br />
-<li><a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">https://en.wikipedia.org/wiki/Cross-site_request_forgery</a></li><br />
-<li><a href="https://www.youtube.com/watch?v=EoaDgUgS6QA">https://www.youtube.com/watch?v=EoaDgUgS6QA</a></li><br />
-<li><a href="https://www.youtube.com/watch?v=eWEgUcHPle0">https://www.youtube.com/watch?v=eWEgUcHPle0</a></li><br />
+<h2>نویسنده</h2>
+<ul>
+<li>بهراد.ب (behroora@yahoo.com)</li>
+</ul><br />
+<h2>منابع</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Cross-site_scripting">https://en.wikipedia.org/wiki/Cross-site_scripting</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">https://en.wikipedia.org/wiki/Cross-site_request_forgery</a></li>
+<li><a href="https://www.youtube.com/watch?v=EoaDgUgS6QA">https://www.youtube.com/watch?v=EoaDgUgS6QA</a></li>
+<li><a href="https://www.youtube.com/watch?v=eWEgUcHPle0">https://www.youtube.com/watch?v=eWEgUcHPle0</a></li>
 </ul><br />
 <p>دو ویدیو آخر بسیار عالی هستن.</p></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
