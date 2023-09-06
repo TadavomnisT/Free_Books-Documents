@@ -4951,8 +4951,10 @@ ______________________________________
 
 ## مسائل مرتبط با این مقاله
 
+
 این مقاله بصورت آزاد و اپن‌سورس در مخزن [کتابها/مقالات آزاد](https://github.com/TadavomnisT/Free_Books-Documents) در لینک زیر در دسترس است:
-* https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr
+
+https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr
 *  [مقایسه سرعت خوندن/نوشتن RAM و HDD 🔥](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr)
     *  [رم چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr#%D8%B1%D9%85-%DA%86%DB%8C%D8%B3%D8%AA)
     *  [هارددیسک چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr#%D9%87%D8%A7%D8%B1%D8%AF%D8%AF%DB%8C%D8%B3%DA%A9-%DA%86%DB%8C%D8%B3%D8%AA)
@@ -4962,7 +4964,8 @@ ______________________________________
 
 
 نسخه انگلیسی این مقاله:
-* https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En
+
+https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En
 *  [Comparison of RAM and HDD Read/Write Speeds 🔥](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En)
     *  [What is a RAM?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#what-is-a-ram)
     *  [What is a Hard-Disk?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#what-is-a-hard-disk)
@@ -4972,5 +4975,6 @@ ______________________________________
 
 
 **هر نوع اشکال علمی، مساله یا بحث مربوط با این مقاله را میتوانید از طریق Issue در ریپازیتوری یا ایمیل مطرح نمایید:**
+
 * https://github.com/TadavomnisT/Free_Books-Documents/issues
 * behroora@yahoo.com
