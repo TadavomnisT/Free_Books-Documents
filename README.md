@@ -11,7 +11,7 @@ ____________________________________________
 
 ### Articles:
 ##### English:
-* [What is Tadavomnism?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/1-what-is-Tadavomnism) (fun)
+* [What is Tadavomnism?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/1-what-is-Tadavomnism) (Fun:3)
 * [Which Search Engine Should We Use?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-En)
 * [What is the Difference Between XSS and XSRF?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En)
      * [What is XSS attack?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En#what-is-xss-attack)
@@ -28,7 +28,7 @@ ____________________________________________
 *  [فرق بین XSS و XSRF چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr)
       *  [حمله XSS چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr#%D8%AD%D9%85%D9%84%D9%87-xss-%DA%86%DB%8C%D8%B3%D8%AA)
       *  [حمله XSRF چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr#-%D8%AD%D9%85%D9%84%D9%87-csrfxsrf-%DA%86%DB%8C%D8%B3%D8%AA)
-*  [مقایسه سرعت خوندن/نوشتن RAM و HDD](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr)
+*  [مقایسه سرعت خوندن/نوشتن RAM و HDD 🔥](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr)
       *  [رم چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr#%D8%B1%D9%85-%DA%86%DB%8C%D8%B3%D8%AA)
       *  [هارددیسک چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr#%D9%87%D8%A7%D8%B1%D8%AF%D8%AF%DB%8C%D8%B3%DA%A9-%DA%86%DB%8C%D8%B3%D8%AA)
       *  [چرا میگیم هارد دیسک به طور متوسط 100,000 بار از رم کند تره؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-Pr#%D9%85%D9%82%D8%A7%DB%8C%D8%B3%D9%87-%D8%B3%D8%B1%D8%B9%D8%AA-%D9%87%D8%A7%D8%B1%D8%AF%D8%AF%DB%8C%D8%B3%DA%A9-%D9%88-%D8%B1%D9%85)
