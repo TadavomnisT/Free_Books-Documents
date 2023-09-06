@@ -238,6 +238,10 @@ function ei_decode($ei)
 
 This is a free and open-source article under the license of GFDL1-3, so permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License.
 
+## Author
+
++ Behrad B. (behroora@yahoo.com)
+
 ## Refrences:
 
 * https://github.com/duckduckgo
