@@ -225,7 +225,7 @@ This is a free and open-source article under the license of GFDL1-3, so permissi
 
 + Behrad B. (behroora@yahoo.com)
 
-## Resources:
+## Resources
 
 * https://en.wikipedia.org/wiki/Cross-site_scripting
 * https://en.wikipedia.org/wiki/Cross-site_request_forgery
@@ -238,7 +238,7 @@ The last two videos are brilliant.
 ## Issues related to this Article
 
 
-This free and open-source article is available in [Free Books/Documents](https://github.com/TadavomnisT/Free_Books-Documents) repository with the following link:
+This free and open-source article is available at [Free Books/Documents](https://github.com/TadavomnisT/Free_Books-Documents) repository with the following link:
 
 https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En
 * [What is the Difference Between XSS and XSRF?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En)
