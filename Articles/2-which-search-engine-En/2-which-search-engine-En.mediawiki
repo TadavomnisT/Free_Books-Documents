@@ -202,3 +202,18 @@ This is a free and open-source article under the license of GFDL1-3, so permissi
 * https://cs50.stackexchange.com/questions/38839/cs50w-project-0-im-feeling-lucky
 * https://deedpolloffice.com/blog/articles/decoding-ei-parameter
 * https://stackoverflow.com/questions/18584386/what-does-ei-mean-in-the-google-homepage-url-https-www-google-co-in-gws-rd#20753179
+
+== Issues related to this Article ==
+
+This free and open-source article is available in [https://github.com/TadavomnisT/Free_Books-Documents Free Books/Documents] repository with the following link:
+
+https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-En * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-En Which Search Engine Should We Use?]
+
+The Persian version of this article:
+
+https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr
+
+'''Any scientific mistakes, issues, questions, or discussions related to this article can be posted through Issues section of repository or sent by email:'''
+
+* https://github.com/TadavomnisT/Free_Books-Documents/issues
+* behroora@yahoo.com
