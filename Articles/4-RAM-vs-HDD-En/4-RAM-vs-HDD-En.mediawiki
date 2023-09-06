@@ -4726,7 +4726,7 @@ This is a free and open-source article under the license of GFDL1-3, so permissi
 
 == Issues related to this Article ==
 
-This free and open-source article is available in [https://github.com/TadavomnisT/Free_Books-Documents Free Books/Documents] repository with the following link:
+This free and open-source article is available at [https://github.com/TadavomnisT/Free_Books-Documents Free Books/Documents] repository with the following link:
 
 https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En Comparison of RAM and HDD Read/Write Speeds 🔥] * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#what-is-a-ram What is a RAM?] * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#what-is-a-hard-disk What is a Hard-Disk?] * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#comparison-of-hard-disk-and-ram-speed Speed Comparison between RAM and HDD] * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#phase-1-comparing-the-speed-of-ram-and-hard-disk-in-handling-large-data Phase 1: Comparing the Speed of RAM and Hard Disk in Handling Large Data] * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#phase-two-comparing-the-speed-of-ram-and-hard-disk-for-small-data-and-fast-sequential-allocations Phase Two: Comparing the Speed of RAM and Hard Disk for Small Data and Fast Sequential Allocations]
 
