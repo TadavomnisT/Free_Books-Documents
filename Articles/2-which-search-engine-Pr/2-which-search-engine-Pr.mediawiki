@@ -187,6 +187,15 @@ https://deedpolloffice.com/blog/articles/decoding-ei-parameter
 
 == مسائل مرتبط با این مقاله ==
 
-این مقاله بصورت آزاد و اپن‌سورس در مخزن [https://github.com/TadavomnisT/Free_Books-Documents کتابها/مقالات آزاد] در لینک زیر در دسترس است: * https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr از چه سرچ انجینی استفاده کنیم؟]
+این مقاله بصورت آزاد و اپن‌سورس در مخزن [https://github.com/TadavomnisT/Free_Books-Documents کتابها/مقالات آزاد] در لینک زیر در دسترس است:
 
-هر نوع اشکال علمی، مساله یا بحث مربوط با این مقاله را میتوانید از طریق Issue در ریپازیتوری یا ایمیل مطرح نمایید: * https://github.com/TadavomnisT/Free_Books-Documents/issues * behroora@yahoo.com
+https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr از چه سرچ انجینی استفاده کنیم؟]
+
+نسخه انگلیسی این مقاله:
+
+https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-E * [https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-En Which Search Engine Should We Use?]
+
+'''هر نوع اشکال علمی، مساله یا بحث مربوط با این مقاله را میتوانید از طریق Issue در ریپازیتوری یا ایمیل مطرح نمایید:'''
+
+* https://github.com/TadavomnisT/Free_Books-Documents/issues
+* behroora@yahoo.com
