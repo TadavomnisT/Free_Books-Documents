@@ -4895,7 +4895,7 @@ And that's it, the hard disk is on average 100,000 times slower than RAM:))
 
 In your own article, you can work on scenarios that can show even greater speed differences. You can perform parallelism in the second phase of the experiment, use different disks, or even use different clusters on different RAID systems. Additionally, if feasible, you can actually let the disk perform calculations for 125 days to obtain a real comparison result:)
 
-## Copyright:
+## Copyright
 
 This is a free and open-source article under the license of GFDL1-3, so permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License.
 
