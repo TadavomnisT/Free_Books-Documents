@@ -230,7 +230,7 @@ function ei_decode($ei)
 }
 ```
 
-## کپی رایت:
+## کپی رایت
 
 این یک مقاله آزاد و متن‌باز تحت مجوز GFDL1-3 می‌باشد، بنابراین اجازه کپی، توزیع و/یا تغییر این سند با شرایط مجوز GNU Free Documentation License داده شده است.
 
@@ -238,7 +238,7 @@ function ei_decode($ei)
 
 + بهراد.ب (behroora@yahoo.com)
 
-## منابع:
+## منابع
 
 * https://github.com/duckduckgo
 * https://help.duckduckgo.com/privacy/t/
@@ -249,3 +249,13 @@ function ei_decode($ei)
 * https://cs50.stackexchange.com/questions/38839/cs50w-project-0-im-feeling-lucky
 * https://deedpolloffice.com/blog/articles/decoding-ei-parameter
 * https://stackoverflow.com/questions/18584386/what-does-ei-mean-in-the-google-homepage-url-https-www-google-co-in-gws-rd#20753179 
+
+## مسائل مرتبط با این مقاله
+
+این مقاله بصورت آزاد و اپن‌سورس در مخزن [کتابها/مقالات آزاد](https://github.com/TadavomnisT/Free_Books-Documents) در لینک زیر در دسترس است:
+* https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr
+* [از چه سرچ انجینی استفاده کنیم؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr)
+
+هر نوع اشکال علمی، مساله یا بحث مربوط با این مقاله را میتوانید از طریق Issue در ریپازیتوری یا ایمیل مطرح نمایید:
+* https://github.com/TadavomnisT/Free_Books-Documents/issues
+* behroora@yahoo.com
