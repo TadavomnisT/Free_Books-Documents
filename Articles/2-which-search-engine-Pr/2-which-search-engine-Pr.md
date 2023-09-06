@@ -234,6 +234,10 @@ function ei_decode($ei)
 
 این یک مقاله آزاد و متن‌باز تحت مجوز GFDL1-3 می‌باشد، بنابراین اجازه کپی، توزیع و/یا تغییر این سند با شرایط مجوز GNU Free Documentation License داده شده است.
 
+## نویسنده
+
++ بهراد.ب (behroora@yahoo.com)
+
 ## منابع:
 
 * https://github.com/duckduckgo
