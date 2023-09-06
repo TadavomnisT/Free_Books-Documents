@@ -11,7 +11,7 @@ ____________________________________________
 
 ### Articles:
 ##### English:
-* [What is Tadavomnism?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/1-what-is-Tadavomnism) (mini-article)
+* [What is Tadavomnism?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/1-what-is-Tadavomnism) (fun)
 * [Which Search Engine Should We Use?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-En)
 * [What is the Difference Between XSS and XSRF?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En)
      * [What is XSS attack?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En#what-is-xss-attack)
