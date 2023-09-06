@@ -1327,4 +1327,716 @@ Therefore:
 <p>Here, I performed a subtle trick:))</p><br />
 <p>I'll explain it in technical language only. By ovserving files getting copied quickly within a range of 20 seconds, I realized that an optimization is goin on under the hood. It's possible that the file has been cached by an entity - the operating system or I/O-related API modules - (and we can see how practical concepts are approving theoretical ones). And since the file entropy is very low (because it's all full of ASCII bytes of "A" character), our experiment may be influenced by the optimizations I explained earlier theoretically. Therefore, for this purpose, I obtained 1 gigabyte of random data from the system entropy instead of our low-entropy file and observed that the time became much longer (up to 20 times longer).</p>
 <pre><code class="language-bash">rm output.txt &amp;&amp; dd if=/dev/random bs=1024 count=1048576 &gt; output.txt</code></pre><br />
+<hr /><br />
+<p>I want to do the final comparing and change the workflow. For this matter, we compare HDD and RAM in a way that several processes consume resources in parallel and interact directly with the hard disk or RAM. We want to see how the servicing time decreases when our storage device is under shared access, both in RAM and disk.</p><br />
+<p>From what we discussed in theory, we know that RAM shouldn't really make much of difference in its behaviour and its speed is not heavily affected by this matter, so it shouldn't slow down significantly. However, the disk on the other hand, due to its physical movements, is likely to be severely affected in terms of speed. Let's go and see it in practice:</p><br />
+<p>The following program eats the RAM! It takes 1 gigabyte of RAM and repeatedly refills and makes it empty.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+
+    cout &lt;&lt; "EATING RAM!!!" &lt;&lt; endl;
+    while( true )
+    {
+        char* arr = new char[1073741824];
+        for(int i = 0; i &lt; 1073741824 ; i++)
+            arr[i] = 'A';
+        delete arr;
+    }
+
+    return 0;
+}</code></pre><br />
+<p><a href="./Files/RAM_eater_test.cpp">Source code</a></p><br />
+<p>I run four instances of this program in parallel at the same time:</p>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ RAM_eater.cpp
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+EATING RAM!!!</code></pre>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+EATING RAM!!!</code></pre>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+EATING RAM!!!</code></pre>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out
+EATING RAM!!!</code></pre><br />
+<p><img src="Files/Executing_RAMeaters.png" alt="Executing RAM-eaters" /></p><br />
+<p>And the output of the <code>top</code> command when four instances of the memory-consuming process are running:</p><br />
+<p><img src="Files/top_command_result.png" alt="top command result" /></p><br />
+<p>Now, concurrently with these, I run our first program, which is <a href="./Files/RAM_write_test.cpp">this</a>:</p>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ RAM_write_test.cpp -o test.out
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out                   
+Execution Time (Based on ctime): 3638.12 ms
+Execution Time (Based on chrono): 3638.24 ms
+Memory Usage: 1047004 KB
+
+real    3.67s
+user    3.45s
+sys     0.22s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3539.23 ms
+Execution Time (Based on chrono): 3539.71 ms
+Memory Usage: 1046948 KB
+
+real    3.56s
+user    3.36s
+sys     0.20s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3587.88 ms
+Execution Time (Based on chrono): 3588.17 ms
+Memory Usage: 1046956 KB
+
+real    3.63s
+user    3.43s
+sys     0.20s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3629.68 ms
+Execution Time (Based on chrono): 3630.07 ms
+Memory Usage: 1046968 KB
+
+real    3.67s
+user    3.43s
+sys     0.24s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3568.61 ms
+Execution Time (Based on chrono): 3568.84 ms
+Memory Usage: 1046920 KB
+
+real    3.59s
+user    3.39s
+sys     0.21s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3578.81 ms
+Execution Time (Based on chrono): 3578.97 ms
+Memory Usage: 1046828 KB
+
+real    3.61s
+user    3.39s
+sys     0.22s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3585.52 ms
+Execution Time (Based on chrono): 3585.62 ms
+Memory Usage: 1046760 KB
+
+real    3.61s
+user    3.33s
+sys     0.28s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3566.91 ms
+Execution Time (Based on chrono): 3567.07 ms
+Memory Usage: 1046944 KB
+
+real    3.60s
+user    3.37s
+sys     0.22s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3594.36 ms
+Execution Time (Based on chrono): 3594.45 ms
+Memory Usage: 1046972 KB
+
+real    3.63s
+user    3.39s
+sys     0.24s
+cpu     99%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./test.out
+Execution Time (Based on ctime): 3584.68 ms
+Execution Time (Based on chrono): 3588.76 ms
+Memory Usage: 1046840 KB
+
+real    3.62s
+user    3.35s
+sys     0.27s
+cpu     99%</code></pre><br />
+<p>And Calculating average:</p>
+<pre><code class="language-md">(3638.12+3539.23+3587.88+3629.68+3568.61+3578.81+3585.52+3566.91+3594.36+3584.68) / 10 = 35873.8 / 10 = 3587.38
+(3638.24+3539.71+3588.17+3630.07+3568.84+3578.97+3585.62+3567.07+3594.45+3588.76) / 10 = 35879.9 / 10 = 3587.99
+(1047004+1046948+1046956+1046968+1046920+1046828+1046760+1046944+1046972+1046840) / 10 = 10469140 / 10 = 1046914
+(3.67s+3.56s+3.63s+3.67s+3.59s+3.61s+3.61s+3.60s+3.63s+3.62s) / 10 = 36.19 / 10 = 3.619
+(3.45s+3.36s+3.43s+3.43s+3.39s+3.39s+3.33s+3.37s+3.39s+3.35s) / 10 = 33.89 / 10 = 3.389
+(0.22s+0.20s+0.20s+0.24s+0.21s+0.22s+0.28s+0.22s+0.24s+0.27s) / 10 = 2.3 / 10 = 0.23
+(99%+99%+99%+99%+99%+99%+99%+99%+99%+99%) / 10 = 990 / 10 = 99
+
+
+Therefore:
+
+* Average Execution Time(Based on ctime): 3587.38 ms
+* Average Execution Time(Based on chrono): 3587.99 ms
+* Average Memory Usage: 1046914 KB
+* Average Real Time: 3.619 s
+* Average User Time: 3.389 s
+* Average Sys Time: 0.23 s
+* Average CPU Usage: 99 %</code></pre><br />
+<p>We can see that the average time has increased approximately by 1.5 times. However, this increase in time does not necessarily mean that the RAM chips have become slower. It could be due to the congestion of the RAM bus, the congestion of the operating system's RAM module, the congestion of the API that processes interact with for memory allocation, or even the congestion of the processor itself!<br />
+To make sure it's not because of the processor, I repeat the above experiment in a multithreading or multicore manner, and I put each memory-consuming process on a separate core of the CPU, and also put the test process on a separate core (altogether 5 cores).<br />
+In simple terms, a multithreaded program assigns different computation threads to different cores. With this approach, we can ensure that the slowdown is not only due to CPU congestion... (Later, we will discuss multithreading or multiprocessing in detail in an article.)</p><br />
+<hr /><br />
+<p>Consider the following program:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;sys/resource.h&gt;
+#include &lt;chrono&gt;
+#include &lt;thread&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+void ram_eater()
+{
+    cout &lt;&lt; "A ram-eater started eating!" &lt;&lt; endl;
+    while( true )
+    {
+        char* arr = new char[1073741824];
+        for(int i = 0; i &lt; 1073741824 ; i++)
+            arr[i] = 'A';
+        delete arr;
+    }
+}
+
+void test()
+{
+    for( int i = 0; i &lt; 10; i++ )
+    {
+        // Start execution time
+        clock_t start_1 = clock();
+        auto start_2 = chrono::high_resolution_clock::now();
+
+        // Start memory usage
+        struct rusage usage;
+        getrusage(RUSAGE_SELF, &amp;usage);
+        long memory_usage_start = usage.ru_maxrss; // in kilobytes
+
+        // Code ----------------------------------------------------------
+        char* arr = new char[1073741824];
+        for(int j = 0; j &lt; 1073741824 ; j++)
+            arr[j] = 'A';
+
+        // ---------------------------------------------------------------
+
+        // Stop measuring memory usage
+        getrusage(RUSAGE_SELF, &amp;usage);
+        long memory_usage_end = usage.ru_maxrss; // in kilobytes
+
+        // Stop measuring execution time
+        clock_t end_1 = clock();
+        auto end_2 = chrono::high_resolution_clock::now();
+        double execution_time_1 = double(end_1 - start_1) / CLOCKS_PER_SEC;
+        chrono::duration&lt;double, milli&gt; execution_time_2 = end_2 - start_2;
+
+        // Printing result
+        cout &lt;&lt; "Execution Time (Based on ctime): " &lt;&lt; execution_time_1 * 1000.0 &lt;&lt; " ms" &lt;&lt; endl;
+        cout &lt;&lt; "Execution Time (Based on chrono): " &lt;&lt; execution_time_2.count() &lt;&lt; " ms" &lt;&lt; endl;
+        cout &lt;&lt; "Memory Usage: " &lt;&lt; memory_usage_end - memory_usage_start &lt;&lt; " KB" &lt;&lt; endl;
+
+        // Free memory to prevent memory-leak
+        delete arr;
+
+        // Sleep for 10 seconds
+        this_thread::sleep_for(chrono::milliseconds(10000)); 
+    }
+}
+
+int main() {
+    vector&lt;thread&gt; threads;
+
+    threads.emplace_back(ram_eater);
+    threads.emplace_back(ram_eater);
+    threads.emplace_back(ram_eater);
+    threads.emplace_back(ram_eater);
+
+    threads.emplace_back(test);
+
+    // Wait for test to be over
+    threads[4].join();
+
+    return 0;
+}</code></pre><br />
+<p><a href="./Files/RAM_eating_multithreading_test.cpp">Source code</a></p><br />
+<p>Execution:</p><br />
+<p><img src="Files/Executing_RAM_eating_multithreading_test.png" alt="Executing RAM_eating_multithreading_test.cpp" /></p>
+<pre><code class="language-diff">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ RAM_eating_multithreading_test.cpp
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./a.out                               
+A ram-eater started eating!
+A ram-eater started eating!
+A ram-eater started eating!
+A ram-eater started eating!
+Execution Time (Based on ctime): 12877.4 ms
+-Execution Time (Based on chrono): 2576.37 ms
+Memory Usage: 4595268 KB
+Execution Time (Based on ctime): 14381.2 ms
+-Execution Time (Based on chrono): 2879.22 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18355.6 ms
+-Execution Time (Based on chrono): 3672.86 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18452.8 ms
+-Execution Time (Based on chrono): 3692.51 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 17189.4 ms
+-Execution Time (Based on chrono): 3442.85 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18136.1 ms
+-Execution Time (Based on chrono): 3625.81 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 17982.1 ms
+-Execution Time (Based on chrono): 3599.67 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18238.8 ms
+-Execution Time (Based on chrono): 3648.24 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18639.8 ms
+-Execution Time (Based on chrono): 3729.46 ms
+Memory Usage: 0 KB
+Execution Time (Based on ctime): 18598.2 ms
+-Execution Time (Based on chrono): 3719.59 ms
+Memory Usage: 0 KB
+terminate called without an active exception
+zsh: IOT instruction  ./a.out</code></pre><br />
+<p>You see that the program is running on multiple cores, and since everything is under one process, the <code>ctime</code> reported time and the amount of memory consumed by the irrelevant data are not relevant to our experiment. Only the <code>chrono</code> time, marked in red (as a Markdown symbol), is the accurate time that should be involved in the comparison. The average time is as follows:</p>
+<pre><code class="language-md">(2576.37+2879.22+3672.86+3692.51+3442.85+3625.81+3599.67+3648.24+3729.46+3719.59) / 10 = 34586.58 / 10 = 3458.658
+
+Therefore:
+
+* Average Execution Time(Based on chrono): 3458.658 ms</code></pre><br />
+<p>The average time obtained in a multithreaded manner is <code>3458.658</code> milliseconds, which is approximately equal to the average time of multiprocessing, which is <code>3587.99</code> milliseconds. So, we can confidently say that, on average, by allocating 100 milliseconds to processor overhead, RAM under a Unix system, during shared access - in a deadly manner! - becomes only 1.5 times slower.</p><br />
+<hr /><br />
+<p>Now let's move on to the same shared access on the hard disk. For this purpose, we are writing a disk-consuming program:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;signal.h&gt;
+#include &lt;ctime&gt;
+
+using namespace std;
+
+ofstream outfile;
+
+void signalHandler(int signum) {
+    outfile.close();
+    cout &lt;&lt; "Interrupt signal received. File closed." &lt;&lt; endl;
+    exit(signum);
+}
+
+int main() {
+    signal(SIGINT, signalHandler);
+    srand(time(NULL));
+    char character = 'A';
+    string filename = to_string(rand()) + ".txt";
+
+    cout &lt;&lt; "EATING HDD!!!" &lt;&lt; endl;
+
+
+    while (true) {
+
+        outfile.open(filename);
+        if (!outfile.is_open()) {
+            cout &lt;&lt; "Error opening file: " &lt;&lt; filename &lt;&lt; endl;
+            return 1;
+        }
+
+        for (int i = 0; i &lt; 1073741824; i++) {
+            outfile &lt;&lt; character;
+        }
+
+        outfile.close();
+    }
+
+    return 0;
+}</code></pre><br />
+<p><a href="./Files/HDD_eater.cpp">Source code</a></p><br />
+<p>Let me give you a brief explanation. This program creates a file with random names and writes 1 gigabyte of data into it. When the writing process is complete, it starts over and writes from the beginning again. This process continues indefinitely unless a interrup-signal is sent to the program. Upon receiving the interruption, it closes the file and the program finishes.</p>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ HDD_eater.cpp -o HDD_eater.out
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./HDD_eater.out 
+EATING HDD!!!</code></pre>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./HDD_eater.out 
+EATING HDD!!!</code></pre>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./HDD_eater.out 
+EATING HDD!!!</code></pre>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ ./HDD_eater.out 
+EATING HDD!!!</code></pre><br />
+<p><img src="Files/Executing_HDDeaters.png" alt="Executing HDD-eaters" /></p><br />
+<p>And during this process, I am running <a href="./Files/HDD_write_test.cpp">this</a> program:</p>
+<pre><code class="language-bash">┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ g++ HDD_write_test.cpp -o HDD_write.out
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out 
+Execution Time (Based on ctime): 11230.8 ms
+Execution Time (Based on chrono): 25468.1 ms
+Memory Usage: 0 KB
+
+real    25.48s
+user    10.30s
+sys     0.93s
+cpu     44%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 11096.1 ms
+Execution Time (Based on chrono): 20764 ms
+Memory Usage: 0 KB
+
+real    20.77s
+user    10.16s
+sys     0.94s
+cpu     53%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13815.2 ms
+Execution Time (Based on chrono): 32682 ms
+Memory Usage: 0 KB
+
+real    32.68s
+user    12.63s
+sys     1.18s
+cpu     42%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 15544.6 ms
+Execution Time (Based on chrono): 47560 ms
+Memory Usage: 0 KB
+
+real    47.57s
+user    13.91s
+sys     1.64s
+cpu     32%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 16873.7 ms
+Execution Time (Based on chrono): 45354.9 ms
+Memory Usage: 0 KB
+
+real    45.36s
+user    15.25s
+sys     1.63s
+cpu     37%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 15391.3 ms
+Execution Time (Based on chrono): 39712.6 ms
+Memory Usage: 0 KB
+
+real    39.92s
+user    13.94s
+sys     1.46s
+cpu     38%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 14051.7 ms
+Execution Time (Based on chrono): 29361.3 ms
+Memory Usage: 0 KB
+
+real    29.36s
+user    12.61s
+sys     1.44s
+cpu     47%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13137.5 ms
+Execution Time (Based on chrono): 35374 ms
+Memory Usage: 0 KB
+
+real    35.64s
+user    11.94s
+sys     1.21s
+cpu     36%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13510.7 ms
+Execution Time (Based on chrono): 28392.7 ms
+Memory Usage: 0 KB
+
+real    28.40s
+user    12.42s
+sys     1.10s
+cpu     47%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 13595 ms
+Execution Time (Based on chrono): 44944.2 ms
+Memory Usage: 0 KB
+
+real    44.95s
+user    12.24s
+sys     1.35s
+cpu     30%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 18275.6 ms
+Execution Time (Based on chrono): 70660.9 ms
+Memory Usage: 0 KB
+
+real    70.66s
+user    16.16s
+sys     2.11s
+cpu     25%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 17255 ms
+Execution Time (Based on chrono): 49479.4 ms
+Memory Usage: 0 KB
+
+real    49.48s
+user    15.43s
+sys     1.82s
+cpu     34%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 15195.9 ms
+Execution Time (Based on chrono): 52613.5 ms
+Memory Usage: 0 KB
+
+real    52.62s
+user    13.64s
+sys     1.56s
+cpu     28%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 14688.6 ms
+Execution Time (Based on chrono): 54965.7 ms
+Memory Usage: 0 KB
+
+real    54.97s
+user    13.33s
+sys     1.36s
+cpu     26%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 18287.1 ms
+Execution Time (Based on chrono): 61944 ms
+Memory Usage: 0 KB
+
+real    61.95s
+user    16.30s
+sys     1.98s
+cpu     29%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 21118.9 ms
+Execution Time (Based on chrono): 70709.4 ms
+Memory Usage: 0 KB
+
+real    70.71s
+user    19.07s
+sys     2.05s
+cpu     29%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 24345 ms
+Execution Time (Based on chrono): 82900.9 ms
+Memory Usage: 0 KB
+
+real    82.90s
+user    21.94s
+sys     2.41s
+cpu     29%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 18640.5 ms
+Execution Time (Based on chrono): 56225.7 ms
+Memory Usage: 0 KB
+
+real    56.23s
+user    16.70s
+sys     1.94s
+cpu     33%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 17671.1 ms
+Execution Time (Based on chrono): 68766 ms
+Memory Usage: 0 KB
+
+real    68.77s
+user    16.09s
+sys     1.58s
+cpu     25%
+
+┌──(user㉿dhcppc4)-[~/Desktop/Articles/4-RAM-vs-HDD-Pr/Files]
+└─$ time ./HDD_write.out
+Execution Time (Based on ctime): 22847.9 ms
+Execution Time (Based on chrono): 88525.2 ms
+Memory Usage: 0 KB
+
+real    88.53s
+user    20.43s
+sys     2.42s
+cpu     25%</code></pre>
+<pre><code class="language-md">(11230.8+11096.1+13815.2+15544.6+16873.7+15391.3+14051.7+13137.5+13510.7+13595+18275.6+17255+15195.9+14688.6+18287.1+21118.9+24345+18640.5+17671.1+22847.9) / 20 = 326572.2 / 20 = 16328.61
+(25468.1+20764+32682+47560+45354.9+39712.6+29361.3+35374+28392.7+44944.2+70660.9+49479.4+52613.5+54965.7+61944+70709.4+82900.9+56225.7+68766+88525.2) / 20 = 1006404.5 / 20 = 50320.225
+(0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0) / 20 = 0 / 20 = 0
+(25.48s+20.77s+32.68s+47.57s+45.36s+39.92s+29.36s+35.64s+28.40s+44.95s+70.66s+49.48s+52.62s+54.97s+61.95s+70.71s+82.90s+56.23s+68.77s+88.53s) / 20 = 1006.95 / 20 = 50.3475
+(10.30s+10.16s+12.63s+13.91s+15.25s+13.94s+12.61s+11.94s+12.42s+12.24s+16.16s+15.43s+13.64s+13.33s+16.30s+19.07s+21.94s+16.70s+16.09s+20.43s) / 20 = 294.49 / 20 = 14.7245
+(0.93s+0.94s+1.18s+1.64s+1.63s+1.46s+1.44s+1.21s+1.10s+1.35s+2.11s+1.82s+1.56s+1.36s+1.98s+2.05s+2.41s+1.94s+1.58s+2.42s) / 20 = 32.11 / 20 = 1.6055
+(44%+53%+42%+32%+37%+38%+47%+36%+47%+30%+25%+34%+28%+26%+29%+29%+29%+33%+25%+25%) / 20 = 689 / 20 = 34.45
+
+
+Therefore:
+
+* Average Execution Time(Based on ctime): 16328.61 ms
+* Average Execution Time(Based on chrono): 50320.225 ms
+* Average Memory Usage: 0 KB
+* Average Real Time: 50.3475 s
+* Average User Time: 14.7245 s
+* Average Sys Time: 1.6055 s
+* Average CPU Usage: 34.45 %</code></pre><br />
+<p>Take a look at this chart, in the first 20 experiments, the time duration has become slower in this way:</p><br />
+<p><img src="Files/HDD_speed_chart_in_20_tests.png" alt="HDD speed chart in 20 tests" /></p>
+<table>
+<thead>
+<tr>
+<th>Test#</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>25468.1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20764</td>
+</tr>
+<tr>
+<td>3</td>
+<td>32682</td>
+</tr>
+<tr>
+<td>4</td>
+<td>47560</td>
+</tr>
+<tr>
+<td>5</td>
+<td>45354.9</td>
+</tr>
+<tr>
+<td>6</td>
+<td>39712.6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>29361.3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>35374</td>
+</tr>
+<tr>
+<td>9</td>
+<td>28392.7</td>
+</tr>
+<tr>
+<td>10</td>
+<td>44944.2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>70660.9</td>
+</tr>
+<tr>
+<td>12</td>
+<td>49479.4</td>
+</tr>
+<tr>
+<td>13</td>
+<td>52613.5</td>
+</tr>
+<tr>
+<td>14</td>
+<td>54965.7</td>
+</tr>
+<tr>
+<td>15</td>
+<td>61944</td>
+</tr>
+<tr>
+<td>16</td>
+<td>70709.4</td>
+</tr>
+<tr>
+<td>17</td>
+<td>82900.9</td>
+</tr>
+<tr>
+<td>18</td>
+<td>56225.7</td>
+</tr>
+<tr>
+<td>19</td>
+<td>68766</td>
+</tr>
+<tr>
+<td>20</td>
+<td>88525.2</td>
+</tr>
+</tbody>
+</table><br />
+<p>Note: I created this chart using the free and open-source software <code>LibreOffice</code>.</p><br />
+<p>Firstly, what is observable from the chart is that over time, there is a linear growth in the time taken for I/O on the disk during shared access. We can conclude that as time passes, the disk writing time becomes slower and slower, unlike RAM, which follows a consistent trend.</p><br />
+<p>Secondly, we can see that the disk has performed its job 50 times slower, but we expected it to be much slower. This is related to the optimizations made by the operating system. The operating system does not allow one process to monopolize I/O on the disk, preventing other processes from accessing it. Instead, it schedules them in turns on the processor and shares the shared-resources. For more information, you can study the concepts of "deadlock" and "mutual exclusion" in computing. We may discuss them in separate article later.</p><br />
+<p>Thirdly, the optimization in the operating system is not the entire issue. Our HDD-eaters are not really standard. They are just four processes that write a limited and constant amount of data (which can be cached) in sequential sectors of the disk, repeating this movement. What if, instead of these HDD-eaters, we used real ones?</p><br />
+<hr /><br />
+<p>Alright, that's enough for now. I'll stop this experiment here because I don't want to damage my disk! But this story will remain unfinished:</p>
+<ul>
+<li>What other scenarios can we test to compare HDD and RAM in large datas?</li>
+</ul><br />
+<p>The comparison we made was a one-dimensional comparison. It was solely about a bunch of data being written in the most optimal way on the HDD/RAM, and we could observe that it could be up to 80 times slower in different scenarios. However, this experimental setup and comparison do not cover all aspects of the situation. We need another dimension of comparison.</p><br />
+<p>Stay tuned for the article as we move on to the second phase of comparison...</p><br />
 <hr /></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
