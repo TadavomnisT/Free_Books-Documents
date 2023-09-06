@@ -19,8 +19,8 @@ ____________________________________________
 *  [Comparison of RAM and HDD Read/Write Speeds](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En)
       *  [What is a RAM?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#what-is-a-ram)
       *  [What is a Hard-Disk?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#what-is-a-hard-disk)
-      *  [Comparison of Hard Disk and RAM Speed](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#comparison-of-hard-disk-and-ram-speed)
-            * [phase1](link)
+      *  [Speed Comparison between RAM and HDD](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#comparison-of-hard-disk-and-ram-speed)
+            * [Phase 1: Comparing the Speed of RAM and Hard Disk in Handling Large Data](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#phase-1-comparing-the-speed-of-ram-and-hard-disk-in-handling-large-data)
             * [phase2](link)
 
 ##### Persian:
