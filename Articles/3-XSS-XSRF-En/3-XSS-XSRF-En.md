@@ -233,3 +233,24 @@ This is a free and open-source article under the license of GFDL1-3, so permissi
 * https://www.youtube.com/watch?v=eWEgUcHPle0
 
 The last two videos are brilliant.
+
+
+## Issues related to this Article
+
+
+This free and open-source article is available in [Free Books/Documents](https://github.com/TadavomnisT/Free_Books-Documents) repository with the following link:
+
+https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En
+* [What is the Difference Between XSS and XSRF?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En)
+    * [What is XSS attack?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En#what-is-xss-attack)
+    * [What is XSRF attack?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-En#what-is-a-csrfxsrf-attack)
+
+
+The Persian version of this article:
+
+https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr
+
+**Any scientific mistakes, issues, questions, or discussions related to this article can be posted through Issues section of repository or sent by email:**
+
+* https://github.com/TadavomnisT/Free_Books-Documents/issues
+* behroora@yahoo.com
