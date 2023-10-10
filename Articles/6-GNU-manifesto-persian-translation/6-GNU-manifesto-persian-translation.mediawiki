@@ -909,11 +909,21 @@ This is a free and open-source article under the license of GFDL1-3, so permissi
 
 * https://www.gnu.org/gnu/manifesto.html
 * https://en.wikipedia.org/wiki/GNU_Manifesto
+* https://t.me/la5tknight
 
 == منابع ==
 
 * https://www.gnu.org/gnu/manifesto.html
 * https://en.wikipedia.org/wiki/GNU_Manifesto
+* https://t.me/la5tknight
+
+== Special Thanks to ==
+
+* https://t.me/la5tknight For helping me in translation.
+
+== تشکر ویژه از ==
+
+* https://t.me/la5tknight برای کمک در فرایند ترجمه.
 
 == Issues related to this Article ==
 
