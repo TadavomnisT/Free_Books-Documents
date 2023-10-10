@@ -446,7 +446,7 @@ We have already greatly reduced the amount of work that the whole society must d
 
 همچنین چند نکته در ترجمه شایان ذکر است:
 
-* عبارت “Public Domain” به عنوان “مالکیت عمومی” ترجمه شده است، برای اطلاعات بیشتر برای اطلاعات بیشتر “[https://en.wikipedia.org/wiki/Public_domain Public Domain]” و “[https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D9%84%DA%A9%DB%8C%D8%AA_%D8%B9%D9%85%D9%88%D9%85%DB%8C مالکیت عمومی]” را در ویکی‌پدیا مطالعه بفرمائید.
+* عبارت “Public Domain” به عنوان “مالکیت عمومی” ترجمه شده است، برای اطلاعات بیشتر “[https://en.wikipedia.org/wiki/Public_domain Public Domain]” و “[https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D9%84%DA%A9%DB%8C%D8%AA_%D8%B9%D9%85%D9%88%D9%85%DB%8C مالکیت عمومی]” را در ویکی‌پدیا مطالعه بفرمائید.
 * عبارت “Murphy” به عنوان “قانون مورفی” ترجمه شده است، این قانون به صراحت بیان میکند که: [https://en.wikipedia.org/wiki/Murphy's_law Anything that can go wrong will go wrong.] [https://fa.wikipedia.org/wiki/%D9%82%D9%88%D8%A7%D9%86%DB%8C%D9%86_%D9%85%D9%88%D8%B1%D9%81%DB%8C هر خطای ممکن رخ خواهد داد.]
 
 برای اطلاعات بیشتر مقالات مرتبط در ویکی‌پدیا را مطالعه بفرمائید.
@@ -869,7 +869,7 @@ We have already greatly reduced the amount of work that the whole society must d
 
 همچنین چند نکته در ترجمه شایان ذکر است:
 
-* عبارت “Public Domain” به عنوان “مالکیت عمومی” ترجمه شده است، برای اطلاعات بیشتر برای اطلاعات بیشتر “[https://en.wikipedia.org/wiki/Public_domain Public Domain]” و “[https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D9%84%DA%A9%DB%8C%D8%AA_%D8%B9%D9%85%D9%88%D9%85%DB%8C مالکیت عمومی]” را در ویکی‌پدیا مطالعه بفرمائید.
+* عبارت “Public Domain” به عنوان “مالکیت عمومی” ترجمه شده است، برای اطلاعات بیشتر “[https://en.wikipedia.org/wiki/Public_domain Public Domain]” و “[https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D9%84%DA%A9%DB%8C%D8%AA_%D8%B9%D9%85%D9%88%D9%85%DB%8C مالکیت عمومی]” را در ویکی‌پدیا مطالعه بفرمائید.
 * عبارت “Murphy” به عنوان “قانون مورفی” ترجمه شده است، این قانون به صراحت بیان میکند که: [https://en.wikipedia.org/wiki/Murphy's_law Anything that can go wrong will go wrong.] [https://fa.wikipedia.org/wiki/%D9%82%D9%88%D8%A7%D9%86%DB%8C%D9%86_%D9%85%D9%88%D8%B1%D9%81%DB%8C هر خطای ممکن رخ خواهد داد.]
 
 برای اطلاعات بیشتر مقالات مرتبط در ویکی‌پدیا را مطالعه بفرمائید.
