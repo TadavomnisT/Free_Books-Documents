@@ -406,73 +406,190 @@ State_0</pre>
 
 [[File:Files/2_4.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+11
+00
+
+Tree:
+root
+└── [0,1]
+    └── [0,0]</pre>
 
 -----
 
 [[File:Files/2_5.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+01
+10✅
+
+Tree:
+root
+└── [0,1]
+    └── [1,0]✅</pre>
 
 -----
 
 [[File:Files/2_6.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+01
+01
+
+Tree:
+root
+└── [0,1]
+    └── [1,1]</pre>
 
 -----
 
 [[File:Files/2_7.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+00
+00
+
+Tree:
+root</pre>
 
 -----
 
 [[File:Files/2_8.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+00
+10
+
+Tree:
+root
+└── [1,0]</pre>
 
 -----
 
 [[File:Files/2_9.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+10
+10
+
+Tree:
+root
+└── [1,0]
+    └── [0,0]</pre>
 
 -----
 
 [[File:Files/2_10.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+01
+10✅
+
+Tree:
+root
+└── [1,0]
+    └── [0,1]✅</pre>
 
 -----
 
 [[File:Files/2_11.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+00
+11
+
+Tree:
+root
+└── [1,0]
+    └── [1,1]</pre>
 
 -----
 
 [[File:Files/2_12.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+00
+00
+
+Tree:
+root</pre>
 
 -----
 
 [[File:Files/2_13.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+00
+01
+
+Tree:
+root
+└── [1,1]</pre>
 
 -----
 
 [[File:Files/2_14.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+10
+01✅
+
+Tree:
+root
+└── [1,1]
+    └── [0,0]✅</pre>
 
 -----
 
 [[File:Files/2_15.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+01
+01
+
+Tree:
+root
+└── [1,1]
+    └── [0,1]</pre>
 
 -----
 
 [[File:Files/2_16.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>Board:
+00
+11
+
+Tree:
+root
+└── [1,1]
+    └── [1,0]</pre>
 و تمااااااااااام :) تمام جوابهای ممکن رو پیدا کردیم 4 جواب (با تفاوت) :
 
 [[File:Files/2_answers.png|thumb|none|alt=2 chess|2 chess]]
 
+<pre>10
+02✅
+
+01
+20✅
+
+20
+01✅
+
+02
+10✅</pre>
 و اگر بین رخ ها تمییز قائل نشیم فقط :
 
 [[File:Files/2_answers_distinguish.png|thumb|none|alt=2 chess|2 chess]]
+
+<pre>10
+01✅
+
+01
+10✅</pre>
+
+-----
 
 خب حالا وقتشه که درخت تصمیم واقعی که برای مساله 2 رخ باید متصور بشه ، رو ویژوآلایز کنم : خوب درختشو نظارت کنید که خیلی مهمه!
 

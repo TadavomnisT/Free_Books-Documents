@@ -332,36 +332,151 @@ State_0</code></pre><br />
 <pre><code>root
 └── [0,1]</code></pre><br />
 <p>من دیگه مراحل رو سریع تا آخر میگم :</p><br />
-<p><img src="Files/2_4.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_4.png" alt="2 chess" /></p>
+<pre><code>Board:
+11
+00
+
+Tree:
+root
+└── [0,1]
+    └── [0,0]</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_5.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_5.png" alt="2 chess" /></p>
+<pre><code>Board:
+01
+10✅
+
+Tree:
+root
+└── [0,1]
+    └── [1,0]✅</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_6.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_6.png" alt="2 chess" /></p>
+<pre><code>Board:
+01
+01
+
+Tree:
+root
+└── [0,1]
+    └── [1,1]</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_7.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_7.png" alt="2 chess" /></p>
+<pre><code>Board:
+00
+00
+
+Tree:
+root</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_8.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_8.png" alt="2 chess" /></p>
+<pre><code>Board:
+00
+10
+
+Tree:
+root
+└── [1,0]</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_9.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_9.png" alt="2 chess" /></p>
+<pre><code>Board:
+10
+10
+
+Tree:
+root
+└── [1,0]
+    └── [0,0]</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_10.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_10.png" alt="2 chess" /></p>
+<pre><code>Board:
+01
+10✅
+
+Tree:
+root
+└── [1,0]
+    └── [0,1]✅</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_11.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_11.png" alt="2 chess" /></p>
+<pre><code>Board:
+00
+11
+
+Tree:
+root
+└── [1,0]
+    └── [1,1]</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_12.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_12.png" alt="2 chess" /></p>
+<pre><code>Board:
+00
+00
+
+Tree:
+root</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_13.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_13.png" alt="2 chess" /></p>
+<pre><code>Board:
+00
+01
+
+Tree:
+root
+└── [1,1]</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_14.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_14.png" alt="2 chess" /></p>
+<pre><code>Board:
+10
+01✅
+
+Tree:
+root
+└── [1,1]
+    └── [0,0]✅</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_15.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_15.png" alt="2 chess" /></p>
+<pre><code>Board:
+01
+01
+
+Tree:
+root
+└── [1,1]
+    └── [0,1]</code></pre><br />
 <hr /><br />
-<p><img src="Files/2_16.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_16.png" alt="2 chess" /></p>
+<pre><code>Board:
+00
+11
+
+Tree:
+root
+└── [1,1]
+    └── [1,0]</code></pre><br />
 <p>و تمااااااااااام :)<br />
 تمام جوابهای ممکن رو پیدا کردیم 4 جواب (با تفاوت) :</p><br />
-<p><img src="Files/2_answers.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_answers.png" alt="2 chess" /></p>
+<pre><code>10
+02✅
+
+01
+20✅
+
+20
+01✅
+
+02
+10✅</code></pre><br />
 <p>و اگر بین رخ ها تمییز قائل نشیم فقط :</p><br />
-<p><img src="Files/2_answers_distinguish.png" alt="2 chess" /></p><br />
+<p><img src="Files/2_answers_distinguish.png" alt="2 chess" /></p>
+<pre><code>10
+01✅
+
+01
+10✅</code></pre><br />
+<hr /><br />
 <p>خب حالا وقتشه که درخت تصمیم واقعی که برای مساله 2 رخ باید متصور بشه ، رو ویژوآلایز کنم : <br />
 خوب درختشو نظارت کنید که خیلی مهمه!</p><br />
 <p>اگر تفاوت قائل بشیم (که کامپیوتر همیشه قائل میشه و شما باید جوری تنظیم کنید که خروجیتون فیلتر بشه):<br />
