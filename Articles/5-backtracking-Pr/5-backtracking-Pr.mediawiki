@@ -392,53 +392,93 @@ State_0</pre>
 
 رخ اول رو سری قبلی توی [0,0] گذاشتیم ، این سری توی [0,1] میگذاریم طبق ترتیب:
 
+[[File:Files/2_chess6.png|thumb|none|alt=2 chess|2 chess]]
+
+<pre>01
+00</pre>
 و درخت :
 
+[[File:Files/2_tree5.png|thumb|none|alt=2 chess|2 chess]]
+
+<pre>root
+└── [0,1]</pre>
 من دیگه مراحل رو سریع تا آخر میگم :
 
-
------
-
-
------
+[[File:Files/2_4.png|thumb|none|alt=2 chess|2 chess]]
 
 
 -----
 
-
------
-
-
------
+[[File:Files/2_5.png|thumb|none|alt=2 chess|2 chess]]
 
 
 -----
 
-
------
-
-
------
+[[File:Files/2_6.png|thumb|none|alt=2 chess|2 chess]]
 
 
 -----
 
-
------
-
-
------
+[[File:Files/2_7.png|thumb|none|alt=2 chess|2 chess]]
 
 
 -----
+
+[[File:Files/2_8.png|thumb|none|alt=2 chess|2 chess]]
+
+
+-----
+
+[[File:Files/2_9.png|thumb|none|alt=2 chess|2 chess]]
+
+
+-----
+
+[[File:Files/2_10.png|thumb|none|alt=2 chess|2 chess]]
+
+
+-----
+
+[[File:Files/2_11.png|thumb|none|alt=2 chess|2 chess]]
+
+
+-----
+
+[[File:Files/2_12.png|thumb|none|alt=2 chess|2 chess]]
+
+
+-----
+
+[[File:Files/2_13.png|thumb|none|alt=2 chess|2 chess]]
+
+
+-----
+
+[[File:Files/2_14.png|thumb|none|alt=2 chess|2 chess]]
+
+
+-----
+
+[[File:Files/2_15.png|thumb|none|alt=2 chess|2 chess]]
+
+
+-----
+
+[[File:Files/2_16.png|thumb|none|alt=2 chess|2 chess]]
 
 و تمااااااااااام :) تمام جوابهای ممکن رو پیدا کردیم 4 جواب (با تفاوت) :
 
+[[File:Files/2_answers.png|thumb|none|alt=2 chess|2 chess]]
+
 و اگر بین رخ ها تمییز قائل نشیم فقط :
 
-خب حالا وقتشه که درخت تصمیم واقعی که برای مساله 2 رخ باید متصور بشه ، رو ویژوآلایز کنم : خوب درختشو سیاحت کنید که خیلی مهمه!
+[[File:Files/2_answers_distinguish.png|thumb|none|alt=2 chess|2 chess]]
 
-اگر تفاوت قائل بشیم (که کامپیوتر همیشه قائل میشه و شما باید جوری تنظیم کنید که خروجیتون فیلتر بشه): • بار اول 4 انتخاب داریم • بار دوم 3 انتخاب (چون نمتونیم یه رخ رو بندازیم تو بغل یک رخ دیگه… از لحاظ اخلاقی… :/) کلاً میشه 12 حالت که دونه دونه گفتم چجوریاست.
+خب حالا وقتشه که درخت تصمیم واقعی که برای مساله 2 رخ باید متصور بشه ، رو ویژوآلایز کنم : خوب درختشو نظارت کنید که خیلی مهمه!
+
+اگر تفاوت قائل بشیم (که کامپیوتر همیشه قائل میشه و شما باید جوری تنظیم کنید که خروجیتون فیلتر بشه): • بار اول 4 انتخاب داریم • بار دوم 3 انتخاب (چون نمتونیم یه رخ رو بندازیم تو بغل یک رخ دیگه… از لحاظ اخلاقی… :/)
+
+کلاً میشه 12 حالت که دونه دونه گفتم چجوریاست.
 
 خب خب خب …
 
