@@ -9148,25 +9148,47 @@ https://rosettacode.org/wiki/Visualize_a_tree
 
 _______________________________________________
 
-
-و تمام :) مقاله تموم شد :)
-
-انتظارم از شما این هست که کامل مطالعه بفرمائيد و اشکالات بنده رو بهم تذکر بدید و اگر سؤالی براتون پیش اومد بپرسید ، منم اگر بلد باشم بهتون پاسخ میدم. سورسکد هم ضمیمه میکنم.
+و... تموم.
 
 لینک گیست مربوط به فایل بک ترکینگ به همراه نحوه اجرای کد:
 https://gist.github.com/TadavomnisT/d9fc6ba06dcb775b5ee8cf8baaa94588
 
-لینک ریپازیتوری مربوط به فایل بک ترکینگ به همراه نحوه اجرای کد:
-https://github.com/TadavomnisT/My_gists/tree/main/php_back_tracking
+
+## کارهای آینده 
+
+شما میتونین بک‌ترکینگ رو توی زبانهای دیگه/مسائل دیگه پیاده‌سازی کنین. برای کارهای آینده ‌ای که راجع به این مقاله میشه انجام داد میتونیم به این مورد اشاره کنیم که کد رو جوری بنویسین که درخت رو توی رم ذخیره نکنه.
+
+## کپی رایت
+
+این یک مقاله آزاد و متن‌باز تحت مجوز GFDL1-3 می‌باشد، بنابراین اجازه کپی، توزیع و/یا تغییر این سند با شرایط مجوز GNU Free Documentation License داده شده است.
+
+## نویسنده
+
++ بهراد.ب (behroora@yahoo.com)
+
+## منابع
+
++ https://en.wikipedia.org/wiki/Rook_polynomial
++ https://en.wikipedia.org/wiki/Eight_queens_puzzle
++ https://rosettacode.org/wiki/Visualize_a_tree
++ https://github.com/TadavomnisT/My_gists/tree/main/visualize_tree
++ https://github.com/TadavomnisT/My_gists/tree/main/php_back_tracking
++ https://gist.github.com/TadavomnisT/f83519f3503b74663c81af5d6c68dd82
++ https://gist.github.com/TadavomnisT/d9fc6ba06dcb775b5ee8cf8baaa94588
+
+## مسائل مرتبط با این مقاله
 
 
-امیدوارم که خوشحال و سلامت باشید.
+این مقاله بصورت آزاد و اپن‌سورس در مخزن [کتابها/مقالات آزاد](https://github.com/TadavomnisT/Free_Books-Documents) در لینک زیر در دسترس است:
 
- امضا: بهراد
-
-
+{PUT STH HERE}
 
 
-TadavomnisT.ir
-t.me/TadavomnisT
-github.com/TadavomnisT
+نسخه انگلیسی این مقاله:
+
+{PUT STH HERE}
+
+**هر نوع اشکال علمی، مساله یا بحث مربوط با این مقاله را میتوانید از طریق Issue در ریپازیتوری یا ایمیل مطرح نمایید:**
+
+* https://github.com/TadavomnisT/Free_Books-Documents/issues
+* behroora@yahoo.com
