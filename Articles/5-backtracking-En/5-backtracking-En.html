@@ -11,4 +11,133 @@
 </ul><br />
 <h2>The n-Queens and n-Rooks Problem</h2><br />
 <p>One of the fundamental goals in artificial intelligence is to model our problems with mathematics and solve them using appropriate algorithms. Backtracking refers to a particular type of algorithm where we can find solutions to a mathematical problem by exploring and backtracking (undoing) steps. To explain this concept, I will use two well-known examples.</p><br />
-<p>I propose two questions:</p></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
+<p>I propose two questions:</p><br />
+<p><strong>Question 1:</strong><br />
+Difficulty Level: Medium to Hard</p>
+<ul>
+<li>We want to place n rooks on an n×n chessboard in such a way that they do not attack each other, meaning none of them can capture another one. For each input n, print all the possible answers as a matrix...</li>
+</ul><br />
+<p><strong>For n = 1: Only one answer should be printed:</strong></p>
+<pre><code>1</code></pre><br />
+<p><strong>For n = 2: Two answers should be printed:</strong></p>
+<pre><code>10
+01
+
+01
+10</code></pre><br />
+<p><strong>For n = 3: Six answers should be printed:</strong></p>
+<pre><code>100
+010
+001
+
+001
+010
+100
+
+010
+001
+100
+
+001
+100
+010
+
+010
+100
+001
+
+100
+001
+010</code></pre><br />
+<p>Note 1: We represent our chessboard as binary square matrices where 1s represent the rooks and 0s represent empty cells.</p><br />
+<p>Note 2: Keep in mind that a rook can only move in its row, column, and attack diagonals.</p><br />
+<hr /><br />
+<p>And the second question, which in truth is a more complex version of the first question:</p><br />
+<p><strong>Question 2:</strong><br />
+Difficulty Level: Medium to Hard</p><br />
+<p>I want to extend the example of the n-rooks problem to a better and more comprehensive puzzle.</p>
+<ul>
+<li>We want to place n queens on an n×n chessboard in such a way that they do not attack each other, meaning none of them can capture another one. For each input n, print all the possible answers as a matrix...</li>
+</ul><br />
+<p><strong>For n = 1: Only one answer should be printed:</strong></p>
+<pre><code>1</code></pre><br />
+<p><strong>For n = 2: No answers should be printed!</strong></p><br />
+<p>The problem does not have a solution for n = 2.</p><br />
+<p><strong>For n = 3: No answers should be printed!!</strong></p><br />
+<p>The problem does not have a solution for n = 3.</p><br />
+<p><strong>For n = 4: Two answers should be printed:</strong></p>
+<pre><code>0010
+1000
+0001
+0100
+
+0100
+0001
+1000
+0010</code></pre><br />
+<p><strong>For n = 5: Ten answers should be printed:</strong></p>
+<pre><code>00010
+01000
+00001
+00100
+10000
+
+01000
+00010
+10000
+00100
+00001
+
+10000
+00100
+00001
+01000
+00010
+
+10000
+00010
+01000
+00001
+00100
+
+00001
+00100
+10000
+00010
+01000
+
+00100
+10000
+00010
+01000
+00001
+
+00100
+00001
+01000
+00010
+10000
+
+00001
+01000
+00010
+10000
+00100
+
+01000
+00001
+00100
+10000
+00010
+
+00010
+10000
+00100
+00001
+01000</code></pre><br />
+<p><strong>And here are the visual representations of these ten answers (n = 5) for better comprehending:</strong></p><br />
+<p><img src="Files/5queens.jpg" alt="5 Queens" /></p><br />
+<p>(Note: I don't remember the source of the image.)</p><br />
+<p>Note 1: We represent our chessboard as binary square matrices where 1s represent the queens and 0s represent empty cells.</p><br />
+<p>Note 2: Keep in mind that a queen can move in its row, column, and diagonals to attack.</p><br />
+<h2>What is the Backtracking Algorithm?</h2></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
