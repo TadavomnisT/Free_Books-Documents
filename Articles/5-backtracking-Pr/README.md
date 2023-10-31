@@ -9220,7 +9220,16 @@ https://gist.github.com/TadavomnisT/d9fc6ba06dcb775b5ee8cf8baaa94588
 
 این مقاله بصورت آزاد و اپن‌سورس در مخزن [کتابها/مقالات آزاد](https://github.com/TadavomnisT/Free_Books-Documents) در لینک زیر در دسترس است:
 
-{PUT STH HERE}
+
+* [الگوریتم بک‌ترکینگ در هوش مصنوعی 🔥](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-Pr)
+    * [مساله nرخ چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-Pr#%D9%85%D8%B3%D8%A7%D9%84%D9%87-n%D8%B1%D8%AE-%D9%88-n%D9%88%D8%B2%DB%8C%D8%B1)
+    * [مساله nوزیر چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-Pr#%D9%85%D8%B3%D8%A7%D9%84%D9%87-n%D8%B1%D8%AE-%D9%88-n%D9%88%D8%B2%DB%8C%D8%B1)
+    * [الگوریتم بک‌ترکینگ چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-Pr#%D8%A7%D9%84%DA%AF%D9%88%D8%B1%DB%8C%D8%AA%D9%85-%D8%A8%DA%A9%D8%AA%D8%B1%DA%A9%DB%8C%D9%86%DA%AF-%DA%86%DB%8C%D8%B3%D8%AA)
+        * [چرا درختها توی علم کامپیوتر اهمیت زیادی دارن؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-Pr#%DA%86%D8%B1%D8%A7-%D8%AF%D8%B1%D8%AE%D8%AA%D9%87%D8%A7-%D8%AA%D9%88%DB%8C-%D8%B9%D9%84%D9%85-%DA%A9%D8%A7%D9%85%D9%BE%DB%8C%D9%88%D8%AA%D8%B1-%D8%A7%D9%87%D9%85%DB%8C%D8%AA-%D8%B2%DB%8C%D8%A7%D8%AF%DB%8C-%D8%AF%D8%A7%D8%B1%D9%86)
+        * [درخت چیست؟ (توضیح ساده)](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-Pr#%D8%AF%D8%B1%D8%AE%D8%AA-%DA%86%DB%8C%D8%B3%D8%AA-%D8%AA%D9%88%D8%B6%DB%8C%D8%AD-%D8%B3%D8%A7%D8%AF%D9%87)
+        * [چجوری مساله nرخ و nوزیر رو با روش بک‌ترکینگ حل کنیم؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-Pr#%DA%86%D8%AC%D9%88%D8%B1%DB%8C-%D9%85%D8%B3%D8%A7%D9%84%D9%87-n%D8%B1%D8%AE-%D9%88-n%D9%88%D8%B2%DB%8C%D8%B1-%D8%B1%D9%88-%D8%A8%D8%A7-%D8%B1%D9%88%D8%B4-%D8%A8%DA%A9%D8%AA%D8%B1%DA%A9%DB%8C%D9%86%DA%AF-%D8%AD%D9%84-%DA%A9%D9%86%DB%8C%D9%85)
+        * [چجوری یه درخت رو توی PHP چاپ کنیم؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-Pr#%DA%86%D8%AC%D9%88%D8%B1%DB%8C-%DB%8C%D9%87-%D8%AF%D8%B1%D8%AE%D8%AA-%D8%B1%D9%88-%D8%AA%D9%88%DB%8C-php-%DA%86%D8%A7%D9%BE-%DA%A9%D9%86%DB%8C%D9%85)
+
 
 
 نسخه انگلیسی این مقاله:
