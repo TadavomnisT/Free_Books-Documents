@@ -162,3 +162,32 @@ Note 1: We represent our chessboard as binary square matrices where 1s represent
 Note 2: Keep in mind that a queen can move in its row, column, and diagonals to attack.
 
 == What is the Backtracking Algorithm? ==
+
+Well, now it’s time to answer these questions that we’ve presented. But before that, I’ll explain a few necessary concepts:
+
+The n-queens problem is one of the challenging problems for mathematicians and has led them to seek optimal solutions. However, since the problem may be confusing for beginners, I decided to start with a simpler version, which is the n-rooks problem. It serves as a simplified version of the n-queens problem. Remember, programmers and algorithm designers primarily focus on the n-queens problem.
+
+Scientists and academic professors commonly discuss the n-queens problem along with other simple problems to establish a connection between algorithm science and artificial intelligence, aiming to explain artificial intelligence algorithms through them.
+
+There are infinite approaches to solving the n-queens problem as well as the n-rooks problem. These include solutions derived from algorithm science and artificial intelligence, mathematical and matrix-based solutions, and the solutions that have not been discovered yet…
+
+* Backtracking Algorithm
+** Monte Carlo Algorithm
+* Constraint Satisfaction Problem (CSP) Algorithm
+* Heuristic Algorithm
+* Hill Climbing Algorithm
+* Local Search Algorithm
+* Genetic Algorithm
+* And other algorithms that are not mentioned…
+
+My goal here is to solve this problem using the Backtracking algorithm.
+
+There are two reasons why I chose this approach (backtracking):
+
+# This approach utilizes the decision tree structure. It uses modeling through tree structures, allowing me to introduce trees to some extent.
+# This approach is based on the “trial and error” method, which is the first solution that comes to mind for all humans.
+
+
+-----
+
+=== Why are trees important in computer science? ===
