@@ -1,7 +1,6 @@
- 
-# Backtracking Algorithm in Artificial Intelligence
+= Backtracking Algorithm in Artificial Intelligence =
 
-## Abstract
+== Abstract ==
 
 In this article, we discuss in detail a fundamental algorithm in artificial intelligence called backtracking and answer the following questions:
 
@@ -12,10 +11,8 @@ In this article, we discuss in detail a fundamental algorithm in artificial inte
 * How can we solve the n-queens problem using the backtracking approach?
 * How can we print an array as a tree structure in PHP?
 
-## The n-Queens and n-Rooks Problem
+== The n-Queens and n-Rooks Problem ==
 
 One of the fundamental goals in artificial intelligence is to model our problems with mathematics and solve them using appropriate algorithms. Backtracking refers to a particular type of algorithm where we can find solutions to a mathematical problem by exploring and backtracking (undoing) steps. To explain this concept, I will use two well-known examples.
 
 I propose two questions:
-
-
