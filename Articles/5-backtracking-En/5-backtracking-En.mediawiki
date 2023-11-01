@@ -190,4 +190,63 @@ There are two reasons why I chose this approach (backtracking):
 
 -----
 
-=== Why are trees important in computer science? ===
+=== Trees: An Indispensable Concept in Computer Science ===
+
+Before talking about backtracking algorithm, I want to highlight the importance of trees:
+
+Trees are indispensable elements in computer science. The concept of trees is extremely important – anyone entering the field of computer science eventually needs to learn about them.
+
+Here are some notable uses of trees in computer science:
+
+* Many hard disk formats utilize trees for partition configuration and file organization.
+** For example, the ext file format employs a structure called an <code>inode</code> which essentially represents a tree structure.
+* File storage and directory configuration worldwide are modeled using trees. The main directory (root directory) serves as the parent directory, with others becoming its children. Each directory can have its own children, and so on. If you’re using a Unix-like system, you can visualize the tree structure by using the <code>tree</code> command.
+** Directory configurations in Linux or any other operating system are universally based on trees. You might be familiar with the term “parent directory”, which refers to the node in a tree.
+* The fastest databases in the world, and I emphasize the word “fastest,” are built on tree structures. Here are a few examples:
+** The MySQL database uses the B-tree.
+** MongoDB uses the B+ tree.
+** The PostgreSQL database uses B+ trees for efficient data indexing and storage.
+** Storing data in a self-balancing tree like the B+ tree significantly enhances the speed of access, search, read, write (inculding insertion and deletion) operations. Som basically the speed of CRUD operations is powered by tree structures. Using mathematical formulas, it can be proven that even in the worst-case scenario, we can perform the access I/O with logarithmic complexity. For instance, given 1 billion stored data entries, we can locate specific data with fewer than 20 comparisons and seek operations! (Ever wondered how Instagram manages to switch between billions of posts and users?!)
+* Social media platforms and social networks, such as Telegram, Instagram, and Facebook, are established on graph structures (a more general form of a tree).
+* Search engines employ trees to store indexed documents.
+* The legendary UNIX operating system is built upon a tree structure.
+** Following the previous point, the entire Linux system is entirety tree-based.
+** User access management in Linux is modeled with trees (you’ve heard of root access, right? Well, root means the tree root node).
+** The handling of system processes in Unix-based systems like Linux is also based on a tree structure. Don’t believe it? Try the <code>pstree</code> command to visualize the process tree of your operating system.
+** Managing threads in operating systems is also accomplished using trees.
+** Approximately 90% of the world’s operating systems are Linux-based, thus making use of tree structures.
+** Other UNIX-based systems also rely on tree-based architectures.
+* Network elements are modeled with graphs.
+* Trees are employed in a significant proportion of dynamic arrays.
+* HTML is structured based on a tree hierarchy.
+* HTML/XML parsing relies on tree structures.
+* There’s a concept in web science called the Document Object Model (DOM), which models web pages as trees.
+* Trees play a fundamental role in the design of compilers, interpreters, and programming languages.
+* Trees have a wide-ranging role in artificial intelligence, which we’ll talk a bit more about it.
+* Many network routing algorithms operate on trees.
+* The hierarchical structure of the Domain Name System (DNS) is based on a tree. (have you heard of root DNS servers?).
+* Version control systems (VCS) like Git operate on a tree structure to effectively manage their branches.
+* …
+
+Well, I won’t say anything more about the advantages of trees because if I continue, we won’t reach the end of our article… Also, I mentioned something called the B+ tree, which may be the subject of a separate article in the future.
+
+So, trees are indeed something important…
+
+
+-----
+
+Alright, alright… Let’s go solve the n-rooks problem:
+
+The backtracking algorithm says:
+
+'''“Hello mate:3 Do you want to model a difficult math problem with me? Do you want to transform your solution into a standardized one? Model the problem and its solution using a tree.”'''
+
+So what does this mean?
+
+Imagine you ask someone who is unfamiliar with mathematics and algorithms to arrange 8 rooks on a chessboard in a way that they don’t attack each other: This person starts placing the first rook, then the second one and continues… then when they reach the 5th rook, they realize that the position they chose allows the 3rd rook to be attacked… There’s no cell left to place the rook safely… So they '''go back''' and change the positions of the 4th and 3rd rooks. They keep doing this until they finally find one of the possible solutions and present it to you. Unintentionally, this person used the backtracking algorithm.
+
+'''Note''': Our goal in this article is not to find the first possible solution. The goal is to find all possible solutions.
+
+In the backtracking algorithm, we create a “decision tree” and model our problem on that tree: Before I show you the tree for a few initial scenarios, let me provide a brief explanation of the tree’s structure using some illustrations. This way, you won’t get confused when I mention terms like - node - root - parent - child - leaf - depth - sibling… However, it’s important to note that describing trees comprehensively would require an extensive explanation, perhaps even exceeding a hundred books!
+
+=== What is a tree? (Simple Explanation) ===
