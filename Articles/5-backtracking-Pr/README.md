@@ -31,7 +31,6 @@
 1
 ```
 
-
 **برای n = 2 : باید ۲ حالت چاپ بشه:**
 
 ```
@@ -45,9 +44,9 @@
 **برای n = 3 : باید ۶ حالت چاپ بشه:**
 
 ```
-100        
-010        
-001        
+100
+010
+001
 
 001
 010
@@ -1221,9 +1220,6 @@ _______________________________________________
 خب خب خب…
 خسته شدیم 😅
 این توضیحات فقط مژه بر همزدنی از الگوریتم عقبگرد یا back-tracking بود. 
-
-خب پس در مقابل  توضیح این الگوریتم شما حلش با الگوریتم های دیگه رو مثل ژنتیک به بنده حقیر یاد بدید.
-ما زمانیکه این لیستی از الگوریتمهای هوش مصنوعی که نوشتم رو یاد بگیریم ، میشه گفت مژه برهم زدنی به لول‌آپ شدن در وادی برنامه‌نویسی نزدیک شدیم.
 
 حالا یه توضیح درباره نحوه ران کردن کد بدم ، و خروجی 3 قسمت اول رو به عنوان حسن ختام این سؤال طولانی و سکسی که با خودش هزاران نکته رو می آموزه خدمتتون نشون بدم :
 
@@ -9234,7 +9230,14 @@ https://gist.github.com/TadavomnisT/d9fc6ba06dcb775b5ee8cf8baaa94588
 
 نسخه انگلیسی این مقاله:
 
-{PUT STH HERE}
+* [Backtracking Algorithm in Artificial Intelligence 🔥](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En)
+    * [The n-Queens and n-Rooks Problem](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#the-n-queens-and-n-rooks-problem)
+    * [What is the Backtracking Algorithm?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#what-is-the-backtracking-algorithm)
+        * [Trees: An Indispensable Concept in Computer Science](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#trees-an-indispensable-concept-in-computer-science)
+        * [What is a tree? (Simple Explanation)](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#what-is-a-tree-simple-explanation)
+        * [Solving n-rooks problem and n-queens problem using the backtracking approach](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#solving-n-rooks-problem-and-n-queens-problem-using-the-backtracking-approach)
+        * [How to print a tree in PHP?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#how-to-print-a-tree-in-php)
+
 
 **هر نوع اشکال علمی، مساله یا بحث مربوط با این مقاله را میتوانید از طریق Issue در ریپازیتوری یا ایمیل مطرح نمایید:**
 
