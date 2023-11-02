@@ -211,16 +211,85 @@ Difficulty Level: Medium to Hard</p><br />
 Also, I mentioned something called the B+ tree, which may be the subject of a separate article in the future.</p><br />
 <p>So, trees are indeed something important...</p><br />
 <hr /><br />
-<p>Alright, alright... Let's go solve the n-rooks problem:</p><br />
+<p>Alright, alright... Let's solve the n-rooks problem:</p><br />
 <p>The backtracking algorithm says:</p><br />
 <p><strong>"Hello mate:3<br />
 Do you want to model a difficult math problem with me? Do you want to transform your solution into a standardized one? Model the problem and its solution using a tree."</strong></p><br />
 <p>So what does this mean?</p><br />
 <p>Imagine you ask someone who is unfamiliar with mathematics and algorithms to arrange 8 rooks on a chessboard in a way that they don't attack each other:<br />
 This person starts placing the first rook, then the second one and continues... then when they reach the 5th rook, they realize that the position they chose allows the 3rd rook to be attacked... There's no cell left to place the rook safely... <br />
-So they <strong>go back</strong> and change the positions of the 4th and 3rd rooks. They keep doing this until they finally find one of the possible solutions and present it to you.<br />
+So they <strong>go back</strong> - retrace the steps - and change the positions of the 4th and 3rd rooks. They keep doing this until they finally find one of the possible solutions and present it to you.<br />
 Unintentionally, this person used the backtracking algorithm.</p><br />
 <p><strong>Note</strong>: Our goal in this article is not to find the first possible solution. The goal is to find all possible solutions.</p><br />
 <p>In the backtracking algorithm, we create a "decision tree" and model our problem on that tree:<br />
 Before I show you the tree for a few initial scenarios, let me provide a brief explanation of the tree's structure using some illustrations. This way, you won't get confused when I mention terms like - node - root - parent - child - leaf - depth - sibling... However, it's important to note that describing trees comprehensively would require an extensive explanation, perhaps even exceeding a hundred books!</p><br />
-<h3>What is a tree? (Simple Explanation)</h3></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
+<h3>What is a tree? (Simple Explanation)</h3><br />
+<p><img src="Files/tree_structure.png" alt="Tree structure" /></p><br />
+<p>Explanation:</p><br />
+<p><strong>Definition of a Tree</strong>: A tree is a graph that does not have any cycles.</p>
+<ul>
+<li>Similar to trees in a garden, every tree must have exactly one root - we don't have a tree without a root. Even a tree with a single node becomes its own root (though it is also considered a leaf - explained later).</li>
+<li><strong>Edge</strong>: Read about edge definitions in graphs; they are more relevant there. In a tree, edges connect the nodes together. Nothing major.</li>
+<li><strong>Node/Vertex</strong>: We call the circles where we write values as nodes or vertices^_^ Read about the special definitions of graphs to learn more about them.</li>
+<li><strong>Leaf</strong>: A node that does not have any children is called a leaf.</li>
+<li><strong>Parent</strong>: A node that has children is the parent for its children.</li>
+<li><strong>Child</strong>: A node that directly originates from another node is called a child of that node.</li>
+<li><strong>Sibling</strong>: Nodes that share the same parent are called siblings.</li>
+<li><strong>Depth</strong>: Depth... I think it refers to the number of edges traversed from the root to reach that particular node. But I've also shown it in the diagram... You'll easily understand what depth means.</li>
+</ul><br />
+<p><strong>Important Note</strong>: I won't provide further explanations about trees. To learn about trees, it is necessary to study graphs. So, read graphs from discrete mathematics.</p><br />
+<hr /><br />
+<h3>Solving n-rooks problem and n-queens problem using the backtracking approach</h3><br />
+<p>Okay, let's model the problem using a tree (Decision-tree) and the backtracking approach:</p><br />
+<p>For n = 1, what do we have?<br />
+We have a chessboard with only one square:</p><br />
+<p><img src="Files/1chess.png" alt="1 chess" /></p>
+<pre><code>1</code></pre><br />
+<p>So constructing its tree is not difficult:<br />
+We place a rook on the chessboard at the cell in [0,0], then we check if the placement okay or not. If it is okay, we are done. If not, we backtrack and try again.<br />
+It's ok so we keep up^_^</p><br />
+<p><img src="Files/1tree.png" alt="1 tree" /></p>
+<pre><code>"root"
+State_0
+    └── [0,0]</code></pre><br />
+<p>Look at the root, which state did I choose? State 0 - which means S0, which means the starting point, which means when we haven't placed anything yet. You can write it in another way if you want.</p><br />
+<hr /><br />
+<p>For n = 2, it becomes a bit more interesting.<br />
+Look chessboard and decision-tree my pretties:</p><br />
+<p><img src="Files/2chess.png" alt="2 chess" /></p>
+<pre><code>00
+00</code></pre><br />
+<p><img src="Files/2tree.png" alt="2 tree" /></p>
+<pre><code>"root"
+State_0</code></pre><br />
+<p><strong>Very important note</strong>: In the question I mentioned, there is an implicit point that there is no difference between different rooks or queens. The first rook is considered the same as the second rook, meaning we don't distinguish between them. In the code I provided, you can specify whether there should be a distinction between the pieces or not. Ahm let's explain a bit more: The assumption we made is that, considering these:</p><br />
+<p><img src="Files/2_1.png" alt="2 queens alternative" /></p>
+<pre><code>10
+02</code></pre><br />
+<p><img src="Files/2_2.png" alt="2 queens alternative" /></p>
+<pre><code>20
+01</code></pre><br />
+<p>In the two cases above, where in the picture, the blue rook [1] is the first one we placed and the red rook [2] is the second one, in the question, we assumed that there is no difference between them and both represent the same <strong>single answer</strong> below:</p><br />
+<p><img src="Files/2_3.png" alt="2 queens alternative" /></p>
+<pre><code>10
+01</code></pre><br />
+<p>But we should consider a more general case where we differentiate between the rooks. Because the solutions in this case are more complete and include the solutions in the "indifferent" part as well.</p><br />
+<p>Now let's solve it using backtracking:<br />
+We place the first rook in cell [0,0]:</p><br />
+<p><img src="Files/2_chess1.png" alt="2 chees1" /></p>
+<pre><code>10
+00</code></pre><br />
+<p>The decision tree so far looks like this:</p><br />
+<p><img src="Files/2_tree1.png" alt="2 tree1" /></p>
+<pre><code>root
+└── [0,0]</code></pre><br />
+<p>Now it's time to place the second rook. According to the order, we placed the first one in [0,0], so we place the second one in [0,1]. So we have:</p><br />
+<p><img src="Files/2_chess2.png" alt="2 chess2" /></p>
+<pre><code>11
+00</code></pre><br />
+<p>The decision tree becomes like this:</p><br />
+<p><img src="Files/2_tree2.png" alt="2 tree2" /></p>
+<pre><code>root
+└── [0,0]
+    └── [0,1]</code></pre><br />
+<p>And now... we check if it is okay. We see that it is not okay! The rooks are attacking each other. So we backtrack and take a step back (we call it backtracking). We remove the piece we placed and go back to its parent node in the tree and place the next child node - it was not our solution!</p></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>

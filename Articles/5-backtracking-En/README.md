@@ -268,7 +268,7 @@ So, trees are indeed something important...
 _______________________________________________
 
 
-Alright, alright... Let's go solve the n-rooks problem:
+Alright, alright... Let's solve the n-rooks problem:
 
 The backtracking algorithm says:
 
@@ -279,7 +279,7 @@ So what does this mean?
 
 Imagine you ask someone who is unfamiliar with mathematics and algorithms to arrange 8 rooks on a chessboard in a way that they don't attack each other:
 This person starts placing the first rook, then the second one and continues... then when they reach the 5th rook, they realize that the position they chose allows the 3rd rook to be attacked... There's no cell left to place the rook safely... 
-So they **go back** and change the positions of the 4th and 3rd rooks. They keep doing this until they finally find one of the possible solutions and present it to you.
+So they **go back** - retrace the steps - and change the positions of the 4th and 3rd rooks. They keep doing this until they finally find one of the possible solutions and present it to you.
 Unintentionally, this person used the backtracking algorithm.
 
 **Note**: Our goal in this article is not to find the first possible solution. The goal is to find all possible solutions.
@@ -289,3 +289,127 @@ Before I show you the tree for a few initial scenarios, let me provide a brief e
 
 ### What is a tree? (Simple Explanation)
 
+
+![Tree structure](Files/tree_structure.png)
+
+
+Explanation:
+
+**Definition of a Tree**: A tree is a graph that does not have any cycles.
+
+* Similar to trees in a garden, every tree must have exactly one root - we don't have a tree without a root. Even a tree with a single node becomes its own root (though it is also considered a leaf - explained later).
+* **Edge**: Read about edge definitions in graphs; they are more relevant there. In a tree, edges connect the nodes together. Nothing major.
+* **Node/Vertex**: We call the circles where we write values as nodes or vertices^_^ Read about the special definitions of graphs to learn more about them.
+* **Leaf**: A node that does not have any children is called a leaf.
+* **Parent**: A node that has children is the parent for its children.
+* **Child**: A node that directly originates from another node is called a child of that node.
+* **Sibling**: Nodes that share the same parent are called siblings.
+* **Depth**: Depth... I think it refers to the number of edges traversed from the root to reach that particular node. But I've also shown it in the diagram... You'll easily understand what depth means.
+
+**Important Note**: I won't provide further explanations about trees. To learn about trees, it is necessary to study graphs. So, read graphs from discrete mathematics.
+
+_______________________________________________
+
+
+### Solving n-rooks problem and n-queens problem using the backtracking approach
+
+
+Okay, let's model the problem using a tree (Decision-tree) and the backtracking approach:
+
+For n = 1, what do we have?
+We have a chessboard with only one square:
+
+![1 chess](Files/1chess.png)
+```
+1
+```
+
+So constructing its tree is not difficult:
+We place a rook on the chessboard at the cell in [0,0], then we check if the placement okay or not. If it is okay, we are done. If not, we backtrack and try again.
+It's ok so we keep up^_^
+
+
+![1 tree](Files/1tree.png)
+```
+"root"
+State_0
+    └── [0,0]
+```
+
+Look at the root, which state did I choose? State 0 - which means S0, which means the starting point, which means when we haven't placed anything yet. You can write it in another way if you want.
+
+_______________________________________________
+
+
+For n = 2, it becomes a bit more interesting.
+Look chessboard and decision-tree my pretties:
+
+![2 chess](Files/2chess.png)
+```
+00
+00
+```
+![2 tree](Files/2tree.png)
+```
+"root"
+State_0
+```
+
+**Very important note**: In the question I mentioned, there is an implicit point that there is no difference between different rooks or queens. The first rook is considered the same as the second rook, meaning we don't distinguish between them. In the code I provided, you can specify whether there should be a distinction between the pieces or not. Ahm let's explain a bit more: The assumption we made is that, considering these:
+
+![2 queens alternative](Files/2_1.png)
+```
+10
+02
+```
+![2 queens alternative](Files/2_2.png)
+```
+20
+01
+```
+
+In the two cases above, where in the picture, the blue rook [1] is the first one we placed and the red rook [2] is the second one, in the question, we assumed that there is no difference between them and both represent the same **single answer** below:
+
+![2 queens alternative](Files/2_3.png)
+```
+10
+01
+```
+
+But we should consider a more general case where we differentiate between the rooks. Because the solutions in this case are more complete and include the solutions in the "indifferent" part as well.
+
+Now let's solve it using backtracking:
+We place the first rook in cell [0,0]:
+
+![2 chees1](Files/2_chess1.png)
+```
+10
+00
+```
+
+The decision tree so far looks like this:
+
+![2 tree1](Files/2_tree1.png)
+```
+root
+└── [0,0]
+```
+
+Now it's time to place the second rook. According to the order, we placed the first one in [0,0], so we place the second one in [0,1]. So we have:
+
+![2 chess2](Files/2_chess2.png)
+```
+11
+00
+```
+
+The decision tree becomes like this:
+
+![2 tree2](Files/2_tree2.png)
+```
+root
+└── [0,0]
+    └── [0,1]
+```
+
+And now... we check if it is okay. We see that it is not okay! The rooks are attacking each other. So we backtrack and take a step back (we call it backtracking). We remove the piece we placed and go back to its parent node in the tree and place the next child node - it was not our solution!
