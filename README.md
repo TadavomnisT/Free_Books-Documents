@@ -23,8 +23,17 @@ ____________________________________________
             * [Phase 1: Comparing the Speed of RAM and Hard Disk in Handling Large Data](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#phase-1-comparing-the-speed-of-ram-and-hard-disk-in-handling-large-data)
             * [Phase Two: Comparing the Speed of RAM and Hard Disk for Small Data and Fast Sequential Allocations](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/4-RAM-vs-HDD-En#phase-two-comparing-the-speed-of-ram-and-hard-disk-for-small-data-and-fast-sequential-allocations)
 * [GNU Manifesto Persian Translation](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/6-GNU-manifesto-persian-translation)
+* [Backtracking Algorithm in Artificial Intelligence 🔥](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En)
+    * [The n-Queens and n-Rooks Problem](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#the-n-queens-and-n-rooks-problem)
+    * [What is the Backtracking Algorithm?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#what-is-the-backtracking-algorithm)
+        * [Trees: An Indispensable Concept in Computer Science](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#trees-an-indispensable-concept-in-computer-science)
+        * [What is a tree? (Simple Explanation)](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#what-is-a-tree-simple-explanation)
+        * [Solving n-rooks problem and n-queens problem using the backtracking approach](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#solving-n-rooks-problem-and-n-queens-problem-using-the-backtracking-approach)
+        * [How to print a tree in PHP?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#how-to-print-a-tree-in-php)
+
 
 ##### Persian:
+
 *  [از چه سرچ انجینی استفاده کنیم؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/2-which-search-engine-Pr)
 *  [فرق بین XSS و XSRF چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr)
       *  [حمله XSS چیست؟](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/3-XSS-XSRF-Pr#%D8%AD%D9%85%D9%84%D9%87-xss-%DA%86%DB%8C%D8%B3%D8%AA)
