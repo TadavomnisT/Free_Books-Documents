@@ -841,3 +841,134 @@ Don’t be surprised by how much resource required by the solutions is growing l
 
 
 -----
+
+'''The version I heard when I was a kid:'''
+
+Chess is one of the oldest games in the world and has been invented many centuries ago. Therefore, it is not surprising if there are many tales about it. Here, we will mention one of them.
+
+The tale says that chess originated from India. King Sheoram, who was fascinated by the clever moves and countless possibilities that one could make with chess pieces, became excited when he found out that its inventor was one of his people. He ordered the inventor, Sessa, to be brought to him so that he could personally reward him for this amazing invention. Sessa, the chess inventor, arrived in the presence of the king. The king kindly said, “I would like to reward you for this extraordinary invention.” The scientist showed his respect, and the king continued, “I am so rich that I can fulfill your best wish. Now, tell me what you want and need.”
+
+Sessa remained silent.
+
+The king encouraged him to speak and said, “Don’t be shy, tell me whatever you want. I will not hesitate to fulfill your best wish.”
+
+He replied, “Your majesty’s kindness is endless. But give me a chance to think about my request and convey it tomorrow.”
+
+The next day, Sessa surprised the king with his humble request. He said, “Your majesty! I want to have one grain of rice in the first square of the chessboard.” The king, thinking he had misheard, asked, “Just a regular grain of rice?” Sessa replied, “Yes, your majesty. In the second square, two grains; in the third square, four grains; in the fourth square, eight grains; in the fifth square, sixteen grains; in the sixth square, thirty-two grains; and…”
+
+The king angrily said, “That’s enough! You will get the rice grains you wished for in the 64 squares of the chessboard. Each square will have twice the number of grains as the previous one. But know that your request is not worthy and deserving of my generosity.” Then the king said, “Go! My servants will bring your sack of rice.”
+
+Sessa smiled and went to wait in front of the palace door. During lunchtime, the king remembered Sessa and asked if the inventor had received his humble reward, and they answered him, “Your majesty, Your command is obeyed. Your mathematicians are busy calculating to see how much rice he should receive.” The king frowned because he was not used to such delay and procrastination in executing his orders. The night before going to bed, he asked again if Sessa’s sack of rice had been given to him, but they said, “O king! Your mathematicians are always at work, and they hope to finish their calculations before sunrise.”
+
+The king angrily said, “Why are they calculating so much? The reward for Sessa should be given to him until the last grain of rice. I will not give any more orders about this!” In the morning, they informed the king that the head mathematician of the palace had requested an visit. The king accepted him. Before the mathematician could speak, the king said, “I want to know if the humble reward that Sessa requested has been given to him.” The old mathematician replied, “The reason I came so early in the morning is this. We have tried our best to calculate Sessa’s rice, and the amount is very astonishing.” The king interrupted his speech with impatience and said, “However astonishing it may be, my royal granaries can handle it. The reward promised to him must be delivered!”
+
+The mathematician said, “Satisfaction and fulfilling Sessa’s wish is beyond your power. In all your royal granaries, there is not enough rice for the amount Sessa requested. In fact, the world has never seen such an amount of rice. If you want to keep your promise, you must order all the lands of the world to be turned into rice farms, all the seas and oceans to dry up, and all the ice and snow in distant poles to melt. And then, if all these vast lands and territories are cultivated with rice, it might be possible to give Sessa the amount of wheat he requested as a reward.”
+
+The king, who was listening attentively to the mathematician’s words, thought for a moment and said thoughtfully, “What is that big number?”
+
+The mathematician replied, “The number is 18,446,744,073,709,551,615.”
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+This number is calculated by getting the sum of the following numbers, which form a geometric progression: 2^64, 2^63, 2^62, …, 2^2, 2^1, 2^0
+
+Using the formula for the sum of a geometric progression, we get:
+
+(2^64-1)/(2-1) = 18446744073709551615
+
+With calculations, it is estimated that an average cubic meter of rice contains 15,000,000 rice grains. Therefore, the reward requested by the chess inventor would require a storage facility of 1,200,000,000 cubic meters or 1,200 kilometers. If we choose a storage facility with a height of 4 meters and a width of 10 meters, it would be 30,000,000 kilometers long or eighty times the distance from Earth to the Moon.
+
+This tale has been mentioned in various sources, and I cannot make sure which one is the original source. If you know, please let me know.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+But here is another version, That I could find on web, written by David Blatner in the book “Spectrums: Our Mind-boggling Universe From Infinitesimal to Infinity” and qouted by Robert Krulwich in “npr.org”.
+
+'''That Old Rice-Grains-On-The-Chessboard Con, With a New Twist'''
+
+Once upon a time, says the science writer David Blatner, there was this con man who made chessboards for high-end clients — in this case, a king.
+
+The craftsman was good; his chessboards were better than beautiful. The king, he knew, loved chess. So he hatched a plan to trick the king into handing over an enormous fortune. His plan? He figured, “This king is not too good at math.”
+
+[[File:Files/illustration-1_wide-1256a876ade6733db2595a012539482f0078cb8c-s800-c85.webp|Con-man beside a chessboard]] Source: Robert Krulwich/[https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist NPR]
+
+So when the craftsman presented his chessboard at court, he told the king,
+
+“Your Highness, I don’t want money for this. Or jewels. All I want is a little rice.”
+
+“Hmm,” thought the king, who was a con man himself. “I’ve got rice. How much rice?”
+
+[[File:Files/king-and-chessboard-wide_custom-b8fefa048014f4511bf552542d8ac489fa121b86-s800-c85.webp|King and chessboard]] Source: Robert Krulwich/[https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist NPR]
+
+“All I want,” said the craftsman, “is for you to put a single grain of rice on the first square, two grains on the second, four on the third, eight on the fourth, and so on and so on and so on, for the full 64 squares.”
+
+“I can do that,” said the king, not thinking. And he ordered his granary to pay the man for the chessboard.
+
+Well, that turned out to be more than a little difficult. The first few squares on the board cost the king one grain, then two, then four … by the end of the first row, he was up to 128 grains.
+
+In the second row, things got out of hand. By the 21st square he owed over a million grains; by the 41st, it was over a trillion grains of rice — more rice than he, his subjects or any king anywhere could afford.
+
+He’d been had.
+
+Or had he?
+
+[[File:Files/illustration-21_custom-f031416acb4976fccccd5cf7f761e38e371f4166-s800-c85.webp|King and rice sack]] Source: Robert Krulwich/[https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist NPR]
+
+He was, after all, a king. He knew a thing or two about negotiating.
+
+“I will pay you,” he told the craftsman. “But before you receive the money, just to be sure you are getting what you asked for, I’d like you to count each and every grain I give you.”
+
+“Oh, that won’t be necessary,” said the craftsman.
+
+“Oh, it is necessary,” said the king. “I wouldn’t want to cheat you.”
+
+It takes one second to count a grain of rice. To count the number of grains he’d been promised, it would have taken the craftsman a half-trillion years, about 42 times the age of our universe, to complete his count. The king wouldn’t pay till the count was done. The craftsman quickly realized the count would never be done. His con was counterconned.
+
+The moral here? Kings may forget their math some of the time, but they rarely forget math all of the time. That’s why they’re kings.
+
+[[File:Files/king-chessboard-rice-wide_custom-6dd2385cb0dd0f59dec43b87ff5a71e7be95369a-s800-c85.webp|King and chessboard]] Source: Robert Krulwich/[https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist NPR]
+
+David Blatner includes this old tale — told briefly — in his new book, Spectrums: Our Mind-boggling Universe From Infinitesimal to Infinity. It’s a book about scaling, variety and all the things we cannot see, hear, feel, count, intuit or understand. It’s a celebration of mystery and mischief.
+
+Source: https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist
+
+
+-----
+
+Bloody hell ha?! That, was exponential growth, I shall write an article about it:3
+
+Jokes aside, I would like to mention an important moral point about chess and its logic: Chess was invented at a time when kings were waging wars and expanding their kingdoms (like they don’t do that anymore ×_×). Therefore, the logic behind it is that the power of the king and queen is higher than the others, and the value of their lives is millions of times greater than the life of an innocent soldier… :/ It’s good to learn about backtracking algorithm or learning programming skill using trees, but if you believe that the no-good logic of chess applies to real life as well, and the life is nothing but a war between a few kings, where soldiers should get sacrificed in order to keep the king and queen safe from checkmate, in that case, you haven’t learned anything. The value of all people is equal, and life is not a game of chess.
+
+
+-----
+
+As I mentioned before, in the source code, I also provided a solution to the n-queens problem and wrote a function for it. The approach is exactly the same as the n-rooks problem with a little modification. Since I love you, I will give you a little explanation of the approach, to prevent leaving anything unexplained: Previously, when we wanted to solve the n-rooks problem, let’s say for n=4: We would place the first rook in a square like [2,2]:
+
+[[File:Files/nqueen1.png|thumb|none|alt=n rooks one R placement|n rooks one R placement]]
+
+<pre>0000
+0000
+00R0
+0000</pre>
+Then in which squares would it attcak?
+
+[[File:Files/nqueen2.png|thumb|none|alt=n rooks one R placement|n rooks one R placement]]
+
+<pre>00X0
+00X0
+XXRX
+00X0</pre>
+In these squares that I marked in red [Xs], we couldn’t place any more rooks.
+
+It’s obvious so far.
+
+But imagine now in the same 4x4 board, we want to solve the n-queens problem:
+
+Let’s say we would place the first queen in a square like [2,2]:
+
+[[File:Files/nqueen3.png|thumb|none|alt=n queens one R placement|n queens one R placement]]
+
+<pre>0000
+0000
+00Q0
+0000</pre>

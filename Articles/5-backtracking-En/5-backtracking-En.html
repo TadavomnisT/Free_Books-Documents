@@ -736,4 +736,86 @@ So you have two options there:</p><br />
 The n-rook problem is like this because it has many solutions, while the n-queen problem has much fewer solutions, and with this code, you can even run it with tree storage. I leave it up to you.</p><br />
 <p>Don't be surprised by how much resource required by the solutions is growing large...<br />
 Everything grows exponentially in these scenarios. To help you understand exponential growth, I'm republishing an old story - please please please read it:3</p><br />
-<hr /></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
+<hr /><br />
+<p><strong>The version I heard when I was a kid:</strong></p><br />
+<p>Chess is one of the oldest games in the world and has been invented many centuries ago. Therefore, it is not surprising if there are many tales about it. Here, we will mention one of them.</p><br />
+<p>The tale says that chess originated from India. King Sheoram, who was fascinated by the clever moves and countless possibilities that one could make with chess pieces, became excited when he found out that its inventor was one of his people. He ordered the inventor, Sessa, to be brought to him so that he could personally reward him for this amazing invention. Sessa, the chess inventor, arrived in the presence of the king. The king kindly said, "I would like to reward you for this extraordinary invention." The scientist showed his respect, and the king continued, "I am so rich that I can fulfill your best wish. Now, tell me what you want and need."</p><br />
+<p>Sessa remained silent.</p><br />
+<p>The king encouraged him to speak and said, "Don't be shy, tell me whatever you want. I will not hesitate to fulfill your best wish."</p><br />
+<p>He replied, "Your majesty's kindness is endless. But give me a chance to think about my request and convey it tomorrow."</p><br />
+<p>The next day, Sessa surprised the king with his humble request. He said, "Your majesty! I want to have one grain of rice in the first square of the chessboard." The king, thinking he had misheard, asked, "Just a regular grain of rice?" Sessa replied, "Yes, your majesty. In the second square, two grains; in the third square, four grains; in the fourth square, eight grains; in the fifth square, sixteen grains; in the sixth square, thirty-two grains; and..."</p><br />
+<p>The king angrily said, "That's enough! You will get the rice grains you wished for in the 64 squares of the chessboard. Each square will have twice the number of grains as the previous one. But know that your request is not worthy and deserving of my generosity." Then the king said, "Go! My servants will bring your sack of rice."</p><br />
+<p>Sessa smiled and went to wait in front of the palace door. During lunchtime, the king remembered Sessa and asked if the inventor had received his humble reward, and they answered him, "Your majesty, Your command is obeyed. Your mathematicians are busy calculating to see how much rice he should receive." The king frowned because he was not used to such delay and procrastination in executing his orders. The night before going to bed, he asked again if Sessa's sack of rice had been given to him, but they said, "O king! Your mathematicians are always at work, and they hope to finish their calculations before sunrise."</p><br />
+<p>The king angrily said, "Why are they calculating so much? The reward for Sessa should be given to him until the last grain of rice. I will not give any more orders about this!" In the morning, they informed the king that the head mathematician of the palace had requested an visit. The king accepted him. Before the mathematician could speak, the king said, "I want to know if the humble reward that Sessa requested has been given to him." The old mathematician replied, "The reason I came so early in the morning is this. We have tried our best to calculate Sessa's rice, and the amount is very astonishing." The king interrupted his speech with impatience and said, "However astonishing it may be, my royal granaries can handle it. The reward promised to him must be delivered!"</p><br />
+<p>The mathematician said, "Satisfaction and fulfilling Sessa's wish is beyond your power. In all your royal granaries, there is not enough rice for the amount Sessa requested. In fact, the world has never seen such an amount of rice. If you want to keep your promise, you must order all the lands of the world to be turned into rice farms, all the seas and oceans to dry up, and all the ice and snow in distant poles to melt. And then, if all these vast lands and territories are cultivated with rice, it might be possible to give Sessa the amount of wheat he requested as a reward."</p><br />
+<p>The king, who was listening attentively to the mathematician's words, thought for a moment and said thoughtfully, "What is that big number?"</p><br />
+<p>The mathematician replied, "The number is 18,446,744,073,709,551,615."</p><br />
+<p>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p><br />
+<p>This number is calculated by getting the sum of the following numbers, which form a geometric progression:<br />
+2^64, 2^63, 2^62, ..., 2^2, 2^1, 2^0</p><br />
+<p>Using the formula for the sum of a geometric progression, we get:</p><br />
+<p>(2^64-1)/(2-1) = 18446744073709551615 </p><br />
+<p>With calculations, it is estimated that an average cubic meter of rice contains 15,000,000 rice grains. Therefore, the reward requested by the chess inventor would require a storage facility of 1,200,000,000 cubic meters or 1,200 kilometers. If we choose a storage facility with a height of 4 meters and a width of 10 meters, it would be 30,000,000 kilometers long or eighty times the distance from Earth to the Moon.</p><br />
+<p>This tale has been mentioned in various sources, and I cannot make sure which one is the original source. If you know, please let me know.</p><br />
+<p>-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p><br />
+<p>But here is another version, That I could find on web, written by David Blatner in the book "Spectrums: Our Mind-boggling Universe From Infinitesimal to Infinity" and qouted by Robert Krulwich in "npr.org".</p><br />
+<p><strong>That Old Rice-Grains-On-The-Chessboard Con, With a New Twist</strong></p><br />
+<p>Once upon a time, says the science writer David Blatner, there was this con man who made chessboards for high-end clients — in this case, a king.</p><br />
+<p>The craftsman was good; his chessboards were better than beautiful. The king, he knew, loved chess. So he hatched a plan to trick the king into handing over an enormous fortune. His plan? He figured, "This king is not too good at math."</p><br />
+<p><img src="Files/illustration-1_wide-1256a876ade6733db2595a012539482f0078cb8c-s800-c85.webp" alt="Con-man beside a chessboard" /><br />
+Source: Robert Krulwich/<a href="https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist">NPR</a> </p><br />
+<p>So when the craftsman presented his chessboard at court, he told the king,</p><br />
+<p>"Your Highness, I don't want money for this. Or jewels. All I want is a little rice."</p><br />
+<p>"Hmm," thought the king, who was a con man himself. "I've got rice. How much rice?"</p><br />
+<p><img src="Files/king-and-chessboard-wide_custom-b8fefa048014f4511bf552542d8ac489fa121b86-s800-c85.webp" alt="King and chessboard" /><br />
+Source: Robert Krulwich/<a href="https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist">NPR</a> </p><br />
+<p>"All I want," said the craftsman, "is for you to put a single grain of rice on the first square, two grains on the second, four on the third, eight on the fourth, and so on and so on and so on, for the full 64 squares."</p><br />
+<p>"I can do that," said the king, not thinking. And he ordered his granary to pay the man for the chessboard.</p><br />
+<p>Well, that turned out to be more than a little difficult. The first few squares on the board cost the king one grain, then two, then four ... by the end of the first row, he was up to 128 grains.</p><br />
+<p>In the second row, things got out of hand. By the 21st square he owed over a million grains; by the 41st, it was over a trillion grains of rice — more rice than he, his subjects or any king anywhere could afford.</p><br />
+<p>He'd been had.</p><br />
+<p>Or had he?</p><br />
+<p><img src="Files/illustration-21_custom-f031416acb4976fccccd5cf7f761e38e371f4166-s800-c85.webp" alt="King and rice sack" /><br />
+Source: Robert Krulwich/<a href="https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist">NPR</a> </p><br />
+<p>He was, after all, a king. He knew a thing or two about negotiating.</p><br />
+<p>"I will pay you," he told the craftsman. "But before you receive the money, just to be sure you are getting what you asked for, I'd like you to count each and every grain I give you."</p><br />
+<p>"Oh, that won't be necessary," said the craftsman.</p><br />
+<p>"Oh, it is necessary," said the king. "I wouldn't want to cheat you."</p><br />
+<p>It takes one second to count a grain of rice. To count the number of grains he'd been promised, it would have taken the craftsman a half-trillion years, about 42 times the age of our universe, to complete his count. The king wouldn't pay till the count was done. The craftsman quickly realized the count would never be done. His con was counterconned.</p><br />
+<p>The moral here? Kings may forget their math some of the time, but they rarely forget math all of the time. That's why they're kings.</p><br />
+<p><img src="Files/king-chessboard-rice-wide_custom-6dd2385cb0dd0f59dec43b87ff5a71e7be95369a-s800-c85.webp" alt="King and chessboard" /><br />
+Source: Robert Krulwich/<a href="https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist">NPR</a> </p><br />
+<p>David Blatner includes this old tale — told briefly — in his new book, Spectrums: Our Mind-boggling Universe From Infinitesimal to Infinity. It's a book about scaling, variety and all the things we cannot see, hear, feel, count, intuit or understand. It's a celebration of mystery and mischief.</p><br />
+<p>Source: <a href="https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist">https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist</a></p><br />
+<hr /><br />
+<p>Bloody hell ha?!<br />
+That, was exponential growth, I shall write an article about it:3</p><br />
+<p>Jokes aside, I would like to mention an important moral point about chess and its logic:<br />
+Chess was invented at a time when kings were waging wars and expanding their kingdoms (like they don't do that anymore ×_×). Therefore, the logic behind it is that the power of the king and queen is higher than the others,  and the value of their lives is millions of times greater than the life of an innocent soldier... :/<br />
+It's good to learn about backtracking algorithm or learning programming skill using trees, but if you believe that the no-good logic of chess applies to real life as well, and the life is nothing but a war between a few kings, where soldiers should get sacrificed in order to keep the king and queen safe from checkmate, in that case, you haven't learned anything.<br />
+The value of all people is equal, and life is not a game of chess.</p><br />
+<hr /><br />
+<p>As I mentioned before, in the source code, I also provided a solution to the n-queens problem and wrote a function for it. The approach is exactly the same as the n-rooks problem with a little modification.<br />
+Since I love you, I will give you a little explanation of the approach, to prevent leaving anything unexplained:<br />
+Previously, when we wanted to solve the n-rooks problem, let's say for n=4:<br />
+We would place the first rook in a square like [2,2]:</p><br />
+<p><img src="Files/nqueen1.png" alt="n rooks one R placement" /></p>
+<pre><code>0000
+0000
+00R0
+0000</code></pre><br />
+<p>Then in which squares would it attcak?</p><br />
+<p><img src="Files/nqueen2.png" alt="n rooks one R placement" /></p>
+<pre><code>00X0
+00X0
+XXRX
+00X0</code></pre><br />
+<p>In these squares that I marked in red [Xs], we couldn't place any more rooks.</p><br />
+<p>It's obvious so far.</p><br />
+<p>But imagine now in the same 4x4 board, we want to solve the n-queens problem:</p><br />
+<p>Let's say we would place the first queen in a square like [2,2]:</p><br />
+<p><img src="Files/nqueen3.png" alt="n queens one R placement" /></p>
+<pre><code>0000
+0000
+00Q0
+0000</code></pre></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
