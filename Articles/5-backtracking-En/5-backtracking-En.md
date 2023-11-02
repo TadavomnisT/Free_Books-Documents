@@ -1084,8 +1084,8 @@ Once upon a time, says the science writer David Blatner, there was this con man 
 The craftsman was good; his chessboards were better than beautiful. The king, he knew, loved chess. So he hatched a plan to trick the king into handing over an enormous fortune. His plan? He figured, "This king is not too good at math."
 
 ![Con-man beside a chessboard](Files/illustration-1_wide-1256a876ade6733db2595a012539482f0078cb8c-s800-c85.webp)
-Source: Robert Krulwich/[NPR](https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist) 
-
+*Source: Robert Krulwich/[NPR](https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist) 
+*
 So when the craftsman presented his chessboard at court, he told the king,
 
 "Your Highness, I don't want money for this. Or jewels. All I want is a little rice."
@@ -1093,8 +1093,8 @@ So when the craftsman presented his chessboard at court, he told the king,
 "Hmm," thought the king, who was a con man himself. "I've got rice. How much rice?"
 
 ![King and chessboard](Files/king-and-chessboard-wide_custom-b8fefa048014f4511bf552542d8ac489fa121b86-s800-c85.webp)
-Source: Robert Krulwich/[NPR](https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist) 
-
+*Source: Robert Krulwich/[NPR](https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist) 
+*
 "All I want," said the craftsman, "is for you to put a single grain of rice on the first square, two grains on the second, four on the third, eight on the fourth, and so on and so on and so on, for the full 64 squares."
 
 "I can do that," said the king, not thinking. And he ordered his granary to pay the man for the chessboard.
@@ -1108,8 +1108,8 @@ He'd been had.
 Or had he?
 
 ![King and rice sack](Files/illustration-21_custom-f031416acb4976fccccd5cf7f761e38e371f4166-s800-c85.webp)
-Source: Robert Krulwich/[NPR](https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist) 
-
+*Source: Robert Krulwich/[NPR](https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist) 
+*
 He was, after all, a king. He knew a thing or two about negotiating.
 
 "I will pay you," he told the craftsman. "But before you receive the money, just to be sure you are getting what you asked for, I'd like you to count each and every grain I give you."
@@ -1123,8 +1123,8 @@ It takes one second to count a grain of rice. To count the number of grains he'd
 The moral here? Kings may forget their math some of the time, but they rarely forget math all of the time. That's why they're kings.
 
 ![King and chessboard](Files/king-chessboard-rice-wide_custom-6dd2385cb0dd0f59dec43b87ff5a71e7be95369a-s800-c85.webp)
-Source: Robert Krulwich/[NPR](https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist) 
-
+*Source: Robert Krulwich/[NPR](https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist) 
+*
 David Blatner includes this old tale — told briefly — in his new book, Spectrums: Our Mind-boggling Universe From Infinitesimal to Infinity. It's a book about scaling, variety and all the things we cannot see, hear, feel, count, intuit or understand. It's a celebration of mystery and mischief.
 
 Source: https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist
@@ -1132,10 +1132,11 @@ Source: https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice
 _______________________________________________
 
 Bloody hell ha?!
+
 That, was exponential growth, I shall write an article about it:3
 
 Jokes aside, I would like to mention an important moral point about chess and its logic:
-Chess was invented at a time when kings were waging wars and expanding their kingdoms (like they don't do that anymore ×_×). Therefore, the logic behind it is that the power of the king and queen is higher than the others,  and the value of their lives is millions of times greater than the life of an innocent soldier... :/
+Chess was invented at a time when kings were declaring wars and expanding their kingdoms (like they don't do that anymore ×_×). Therefore, the logic behind it is that the power of the king and queen is higher than the others,  and the value of their lives is millions of times greater than the life of an innocent soldier... :/
 It's good to learn about backtracking algorithm or learning programming skill using trees, but if you believe that the no-good logic of chess applies to real life as well, and the life is nothing but a war between a few kings, where soldiers should get sacrificed in order to keep the king and queen safe from checkmate, in that case, you haven't learned anything.
 The value of all people is equal, and life is not a game of chess.
 
@@ -1180,3 +1181,8142 @@ Let's say we would place the first queen in a square like [2,2]:
 00Q0
 0000
 ```
+
+Now, let's see which squares it can attack, in other words, which squares become unusable:
+
+![n queens one R placement](Files/nqueen4.png)
+```
+X0X0
+0XXX
+XXQX
+0XXX
+```
+
+I hope you understand how it works. If you didn't understand, please consider the following figure:
+
+![n queens one R placement](Files/nqueen5.png)
+```
+Z0X0
+0ZXZ
+XXQX
+0ZXZ
+```
+
+1- The square where the queen is placed cannot be occupied by another queen. (Blue - Q)
+2- The queen can attack squares in its vertical and horizontal lines (its own row and column), therefor no other queens can be placed over there. (Reds - X)
+3- It can attack squares in its main and secondary diagonals, therefor no queens can be placed over there. (Pinks - Z)
+
+So, our code for the n-queens problem has a difference compared to the n-rooks problem when these pink squares (Zs) are added.
+I will run the program for you in two scenarios: when the solution is based on distinguishing between different pieces and when it's not, so you can see the difference.
+
+Regarding the code, there is one more thing I want to mention. In the case where we don't distinguish between the pieces, as a feature to help you learn something, I printed some additional information for you to see if the created matrix (chessboard) **is symmetric with respect to the main diagonal or not**. What does it mean for a matrix to be symmetric with respect to the main diagonal!? I will explain.
+
+In the context of matrices, in square matrices, if the i (row number) for an element is equal to the j (its column number) for that element, That element is considered to be on the main diagonal.
+
+![Matrix](Files/matrix1.png)
+```
+X000Z
+0X0Z0
+00Y00
+0Z0X0
+Z000X
+
+X = Main diagonal
+Z = Antidiagonal
+```
+And correspondingly, the other diagonal of the matrix is called the secondary diagonal or "Antidiagonal".
+It's very simple...
+Now, let's see if the created matrix is symmetric with respect to the main diagonal or not....
+What I mean is, does each element on one side of the main diagonal have its counterpart on the other side or not,
+For example:
+
+![Symmetric Matrix](Files/matrix2.png)
+```
+Symmetric Matrix:
+
+1   1   -1
+1   2   0
+-1  0   5
+
+A_T = A
+```
+
+It is symmetric with respect to the main diagonal. Why? Pay attention:
+
+![Symmetric Matrix](Files/matrix3.png)
+```
+1   1   -1
+1   2   0
+-1  0   5
+```
+
+But the following matrix is not symmetric:
+
+![Symmetric Matrix](Files/matrix4.png)
+```
+1   1   1
+1   2   0
+-1  0   5
+```
+
+It is clear that a matrix that is symmetric with respect to the main diagonal is simply called "symmetric matrix".
+
+If I want to look a bit more observative at our question regarding the topic of symmetric matrices, a chessboard is symmetric if whether we look at the chessboard from the perspective of the player in white or the player in black, we see the same placement of peices. I will show you an example with a figure.
+I will print the word "symmetric" above any matrix that is symmetric (only in the scenario where we didn't apply for distinction, otherwise it doesn't make sense {Why? - If you can answer this, it means you understood the topic.}). For example, if you run the program for 4 queens, you will see that out of the 24 generated solutions, 10 of them are symmetric. For example, one of those symmetric solutions is:
+
+
+```
+_______
+**symmetric**
+0 0 0 1 
+0 1 0 0 
+0 0 1 0 
+1 0 0 0 
+_______
+```
+Now pay attention, see that it is symmetric with respect to the main diagonal.
+
+![Symmetric Matrix](Files/matrix5.png)
+```
+0 0 0 1 
+0 1 0 0 
+0 0 1 0 
+1 0 0 0 
+```
+
+Now, let's see the exact same case on a chessboard:
+
+![Symmetric Chessboard](Files/chess_symmetric.png)
+```
+White
+0 0 0 1 
+0 1 0 0 
+0 0 1 0 
+1 0 0 0
+Black
+
+
+Black
+0 0 0 1 
+0 1 0 0 
+0 0 1 0 
+1 0 0 0
+White
+```
+
+
+I rotated the exact same image 180 degrees so you can understand what I mean.
+So, these symmetric cases are also indicated by the program.
+_______________________________________________
+
+
+Well well well,...
+We're kinda exhausted, aren't we?!😅
+These explanations were just a glimpse of the backtracking algorithm context.
+
+Now let me explain how to run the code and show you the output of the first three parts as an ending outro to this long and sexy question that teaches thousands of things within itself:
+
+To run the code, just run `back_tracking.php`. In the code, I called both the n-queens function and the n-rooks function twice. The first time, it solves the problem with "indifference" (the condition of our question), and the second time, it applies "distinguishing" and "difference".
+
+[I have attached the source code at the end of the article.]
+
+
+I will execute the code for:
+
+- 1 rook - indifferent
+- 1 rook - distinguish
+- 1 queen - indifferent
+- 1 queen - distinguish
+- 2 rooks - indifferent
+- 2 rooks - distinguish
+- 2 queens - indifferent
+- 2 queens - distinguish
+- 3 rooks - indifferent
+- 3 rooks - distinguish
+- 3 queens - indifferent
+- 3 queens - distinguish
+And because I love you guys so much, I will also execute for:
+- 4 rooks - indifferent
+- 4 rooks - distinguish
+- 4 queens - indifferent
+- 4 queens - distinguish
+
+_______________________________________________
+
+
+For the n-rooks problem with n = 1 (indifferent):
+Call the function like this:
+
+```
+n_rooks( 1 );
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 1 ROOKS ** (no distinguish between rooks)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    └── [0,0]
+
+Printing all possible solutions :
+**symmetric**
+1 
+_
+Number of answers : 1
+Number of symmetric answers : 1
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-rooks problem with n = 1 (distinguish):
+Call the function like this:
+
+```
+n_rooks( 1 , true ); //distinguish between rooks
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 1 ROOKS ** (distinguishing between rooks)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    └── [0,0]
+
+Printing all possible solutions :
+1 
+_
+Number of answers : 1
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+
+_______________________________________________
+
+For the n-rooks problem with n = 1 (indifferent):
+Call the function like this:
+
+```
+n_queens( 1 );
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 1 QUEENS ** (no distinguish between queens)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    └── [0,0]
+
+Printing all possible solutions :
+**symmetric**
+1 
+_
+Number of answers : 1
+Number of symmetric answers : 1
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+
+For the n-queens problem with n = 1 (distinguish):
+Call the function like this:
+
+```
+n_queens( 1 , true ); //distinguish between queens
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 1 QUEENS ** (distinguishing between queens)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    └── [0,0]
+
+Printing all possible solutions :
+1 
+_
+Number of answers : 1
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-rooks problem with n = 2 (indifferent):
+Call the function like this:
+
+```
+n_rooks( 2 );
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 2 ROOKS ** (no distinguish between rooks)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   └── [1,1]
+    ├── [0,1]
+    │   └── [1,0]
+    ├── [1,0]
+    │   └── [0,1]
+    └── [1,1]
+        └── [0,0]
+
+Printing all possible solutions :
+**symmetric**
+1 0 
+0 1 
+___
+**symmetric**
+0 1 
+1 0 
+___
+Number of answers : 2
+Number of symmetric answers : 2
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-rooks problem with n = 2 (distinguish):
+Call the function like this:
+
+```
+n_rooks( 2 , true ); //distinguish between rooks
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 2 ROOKS ** (distinguishing between rooks)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   └── [1,1]
+    ├── [0,1]
+    │   └── [1,0]
+    ├── [1,0]
+    │   └── [0,1]
+    └── [1,1]
+        └── [0,0]
+
+Printing all possible solutions :
+1 0 
+0 2 
+___
+0 1 
+2 0 
+___
+0 2 
+1 0 
+___
+2 0 
+0 1 
+___
+Number of answers : 4
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-queens problem with n = 2 (indifferent):
+Call the function like this:
+
+```
+n_queens( 2 );
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 2 QUEENS ** (no distinguish between queens)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    ├── [0,1]
+    ├── [1,0]
+    └── [1,1]
+
+Printing all possible solutions :
+Number of answers : 0
+Number of symmetric answers : 0
+___________________________________
+behrad@TadavomnisT:~/Desktop$  
+```
+
+For the n-queens problem with n = 2 (distinguish):
+Call the function like this:
+
+```
+n_queens( 2 , true ); //distinguish between queens
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 2 QUEENS ** (distinguishing between queens)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    ├── [0,1]
+    ├── [1,0]
+    └── [1,1]
+
+Printing all possible solutions :
+Number of answers : 0
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-rooks problem with n = 3 (indifferent):
+Call the function like this:
+
+```
+n_rooks( 3 );
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 3 ROOKS ** (no distinguish between rooks)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   ├── [1,1]
+    │   │   └── [2,2]
+    │   ├── [1,2]
+    │   │   └── [2,1]
+    │   ├── [2,1]
+    │   │   └── [1,2]
+    │   └── [2,2]
+    │       └── [1,1]
+    ├── [0,1]
+    │   ├── [1,0]
+    │   │   └── [2,2]
+    │   ├── [1,2]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [1,2]
+    │   └── [2,2]
+    │       └── [1,0]
+    ├── [0,2]
+    │   ├── [1,0]
+    │   │   └── [2,1]
+    │   ├── [1,1]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [1,1]
+    │   └── [2,1]
+    │       └── [1,0]
+    ├── [1,0]
+    │   ├── [0,1]
+    │   │   └── [2,2]
+    │   ├── [0,2]
+    │   │   └── [2,1]
+    │   ├── [2,1]
+    │   │   └── [0,2]
+    │   └── [2,2]
+    │       └── [0,1]
+    ├── [1,1]
+    │   ├── [0,0]
+    │   │   └── [2,2]
+    │   ├── [0,2]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [0,2]
+    │   └── [2,2]
+    │       └── [0,0]
+    ├── [1,2]
+    │   ├── [0,0]
+    │   │   └── [2,1]
+    │   ├── [0,1]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [0,1]
+    │   └── [2,1]
+    │       └── [0,0]
+    ├── [2,0]
+    │   ├── [0,1]
+    │   │   └── [1,2]
+    │   ├── [0,2]
+    │   │   └── [1,1]
+    │   ├── [1,1]
+    │   │   └── [0,2]
+    │   └── [1,2]
+    │       └── [0,1]
+    ├── [2,1]
+    │   ├── [0,0]
+    │   │   └── [1,2]
+    │   ├── [0,2]
+    │   │   └── [1,0]
+    │   ├── [1,0]
+    │   │   └── [0,2]
+    │   └── [1,2]
+    │       └── [0,0]
+    └── [2,2]
+        ├── [0,0]
+        │   └── [1,1]
+        ├── [0,1]
+        │   └── [1,0]
+        ├── [1,0]
+        │   └── [0,1]
+        └── [1,1]
+            └── [0,0]
+
+Printing all possible solutions :
+**symmetric**
+1 0 0 
+0 1 0 
+0 0 1 
+_____
+**symmetric**
+1 0 0 
+0 0 1 
+0 1 0 
+_____
+**symmetric**
+0 1 0 
+1 0 0 
+0 0 1 
+_____
+0 1 0 
+0 0 1 
+1 0 0 
+_____
+0 0 1 
+1 0 0 
+0 1 0 
+_____
+**symmetric**
+0 0 1 
+0 1 0 
+1 0 0 
+_____
+Number of answers : 6
+Number of symmetric answers : 4
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-rooks problem with n = 3 (distinguish):
+Call the function like this:
+
+```
+n_rooks( 3 , true ); //distinguish between rooks
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 3 ROOKS ** (distinguishing between rooks)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   ├── [1,1]
+    │   │   └── [2,2]
+    │   ├── [1,2]
+    │   │   └── [2,1]
+    │   ├── [2,1]
+    │   │   └── [1,2]
+    │   └── [2,2]
+    │       └── [1,1]
+    ├── [0,1]
+    │   ├── [1,0]
+    │   │   └── [2,2]
+    │   ├── [1,2]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [1,2]
+    │   └── [2,2]
+    │       └── [1,0]
+    ├── [0,2]
+    │   ├── [1,0]
+    │   │   └── [2,1]
+    │   ├── [1,1]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [1,1]
+    │   └── [2,1]
+    │       └── [1,0]
+    ├── [1,0]
+    │   ├── [0,1]
+    │   │   └── [2,2]
+    │   ├── [0,2]
+    │   │   └── [2,1]
+    │   ├── [2,1]
+    │   │   └── [0,2]
+    │   └── [2,2]
+    │       └── [0,1]
+    ├── [1,1]
+    │   ├── [0,0]
+    │   │   └── [2,2]
+    │   ├── [0,2]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [0,2]
+    │   └── [2,2]
+    │       └── [0,0]
+    ├── [1,2]
+    │   ├── [0,0]
+    │   │   └── [2,1]
+    │   ├── [0,1]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [0,1]
+    │   └── [2,1]
+    │       └── [0,0]
+    ├── [2,0]
+    │   ├── [0,1]
+    │   │   └── [1,2]
+    │   ├── [0,2]
+    │   │   └── [1,1]
+    │   ├── [1,1]
+    │   │   └── [0,2]
+    │   └── [1,2]
+    │       └── [0,1]
+    ├── [2,1]
+    │   ├── [0,0]
+    │   │   └── [1,2]
+    │   ├── [0,2]
+    │   │   └── [1,0]
+    │   ├── [1,0]
+    │   │   └── [0,2]
+    │   └── [1,2]
+    │       └── [0,0]
+    └── [2,2]
+        ├── [0,0]
+        │   └── [1,1]
+        ├── [0,1]
+        │   └── [1,0]
+        ├── [1,0]
+        │   └── [0,1]
+        └── [1,1]
+            └── [0,0]
+
+Printing all possible solutions :
+1 0 0 
+0 2 0 
+0 0 3 
+_____
+1 0 0 
+0 0 2 
+0 3 0 
+_____
+1 0 0 
+0 0 3 
+0 2 0 
+_____
+1 0 0 
+0 3 0 
+0 0 2 
+_____
+0 1 0 
+2 0 0 
+0 0 3 
+_____
+0 1 0 
+0 0 2 
+3 0 0 
+_____
+0 1 0 
+0 0 3 
+2 0 0 
+_____
+0 1 0 
+3 0 0 
+0 0 2 
+_____
+0 0 1 
+2 0 0 
+0 3 0 
+_____
+0 0 1 
+0 2 0 
+3 0 0 
+_____
+0 0 1 
+0 3 0 
+2 0 0 
+_____
+0 0 1 
+3 0 0 
+0 2 0 
+_____
+0 2 0 
+1 0 0 
+0 0 3 
+_____
+0 0 2 
+1 0 0 
+0 3 0 
+_____
+0 0 3 
+1 0 0 
+0 2 0 
+_____
+0 3 0 
+1 0 0 
+0 0 2 
+_____
+2 0 0 
+0 1 0 
+0 0 3 
+_____
+0 0 2 
+0 1 0 
+3 0 0 
+_____
+0 0 3 
+0 1 0 
+2 0 0 
+_____
+3 0 0 
+0 1 0 
+0 0 2 
+_____
+2 0 0 
+0 0 1 
+0 3 0 
+_____
+0 2 0 
+0 0 1 
+3 0 0 
+_____
+0 3 0 
+0 0 1 
+2 0 0 
+_____
+3 0 0 
+0 0 1 
+0 2 0 
+_____
+0 2 0 
+0 0 3 
+1 0 0 
+_____
+0 0 2 
+0 3 0 
+1 0 0 
+_____
+0 0 3 
+0 2 0 
+1 0 0 
+_____
+0 3 0 
+0 0 2 
+1 0 0 
+_____
+2 0 0 
+0 0 3 
+0 1 0 
+_____
+0 0 2 
+3 0 0 
+0 1 0 
+_____
+0 0 3 
+2 0 0 
+0 1 0 
+_____
+3 0 0 
+0 0 2 
+0 1 0 
+_____
+2 0 0 
+0 3 0 
+0 0 1 
+_____
+0 2 0 
+3 0 0 
+0 0 1 
+_____
+0 3 0 
+2 0 0 
+0 0 1 
+_____
+3 0 0 
+0 2 0 
+0 0 1 
+_____
+Number of answers : 36
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-queens problem with n = 3 (indifferent):
+Call the function like this:
+
+```
+n_queens( 3 );
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 3 QUEENS ** (no distinguish between queens)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   ├── [1,2]
+    │   └── [2,1]
+    ├── [0,1]
+    │   ├── [2,0]
+    │   └── [2,2]
+    ├── [0,2]
+    │   ├── [1,0]
+    │   └── [2,1]
+    ├── [1,0]
+    │   ├── [0,2]
+    │   └── [2,2]
+    ├── [1,1]
+    ├── [1,2]
+    │   ├── [0,0]
+    │   └── [2,0]
+    ├── [2,0]
+    │   ├── [0,1]
+    │   └── [1,2]
+    ├── [2,1]
+    │   ├── [0,0]
+    │   └── [0,2]
+    └── [2,2]
+        ├── [0,1]
+        └── [1,0]
+
+Printing all possible solutions :
+Number of answers : 0
+Number of symmetric answers : 0
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-queens problem with n = 3 (distinguish):
+Call the function like this:
+
+```
+n_queens( 3 , true ); //distinguish between queens
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 3 QUEENS ** (distinguishing between queens)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   ├── [1,2]
+    │   └── [2,1]
+    ├── [0,1]
+    │   ├── [2,0]
+    │   └── [2,2]
+    ├── [0,2]
+    │   ├── [1,0]
+    │   └── [2,1]
+    ├── [1,0]
+    │   ├── [0,2]
+    │   └── [2,2]
+    ├── [1,1]
+    ├── [1,2]
+    │   ├── [0,0]
+    │   └── [2,0]
+    ├── [2,0]
+    │   ├── [0,1]
+    │   └── [1,2]
+    ├── [2,1]
+    │   ├── [0,0]
+    │   └── [0,2]
+    └── [2,2]
+        ├── [0,1]
+        └── [1,0]
+
+Printing all possible solutions :
+Number of answers : 0
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-rooks problem with n = 4 (indifferent):
+Call the function like this:
+
+```
+n_rooks( 4 );
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 4 ROOKS ** (no distinguish between rooks)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   ├── [1,1]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,2]
+    │   ├── [1,2]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,1]
+    │   ├── [1,3]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,1]
+    │   ├── [2,1]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,2]
+    │   ├── [2,2]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,1]
+    │   ├── [2,3]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,1]
+    │   ├── [3,1]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,2]
+    │   ├── [3,2]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,1]
+    │   └── [3,3]
+    │       ├── [1,1]
+    │       │   └── [2,2]
+    │       ├── [1,2]
+    │       │   └── [2,1]
+    │       ├── [2,1]
+    │       │   └── [1,2]
+    │       └── [2,2]
+    │           └── [1,1]
+    ├── [0,1]
+    │   ├── [1,0]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,2]
+    │   ├── [1,2]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,0]
+    │   ├── [1,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,2]
+    │   ├── [2,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,0]
+    │   ├── [2,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,0]
+    │   ├── [3,0]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,2]
+    │   ├── [3,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   └── [3,3]
+    │       ├── [1,0]
+    │       │   └── [2,2]
+    │       ├── [1,2]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [1,2]
+    │       └── [2,2]
+    │           └── [1,0]
+    ├── [0,2]
+    │   ├── [1,0]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,1]
+    │   ├── [1,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,0]
+    │   ├── [1,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,1]
+    │   │   └── [3,1]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,1]
+    │   ├── [2,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,0]
+    │   ├── [2,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,1]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [3,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,1]
+    │   ├── [3,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   └── [3,3]
+    │       ├── [1,0]
+    │       │   └── [2,1]
+    │       ├── [1,1]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [1,1]
+    │       └── [2,1]
+    │           └── [1,0]
+    ├── [0,3]
+    │   ├── [1,0]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,1]
+    │   ├── [1,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [1,2]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,1]
+    │   │   └── [3,1]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,1]
+    │   ├── [2,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,0]
+    │   ├── [2,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,1]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [3,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,2]
+    │   │   └── [2,2]
+    │   │       └── [1,1]
+    │   ├── [3,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,2]
+    │   │   └── [2,2]
+    │   │       └── [1,0]
+    │   └── [3,2]
+    │       ├── [1,0]
+    │       │   └── [2,1]
+    │       ├── [1,1]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [1,1]
+    │       └── [2,1]
+    │           └── [1,0]
+    ├── [1,0]
+    │   ├── [0,1]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,2]
+    │   ├── [0,2]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,1]
+    │   ├── [0,3]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,1]
+    │   ├── [2,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,2]
+    │   ├── [2,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,1]
+    │   ├── [2,3]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [3,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,1]
+    │   └── [3,3]
+    │       ├── [0,1]
+    │       │   └── [2,2]
+    │       ├── [0,2]
+    │       │   └── [2,1]
+    │       ├── [2,1]
+    │       │   └── [0,2]
+    │       └── [2,2]
+    │           └── [0,1]
+    ├── [1,1]
+    │   ├── [0,0]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,2]
+    │   ├── [0,2]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,0]
+    │   ├── [0,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,2]
+    │   ├── [2,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,0]
+    │   ├── [2,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [3,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,0]
+    │   └── [3,3]
+    │       ├── [0,0]
+    │       │   └── [2,2]
+    │       ├── [0,2]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [0,2]
+    │       └── [2,2]
+    │           └── [0,0]
+    ├── [1,2]
+    │   ├── [0,0]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,1]
+    │   ├── [0,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,0]
+    │   ├── [0,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,1]
+    │   │   └── [3,1]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,0]
+    │   ├── [2,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,1]
+    │   │   └── [3,1]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,0]
+    │   └── [3,3]
+    │       ├── [0,0]
+    │       │   └── [2,1]
+    │       ├── [0,1]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [0,1]
+    │       └── [2,1]
+    │           └── [0,0]
+    ├── [1,3]
+    │   ├── [0,0]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,1]
+    │   ├── [0,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [0,2]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,1]
+    │   │   └── [3,1]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,0]
+    │   ├── [2,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,1]
+    │   │   └── [3,1]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,2]
+    │   │   └── [2,2]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,2]
+    │   │   └── [2,2]
+    │   │       └── [0,0]
+    │   └── [3,2]
+    │       ├── [0,0]
+    │       │   └── [2,1]
+    │       ├── [0,1]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [0,1]
+    │       └── [2,1]
+    │           └── [0,0]
+    ├── [2,0]
+    │   ├── [0,1]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,2]
+    │   ├── [0,2]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,1]
+    │   ├── [0,3]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,1]
+    │   ├── [1,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,1]
+    │   ├── [1,3]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,2]
+    │   ├── [3,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   └── [3,3]
+    │       ├── [0,1]
+    │       │   └── [1,2]
+    │       ├── [0,2]
+    │       │   └── [1,1]
+    │       ├── [1,1]
+    │       │   └── [0,2]
+    │       └── [1,2]
+    │           └── [0,1]
+    ├── [2,1]
+    │   ├── [0,0]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,2]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,0]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,2]
+    │   ├── [3,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,0]
+    │   └── [3,3]
+    │       ├── [0,0]
+    │       │   └── [1,2]
+    │       ├── [0,2]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,2]
+    │       └── [1,2]
+    │           └── [0,0]
+    ├── [2,2]
+    │   ├── [0,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,1]
+    │   ├── [0,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,1]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,1]
+    │   ├── [1,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,0]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,1]
+    │   │   └── [3,1]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,0]
+    │   └── [3,3]
+    │       ├── [0,0]
+    │       │   └── [1,1]
+    │       ├── [0,1]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,1]
+    │       └── [1,1]
+    │           └── [0,0]
+    ├── [2,3]
+    │   ├── [0,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,1]
+    │   ├── [0,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,0]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,1]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [1,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,0]
+    │   ├── [1,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,1]
+    │   │   └── [3,1]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,2]
+    │   │   └── [1,2]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,2]
+    │   │   └── [1,2]
+    │   │       └── [0,0]
+    │   └── [3,2]
+    │       ├── [0,0]
+    │       │   └── [1,1]
+    │       ├── [0,1]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,1]
+    │       └── [1,1]
+    │           └── [0,0]
+    ├── [3,0]
+    │   ├── [0,1]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,2]
+    │   ├── [0,2]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,1]
+    │   ├── [0,3]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,2]
+    │   │   └── [2,2]
+    │   │       └── [1,1]
+    │   ├── [1,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,1]
+    │   ├── [1,3]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,2]
+    │   │   └── [2,2]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,2]
+    │   ├── [2,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   └── [2,3]
+    │       ├── [0,1]
+    │       │   └── [1,2]
+    │       ├── [0,2]
+    │       │   └── [1,1]
+    │       ├── [1,1]
+    │       │   └── [0,2]
+    │       └── [1,2]
+    │           └── [0,1]
+    ├── [3,1]
+    │   ├── [0,0]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,2]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,2]
+    │   │   └── [2,2]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,0]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,2]
+    │   │   └── [2,2]
+    │   │       └── [0,0]
+    │   ├── [2,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,2]
+    │   ├── [2,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,0]
+    │   └── [2,3]
+    │       ├── [0,0]
+    │       │   └── [1,2]
+    │       ├── [0,2]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,2]
+    │       └── [1,2]
+    │           └── [0,0]
+    ├── [3,2]
+    │   ├── [0,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,1]
+    │   ├── [0,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,1]
+    │   │   └── [2,1]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,1]
+    │   ├── [1,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,0]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,1]
+    │   │   └── [2,1]
+    │   │       └── [0,0]
+    │   ├── [2,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,0]
+    │   └── [2,3]
+    │       ├── [0,0]
+    │       │   └── [1,1]
+    │       ├── [0,1]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,1]
+    │       └── [1,1]
+    │           └── [0,0]
+    └── [3,3]
+        ├── [0,0]
+        │   ├── [1,1]
+        │   │   └── [2,2]
+        │   ├── [1,2]
+        │   │   └── [2,1]
+        │   ├── [2,1]
+        │   │   └── [1,2]
+        │   └── [2,2]
+        │       └── [1,1]
+        ├── [0,1]
+        │   ├── [1,0]
+        │   │   └── [2,2]
+        │   ├── [1,2]
+        │   │   └── [2,0]
+        │   ├── [2,0]
+        │   │   └── [1,2]
+        │   └── [2,2]
+        │       └── [1,0]
+        ├── [0,2]
+        │   ├── [1,0]
+        │   │   └── [2,1]
+        │   ├── [1,1]
+        │   │   └── [2,0]
+        │   ├── [2,0]
+        │   │   └── [1,1]
+        │   └── [2,1]
+        │       └── [1,0]
+        ├── [1,0]
+        │   ├── [0,1]
+        │   │   └── [2,2]
+        │   ├── [0,2]
+        │   │   └── [2,1]
+        │   ├── [2,1]
+        │   │   └── [0,2]
+        │   └── [2,2]
+        │       └── [0,1]
+        ├── [1,1]
+        │   ├── [0,0]
+        │   │   └── [2,2]
+        │   ├── [0,2]
+        │   │   └── [2,0]
+        │   ├── [2,0]
+        │   │   └── [0,2]
+        │   └── [2,2]
+        │       └── [0,0]
+        ├── [1,2]
+        │   ├── [0,0]
+        │   │   └── [2,1]
+        │   ├── [0,1]
+        │   │   └── [2,0]
+        │   ├── [2,0]
+        │   │   └── [0,1]
+        │   └── [2,1]
+        │       └── [0,0]
+        ├── [2,0]
+        │   ├── [0,1]
+        │   │   └── [1,2]
+        │   ├── [0,2]
+        │   │   └── [1,1]
+        │   ├── [1,1]
+        │   │   └── [0,2]
+        │   └── [1,2]
+        │       └── [0,1]
+        ├── [2,1]
+        │   ├── [0,0]
+        │   │   └── [1,2]
+        │   ├── [0,2]
+        │   │   └── [1,0]
+        │   ├── [1,0]
+        │   │   └── [0,2]
+        │   └── [1,2]
+        │       └── [0,0]
+        └── [2,2]
+            ├── [0,0]
+            │   └── [1,1]
+            ├── [0,1]
+            │   └── [1,0]
+            ├── [1,0]
+            │   └── [0,1]
+            └── [1,1]
+                └── [0,0]
+
+Printing all possible solutions :
+**symmetric**
+1 0 0 0 
+0 1 0 0 
+0 0 1 0 
+0 0 0 1 
+_______
+**symmetric**
+1 0 0 0 
+0 1 0 0 
+0 0 0 1 
+0 0 1 0 
+_______
+**symmetric**
+1 0 0 0 
+0 0 1 0 
+0 1 0 0 
+0 0 0 1 
+_______
+1 0 0 0 
+0 0 1 0 
+0 0 0 1 
+0 1 0 0 
+_______
+1 0 0 0 
+0 0 0 1 
+0 1 0 0 
+0 0 1 0 
+_______
+**symmetric**
+1 0 0 0 
+0 0 0 1 
+0 0 1 0 
+0 1 0 0 
+_______
+**symmetric**
+0 1 0 0 
+1 0 0 0 
+0 0 1 0 
+0 0 0 1 
+_______
+**symmetric**
+0 1 0 0 
+1 0 0 0 
+0 0 0 1 
+0 0 1 0 
+_______
+0 1 0 0 
+0 0 1 0 
+1 0 0 0 
+0 0 0 1 
+_______
+0 1 0 0 
+0 0 1 0 
+0 0 0 1 
+1 0 0 0 
+_______
+0 1 0 0 
+0 0 0 1 
+1 0 0 0 
+0 0 1 0 
+_______
+0 1 0 0 
+0 0 0 1 
+0 0 1 0 
+1 0 0 0 
+_______
+0 0 1 0 
+1 0 0 0 
+0 1 0 0 
+0 0 0 1 
+_______
+0 0 1 0 
+1 0 0 0 
+0 0 0 1 
+0 1 0 0 
+_______
+**symmetric**
+0 0 1 0 
+0 1 0 0 
+1 0 0 0 
+0 0 0 1 
+_______
+0 0 1 0 
+0 1 0 0 
+0 0 0 1 
+1 0 0 0 
+_______
+**symmetric**
+0 0 1 0 
+0 0 0 1 
+1 0 0 0 
+0 1 0 0 
+_______
+0 0 1 0 
+0 0 0 1 
+0 1 0 0 
+1 0 0 0 
+_______
+0 0 0 1 
+1 0 0 0 
+0 1 0 0 
+0 0 1 0 
+_______
+0 0 0 1 
+1 0 0 0 
+0 0 1 0 
+0 1 0 0 
+_______
+0 0 0 1 
+0 1 0 0 
+1 0 0 0 
+0 0 1 0 
+_______
+**symmetric**
+0 0 0 1 
+0 1 0 0 
+0 0 1 0 
+1 0 0 0 
+_______
+0 0 0 1 
+0 0 1 0 
+1 0 0 0 
+0 1 0 0 
+_______
+**symmetric**
+0 0 0 1 
+0 0 1 0 
+0 1 0 0 
+1 0 0 0 
+_______
+Number of answers : 24
+Number of symmetric answers : 10
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-rooks problem with n = 4 (distinguish):
+Call the function like this:
+
+```
+n_rooks( 4 , true ); //distinguish between rooks
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 4 ROOKS ** (distinguishing between rooks)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   ├── [1,1]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,2]
+    │   ├── [1,2]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,1]
+    │   ├── [1,3]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,1]
+    │   ├── [2,1]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,2]
+    │   ├── [2,2]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,1]
+    │   ├── [2,3]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,1]
+    │   ├── [3,1]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,2]
+    │   ├── [3,2]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,1]
+    │   └── [3,3]
+    │       ├── [1,1]
+    │       │   └── [2,2]
+    │       ├── [1,2]
+    │       │   └── [2,1]
+    │       ├── [2,1]
+    │       │   └── [1,2]
+    │       └── [2,2]
+    │           └── [1,1]
+    ├── [0,1]
+    │   ├── [1,0]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,2]
+    │   ├── [1,2]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,0]
+    │   ├── [1,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,2]
+    │   ├── [2,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,0]
+    │   ├── [2,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,0]
+    │   ├── [3,0]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,2]
+    │   ├── [3,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   └── [3,3]
+    │       ├── [1,0]
+    │       │   └── [2,2]
+    │       ├── [1,2]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [1,2]
+    │       └── [2,2]
+    │           └── [1,0]
+    ├── [0,2]
+    │   ├── [1,0]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,1]
+    │   ├── [1,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,0]
+    │   ├── [1,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,1]
+    │   │   └── [3,1]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,1]
+    │   ├── [2,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,0]
+    │   ├── [2,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,1]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [3,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,1]
+    │   ├── [3,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   └── [3,3]
+    │       ├── [1,0]
+    │       │   └── [2,1]
+    │       ├── [1,1]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [1,1]
+    │       └── [2,1]
+    │           └── [1,0]
+    ├── [0,3]
+    │   ├── [1,0]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,1]
+    │   ├── [1,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [1,2]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,1]
+    │   │   └── [3,1]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,1]
+    │   ├── [2,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,0]
+    │   ├── [2,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,1]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [3,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,2]
+    │   │   └── [2,2]
+    │   │       └── [1,1]
+    │   ├── [3,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,2]
+    │   │   └── [2,2]
+    │   │       └── [1,0]
+    │   └── [3,2]
+    │       ├── [1,0]
+    │       │   └── [2,1]
+    │       ├── [1,1]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [1,1]
+    │       └── [2,1]
+    │           └── [1,0]
+    ├── [1,0]
+    │   ├── [0,1]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,2]
+    │   ├── [0,2]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,1]
+    │   ├── [0,3]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,1]
+    │   ├── [2,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,2]
+    │   ├── [2,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,1]
+    │   ├── [2,3]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [3,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,1]
+    │   └── [3,3]
+    │       ├── [0,1]
+    │       │   └── [2,2]
+    │       ├── [0,2]
+    │       │   └── [2,1]
+    │       ├── [2,1]
+    │       │   └── [0,2]
+    │       └── [2,2]
+    │           └── [0,1]
+    ├── [1,1]
+    │   ├── [0,0]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,2]
+    │   ├── [0,2]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,0]
+    │   ├── [0,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,2]
+    │   ├── [2,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,0]
+    │   ├── [2,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [3,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,0]
+    │   └── [3,3]
+    │       ├── [0,0]
+    │       │   └── [2,2]
+    │       ├── [0,2]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [0,2]
+    │       └── [2,2]
+    │           └── [0,0]
+    ├── [1,2]
+    │   ├── [0,0]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,1]
+    │   ├── [0,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   │       └── [2,0]
+    │   ├── [0,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,1]
+    │   │   └── [3,1]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,0]
+    │   ├── [2,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,1]
+    │   │   └── [3,1]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,0]
+    │   └── [3,3]
+    │       ├── [0,0]
+    │       │   └── [2,1]
+    │       ├── [0,1]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [0,1]
+    │       └── [2,1]
+    │           └── [0,0]
+    ├── [1,3]
+    │   ├── [0,0]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,1]
+    │   ├── [0,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,2]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [0,2]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [2,1]
+    │   │   └── [3,1]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,0]
+    │   ├── [2,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,1]
+    │   │   └── [3,1]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,2]
+    │   │   └── [2,2]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,2]
+    │   │   └── [2,2]
+    │   │       └── [0,0]
+    │   └── [3,2]
+    │       ├── [0,0]
+    │       │   └── [2,1]
+    │       ├── [0,1]
+    │       │   └── [2,0]
+    │       ├── [2,0]
+    │       │   └── [0,1]
+    │       └── [2,1]
+    │           └── [0,0]
+    ├── [2,0]
+    │   ├── [0,1]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,2]
+    │   ├── [0,2]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,1]
+    │   ├── [0,3]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,1]
+    │   ├── [1,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,1]
+    │   ├── [1,3]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,2]
+    │   ├── [3,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   └── [3,3]
+    │       ├── [0,1]
+    │       │   └── [1,2]
+    │       ├── [0,2]
+    │       │   └── [1,1]
+    │       ├── [1,1]
+    │       │   └── [0,2]
+    │       └── [1,2]
+    │           └── [0,1]
+    ├── [2,1]
+    │   ├── [0,0]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,2]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,0]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,2]
+    │   ├── [3,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,0]
+    │   └── [3,3]
+    │       ├── [0,0]
+    │       │   └── [1,2]
+    │       ├── [0,2]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,2]
+    │       └── [1,2]
+    │           └── [0,0]
+    ├── [2,2]
+    │   ├── [0,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,1]
+    │   ├── [0,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,1]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,1]
+    │   ├── [1,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,3]
+    │   │   └── [3,3]
+    │   │       └── [0,0]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,1]
+    │   │   └── [3,1]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,0]
+    │   └── [3,3]
+    │       ├── [0,0]
+    │       │   └── [1,1]
+    │       ├── [0,1]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,1]
+    │       └── [1,1]
+    │           └── [0,0]
+    ├── [2,3]
+    │   ├── [0,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,1]
+    │   ├── [0,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,2]
+    │   │   └── [3,2]
+    │   │       └── [1,0]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [1,1]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [1,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,2]
+    │   │   └── [3,2]
+    │   │       └── [0,0]
+    │   ├── [1,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,0]
+    │   │   ├── [3,0]
+    │   │   │   └── [0,1]
+    │   │   └── [3,1]
+    │   │       └── [0,0]
+    │   ├── [3,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,2]
+    │   │   └── [1,2]
+    │   │       └── [0,1]
+    │   ├── [3,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,2]
+    │   │   └── [1,2]
+    │   │       └── [0,0]
+    │   └── [3,2]
+    │       ├── [0,0]
+    │       │   └── [1,1]
+    │       ├── [0,1]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,1]
+    │       └── [1,1]
+    │           └── [0,0]
+    ├── [3,0]
+    │   ├── [0,1]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,2]
+    │   ├── [0,2]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,1]
+    │   ├── [0,3]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,2]
+    │   │   └── [2,2]
+    │   │       └── [1,1]
+    │   ├── [1,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,1]
+    │   ├── [1,3]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,2]
+    │   │   └── [2,2]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,2]
+    │   ├── [2,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   └── [2,3]
+    │       ├── [0,1]
+    │       │   └── [1,2]
+    │       ├── [0,2]
+    │       │   └── [1,1]
+    │       ├── [1,1]
+    │       │   └── [0,2]
+    │       └── [1,2]
+    │           └── [0,1]
+    ├── [3,1]
+    │   ├── [0,0]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,2]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,2]
+    │   │   └── [2,2]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,2]
+    │   │   ├── [2,2]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,0]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,2]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,2]
+    │   │   └── [2,2]
+    │   │       └── [0,0]
+    │   ├── [2,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,2]
+    │   │   ├── [1,2]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,2]
+    │   ├── [2,2]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,0]
+    │   └── [2,3]
+    │       ├── [0,0]
+    │       │   └── [1,2]
+    │       ├── [0,2]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,2]
+    │       └── [1,2]
+    │           └── [0,0]
+    ├── [3,2]
+    │   ├── [0,0]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,1]
+    │   ├── [0,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [1,1]
+    │   │   └── [2,1]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,1]
+    │   │   ├── [2,1]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,1]
+    │   ├── [1,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,0]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   │   └── [2,1]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,0]
+    │   │   ├── [2,0]
+    │   │   │   └── [0,1]
+    │   │   └── [2,1]
+    │   │       └── [0,0]
+    │   ├── [2,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,1]
+    │   │   ├── [1,1]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   ├── [0,0]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   │   └── [1,0]
+    │   │   ├── [1,0]
+    │   │   │   └── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,0]
+    │   └── [2,3]
+    │       ├── [0,0]
+    │       │   └── [1,1]
+    │       ├── [0,1]
+    │       │   └── [1,0]
+    │       ├── [1,0]
+    │       │   └── [0,1]
+    │       └── [1,1]
+    │           └── [0,0]
+    └── [3,3]
+        ├── [0,0]
+        │   ├── [1,1]
+        │   │   └── [2,2]
+        │   ├── [1,2]
+        │   │   └── [2,1]
+        │   ├── [2,1]
+        │   │   └── [1,2]
+        │   └── [2,2]
+        │       └── [1,1]
+        ├── [0,1]
+        │   ├── [1,0]
+        │   │   └── [2,2]
+        │   ├── [1,2]
+        │   │   └── [2,0]
+        │   ├── [2,0]
+        │   │   └── [1,2]
+        │   └── [2,2]
+        │       └── [1,0]
+        ├── [0,2]
+        │   ├── [1,0]
+        │   │   └── [2,1]
+        │   ├── [1,1]
+        │   │   └── [2,0]
+        │   ├── [2,0]
+        │   │   └── [1,1]
+        │   └── [2,1]
+        │       └── [1,0]
+        ├── [1,0]
+        │   ├── [0,1]
+        │   │   └── [2,2]
+        │   ├── [0,2]
+        │   │   └── [2,1]
+        │   ├── [2,1]
+        │   │   └── [0,2]
+        │   └── [2,2]
+        │       └── [0,1]
+        ├── [1,1]
+        │   ├── [0,0]
+        │   │   └── [2,2]
+        │   ├── [0,2]
+        │   │   └── [2,0]
+        │   ├── [2,0]
+        │   │   └── [0,2]
+        │   └── [2,2]
+        │       └── [0,0]
+        ├── [1,2]
+        │   ├── [0,0]
+        │   │   └── [2,1]
+        │   ├── [0,1]
+        │   │   └── [2,0]
+        │   ├── [2,0]
+        │   │   └── [0,1]
+        │   └── [2,1]
+        │       └── [0,0]
+        ├── [2,0]
+        │   ├── [0,1]
+        │   │   └── [1,2]
+        │   ├── [0,2]
+        │   │   └── [1,1]
+        │   ├── [1,1]
+        │   │   └── [0,2]
+        │   └── [1,2]
+        │       └── [0,1]
+        ├── [2,1]
+        │   ├── [0,0]
+        │   │   └── [1,2]
+        │   ├── [0,2]
+        │   │   └── [1,0]
+        │   ├── [1,0]
+        │   │   └── [0,2]
+        │   └── [1,2]
+        │       └── [0,0]
+        └── [2,2]
+            ├── [0,0]
+            │   └── [1,1]
+            ├── [0,1]
+            │   └── [1,0]
+            ├── [1,0]
+            │   └── [0,1]
+            └── [1,1]
+                └── [0,0]
+
+Printing all possible solutions :
+1 0 0 0 
+0 2 0 0 
+0 0 3 0 
+0 0 0 4 
+_______
+1 0 0 0 
+0 2 0 0 
+0 0 0 3 
+0 0 4 0 
+_______
+1 0 0 0 
+0 2 0 0 
+0 0 0 4 
+0 0 3 0 
+_______
+1 0 0 0 
+0 2 0 0 
+0 0 4 0 
+0 0 0 3 
+_______
+1 0 0 0 
+0 0 2 0 
+0 3 0 0 
+0 0 0 4 
+_______
+1 0 0 0 
+0 0 2 0 
+0 0 0 3 
+0 4 0 0 
+_______
+1 0 0 0 
+0 0 2 0 
+0 0 0 4 
+0 3 0 0 
+_______
+1 0 0 0 
+0 0 2 0 
+0 4 0 0 
+0 0 0 3 
+_______
+1 0 0 0 
+0 0 0 2 
+0 3 0 0 
+0 0 4 0 
+_______
+1 0 0 0 
+0 0 0 2 
+0 0 3 0 
+0 4 0 0 
+_______
+1 0 0 0 
+0 0 0 2 
+0 0 4 0 
+0 3 0 0 
+_______
+1 0 0 0 
+0 0 0 2 
+0 4 0 0 
+0 0 3 0 
+_______
+1 0 0 0 
+0 0 3 0 
+0 2 0 0 
+0 0 0 4 
+_______
+1 0 0 0 
+0 0 0 3 
+0 2 0 0 
+0 0 4 0 
+_______
+1 0 0 0 
+0 0 0 4 
+0 2 0 0 
+0 0 3 0 
+_______
+1 0 0 0 
+0 0 4 0 
+0 2 0 0 
+0 0 0 3 
+_______
+1 0 0 0 
+0 3 0 0 
+0 0 2 0 
+0 0 0 4 
+_______
+1 0 0 0 
+0 0 0 3 
+0 0 2 0 
+0 4 0 0 
+_______
+1 0 0 0 
+0 0 0 4 
+0 0 2 0 
+0 3 0 0 
+_______
+1 0 0 0 
+0 4 0 0 
+0 0 2 0 
+0 0 0 3 
+_______
+1 0 0 0 
+0 3 0 0 
+0 0 0 2 
+0 0 4 0 
+_______
+1 0 0 0 
+0 0 3 0 
+0 0 0 2 
+0 4 0 0 
+_______
+1 0 0 0 
+0 0 4 0 
+0 0 0 2 
+0 3 0 0 
+_______
+1 0 0 0 
+0 4 0 0 
+0 0 0 2 
+0 0 3 0 
+_______
+1 0 0 0 
+0 0 3 0 
+0 0 0 4 
+0 2 0 0 
+_______
+1 0 0 0 
+0 0 0 3 
+0 0 4 0 
+0 2 0 0 
+_______
+1 0 0 0 
+0 0 0 4 
+0 0 3 0 
+0 2 0 0 
+_______
+1 0 0 0 
+0 0 4 0 
+0 0 0 3 
+0 2 0 0 
+_______
+1 0 0 0 
+0 3 0 0 
+0 0 0 4 
+0 0 2 0 
+_______
+1 0 0 0 
+0 0 0 3 
+0 4 0 0 
+0 0 2 0 
+_______
+1 0 0 0 
+0 0 0 4 
+0 3 0 0 
+0 0 2 0 
+_______
+1 0 0 0 
+0 4 0 0 
+0 0 0 3 
+0 0 2 0 
+_______
+1 0 0 0 
+0 3 0 0 
+0 0 4 0 
+0 0 0 2 
+_______
+1 0 0 0 
+0 0 3 0 
+0 4 0 0 
+0 0 0 2 
+_______
+1 0 0 0 
+0 0 4 0 
+0 3 0 0 
+0 0 0 2 
+_______
+1 0 0 0 
+0 4 0 0 
+0 0 3 0 
+0 0 0 2 
+_______
+0 1 0 0 
+2 0 0 0 
+0 0 3 0 
+0 0 0 4 
+_______
+0 1 0 0 
+2 0 0 0 
+0 0 0 3 
+0 0 4 0 
+_______
+0 1 0 0 
+2 0 0 0 
+0 0 0 4 
+0 0 3 0 
+_______
+0 1 0 0 
+2 0 0 0 
+0 0 4 0 
+0 0 0 3 
+_______
+0 1 0 0 
+0 0 2 0 
+3 0 0 0 
+0 0 0 4 
+_______
+0 1 0 0 
+0 0 2 0 
+0 0 0 3 
+4 0 0 0 
+_______
+0 1 0 0 
+0 0 2 0 
+0 0 0 4 
+3 0 0 0 
+_______
+0 1 0 0 
+0 0 2 0 
+4 0 0 0 
+0 0 0 3 
+_______
+0 1 0 0 
+0 0 0 2 
+3 0 0 0 
+0 0 4 0 
+_______
+0 1 0 0 
+0 0 0 2 
+0 0 3 0 
+4 0 0 0 
+_______
+0 1 0 0 
+0 0 0 2 
+0 0 4 0 
+3 0 0 0 
+_______
+0 1 0 0 
+0 0 0 2 
+4 0 0 0 
+0 0 3 0 
+_______
+0 1 0 0 
+0 0 3 0 
+2 0 0 0 
+0 0 0 4 
+_______
+0 1 0 0 
+0 0 0 3 
+2 0 0 0 
+0 0 4 0 
+_______
+0 1 0 0 
+0 0 0 4 
+2 0 0 0 
+0 0 3 0 
+_______
+0 1 0 0 
+0 0 4 0 
+2 0 0 0 
+0 0 0 3 
+_______
+0 1 0 0 
+3 0 0 0 
+0 0 2 0 
+0 0 0 4 
+_______
+0 1 0 0 
+0 0 0 3 
+0 0 2 0 
+4 0 0 0 
+_______
+0 1 0 0 
+0 0 0 4 
+0 0 2 0 
+3 0 0 0 
+_______
+0 1 0 0 
+4 0 0 0 
+0 0 2 0 
+0 0 0 3 
+_______
+0 1 0 0 
+3 0 0 0 
+0 0 0 2 
+0 0 4 0 
+_______
+0 1 0 0 
+0 0 3 0 
+0 0 0 2 
+4 0 0 0 
+_______
+0 1 0 0 
+0 0 4 0 
+0 0 0 2 
+3 0 0 0 
+_______
+0 1 0 0 
+4 0 0 0 
+0 0 0 2 
+0 0 3 0 
+_______
+0 1 0 0 
+0 0 3 0 
+0 0 0 4 
+2 0 0 0 
+_______
+0 1 0 0 
+0 0 0 3 
+0 0 4 0 
+2 0 0 0 
+_______
+0 1 0 0 
+0 0 0 4 
+0 0 3 0 
+2 0 0 0 
+_______
+0 1 0 0 
+0 0 4 0 
+0 0 0 3 
+2 0 0 0 
+_______
+0 1 0 0 
+3 0 0 0 
+0 0 0 4 
+0 0 2 0 
+_______
+0 1 0 0 
+0 0 0 3 
+4 0 0 0 
+0 0 2 0 
+_______
+0 1 0 0 
+0 0 0 4 
+3 0 0 0 
+0 0 2 0 
+_______
+0 1 0 0 
+4 0 0 0 
+0 0 0 3 
+0 0 2 0 
+_______
+0 1 0 0 
+3 0 0 0 
+0 0 4 0 
+0 0 0 2 
+_______
+0 1 0 0 
+0 0 3 0 
+4 0 0 0 
+0 0 0 2 
+_______
+0 1 0 0 
+0 0 4 0 
+3 0 0 0 
+0 0 0 2 
+_______
+0 1 0 0 
+4 0 0 0 
+0 0 3 0 
+0 0 0 2 
+_______
+0 0 1 0 
+2 0 0 0 
+0 3 0 0 
+0 0 0 4 
+_______
+0 0 1 0 
+2 0 0 0 
+0 0 0 3 
+0 4 0 0 
+_______
+0 0 1 0 
+2 0 0 0 
+0 0 0 4 
+0 3 0 0 
+_______
+0 0 1 0 
+2 0 0 0 
+0 4 0 0 
+0 0 0 3 
+_______
+0 0 1 0 
+0 2 0 0 
+3 0 0 0 
+0 0 0 4 
+_______
+0 0 1 0 
+0 2 0 0 
+0 0 0 3 
+4 0 0 0 
+_______
+0 0 1 0 
+0 2 0 0 
+0 0 0 4 
+3 0 0 0 
+_______
+0 0 1 0 
+0 2 0 0 
+4 0 0 0 
+0 0 0 3 
+_______
+0 0 1 0 
+0 0 0 2 
+3 0 0 0 
+0 4 0 0 
+_______
+0 0 1 0 
+0 0 0 2 
+0 3 0 0 
+4 0 0 0 
+_______
+0 0 1 0 
+0 0 0 2 
+0 4 0 0 
+3 0 0 0 
+_______
+0 0 1 0 
+0 0 0 2 
+4 0 0 0 
+0 3 0 0 
+_______
+0 0 1 0 
+0 3 0 0 
+2 0 0 0 
+0 0 0 4 
+_______
+0 0 1 0 
+0 0 0 3 
+2 0 0 0 
+0 4 0 0 
+_______
+0 0 1 0 
+0 0 0 4 
+2 0 0 0 
+0 3 0 0 
+_______
+0 0 1 0 
+0 4 0 0 
+2 0 0 0 
+0 0 0 3 
+_______
+0 0 1 0 
+3 0 0 0 
+0 2 0 0 
+0 0 0 4 
+_______
+0 0 1 0 
+0 0 0 3 
+0 2 0 0 
+4 0 0 0 
+_______
+0 0 1 0 
+0 0 0 4 
+0 2 0 0 
+3 0 0 0 
+_______
+0 0 1 0 
+4 0 0 0 
+0 2 0 0 
+0 0 0 3 
+_______
+0 0 1 0 
+3 0 0 0 
+0 0 0 2 
+0 4 0 0 
+_______
+0 0 1 0 
+0 3 0 0 
+0 0 0 2 
+4 0 0 0 
+_______
+0 0 1 0 
+0 4 0 0 
+0 0 0 2 
+3 0 0 0 
+_______
+0 0 1 0 
+4 0 0 0 
+0 0 0 2 
+0 3 0 0 
+_______
+0 0 1 0 
+0 3 0 0 
+0 0 0 4 
+2 0 0 0 
+_______
+0 0 1 0 
+0 0 0 3 
+0 4 0 0 
+2 0 0 0 
+_______
+0 0 1 0 
+0 0 0 4 
+0 3 0 0 
+2 0 0 0 
+_______
+0 0 1 0 
+0 4 0 0 
+0 0 0 3 
+2 0 0 0 
+_______
+0 0 1 0 
+3 0 0 0 
+0 0 0 4 
+0 2 0 0 
+_______
+0 0 1 0 
+0 0 0 3 
+4 0 0 0 
+0 2 0 0 
+_______
+0 0 1 0 
+0 0 0 4 
+3 0 0 0 
+0 2 0 0 
+_______
+0 0 1 0 
+4 0 0 0 
+0 0 0 3 
+0 2 0 0 
+_______
+0 0 1 0 
+3 0 0 0 
+0 4 0 0 
+0 0 0 2 
+_______
+0 0 1 0 
+0 3 0 0 
+4 0 0 0 
+0 0 0 2 
+_______
+0 0 1 0 
+0 4 0 0 
+3 0 0 0 
+0 0 0 2 
+_______
+0 0 1 0 
+4 0 0 0 
+0 3 0 0 
+0 0 0 2 
+_______
+0 0 0 1 
+2 0 0 0 
+0 3 0 0 
+0 0 4 0 
+_______
+0 0 0 1 
+2 0 0 0 
+0 0 3 0 
+0 4 0 0 
+_______
+0 0 0 1 
+2 0 0 0 
+0 0 4 0 
+0 3 0 0 
+_______
+0 0 0 1 
+2 0 0 0 
+0 4 0 0 
+0 0 3 0 
+_______
+0 0 0 1 
+0 2 0 0 
+3 0 0 0 
+0 0 4 0 
+_______
+0 0 0 1 
+0 2 0 0 
+0 0 3 0 
+4 0 0 0 
+_______
+0 0 0 1 
+0 2 0 0 
+0 0 4 0 
+3 0 0 0 
+_______
+0 0 0 1 
+0 2 0 0 
+4 0 0 0 
+0 0 3 0 
+_______
+0 0 0 1 
+0 0 2 0 
+3 0 0 0 
+0 4 0 0 
+_______
+0 0 0 1 
+0 0 2 0 
+0 3 0 0 
+4 0 0 0 
+_______
+0 0 0 1 
+0 0 2 0 
+0 4 0 0 
+3 0 0 0 
+_______
+0 0 0 1 
+0 0 2 0 
+4 0 0 0 
+0 3 0 0 
+_______
+0 0 0 1 
+0 3 0 0 
+2 0 0 0 
+0 0 4 0 
+_______
+0 0 0 1 
+0 0 3 0 
+2 0 0 0 
+0 4 0 0 
+_______
+0 0 0 1 
+0 0 4 0 
+2 0 0 0 
+0 3 0 0 
+_______
+0 0 0 1 
+0 4 0 0 
+2 0 0 0 
+0 0 3 0 
+_______
+0 0 0 1 
+3 0 0 0 
+0 2 0 0 
+0 0 4 0 
+_______
+0 0 0 1 
+0 0 3 0 
+0 2 0 0 
+4 0 0 0 
+_______
+0 0 0 1 
+0 0 4 0 
+0 2 0 0 
+3 0 0 0 
+_______
+0 0 0 1 
+4 0 0 0 
+0 2 0 0 
+0 0 3 0 
+_______
+0 0 0 1 
+3 0 0 0 
+0 0 2 0 
+0 4 0 0 
+_______
+0 0 0 1 
+0 3 0 0 
+0 0 2 0 
+4 0 0 0 
+_______
+0 0 0 1 
+0 4 0 0 
+0 0 2 0 
+3 0 0 0 
+_______
+0 0 0 1 
+4 0 0 0 
+0 0 2 0 
+0 3 0 0 
+_______
+0 0 0 1 
+0 3 0 0 
+0 0 4 0 
+2 0 0 0 
+_______
+0 0 0 1 
+0 0 3 0 
+0 4 0 0 
+2 0 0 0 
+_______
+0 0 0 1 
+0 0 4 0 
+0 3 0 0 
+2 0 0 0 
+_______
+0 0 0 1 
+0 4 0 0 
+0 0 3 0 
+2 0 0 0 
+_______
+0 0 0 1 
+3 0 0 0 
+0 0 4 0 
+0 2 0 0 
+_______
+0 0 0 1 
+0 0 3 0 
+4 0 0 0 
+0 2 0 0 
+_______
+0 0 0 1 
+0 0 4 0 
+3 0 0 0 
+0 2 0 0 
+_______
+0 0 0 1 
+4 0 0 0 
+0 0 3 0 
+0 2 0 0 
+_______
+0 0 0 1 
+3 0 0 0 
+0 4 0 0 
+0 0 2 0 
+_______
+0 0 0 1 
+0 3 0 0 
+4 0 0 0 
+0 0 2 0 
+_______
+0 0 0 1 
+0 4 0 0 
+3 0 0 0 
+0 0 2 0 
+_______
+0 0 0 1 
+4 0 0 0 
+0 3 0 0 
+0 0 2 0 
+_______
+0 2 0 0 
+1 0 0 0 
+0 0 3 0 
+0 0 0 4 
+_______
+0 2 0 0 
+1 0 0 0 
+0 0 0 3 
+0 0 4 0 
+_______
+0 2 0 0 
+1 0 0 0 
+0 0 0 4 
+0 0 3 0 
+_______
+0 2 0 0 
+1 0 0 0 
+0 0 4 0 
+0 0 0 3 
+_______
+0 0 2 0 
+1 0 0 0 
+0 3 0 0 
+0 0 0 4 
+_______
+0 0 2 0 
+1 0 0 0 
+0 0 0 3 
+0 4 0 0 
+_______
+0 0 2 0 
+1 0 0 0 
+0 0 0 4 
+0 3 0 0 
+_______
+0 0 2 0 
+1 0 0 0 
+0 4 0 0 
+0 0 0 3 
+_______
+0 0 0 2 
+1 0 0 0 
+0 3 0 0 
+0 0 4 0 
+_______
+0 0 0 2 
+1 0 0 0 
+0 0 3 0 
+0 4 0 0 
+_______
+0 0 0 2 
+1 0 0 0 
+0 0 4 0 
+0 3 0 0 
+_______
+0 0 0 2 
+1 0 0 0 
+0 4 0 0 
+0 0 3 0 
+_______
+0 0 3 0 
+1 0 0 0 
+0 2 0 0 
+0 0 0 4 
+_______
+0 0 0 3 
+1 0 0 0 
+0 2 0 0 
+0 0 4 0 
+_______
+0 0 0 4 
+1 0 0 0 
+0 2 0 0 
+0 0 3 0 
+_______
+0 0 4 0 
+1 0 0 0 
+0 2 0 0 
+0 0 0 3 
+_______
+0 3 0 0 
+1 0 0 0 
+0 0 2 0 
+0 0 0 4 
+_______
+0 0 0 3 
+1 0 0 0 
+0 0 2 0 
+0 4 0 0 
+_______
+0 0 0 4 
+1 0 0 0 
+0 0 2 0 
+0 3 0 0 
+_______
+0 4 0 0 
+1 0 0 0 
+0 0 2 0 
+0 0 0 3 
+_______
+0 3 0 0 
+1 0 0 0 
+0 0 0 2 
+0 0 4 0 
+_______
+0 0 3 0 
+1 0 0 0 
+0 0 0 2 
+0 4 0 0 
+_______
+0 0 4 0 
+1 0 0 0 
+0 0 0 2 
+0 3 0 0 
+_______
+0 4 0 0 
+1 0 0 0 
+0 0 0 2 
+0 0 3 0 
+_______
+0 0 3 0 
+1 0 0 0 
+0 0 0 4 
+0 2 0 0 
+_______
+0 0 0 3 
+1 0 0 0 
+0 0 4 0 
+0 2 0 0 
+_______
+0 0 0 4 
+1 0 0 0 
+0 0 3 0 
+0 2 0 0 
+_______
+0 0 4 0 
+1 0 0 0 
+0 0 0 3 
+0 2 0 0 
+_______
+0 3 0 0 
+1 0 0 0 
+0 0 0 4 
+0 0 2 0 
+_______
+0 0 0 3 
+1 0 0 0 
+0 4 0 0 
+0 0 2 0 
+_______
+0 0 0 4 
+1 0 0 0 
+0 3 0 0 
+0 0 2 0 
+_______
+0 4 0 0 
+1 0 0 0 
+0 0 0 3 
+0 0 2 0 
+_______
+0 3 0 0 
+1 0 0 0 
+0 0 4 0 
+0 0 0 2 
+_______
+0 0 3 0 
+1 0 0 0 
+0 4 0 0 
+0 0 0 2 
+_______
+0 0 4 0 
+1 0 0 0 
+0 3 0 0 
+0 0 0 2 
+_______
+0 4 0 0 
+1 0 0 0 
+0 0 3 0 
+0 0 0 2 
+_______
+2 0 0 0 
+0 1 0 0 
+0 0 3 0 
+0 0 0 4 
+_______
+2 0 0 0 
+0 1 0 0 
+0 0 0 3 
+0 0 4 0 
+_______
+2 0 0 0 
+0 1 0 0 
+0 0 0 4 
+0 0 3 0 
+_______
+2 0 0 0 
+0 1 0 0 
+0 0 4 0 
+0 0 0 3 
+_______
+0 0 2 0 
+0 1 0 0 
+3 0 0 0 
+0 0 0 4 
+_______
+0 0 2 0 
+0 1 0 0 
+0 0 0 3 
+4 0 0 0 
+_______
+0 0 2 0 
+0 1 0 0 
+0 0 0 4 
+3 0 0 0 
+_______
+0 0 2 0 
+0 1 0 0 
+4 0 0 0 
+0 0 0 3 
+_______
+0 0 0 2 
+0 1 0 0 
+3 0 0 0 
+0 0 4 0 
+_______
+0 0 0 2 
+0 1 0 0 
+0 0 3 0 
+4 0 0 0 
+_______
+0 0 0 2 
+0 1 0 0 
+0 0 4 0 
+3 0 0 0 
+_______
+0 0 0 2 
+0 1 0 0 
+4 0 0 0 
+0 0 3 0 
+_______
+0 0 3 0 
+0 1 0 0 
+2 0 0 0 
+0 0 0 4 
+_______
+0 0 0 3 
+0 1 0 0 
+2 0 0 0 
+0 0 4 0 
+_______
+0 0 0 4 
+0 1 0 0 
+2 0 0 0 
+0 0 3 0 
+_______
+0 0 4 0 
+0 1 0 0 
+2 0 0 0 
+0 0 0 3 
+_______
+3 0 0 0 
+0 1 0 0 
+0 0 2 0 
+0 0 0 4 
+_______
+0 0 0 3 
+0 1 0 0 
+0 0 2 0 
+4 0 0 0 
+_______
+0 0 0 4 
+0 1 0 0 
+0 0 2 0 
+3 0 0 0 
+_______
+4 0 0 0 
+0 1 0 0 
+0 0 2 0 
+0 0 0 3 
+_______
+3 0 0 0 
+0 1 0 0 
+0 0 0 2 
+0 0 4 0 
+_______
+0 0 3 0 
+0 1 0 0 
+0 0 0 2 
+4 0 0 0 
+_______
+0 0 4 0 
+0 1 0 0 
+0 0 0 2 
+3 0 0 0 
+_______
+4 0 0 0 
+0 1 0 0 
+0 0 0 2 
+0 0 3 0 
+_______
+0 0 3 0 
+0 1 0 0 
+0 0 0 4 
+2 0 0 0 
+_______
+0 0 0 3 
+0 1 0 0 
+0 0 4 0 
+2 0 0 0 
+_______
+0 0 0 4 
+0 1 0 0 
+0 0 3 0 
+2 0 0 0 
+_______
+0 0 4 0 
+0 1 0 0 
+0 0 0 3 
+2 0 0 0 
+_______
+3 0 0 0 
+0 1 0 0 
+0 0 0 4 
+0 0 2 0 
+_______
+0 0 0 3 
+0 1 0 0 
+4 0 0 0 
+0 0 2 0 
+_______
+0 0 0 4 
+0 1 0 0 
+3 0 0 0 
+0 0 2 0 
+_______
+4 0 0 0 
+0 1 0 0 
+0 0 0 3 
+0 0 2 0 
+_______
+3 0 0 0 
+0 1 0 0 
+0 0 4 0 
+0 0 0 2 
+_______
+0 0 3 0 
+0 1 0 0 
+4 0 0 0 
+0 0 0 2 
+_______
+0 0 4 0 
+0 1 0 0 
+3 0 0 0 
+0 0 0 2 
+_______
+4 0 0 0 
+0 1 0 0 
+0 0 3 0 
+0 0 0 2 
+_______
+2 0 0 0 
+0 0 1 0 
+0 3 0 0 
+0 0 0 4 
+_______
+2 0 0 0 
+0 0 1 0 
+0 0 0 3 
+0 4 0 0 
+_______
+2 0 0 0 
+0 0 1 0 
+0 0 0 4 
+0 3 0 0 
+_______
+2 0 0 0 
+0 0 1 0 
+0 4 0 0 
+0 0 0 3 
+_______
+0 2 0 0 
+0 0 1 0 
+3 0 0 0 
+0 0 0 4 
+_______
+0 2 0 0 
+0 0 1 0 
+0 0 0 3 
+4 0 0 0 
+_______
+0 2 0 0 
+0 0 1 0 
+0 0 0 4 
+3 0 0 0 
+_______
+0 2 0 0 
+0 0 1 0 
+4 0 0 0 
+0 0 0 3 
+_______
+0 0 0 2 
+0 0 1 0 
+3 0 0 0 
+0 4 0 0 
+_______
+0 0 0 2 
+0 0 1 0 
+0 3 0 0 
+4 0 0 0 
+_______
+0 0 0 2 
+0 0 1 0 
+0 4 0 0 
+3 0 0 0 
+_______
+0 0 0 2 
+0 0 1 0 
+4 0 0 0 
+0 3 0 0 
+_______
+0 3 0 0 
+0 0 1 0 
+2 0 0 0 
+0 0 0 4 
+_______
+0 0 0 3 
+0 0 1 0 
+2 0 0 0 
+0 4 0 0 
+_______
+0 0 0 4 
+0 0 1 0 
+2 0 0 0 
+0 3 0 0 
+_______
+0 4 0 0 
+0 0 1 0 
+2 0 0 0 
+0 0 0 3 
+_______
+3 0 0 0 
+0 0 1 0 
+0 2 0 0 
+0 0 0 4 
+_______
+0 0 0 3 
+0 0 1 0 
+0 2 0 0 
+4 0 0 0 
+_______
+0 0 0 4 
+0 0 1 0 
+0 2 0 0 
+3 0 0 0 
+_______
+4 0 0 0 
+0 0 1 0 
+0 2 0 0 
+0 0 0 3 
+_______
+3 0 0 0 
+0 0 1 0 
+0 0 0 2 
+0 4 0 0 
+_______
+0 3 0 0 
+0 0 1 0 
+0 0 0 2 
+4 0 0 0 
+_______
+0 4 0 0 
+0 0 1 0 
+0 0 0 2 
+3 0 0 0 
+_______
+4 0 0 0 
+0 0 1 0 
+0 0 0 2 
+0 3 0 0 
+_______
+0 3 0 0 
+0 0 1 0 
+0 0 0 4 
+2 0 0 0 
+_______
+0 0 0 3 
+0 0 1 0 
+0 4 0 0 
+2 0 0 0 
+_______
+0 0 0 4 
+0 0 1 0 
+0 3 0 0 
+2 0 0 0 
+_______
+0 4 0 0 
+0 0 1 0 
+0 0 0 3 
+2 0 0 0 
+_______
+3 0 0 0 
+0 0 1 0 
+0 0 0 4 
+0 2 0 0 
+_______
+0 0 0 3 
+0 0 1 0 
+4 0 0 0 
+0 2 0 0 
+_______
+0 0 0 4 
+0 0 1 0 
+3 0 0 0 
+0 2 0 0 
+_______
+4 0 0 0 
+0 0 1 0 
+0 0 0 3 
+0 2 0 0 
+_______
+3 0 0 0 
+0 0 1 0 
+0 4 0 0 
+0 0 0 2 
+_______
+0 3 0 0 
+0 0 1 0 
+4 0 0 0 
+0 0 0 2 
+_______
+0 4 0 0 
+0 0 1 0 
+3 0 0 0 
+0 0 0 2 
+_______
+4 0 0 0 
+0 0 1 0 
+0 3 0 0 
+0 0 0 2 
+_______
+2 0 0 0 
+0 0 0 1 
+0 3 0 0 
+0 0 4 0 
+_______
+2 0 0 0 
+0 0 0 1 
+0 0 3 0 
+0 4 0 0 
+_______
+2 0 0 0 
+0 0 0 1 
+0 0 4 0 
+0 3 0 0 
+_______
+2 0 0 0 
+0 0 0 1 
+0 4 0 0 
+0 0 3 0 
+_______
+0 2 0 0 
+0 0 0 1 
+3 0 0 0 
+0 0 4 0 
+_______
+0 2 0 0 
+0 0 0 1 
+0 0 3 0 
+4 0 0 0 
+_______
+0 2 0 0 
+0 0 0 1 
+0 0 4 0 
+3 0 0 0 
+_______
+0 2 0 0 
+0 0 0 1 
+4 0 0 0 
+0 0 3 0 
+_______
+0 0 2 0 
+0 0 0 1 
+3 0 0 0 
+0 4 0 0 
+_______
+0 0 2 0 
+0 0 0 1 
+0 3 0 0 
+4 0 0 0 
+_______
+0 0 2 0 
+0 0 0 1 
+0 4 0 0 
+3 0 0 0 
+_______
+0 0 2 0 
+0 0 0 1 
+4 0 0 0 
+0 3 0 0 
+_______
+0 3 0 0 
+0 0 0 1 
+2 0 0 0 
+0 0 4 0 
+_______
+0 0 3 0 
+0 0 0 1 
+2 0 0 0 
+0 4 0 0 
+_______
+0 0 4 0 
+0 0 0 1 
+2 0 0 0 
+0 3 0 0 
+_______
+0 4 0 0 
+0 0 0 1 
+2 0 0 0 
+0 0 3 0 
+_______
+3 0 0 0 
+0 0 0 1 
+0 2 0 0 
+0 0 4 0 
+_______
+0 0 3 0 
+0 0 0 1 
+0 2 0 0 
+4 0 0 0 
+_______
+0 0 4 0 
+0 0 0 1 
+0 2 0 0 
+3 0 0 0 
+_______
+4 0 0 0 
+0 0 0 1 
+0 2 0 0 
+0 0 3 0 
+_______
+3 0 0 0 
+0 0 0 1 
+0 0 2 0 
+0 4 0 0 
+_______
+0 3 0 0 
+0 0 0 1 
+0 0 2 0 
+4 0 0 0 
+_______
+0 4 0 0 
+0 0 0 1 
+0 0 2 0 
+3 0 0 0 
+_______
+4 0 0 0 
+0 0 0 1 
+0 0 2 0 
+0 3 0 0 
+_______
+0 3 0 0 
+0 0 0 1 
+0 0 4 0 
+2 0 0 0 
+_______
+0 0 3 0 
+0 0 0 1 
+0 4 0 0 
+2 0 0 0 
+_______
+0 0 4 0 
+0 0 0 1 
+0 3 0 0 
+2 0 0 0 
+_______
+0 4 0 0 
+0 0 0 1 
+0 0 3 0 
+2 0 0 0 
+_______
+3 0 0 0 
+0 0 0 1 
+0 0 4 0 
+0 2 0 0 
+_______
+0 0 3 0 
+0 0 0 1 
+4 0 0 0 
+0 2 0 0 
+_______
+0 0 4 0 
+0 0 0 1 
+3 0 0 0 
+0 2 0 0 
+_______
+4 0 0 0 
+0 0 0 1 
+0 0 3 0 
+0 2 0 0 
+_______
+3 0 0 0 
+0 0 0 1 
+0 4 0 0 
+0 0 2 0 
+_______
+0 3 0 0 
+0 0 0 1 
+4 0 0 0 
+0 0 2 0 
+_______
+0 4 0 0 
+0 0 0 1 
+3 0 0 0 
+0 0 2 0 
+_______
+4 0 0 0 
+0 0 0 1 
+0 3 0 0 
+0 0 2 0 
+_______
+0 2 0 0 
+0 0 3 0 
+1 0 0 0 
+0 0 0 4 
+_______
+0 2 0 0 
+0 0 0 3 
+1 0 0 0 
+0 0 4 0 
+_______
+0 2 0 0 
+0 0 0 4 
+1 0 0 0 
+0 0 3 0 
+_______
+0 2 0 0 
+0 0 4 0 
+1 0 0 0 
+0 0 0 3 
+_______
+0 0 2 0 
+0 3 0 0 
+1 0 0 0 
+0 0 0 4 
+_______
+0 0 2 0 
+0 0 0 3 
+1 0 0 0 
+0 4 0 0 
+_______
+0 0 2 0 
+0 0 0 4 
+1 0 0 0 
+0 3 0 0 
+_______
+0 0 2 0 
+0 4 0 0 
+1 0 0 0 
+0 0 0 3 
+_______
+0 0 0 2 
+0 3 0 0 
+1 0 0 0 
+0 0 4 0 
+_______
+0 0 0 2 
+0 0 3 0 
+1 0 0 0 
+0 4 0 0 
+_______
+0 0 0 2 
+0 0 4 0 
+1 0 0 0 
+0 3 0 0 
+_______
+0 0 0 2 
+0 4 0 0 
+1 0 0 0 
+0 0 3 0 
+_______
+0 0 3 0 
+0 2 0 0 
+1 0 0 0 
+0 0 0 4 
+_______
+0 0 0 3 
+0 2 0 0 
+1 0 0 0 
+0 0 4 0 
+_______
+0 0 0 4 
+0 2 0 0 
+1 0 0 0 
+0 0 3 0 
+_______
+0 0 4 0 
+0 2 0 0 
+1 0 0 0 
+0 0 0 3 
+_______
+0 3 0 0 
+0 0 2 0 
+1 0 0 0 
+0 0 0 4 
+_______
+0 0 0 3 
+0 0 2 0 
+1 0 0 0 
+0 4 0 0 
+_______
+0 0 0 4 
+0 0 2 0 
+1 0 0 0 
+0 3 0 0 
+_______
+0 4 0 0 
+0 0 2 0 
+1 0 0 0 
+0 0 0 3 
+_______
+0 3 0 0 
+0 0 0 2 
+1 0 0 0 
+0 0 4 0 
+_______
+0 0 3 0 
+0 0 0 2 
+1 0 0 0 
+0 4 0 0 
+_______
+0 0 4 0 
+0 0 0 2 
+1 0 0 0 
+0 3 0 0 
+_______
+0 4 0 0 
+0 0 0 2 
+1 0 0 0 
+0 0 3 0 
+_______
+0 0 3 0 
+0 0 0 4 
+1 0 0 0 
+0 2 0 0 
+_______
+0 0 0 3 
+0 0 4 0 
+1 0 0 0 
+0 2 0 0 
+_______
+0 0 0 4 
+0 0 3 0 
+1 0 0 0 
+0 2 0 0 
+_______
+0 0 4 0 
+0 0 0 3 
+1 0 0 0 
+0 2 0 0 
+_______
+0 3 0 0 
+0 0 0 4 
+1 0 0 0 
+0 0 2 0 
+_______
+0 0 0 3 
+0 4 0 0 
+1 0 0 0 
+0 0 2 0 
+_______
+0 0 0 4 
+0 3 0 0 
+1 0 0 0 
+0 0 2 0 
+_______
+0 4 0 0 
+0 0 0 3 
+1 0 0 0 
+0 0 2 0 
+_______
+0 3 0 0 
+0 0 4 0 
+1 0 0 0 
+0 0 0 2 
+_______
+0 0 3 0 
+0 4 0 0 
+1 0 0 0 
+0 0 0 2 
+_______
+0 0 4 0 
+0 3 0 0 
+1 0 0 0 
+0 0 0 2 
+_______
+0 4 0 0 
+0 0 3 0 
+1 0 0 0 
+0 0 0 2 
+_______
+2 0 0 0 
+0 0 3 0 
+0 1 0 0 
+0 0 0 4 
+_______
+2 0 0 0 
+0 0 0 3 
+0 1 0 0 
+0 0 4 0 
+_______
+2 0 0 0 
+0 0 0 4 
+0 1 0 0 
+0 0 3 0 
+_______
+2 0 0 0 
+0 0 4 0 
+0 1 0 0 
+0 0 0 3 
+_______
+0 0 2 0 
+3 0 0 0 
+0 1 0 0 
+0 0 0 4 
+_______
+0 0 2 0 
+0 0 0 3 
+0 1 0 0 
+4 0 0 0 
+_______
+0 0 2 0 
+0 0 0 4 
+0 1 0 0 
+3 0 0 0 
+_______
+0 0 2 0 
+4 0 0 0 
+0 1 0 0 
+0 0 0 3 
+_______
+0 0 0 2 
+3 0 0 0 
+0 1 0 0 
+0 0 4 0 
+_______
+0 0 0 2 
+0 0 3 0 
+0 1 0 0 
+4 0 0 0 
+_______
+0 0 0 2 
+0 0 4 0 
+0 1 0 0 
+3 0 0 0 
+_______
+0 0 0 2 
+4 0 0 0 
+0 1 0 0 
+0 0 3 0 
+_______
+0 0 3 0 
+2 0 0 0 
+0 1 0 0 
+0 0 0 4 
+_______
+0 0 0 3 
+2 0 0 0 
+0 1 0 0 
+0 0 4 0 
+_______
+0 0 0 4 
+2 0 0 0 
+0 1 0 0 
+0 0 3 0 
+_______
+0 0 4 0 
+2 0 0 0 
+0 1 0 0 
+0 0 0 3 
+_______
+3 0 0 0 
+0 0 2 0 
+0 1 0 0 
+0 0 0 4 
+_______
+0 0 0 3 
+0 0 2 0 
+0 1 0 0 
+4 0 0 0 
+_______
+0 0 0 4 
+0 0 2 0 
+0 1 0 0 
+3 0 0 0 
+_______
+4 0 0 0 
+0 0 2 0 
+0 1 0 0 
+0 0 0 3 
+_______
+3 0 0 0 
+0 0 0 2 
+0 1 0 0 
+0 0 4 0 
+_______
+0 0 3 0 
+0 0 0 2 
+0 1 0 0 
+4 0 0 0 
+_______
+0 0 4 0 
+0 0 0 2 
+0 1 0 0 
+3 0 0 0 
+_______
+4 0 0 0 
+0 0 0 2 
+0 1 0 0 
+0 0 3 0 
+_______
+0 0 3 0 
+0 0 0 4 
+0 1 0 0 
+2 0 0 0 
+_______
+0 0 0 3 
+0 0 4 0 
+0 1 0 0 
+2 0 0 0 
+_______
+0 0 0 4 
+0 0 3 0 
+0 1 0 0 
+2 0 0 0 
+_______
+0 0 4 0 
+0 0 0 3 
+0 1 0 0 
+2 0 0 0 
+_______
+3 0 0 0 
+0 0 0 4 
+0 1 0 0 
+0 0 2 0 
+_______
+0 0 0 3 
+4 0 0 0 
+0 1 0 0 
+0 0 2 0 
+_______
+0 0 0 4 
+3 0 0 0 
+0 1 0 0 
+0 0 2 0 
+_______
+4 0 0 0 
+0 0 0 3 
+0 1 0 0 
+0 0 2 0 
+_______
+3 0 0 0 
+0 0 4 0 
+0 1 0 0 
+0 0 0 2 
+_______
+0 0 3 0 
+4 0 0 0 
+0 1 0 0 
+0 0 0 2 
+_______
+0 0 4 0 
+3 0 0 0 
+0 1 0 0 
+0 0 0 2 
+_______
+4 0 0 0 
+0 0 3 0 
+0 1 0 0 
+0 0 0 2 
+_______
+2 0 0 0 
+0 3 0 0 
+0 0 1 0 
+0 0 0 4 
+_______
+2 0 0 0 
+0 0 0 3 
+0 0 1 0 
+0 4 0 0 
+_______
+2 0 0 0 
+0 0 0 4 
+0 0 1 0 
+0 3 0 0 
+_______
+2 0 0 0 
+0 4 0 0 
+0 0 1 0 
+0 0 0 3 
+_______
+0 2 0 0 
+3 0 0 0 
+0 0 1 0 
+0 0 0 4 
+_______
+0 2 0 0 
+0 0 0 3 
+0 0 1 0 
+4 0 0 0 
+_______
+0 2 0 0 
+0 0 0 4 
+0 0 1 0 
+3 0 0 0 
+_______
+0 2 0 0 
+4 0 0 0 
+0 0 1 0 
+0 0 0 3 
+_______
+0 0 0 2 
+3 0 0 0 
+0 0 1 0 
+0 4 0 0 
+_______
+0 0 0 2 
+0 3 0 0 
+0 0 1 0 
+4 0 0 0 
+_______
+0 0 0 2 
+0 4 0 0 
+0 0 1 0 
+3 0 0 0 
+_______
+0 0 0 2 
+4 0 0 0 
+0 0 1 0 
+0 3 0 0 
+_______
+0 3 0 0 
+2 0 0 0 
+0 0 1 0 
+0 0 0 4 
+_______
+0 0 0 3 
+2 0 0 0 
+0 0 1 0 
+0 4 0 0 
+_______
+0 0 0 4 
+2 0 0 0 
+0 0 1 0 
+0 3 0 0 
+_______
+0 4 0 0 
+2 0 0 0 
+0 0 1 0 
+0 0 0 3 
+_______
+3 0 0 0 
+0 2 0 0 
+0 0 1 0 
+0 0 0 4 
+_______
+0 0 0 3 
+0 2 0 0 
+0 0 1 0 
+4 0 0 0 
+_______
+0 0 0 4 
+0 2 0 0 
+0 0 1 0 
+3 0 0 0 
+_______
+4 0 0 0 
+0 2 0 0 
+0 0 1 0 
+0 0 0 3 
+_______
+3 0 0 0 
+0 0 0 2 
+0 0 1 0 
+0 4 0 0 
+_______
+0 3 0 0 
+0 0 0 2 
+0 0 1 0 
+4 0 0 0 
+_______
+0 4 0 0 
+0 0 0 2 
+0 0 1 0 
+3 0 0 0 
+_______
+4 0 0 0 
+0 0 0 2 
+0 0 1 0 
+0 3 0 0 
+_______
+0 3 0 0 
+0 0 0 4 
+0 0 1 0 
+2 0 0 0 
+_______
+0 0 0 3 
+0 4 0 0 
+0 0 1 0 
+2 0 0 0 
+_______
+0 0 0 4 
+0 3 0 0 
+0 0 1 0 
+2 0 0 0 
+_______
+0 4 0 0 
+0 0 0 3 
+0 0 1 0 
+2 0 0 0 
+_______
+3 0 0 0 
+0 0 0 4 
+0 0 1 0 
+0 2 0 0 
+_______
+0 0 0 3 
+4 0 0 0 
+0 0 1 0 
+0 2 0 0 
+_______
+0 0 0 4 
+3 0 0 0 
+0 0 1 0 
+0 2 0 0 
+_______
+4 0 0 0 
+0 0 0 3 
+0 0 1 0 
+0 2 0 0 
+_______
+3 0 0 0 
+0 4 0 0 
+0 0 1 0 
+0 0 0 2 
+_______
+0 3 0 0 
+4 0 0 0 
+0 0 1 0 
+0 0 0 2 
+_______
+0 4 0 0 
+3 0 0 0 
+0 0 1 0 
+0 0 0 2 
+_______
+4 0 0 0 
+0 3 0 0 
+0 0 1 0 
+0 0 0 2 
+_______
+2 0 0 0 
+0 3 0 0 
+0 0 0 1 
+0 0 4 0 
+_______
+2 0 0 0 
+0 0 3 0 
+0 0 0 1 
+0 4 0 0 
+_______
+2 0 0 0 
+0 0 4 0 
+0 0 0 1 
+0 3 0 0 
+_______
+2 0 0 0 
+0 4 0 0 
+0 0 0 1 
+0 0 3 0 
+_______
+0 2 0 0 
+3 0 0 0 
+0 0 0 1 
+0 0 4 0 
+_______
+0 2 0 0 
+0 0 3 0 
+0 0 0 1 
+4 0 0 0 
+_______
+0 2 0 0 
+0 0 4 0 
+0 0 0 1 
+3 0 0 0 
+_______
+0 2 0 0 
+4 0 0 0 
+0 0 0 1 
+0 0 3 0 
+_______
+0 0 2 0 
+3 0 0 0 
+0 0 0 1 
+0 4 0 0 
+_______
+0 0 2 0 
+0 3 0 0 
+0 0 0 1 
+4 0 0 0 
+_______
+0 0 2 0 
+0 4 0 0 
+0 0 0 1 
+3 0 0 0 
+_______
+0 0 2 0 
+4 0 0 0 
+0 0 0 1 
+0 3 0 0 
+_______
+0 3 0 0 
+2 0 0 0 
+0 0 0 1 
+0 0 4 0 
+_______
+0 0 3 0 
+2 0 0 0 
+0 0 0 1 
+0 4 0 0 
+_______
+0 0 4 0 
+2 0 0 0 
+0 0 0 1 
+0 3 0 0 
+_______
+0 4 0 0 
+2 0 0 0 
+0 0 0 1 
+0 0 3 0 
+_______
+3 0 0 0 
+0 2 0 0 
+0 0 0 1 
+0 0 4 0 
+_______
+0 0 3 0 
+0 2 0 0 
+0 0 0 1 
+4 0 0 0 
+_______
+0 0 4 0 
+0 2 0 0 
+0 0 0 1 
+3 0 0 0 
+_______
+4 0 0 0 
+0 2 0 0 
+0 0 0 1 
+0 0 3 0 
+_______
+3 0 0 0 
+0 0 2 0 
+0 0 0 1 
+0 4 0 0 
+_______
+0 3 0 0 
+0 0 2 0 
+0 0 0 1 
+4 0 0 0 
+_______
+0 4 0 0 
+0 0 2 0 
+0 0 0 1 
+3 0 0 0 
+_______
+4 0 0 0 
+0 0 2 0 
+0 0 0 1 
+0 3 0 0 
+_______
+0 3 0 0 
+0 0 4 0 
+0 0 0 1 
+2 0 0 0 
+_______
+0 0 3 0 
+0 4 0 0 
+0 0 0 1 
+2 0 0 0 
+_______
+0 0 4 0 
+0 3 0 0 
+0 0 0 1 
+2 0 0 0 
+_______
+0 4 0 0 
+0 0 3 0 
+0 0 0 1 
+2 0 0 0 
+_______
+3 0 0 0 
+0 0 4 0 
+0 0 0 1 
+0 2 0 0 
+_______
+0 0 3 0 
+4 0 0 0 
+0 0 0 1 
+0 2 0 0 
+_______
+0 0 4 0 
+3 0 0 0 
+0 0 0 1 
+0 2 0 0 
+_______
+4 0 0 0 
+0 0 3 0 
+0 0 0 1 
+0 2 0 0 
+_______
+3 0 0 0 
+0 4 0 0 
+0 0 0 1 
+0 0 2 0 
+_______
+0 3 0 0 
+4 0 0 0 
+0 0 0 1 
+0 0 2 0 
+_______
+0 4 0 0 
+3 0 0 0 
+0 0 0 1 
+0 0 2 0 
+_______
+4 0 0 0 
+0 3 0 0 
+0 0 0 1 
+0 0 2 0 
+_______
+0 2 0 0 
+0 0 3 0 
+0 0 0 4 
+1 0 0 0 
+_______
+0 2 0 0 
+0 0 0 3 
+0 0 4 0 
+1 0 0 0 
+_______
+0 2 0 0 
+0 0 0 4 
+0 0 3 0 
+1 0 0 0 
+_______
+0 2 0 0 
+0 0 4 0 
+0 0 0 3 
+1 0 0 0 
+_______
+0 0 2 0 
+0 3 0 0 
+0 0 0 4 
+1 0 0 0 
+_______
+0 0 2 0 
+0 0 0 3 
+0 4 0 0 
+1 0 0 0 
+_______
+0 0 2 0 
+0 0 0 4 
+0 3 0 0 
+1 0 0 0 
+_______
+0 0 2 0 
+0 4 0 0 
+0 0 0 3 
+1 0 0 0 
+_______
+0 0 0 2 
+0 3 0 0 
+0 0 4 0 
+1 0 0 0 
+_______
+0 0 0 2 
+0 0 3 0 
+0 4 0 0 
+1 0 0 0 
+_______
+0 0 0 2 
+0 0 4 0 
+0 3 0 0 
+1 0 0 0 
+_______
+0 0 0 2 
+0 4 0 0 
+0 0 3 0 
+1 0 0 0 
+_______
+0 0 3 0 
+0 2 0 0 
+0 0 0 4 
+1 0 0 0 
+_______
+0 0 0 3 
+0 2 0 0 
+0 0 4 0 
+1 0 0 0 
+_______
+0 0 0 4 
+0 2 0 0 
+0 0 3 0 
+1 0 0 0 
+_______
+0 0 4 0 
+0 2 0 0 
+0 0 0 3 
+1 0 0 0 
+_______
+0 3 0 0 
+0 0 2 0 
+0 0 0 4 
+1 0 0 0 
+_______
+0 0 0 3 
+0 0 2 0 
+0 4 0 0 
+1 0 0 0 
+_______
+0 0 0 4 
+0 0 2 0 
+0 3 0 0 
+1 0 0 0 
+_______
+0 4 0 0 
+0 0 2 0 
+0 0 0 3 
+1 0 0 0 
+_______
+0 3 0 0 
+0 0 0 2 
+0 0 4 0 
+1 0 0 0 
+_______
+0 0 3 0 
+0 0 0 2 
+0 4 0 0 
+1 0 0 0 
+_______
+0 0 4 0 
+0 0 0 2 
+0 3 0 0 
+1 0 0 0 
+_______
+0 4 0 0 
+0 0 0 2 
+0 0 3 0 
+1 0 0 0 
+_______
+0 0 3 0 
+0 0 0 4 
+0 2 0 0 
+1 0 0 0 
+_______
+0 0 0 3 
+0 0 4 0 
+0 2 0 0 
+1 0 0 0 
+_______
+0 0 0 4 
+0 0 3 0 
+0 2 0 0 
+1 0 0 0 
+_______
+0 0 4 0 
+0 0 0 3 
+0 2 0 0 
+1 0 0 0 
+_______
+0 3 0 0 
+0 0 0 4 
+0 0 2 0 
+1 0 0 0 
+_______
+0 0 0 3 
+0 4 0 0 
+0 0 2 0 
+1 0 0 0 
+_______
+0 0 0 4 
+0 3 0 0 
+0 0 2 0 
+1 0 0 0 
+_______
+0 4 0 0 
+0 0 0 3 
+0 0 2 0 
+1 0 0 0 
+_______
+0 3 0 0 
+0 0 4 0 
+0 0 0 2 
+1 0 0 0 
+_______
+0 0 3 0 
+0 4 0 0 
+0 0 0 2 
+1 0 0 0 
+_______
+0 0 4 0 
+0 3 0 0 
+0 0 0 2 
+1 0 0 0 
+_______
+0 4 0 0 
+0 0 3 0 
+0 0 0 2 
+1 0 0 0 
+_______
+2 0 0 0 
+0 0 3 0 
+0 0 0 4 
+0 1 0 0 
+_______
+2 0 0 0 
+0 0 0 3 
+0 0 4 0 
+0 1 0 0 
+_______
+2 0 0 0 
+0 0 0 4 
+0 0 3 0 
+0 1 0 0 
+_______
+2 0 0 0 
+0 0 4 0 
+0 0 0 3 
+0 1 0 0 
+_______
+0 0 2 0 
+3 0 0 0 
+0 0 0 4 
+0 1 0 0 
+_______
+0 0 2 0 
+0 0 0 3 
+4 0 0 0 
+0 1 0 0 
+_______
+0 0 2 0 
+0 0 0 4 
+3 0 0 0 
+0 1 0 0 
+_______
+0 0 2 0 
+4 0 0 0 
+0 0 0 3 
+0 1 0 0 
+_______
+0 0 0 2 
+3 0 0 0 
+0 0 4 0 
+0 1 0 0 
+_______
+0 0 0 2 
+0 0 3 0 
+4 0 0 0 
+0 1 0 0 
+_______
+0 0 0 2 
+0 0 4 0 
+3 0 0 0 
+0 1 0 0 
+_______
+0 0 0 2 
+4 0 0 0 
+0 0 3 0 
+0 1 0 0 
+_______
+0 0 3 0 
+2 0 0 0 
+0 0 0 4 
+0 1 0 0 
+_______
+0 0 0 3 
+2 0 0 0 
+0 0 4 0 
+0 1 0 0 
+_______
+0 0 0 4 
+2 0 0 0 
+0 0 3 0 
+0 1 0 0 
+_______
+0 0 4 0 
+2 0 0 0 
+0 0 0 3 
+0 1 0 0 
+_______
+3 0 0 0 
+0 0 2 0 
+0 0 0 4 
+0 1 0 0 
+_______
+0 0 0 3 
+0 0 2 0 
+4 0 0 0 
+0 1 0 0 
+_______
+0 0 0 4 
+0 0 2 0 
+3 0 0 0 
+0 1 0 0 
+_______
+4 0 0 0 
+0 0 2 0 
+0 0 0 3 
+0 1 0 0 
+_______
+3 0 0 0 
+0 0 0 2 
+0 0 4 0 
+0 1 0 0 
+_______
+0 0 3 0 
+0 0 0 2 
+4 0 0 0 
+0 1 0 0 
+_______
+0 0 4 0 
+0 0 0 2 
+3 0 0 0 
+0 1 0 0 
+_______
+4 0 0 0 
+0 0 0 2 
+0 0 3 0 
+0 1 0 0 
+_______
+0 0 3 0 
+0 0 0 4 
+2 0 0 0 
+0 1 0 0 
+_______
+0 0 0 3 
+0 0 4 0 
+2 0 0 0 
+0 1 0 0 
+_______
+0 0 0 4 
+0 0 3 0 
+2 0 0 0 
+0 1 0 0 
+_______
+0 0 4 0 
+0 0 0 3 
+2 0 0 0 
+0 1 0 0 
+_______
+3 0 0 0 
+0 0 0 4 
+0 0 2 0 
+0 1 0 0 
+_______
+0 0 0 3 
+4 0 0 0 
+0 0 2 0 
+0 1 0 0 
+_______
+0 0 0 4 
+3 0 0 0 
+0 0 2 0 
+0 1 0 0 
+_______
+4 0 0 0 
+0 0 0 3 
+0 0 2 0 
+0 1 0 0 
+_______
+3 0 0 0 
+0 0 4 0 
+0 0 0 2 
+0 1 0 0 
+_______
+0 0 3 0 
+4 0 0 0 
+0 0 0 2 
+0 1 0 0 
+_______
+0 0 4 0 
+3 0 0 0 
+0 0 0 2 
+0 1 0 0 
+_______
+4 0 0 0 
+0 0 3 0 
+0 0 0 2 
+0 1 0 0 
+_______
+2 0 0 0 
+0 3 0 0 
+0 0 0 4 
+0 0 1 0 
+_______
+2 0 0 0 
+0 0 0 3 
+0 4 0 0 
+0 0 1 0 
+_______
+2 0 0 0 
+0 0 0 4 
+0 3 0 0 
+0 0 1 0 
+_______
+2 0 0 0 
+0 4 0 0 
+0 0 0 3 
+0 0 1 0 
+_______
+0 2 0 0 
+3 0 0 0 
+0 0 0 4 
+0 0 1 0 
+_______
+0 2 0 0 
+0 0 0 3 
+4 0 0 0 
+0 0 1 0 
+_______
+0 2 0 0 
+0 0 0 4 
+3 0 0 0 
+0 0 1 0 
+_______
+0 2 0 0 
+4 0 0 0 
+0 0 0 3 
+0 0 1 0 
+_______
+0 0 0 2 
+3 0 0 0 
+0 4 0 0 
+0 0 1 0 
+_______
+0 0 0 2 
+0 3 0 0 
+4 0 0 0 
+0 0 1 0 
+_______
+0 0 0 2 
+0 4 0 0 
+3 0 0 0 
+0 0 1 0 
+_______
+0 0 0 2 
+4 0 0 0 
+0 3 0 0 
+0 0 1 0 
+_______
+0 3 0 0 
+2 0 0 0 
+0 0 0 4 
+0 0 1 0 
+_______
+0 0 0 3 
+2 0 0 0 
+0 4 0 0 
+0 0 1 0 
+_______
+0 0 0 4 
+2 0 0 0 
+0 3 0 0 
+0 0 1 0 
+_______
+0 4 0 0 
+2 0 0 0 
+0 0 0 3 
+0 0 1 0 
+_______
+3 0 0 0 
+0 2 0 0 
+0 0 0 4 
+0 0 1 0 
+_______
+0 0 0 3 
+0 2 0 0 
+4 0 0 0 
+0 0 1 0 
+_______
+0 0 0 4 
+0 2 0 0 
+3 0 0 0 
+0 0 1 0 
+_______
+4 0 0 0 
+0 2 0 0 
+0 0 0 3 
+0 0 1 0 
+_______
+3 0 0 0 
+0 0 0 2 
+0 4 0 0 
+0 0 1 0 
+_______
+0 3 0 0 
+0 0 0 2 
+4 0 0 0 
+0 0 1 0 
+_______
+0 4 0 0 
+0 0 0 2 
+3 0 0 0 
+0 0 1 0 
+_______
+4 0 0 0 
+0 0 0 2 
+0 3 0 0 
+0 0 1 0 
+_______
+0 3 0 0 
+0 0 0 4 
+2 0 0 0 
+0 0 1 0 
+_______
+0 0 0 3 
+0 4 0 0 
+2 0 0 0 
+0 0 1 0 
+_______
+0 0 0 4 
+0 3 0 0 
+2 0 0 0 
+0 0 1 0 
+_______
+0 4 0 0 
+0 0 0 3 
+2 0 0 0 
+0 0 1 0 
+_______
+3 0 0 0 
+0 0 0 4 
+0 2 0 0 
+0 0 1 0 
+_______
+0 0 0 3 
+4 0 0 0 
+0 2 0 0 
+0 0 1 0 
+_______
+0 0 0 4 
+3 0 0 0 
+0 2 0 0 
+0 0 1 0 
+_______
+4 0 0 0 
+0 0 0 3 
+0 2 0 0 
+0 0 1 0 
+_______
+3 0 0 0 
+0 4 0 0 
+0 0 0 2 
+0 0 1 0 
+_______
+0 3 0 0 
+4 0 0 0 
+0 0 0 2 
+0 0 1 0 
+_______
+0 4 0 0 
+3 0 0 0 
+0 0 0 2 
+0 0 1 0 
+_______
+4 0 0 0 
+0 3 0 0 
+0 0 0 2 
+0 0 1 0 
+_______
+2 0 0 0 
+0 3 0 0 
+0 0 4 0 
+0 0 0 1 
+_______
+2 0 0 0 
+0 0 3 0 
+0 4 0 0 
+0 0 0 1 
+_______
+2 0 0 0 
+0 0 4 0 
+0 3 0 0 
+0 0 0 1 
+_______
+2 0 0 0 
+0 4 0 0 
+0 0 3 0 
+0 0 0 1 
+_______
+0 2 0 0 
+3 0 0 0 
+0 0 4 0 
+0 0 0 1 
+_______
+0 2 0 0 
+0 0 3 0 
+4 0 0 0 
+0 0 0 1 
+_______
+0 2 0 0 
+0 0 4 0 
+3 0 0 0 
+0 0 0 1 
+_______
+0 2 0 0 
+4 0 0 0 
+0 0 3 0 
+0 0 0 1 
+_______
+0 0 2 0 
+3 0 0 0 
+0 4 0 0 
+0 0 0 1 
+_______
+0 0 2 0 
+0 3 0 0 
+4 0 0 0 
+0 0 0 1 
+_______
+0 0 2 0 
+0 4 0 0 
+3 0 0 0 
+0 0 0 1 
+_______
+0 0 2 0 
+4 0 0 0 
+0 3 0 0 
+0 0 0 1 
+_______
+0 3 0 0 
+2 0 0 0 
+0 0 4 0 
+0 0 0 1 
+_______
+0 0 3 0 
+2 0 0 0 
+0 4 0 0 
+0 0 0 1 
+_______
+0 0 4 0 
+2 0 0 0 
+0 3 0 0 
+0 0 0 1 
+_______
+0 4 0 0 
+2 0 0 0 
+0 0 3 0 
+0 0 0 1 
+_______
+3 0 0 0 
+0 2 0 0 
+0 0 4 0 
+0 0 0 1 
+_______
+0 0 3 0 
+0 2 0 0 
+4 0 0 0 
+0 0 0 1 
+_______
+0 0 4 0 
+0 2 0 0 
+3 0 0 0 
+0 0 0 1 
+_______
+4 0 0 0 
+0 2 0 0 
+0 0 3 0 
+0 0 0 1 
+_______
+3 0 0 0 
+0 0 2 0 
+0 4 0 0 
+0 0 0 1 
+_______
+0 3 0 0 
+0 0 2 0 
+4 0 0 0 
+0 0 0 1 
+_______
+0 4 0 0 
+0 0 2 0 
+3 0 0 0 
+0 0 0 1 
+_______
+4 0 0 0 
+0 0 2 0 
+0 3 0 0 
+0 0 0 1 
+_______
+0 3 0 0 
+0 0 4 0 
+2 0 0 0 
+0 0 0 1 
+_______
+0 0 3 0 
+0 4 0 0 
+2 0 0 0 
+0 0 0 1 
+_______
+0 0 4 0 
+0 3 0 0 
+2 0 0 0 
+0 0 0 1 
+_______
+0 4 0 0 
+0 0 3 0 
+2 0 0 0 
+0 0 0 1 
+_______
+3 0 0 0 
+0 0 4 0 
+0 2 0 0 
+0 0 0 1 
+_______
+0 0 3 0 
+4 0 0 0 
+0 2 0 0 
+0 0 0 1 
+_______
+0 0 4 0 
+3 0 0 0 
+0 2 0 0 
+0 0 0 1 
+_______
+4 0 0 0 
+0 0 3 0 
+0 2 0 0 
+0 0 0 1 
+_______
+3 0 0 0 
+0 4 0 0 
+0 0 2 0 
+0 0 0 1 
+_______
+0 3 0 0 
+4 0 0 0 
+0 0 2 0 
+0 0 0 1 
+_______
+0 4 0 0 
+3 0 0 0 
+0 0 2 0 
+0 0 0 1 
+_______
+4 0 0 0 
+0 3 0 0 
+0 0 2 0 
+0 0 0 1 
+_______
+Number of answers : 576
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+For the n-queens problem with n = 4 (indifferent):
+Call the function like this:
+
+```
+n_queens( 4 );
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 4 QUEENS ** (no distinguish between queens)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   ├── [1,2]
+    │   │   └── [3,1]
+    │   ├── [1,3]
+    │   │   ├── [2,1]
+    │   │   └── [3,2]
+    │   ├── [2,1]
+    │   │   └── [1,3]
+    │   ├── [2,3]
+    │   │   └── [3,1]
+    │   ├── [3,1]
+    │   │   ├── [1,2]
+    │   │   └── [2,3]
+    │   └── [3,2]
+    │       └── [1,3]
+    ├── [0,1]
+    │   ├── [1,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,0]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   ├── [2,2]
+    │   │   └── [3,0]
+    │   ├── [3,0]
+    │   │   ├── [1,3]
+    │   │   └── [2,2]
+    │   ├── [3,2]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   └── [2,0]
+    │   │       └── [1,3]
+    │   └── [3,3]
+    │       └── [2,0]
+    ├── [0,2]
+    │   ├── [1,0]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   ├── [2,1]
+    │   │   └── [3,3]
+    │   ├── [2,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,0]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [3,0]
+    │   │   └── [2,3]
+    │   ├── [3,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   └── [3,3]
+    │       ├── [1,0]
+    │       └── [2,1]
+    ├── [0,3]
+    │   ├── [1,0]
+    │   │   ├── [2,2]
+    │   │   └── [3,1]
+    │   ├── [1,1]
+    │   │   └── [3,2]
+    │   ├── [2,0]
+    │   │   └── [3,2]
+    │   ├── [2,2]
+    │   │   └── [1,0]
+    │   ├── [3,1]
+    │   │   └── [1,0]
+    │   └── [3,2]
+    │       ├── [1,1]
+    │       └── [2,0]
+    ├── [1,0]
+    │   ├── [0,2]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   ├── [0,3]
+    │   │   ├── [2,2]
+    │   │   └── [3,1]
+    │   ├── [2,2]
+    │   │   └── [0,3]
+    │   ├── [2,3]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   └── [3,1]
+    │   │       └── [0,2]
+    │   ├── [3,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   └── [3,3]
+    │       └── [0,2]
+    ├── [1,1]
+    │   ├── [0,3]
+    │   │   └── [3,2]
+    │   ├── [2,3]
+    │   │   └── [3,0]
+    │   ├── [3,0]
+    │   │   └── [2,3]
+    │   └── [3,2]
+    │       └── [0,3]
+    ├── [1,2]
+    │   ├── [0,0]
+    │   │   └── [3,1]
+    │   ├── [2,0]
+    │   │   └── [3,3]
+    │   ├── [3,1]
+    │   │   └── [0,0]
+    │   └── [3,3]
+    │       └── [2,0]
+    ├── [1,3]
+    │   ├── [0,0]
+    │   │   ├── [2,1]
+    │   │   └── [3,2]
+    │   ├── [0,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,0]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   └── [0,0]
+    │   ├── [3,0]
+    │   │   └── [0,1]
+    │   └── [3,2]
+    │       ├── [0,0]
+    │       ├── [0,1]
+    │       │   └── [2,0]
+    │       └── [2,0]
+    │           └── [0,1]
+    ├── [2,0]
+    │   ├── [0,1]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   ├── [0,3]
+    │   │   └── [3,2]
+    │   ├── [1,2]
+    │   │   └── [3,3]
+    │   ├── [1,3]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [3,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   └── [3,3]
+    │       ├── [0,1]
+    │       └── [1,2]
+    ├── [2,1]
+    │   ├── [0,0]
+    │   │   └── [1,3]
+    │   ├── [0,2]
+    │   │   └── [3,3]
+    │   ├── [1,3]
+    │   │   └── [0,0]
+    │   └── [3,3]
+    │       └── [0,2]
+    ├── [2,2]
+    │   ├── [0,1]
+    │   │   └── [3,0]
+    │   ├── [0,3]
+    │   │   └── [1,0]
+    │   ├── [1,0]
+    │   │   └── [0,3]
+    │   └── [3,0]
+    │       └── [0,1]
+    ├── [2,3]
+    │   ├── [0,0]
+    │   │   └── [3,1]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,0]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   └── [3,1]
+    │   │       └── [0,2]
+    │   ├── [1,1]
+    │   │   └── [3,0]
+    │   ├── [3,0]
+    │   │   ├── [0,2]
+    │   │   └── [1,1]
+    │   └── [3,1]
+    │       ├── [0,0]
+    │       ├── [0,2]
+    │       │   └── [1,0]
+    │       └── [1,0]
+    │           └── [0,2]
+    ├── [3,0]
+    │   ├── [0,1]
+    │   │   ├── [1,3]
+    │   │   └── [2,2]
+    │   ├── [0,2]
+    │   │   └── [2,3]
+    │   ├── [1,1]
+    │   │   └── [2,3]
+    │   ├── [1,3]
+    │   │   └── [0,1]
+    │   ├── [2,2]
+    │   │   └── [0,1]
+    │   └── [2,3]
+    │       ├── [0,2]
+    │       └── [1,1]
+    ├── [3,1]
+    │   ├── [0,0]
+    │   │   ├── [1,2]
+    │   │   └── [2,3]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   └── [0,0]
+    │   └── [2,3]
+    │       ├── [0,0]
+    │       ├── [0,2]
+    │       │   └── [1,0]
+    │       └── [1,0]
+    │           └── [0,2]
+    ├── [3,2]
+    │   ├── [0,0]
+    │   │   └── [1,3]
+    │   ├── [0,1]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   └── [2,0]
+    │   │       └── [1,3]
+    │   ├── [0,3]
+    │   │   ├── [1,1]
+    │   │   └── [2,0]
+    │   ├── [1,1]
+    │   │   └── [0,3]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,0]
+    │   │   └── [2,0]
+    │   │       └── [0,1]
+    │   └── [2,0]
+    │       ├── [0,1]
+    │       │   └── [1,3]
+    │       ├── [0,3]
+    │       └── [1,3]
+    │           └── [0,1]
+    └── [3,3]
+        ├── [0,1]
+        │   └── [2,0]
+        ├── [0,2]
+        │   ├── [1,0]
+        │   └── [2,1]
+        ├── [1,0]
+        │   └── [0,2]
+        ├── [1,2]
+        │   └── [2,0]
+        ├── [2,0]
+        │   ├── [0,1]
+        │   └── [1,2]
+        └── [2,1]
+            └── [0,2]
+
+Printing all possible solutions :
+0 1 0 0 
+0 0 0 1 
+1 0 0 0 
+0 0 1 0 
+_______
+0 0 1 0 
+1 0 0 0 
+0 0 0 1 
+0 1 0 0 
+_______
+Number of answers : 2
+Number of symmetric answers : 0
+___________________________________
+behrad@TadavomnisT:~/Desktop$  
+```
+_______________________________________________
+
+
+For the n-queens problem with n = 4 (distinguish):
+Call the function like this:
+
+```
+n_queens( 4 , true ); //distinguish between queens
+```
+
+And the result of this part:
+
+```
+behrad@TadavomnisT:~/Desktop$ php back_tracking.php 
+
+** 4 QUEENS ** (distinguishing between queens)
+Building empty matrix...
+Building decision tree...
+Printing decision tree :
+.
+└── "root"
+    ├── [0,0]
+    │   ├── [1,2]
+    │   │   └── [3,1]
+    │   ├── [1,3]
+    │   │   ├── [2,1]
+    │   │   └── [3,2]
+    │   ├── [2,1]
+    │   │   └── [1,3]
+    │   ├── [2,3]
+    │   │   └── [3,1]
+    │   ├── [3,1]
+    │   │   ├── [1,2]
+    │   │   └── [2,3]
+    │   └── [3,2]
+    │       └── [1,3]
+    ├── [0,1]
+    │   ├── [1,3]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,0]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   ├── [2,2]
+    │   │   └── [3,0]
+    │   ├── [3,0]
+    │   │   ├── [1,3]
+    │   │   └── [2,2]
+    │   ├── [3,2]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   └── [2,0]
+    │   │       └── [1,3]
+    │   └── [3,3]
+    │       └── [2,0]
+    ├── [0,2]
+    │   ├── [1,0]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   ├── [2,1]
+    │   │   └── [3,3]
+    │   ├── [2,3]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,0]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [3,0]
+    │   │   └── [2,3]
+    │   ├── [3,1]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   └── [3,3]
+    │       ├── [1,0]
+    │       └── [2,1]
+    ├── [0,3]
+    │   ├── [1,0]
+    │   │   ├── [2,2]
+    │   │   └── [3,1]
+    │   ├── [1,1]
+    │   │   └── [3,2]
+    │   ├── [2,0]
+    │   │   └── [3,2]
+    │   ├── [2,2]
+    │   │   └── [1,0]
+    │   ├── [3,1]
+    │   │   └── [1,0]
+    │   └── [3,2]
+    │       ├── [1,1]
+    │       └── [2,0]
+    ├── [1,0]
+    │   ├── [0,2]
+    │   │   ├── [2,3]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,1]
+    │   │   │   └── [2,3]
+    │   │   └── [3,3]
+    │   ├── [0,3]
+    │   │   ├── [2,2]
+    │   │   └── [3,1]
+    │   ├── [2,2]
+    │   │   └── [0,3]
+    │   ├── [2,3]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   └── [3,1]
+    │   │       └── [0,2]
+    │   ├── [3,1]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   └── [3,3]
+    │       └── [0,2]
+    ├── [1,1]
+    │   ├── [0,3]
+    │   │   └── [3,2]
+    │   ├── [2,3]
+    │   │   └── [3,0]
+    │   ├── [3,0]
+    │   │   └── [2,3]
+    │   └── [3,2]
+    │       └── [0,3]
+    ├── [1,2]
+    │   ├── [0,0]
+    │   │   └── [3,1]
+    │   ├── [2,0]
+    │   │   └── [3,3]
+    │   ├── [3,1]
+    │   │   └── [0,0]
+    │   └── [3,3]
+    │       └── [2,0]
+    ├── [1,3]
+    │   ├── [0,0]
+    │   │   ├── [2,1]
+    │   │   └── [3,2]
+    │   ├── [0,1]
+    │   │   ├── [2,0]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,0]
+    │   │   └── [3,2]
+    │   │       └── [2,0]
+    │   ├── [2,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [2,1]
+    │   │   └── [0,0]
+    │   ├── [3,0]
+    │   │   └── [0,1]
+    │   └── [3,2]
+    │       ├── [0,0]
+    │       ├── [0,1]
+    │       │   └── [2,0]
+    │       └── [2,0]
+    │           └── [0,1]
+    ├── [2,0]
+    │   ├── [0,1]
+    │   │   ├── [1,3]
+    │   │   │   └── [3,2]
+    │   │   ├── [3,2]
+    │   │   │   └── [1,3]
+    │   │   └── [3,3]
+    │   ├── [0,3]
+    │   │   └── [3,2]
+    │   ├── [1,2]
+    │   │   └── [3,3]
+    │   ├── [1,3]
+    │   │   ├── [0,1]
+    │   │   │   └── [3,2]
+    │   │   └── [3,2]
+    │   │       └── [0,1]
+    │   ├── [3,2]
+    │   │   ├── [0,1]
+    │   │   │   └── [1,3]
+    │   │   ├── [0,3]
+    │   │   └── [1,3]
+    │   │       └── [0,1]
+    │   └── [3,3]
+    │       ├── [0,1]
+    │       └── [1,2]
+    ├── [2,1]
+    │   ├── [0,0]
+    │   │   └── [1,3]
+    │   ├── [0,2]
+    │   │   └── [3,3]
+    │   ├── [1,3]
+    │   │   └── [0,0]
+    │   └── [3,3]
+    │       └── [0,2]
+    ├── [2,2]
+    │   ├── [0,1]
+    │   │   └── [3,0]
+    │   ├── [0,3]
+    │   │   └── [1,0]
+    │   ├── [1,0]
+    │   │   └── [0,3]
+    │   └── [3,0]
+    │       └── [0,1]
+    ├── [2,3]
+    │   ├── [0,0]
+    │   │   └── [3,1]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [3,1]
+    │   │   ├── [3,0]
+    │   │   └── [3,1]
+    │   │       └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [3,1]
+    │   │   └── [3,1]
+    │   │       └── [0,2]
+    │   ├── [1,1]
+    │   │   └── [3,0]
+    │   ├── [3,0]
+    │   │   ├── [0,2]
+    │   │   └── [1,1]
+    │   └── [3,1]
+    │       ├── [0,0]
+    │       ├── [0,2]
+    │       │   └── [1,0]
+    │       └── [1,0]
+    │           └── [0,2]
+    ├── [3,0]
+    │   ├── [0,1]
+    │   │   ├── [1,3]
+    │   │   └── [2,2]
+    │   ├── [0,2]
+    │   │   └── [2,3]
+    │   ├── [1,1]
+    │   │   └── [2,3]
+    │   ├── [1,3]
+    │   │   └── [0,1]
+    │   ├── [2,2]
+    │   │   └── [0,1]
+    │   └── [2,3]
+    │       ├── [0,2]
+    │       └── [1,1]
+    ├── [3,1]
+    │   ├── [0,0]
+    │   │   ├── [1,2]
+    │   │   └── [2,3]
+    │   ├── [0,2]
+    │   │   ├── [1,0]
+    │   │   │   └── [2,3]
+    │   │   └── [2,3]
+    │   │       └── [1,0]
+    │   ├── [0,3]
+    │   │   └── [1,0]
+    │   ├── [1,0]
+    │   │   ├── [0,2]
+    │   │   │   └── [2,3]
+    │   │   ├── [0,3]
+    │   │   └── [2,3]
+    │   │       └── [0,2]
+    │   ├── [1,2]
+    │   │   └── [0,0]
+    │   └── [2,3]
+    │       ├── [0,0]
+    │       ├── [0,2]
+    │       │   └── [1,0]
+    │       └── [1,0]
+    │           └── [0,2]
+    ├── [3,2]
+    │   ├── [0,0]
+    │   │   └── [1,3]
+    │   ├── [0,1]
+    │   │   ├── [1,3]
+    │   │   │   └── [2,0]
+    │   │   └── [2,0]
+    │   │       └── [1,3]
+    │   ├── [0,3]
+    │   │   ├── [1,1]
+    │   │   └── [2,0]
+    │   ├── [1,1]
+    │   │   └── [0,3]
+    │   ├── [1,3]
+    │   │   ├── [0,0]
+    │   │   ├── [0,1]
+    │   │   │   └── [2,0]
+    │   │   └── [2,0]
+    │   │       └── [0,1]
+    │   └── [2,0]
+    │       ├── [0,1]
+    │       │   └── [1,3]
+    │       ├── [0,3]
+    │       └── [1,3]
+    │           └── [0,1]
+    └── [3,3]
+        ├── [0,1]
+        │   └── [2,0]
+        ├── [0,2]
+        │   ├── [1,0]
+        │   └── [2,1]
+        ├── [1,0]
+        │   └── [0,2]
+        ├── [1,2]
+        │   └── [2,0]
+        ├── [2,0]
+        │   ├── [0,1]
+        │   └── [1,2]
+        └── [2,1]
+            └── [0,2]
+
+Printing all possible solutions :
+0 1 0 0 
+0 0 0 2 
+3 0 0 0 
+0 0 4 0 
+_______
+0 1 0 0 
+0 0 0 2 
+4 0 0 0 
+0 0 3 0 
+_______
+0 1 0 0 
+0 0 0 3 
+2 0 0 0 
+0 0 4 0 
+_______
+0 1 0 0 
+0 0 0 4 
+2 0 0 0 
+0 0 3 0 
+_______
+0 1 0 0 
+0 0 0 3 
+4 0 0 0 
+0 0 2 0 
+_______
+0 1 0 0 
+0 0 0 4 
+3 0 0 0 
+0 0 2 0 
+_______
+0 0 1 0 
+2 0 0 0 
+0 0 0 3 
+0 4 0 0 
+_______
+0 0 1 0 
+2 0 0 0 
+0 0 0 4 
+0 3 0 0 
+_______
+0 0 1 0 
+3 0 0 0 
+0 0 0 2 
+0 4 0 0 
+_______
+0 0 1 0 
+4 0 0 0 
+0 0 0 2 
+0 3 0 0 
+_______
+0 0 1 0 
+3 0 0 0 
+0 0 0 4 
+0 2 0 0 
+_______
+0 0 1 0 
+4 0 0 0 
+0 0 0 3 
+0 2 0 0 
+_______
+0 0 2 0 
+1 0 0 0 
+0 0 0 3 
+0 4 0 0 
+_______
+0 0 2 0 
+1 0 0 0 
+0 0 0 4 
+0 3 0 0 
+_______
+0 0 3 0 
+1 0 0 0 
+0 0 0 2 
+0 4 0 0 
+_______
+0 0 4 0 
+1 0 0 0 
+0 0 0 2 
+0 3 0 0 
+_______
+0 0 3 0 
+1 0 0 0 
+0 0 0 4 
+0 2 0 0 
+_______
+0 0 4 0 
+1 0 0 0 
+0 0 0 3 
+0 2 0 0 
+_______
+0 2 0 0 
+0 0 0 1 
+3 0 0 0 
+0 0 4 0 
+_______
+0 2 0 0 
+0 0 0 1 
+4 0 0 0 
+0 0 3 0 
+_______
+0 3 0 0 
+0 0 0 1 
+2 0 0 0 
+0 0 4 0 
+_______
+0 4 0 0 
+0 0 0 1 
+2 0 0 0 
+0 0 3 0 
+_______
+0 3 0 0 
+0 0 0 1 
+4 0 0 0 
+0 0 2 0 
+_______
+0 4 0 0 
+0 0 0 1 
+3 0 0 0 
+0 0 2 0 
+_______
+0 2 0 0 
+0 0 0 3 
+1 0 0 0 
+0 0 4 0 
+_______
+0 2 0 0 
+0 0 0 4 
+1 0 0 0 
+0 0 3 0 
+_______
+0 3 0 0 
+0 0 0 2 
+1 0 0 0 
+0 0 4 0 
+_______
+0 4 0 0 
+0 0 0 2 
+1 0 0 0 
+0 0 3 0 
+_______
+0 3 0 0 
+0 0 0 4 
+1 0 0 0 
+0 0 2 0 
+_______
+0 4 0 0 
+0 0 0 3 
+1 0 0 0 
+0 0 2 0 
+_______
+0 0 2 0 
+3 0 0 0 
+0 0 0 1 
+0 4 0 0 
+_______
+0 0 2 0 
+4 0 0 0 
+0 0 0 1 
+0 3 0 0 
+_______
+0 0 3 0 
+2 0 0 0 
+0 0 0 1 
+0 4 0 0 
+_______
+0 0 4 0 
+2 0 0 0 
+0 0 0 1 
+0 3 0 0 
+_______
+0 0 3 0 
+4 0 0 0 
+0 0 0 1 
+0 2 0 0 
+_______
+0 0 4 0 
+3 0 0 0 
+0 0 0 1 
+0 2 0 0 
+_______
+0 0 2 0 
+3 0 0 0 
+0 0 0 4 
+0 1 0 0 
+_______
+0 0 2 0 
+4 0 0 0 
+0 0 0 3 
+0 1 0 0 
+_______
+0 0 3 0 
+2 0 0 0 
+0 0 0 4 
+0 1 0 0 
+_______
+0 0 4 0 
+2 0 0 0 
+0 0 0 3 
+0 1 0 0 
+_______
+0 0 3 0 
+4 0 0 0 
+0 0 0 2 
+0 1 0 0 
+_______
+0 0 4 0 
+3 0 0 0 
+0 0 0 2 
+0 1 0 0 
+_______
+0 2 0 0 
+0 0 0 3 
+4 0 0 0 
+0 0 1 0 
+_______
+0 2 0 0 
+0 0 0 4 
+3 0 0 0 
+0 0 1 0 
+_______
+0 3 0 0 
+0 0 0 2 
+4 0 0 0 
+0 0 1 0 
+_______
+0 4 0 0 
+0 0 0 2 
+3 0 0 0 
+0 0 1 0 
+_______
+0 3 0 0 
+0 0 0 4 
+2 0 0 0 
+0 0 1 0 
+_______
+0 4 0 0 
+0 0 0 3 
+2 0 0 0 
+0 0 1 0 
+_______
+Number of answers : 48
+___________________________________
+behrad@TadavomnisT:~/Desktop$ 
+```
+_______________________________________________
+
+
+This whole printing tree thing is for teaching you, so you can write a more optimized program.
+
+And of course, the class source-code:
+
+
+back_tracking.php
+
+```PHP
+<?php
+
+set_time_limit(0);
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // 
+// //                                                                      // // 
+// //                              NOTICE:                                 // // 
+// //                                                                      // // 
+// //                  THIS IS NOT AN OPTIMISED SCRIPT!                    // // 
+// //                  THIS IS NOT AN OPTIMISED SCRIPT!                    // // 
+// //                  THIS IS NOT AN OPTIMISED SCRIPT!                    // // 
+// //                  THIS IS NOT AN OPTIMISED SCRIPT!                    // // 
+// //                                                                      // // 
+// //                                                                      // // 
+// //             THIS SCRIPT IS JUST FOR EDUCATIONAL PURPOSES             // // 
+// //                                                                      // // 
+// //               CLASSES AND FUNCTIONS BY : TadavomnisT                 // // 
+// //                                                                      // // 
+// //                                                                      // // 
+// //                    GitHub gist for this script:                      // // 
+// // https://gist.github.com/TadavomnisT/d9fc6ba06dcb775b5ee8cf8baaa94588 // // 
+// //                                                                      // // 
+// //                 GitHub repositpry for this script:                   // // 
+// // https://github.com/TadavomnisT/My_gists/tree/main/php_back_tracking  // // 
+// //                                                                      // // 
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+n_rooks( 4 );
+
+n_rooks( 4 , true ); //distinguish between rooks
+
+// // -----------------------------------------------------
+
+n_queens( 4 );
+
+n_queens( 4 , true ); //distinguish between queens
+
+// =============================================================================
+// =============================================================================
+// FUNCTIONS====================================================================
+// =============================================================================
+// =============================================================================
+
+function n_rooks( int $size , bool $distinguish = false )
+{
+    echo PHP_EOL . "** $size ROOKS **" . (($distinguish)? " (distinguishing between rooks)" : " (no distinguish between rooks)") . PHP_EOL . "Building empty matrix..." . PHP_EOL;
+    $matrix = [];
+    for ($i = 0; $i < $size; $i++) // build empty matrix
+        for ($j=0; $j <$size ; $j++)
+            $matrix[$i][$j] = 0;
+    echo "Building decision tree..." . PHP_EOL;
+    $tree = new Tree;
+    $tree->createNode( "root" );
+    for ($i = 0; $i < $size ; $i++) {
+        foreach ($tree->getAllNodesOfDepth($i) as $KeyOfNode) {
+            $tempNode = $tree->getNode( $KeyOfNode );
+            $forbiddenRows = [];
+            $forbiddenColumns = [];
+            while (!$tempNode->isRoot()) {
+                $forbiddenRows[] = $tempNode->getValue()[0]; 
+                $forbiddenColumns[] = $tempNode->getValue()[1];
+                $tempNode = $tree->getNode( $tempNode->getParent() );
+            }
+            for ($j = 0; $j < $size  ; $j++) { 
+                for ($k = 0; $k < $size  ; $k++) { 
+                    if ( !in_array( $j , $forbiddenRows ) && !in_array( $k , $forbiddenColumns ) ) $tree->createChild( [$j , $k] , $KeyOfNode );
+                }
+            }
+        }
+    }
+    echo "Printing decision tree :" . PHP_EOL;
+    $tree->printTree();
+    echo PHP_EOL . "Printing all possible solutions :" . PHP_EOL;
+    $printedMatrixes = [];
+    $answerCounter = 0;
+    if (!$distinguish) $symmetricCounter = 0;
+    foreach ($tree->getAllNodesOfDepth($size) as $KeyOfNode) {
+        $tempMatrix = $matrix;
+        $tempNode = $tree->getNode( $KeyOfNode );
+        $counter = $size;
+        while (!$tempNode->isRoot()) {
+            $coordinate = $tempNode->getValue(); 
+            $tempMatrix[ $coordinate[0] ][ $coordinate[1] ] = ($distinguish) ? $counter : 1 ;
+            $tempNode = $tree->getNode( $tempNode->getParent() );
+            --$counter;
+        }
+        if (!$distinguish) {
+            if ( !in_array( $tempMatrix , $printedMatrixes  ) ) {
+                if(is_symmetric($tempMatrix , $size)){
+                    echo "**symmetric**" . PHP_EOL;
+                    ++$symmetricCounter;
+                } 
+                for ($i=0; $i < $size; $i++) { // print matrix
+                    for ($j=0; $j <$size ; $j++) { 
+                        echo $tempMatrix[$i][$j] . " ";
+                    }
+                    echo PHP_EOL;
+                }
+                echo str_repeat("_" , $size * 2 - 1) . PHP_EOL;
+                ++ $answerCounter;
+            }
+            $printedMatrixes[] = $tempMatrix;
+        }
+        else{
+            for ($i=0; $i < $size; $i++) { // print matrix
+                for ($j=0; $j <$size ; $j++) { 
+                    echo $tempMatrix[$i][$j] . " ";
+                }
+                echo PHP_EOL;
+            }
+            echo str_repeat("_" , $size * 2 - 1) . PHP_EOL;
+            ++ $answerCounter;
+        }
+    }
+    echo "Number of answers : " . $answerCounter . PHP_EOL;
+    if (!$distinguish) echo "Number of symmetric answers : " . $symmetricCounter . PHP_EOL;
+    echo "___________________________________" .PHP_EOL;
+}
+
+function n_queens( int $size , $distinguish = false )
+{
+    echo PHP_EOL  . "** $size QUEENS **" . (($distinguish)? " (distinguishing between queens)" : " (no distinguish between queens)") . PHP_EOL .  "Building empty matrix..." . PHP_EOL;
+    $matrix = [];
+    for ($i = 0; $i < $size; $i++) // build empty matrix
+        for ($j=0; $j <$size ; $j++)
+            $matrix[$i][$j] = 0;
+    echo "Building decision tree..." . PHP_EOL;
+    $tree = new Tree;
+    $tree->createNode( "root" );
+    for ($i = 0; $i < $size ; $i++) {
+        foreach ($tree->getAllNodesOfDepth($i) as $KeyOfNode) {
+            $tempNode = $tree->getNode( $KeyOfNode );
+            $forbiddenRows = [];
+            $forbiddenColumns = [];
+            $forbiddenSums = [];
+            $forbiddenSubs = [];
+            while (!$tempNode->isRoot()) {
+                $forbiddenRows[] = $tempNode->getValue()[0]; 
+                $forbiddenColumns[] = $tempNode->getValue()[1];
+                $forbiddenSums[] = $tempNode->getValue()[1] + $tempNode->getValue()[0];
+                $forbiddenSubs[] = $tempNode->getValue()[1] - $tempNode->getValue()[0];
+                $tempNode = $tree->getNode( $tempNode->getParent() );
+            }
+            for ($j = 0; $j < $size  ; $j++) { 
+                for ($k = 0; $k < $size  ; $k++) { 
+                    if ( !in_array( $j , $forbiddenRows ) && 
+                        !in_array( $k , $forbiddenColumns) &&
+                        !in_array( $k + $j , $forbiddenSums) &&
+                        !in_array( $k - $j , $forbiddenSubs)
+                        ){
+                            $tree->createChild( [$j , $k] , $KeyOfNode );
+                        }
+                }
+            }
+        }
+    }
+    echo "Printing decision tree :" . PHP_EOL;
+    $tree->printTree();
+    echo PHP_EOL . "Printing all possible solutions :" . PHP_EOL;
+    $printedMatrixes = [];
+    $answerCounter = 0;
+    if (!$distinguish) $symmetricCounter = 0;
+    foreach ($tree->getAllNodesOfDepth($size) as $KeyOfNode) {
+        $tempMatrix = $matrix;
+        $tempNode = $tree->getNode( $KeyOfNode );
+        $counter = $size;
+        while (!$tempNode->isRoot()) {
+            $coordinate = $tempNode->getValue(); 
+            $tempMatrix[ $coordinate[0] ][ $coordinate[1] ] = ($distinguish) ? $counter : 1 ;
+            $tempNode = $tree->getNode( $tempNode->getParent() );
+            --$counter;
+        }
+        if (!$distinguish) {
+            if ( !in_array( $tempMatrix , $printedMatrixes  ) ) {
+                if(is_symmetric($tempMatrix , $size)){
+                    echo "**symmetric**" . PHP_EOL;
+                    ++$symmetricCounter;
+                } 
+                for ($i=0; $i < $size; $i++) { // print matrix
+                    for ($j=0; $j <$size ; $j++) { 
+                        echo $tempMatrix[$i][$j] . " ";
+                    }
+                    echo PHP_EOL;
+                }
+                echo str_repeat("_" , $size * 2 - 1) . PHP_EOL;
+                ++ $answerCounter;
+            }
+            $printedMatrixes[] = $tempMatrix;
+        }
+        else{
+            for ($i=0; $i < $size; $i++) { // print matrix
+                for ($j=0; $j <$size ; $j++) { 
+                    echo $tempMatrix[$i][$j] . " ";
+                }
+                echo PHP_EOL;
+            }
+            echo str_repeat("_" , $size * 2 - 1) . PHP_EOL;
+            ++ $answerCounter;
+        }
+    }
+    echo "Number of answers : " . $answerCounter . PHP_EOL;
+    if (!$distinguish) echo "Number of symmetric answers : " . $symmetricCounter . PHP_EOL;
+    echo "___________________________________" .PHP_EOL;
+}
+
+function is_symmetric( array $matrix , int $size )
+{
+    for ($i=0; $i < $size; $i++) 
+        for ($j=0; $j <$size ; $j++) 
+            if( $matrix[$i][$j] !== $matrix[$j][$i] ) return false ;
+    return true;
+}
+
+function n_rooks_optimised( int $size ) //Try to directly print solutions instead of storing them in tree.
+{
+    # code...
+}
+
+function n_queens_optimised( int $size ) //Try to directly print solutions instead of storing them in tree.
+{
+    # code...
+}
+
+// =============================================================================
+// =============================================================================
+// CLASSES======================================================================
+// =============================================================================
+// =============================================================================
+
+class Tree
+{
+    private $nodes = [];
+
+    public function __construct( ) {
+        #-------constructor? maybe later:))
+    }
+    public function setValue( int $nodeNumber , $value )
+    {
+        $this->nodes[$nodeNumber]->setValue($value); 
+        return [
+            "key" => $nodeNumber,
+            "node" => $this->nodes[$nodeNumber]
+        ];
+    }
+    public function deleteNode(int $nodeNumber) //NOT IMPLEMENTED YET
+    {
+        # code...
+    }
+    public function breadthFirst() //NOT IMPLEMENTED YET
+    {
+        # code...
+    }
+    public function depthFirst() //NOT IMPLEMENTED YET
+    {
+        # code...
+    }
+    public function getAllNodes()
+    {
+        return $this->nodes;
+    }
+    public function getAllNodesOfDepth( int $depth )
+    {
+        $return = [];
+        foreach ($this->nodes as $key => $node) {
+            if( $this->getNodeDepth( $key ) == $depth ) $return[] = $key;
+        }
+        return $return;
+    }
+    public function createNode( $value = null , int $parent = null , array $children = [])
+    {
+        $this->nodes[] = new Node ( $value , $parent , $children );
+        return [
+            "key" => (count( $this->nodes ) -1),
+            "node" => $this->nodes[(count( $this->nodes ) -1)]
+        ];
+    }
+    public function createChild(  $value = null ,  int $parent = null  )
+    {
+        $this->nodes[] = new Node ( $value , $parent , [] );
+        $this->nodes[$parent]->addChildren( (count( $this->nodes ) -1) );
+        return [
+            "key" => (count( $this->nodes ) -1),
+            "node" => $this->nodes[(count( $this->nodes ) -1)]
+        ];
+    }
+    public function getChildren( $nodeNumber )
+    {
+        return $this->nodes[ $nodeNumber ]->getChildren;
+    }
+    public function getNode( $nodeNumber )
+    {
+        return $this->nodes[ $nodeNumber ];
+    }
+    public function getRoot()
+    {
+        foreach ($this->nodes as $key => $node) {
+            if ($node->getParent() === null) return ["key" => $key , "node" => $node];
+        }
+        return false;
+    }
+    public function getTreeDepth()
+    {
+        if( count($this->nodes) === 0 ) return 0;
+        $tempNode = $this->getRoot()['node'];
+        $depth = 0;
+        do {
+            $tempNode= $this->nodes[$tempNode->children[0]];
+            $depth++;
+        }while (!($tempNode->isLeafe()));
+        return $depth;
+    }
+    public function getNodeDepth( $nodeNumber )
+    {
+        if( count($this->nodes) === 0 ) return 0;
+        $tempNode = $this->nodes[ $nodeNumber ];
+        $depth = 0;
+        while (!($tempNode->isRoot())){
+            $tempNode = $this->nodes[$tempNode->getParent()];
+            $depth++;
+        }
+        return $depth;
+    }
+    private function convertToArray( $processNode = NULL )
+    {
+        if($processNode == NULL) $processNode = $this->getRoot()['node'];
+        if ( count( $processNode->getChildren() ) > 0 )
+        foreach ($processNode->getChildren() as $node) {
+            if ( count( $this->nodes[$node]->getChildren() ) == 0 )
+            $return[ json_encode($processNode->getValue()) ][] = $this->convertToArray( $this->nodes[$node] )  ;
+            else $return[ json_encode($processNode->getValue()) ] = ((isset($return)) ? $return[ json_encode($processNode->getValue()) ] : []) + $this->convertToArray( $this->nodes[$node] )  ;
+        }
+        else $return = json_encode($processNode->getValue());
+        return $return; 
+    }
+    private function printArray( array $tree , string $key = "." , string $stack = "" , $first = TRUE , $firstPadding = NULL )
+    {
+        if ( gettype($tree) == "array" )
+        {
+            if($firstPadding === NULL) $firstPadding = ( count($tree)>1 ) ? "│   " : "    " ;
+            echo   $key . PHP_EOL ;
+            foreach ($tree as $key => $value) {
+                if ($key === array_key_last($tree)){
+                    echo (($first) ? "" : $firstPadding ) . $stack . "└── ";
+                    $padding = "    ";
+                    if($first) $firstPadding = "    ";
+                }
+                else {
+                    echo (($first) ? "" : $firstPadding ) . $stack . "├── ";
+                    $padding = "│   ";
+                }
+                if( is_array($value) )$this->printArray( $value , $key ,   $stack . (($first) ? "" : $padding ) , FALSE , $firstPadding );
+                else echo $key . " -> " . $value . PHP_EOL;
+            }
+        }
+        else echo $tree . PHP_EOL;
+    }
+    public function printTree()
+    {
+        if( count($this->nodes) < 1 ) echo "EMPTY TREE" . PHP_EOL;
+        else if( count($this->nodes) == 1 ) echo $this->getRoot()["node"]->getValue() . PHP_EOL;
+        else $this->printArray( $this->convertToArray() );
+        return true;
+    }
+}
+
+class Node 
+{
+    private $value;
+    private $parent = null;
+    private $children = [];
+
+    public function __construct( $value = null , int $parent = null , array $children = []) {        
+        $this->value = $value;
+        $this->parent = $parent;
+        $this->children = $children;
+    }
+    public function getValue()
+    {
+        return $this->value;
+    }
+    public function getParent()
+    {
+        return $this->parent;
+    }
+    public function getChildren()
+    {
+        return $this->children;
+    }
+    public function setValue( $newValue )
+    {
+        $this->value = $newValue;
+        return $this->value;
+    }
+    public function setParent( $newParent )
+    {
+        $this->parent = $newParent;
+        return $this->parent;
+    }
+    public function setChildren( $newChildren = [] )
+    {
+        $this->children = $newChildren;
+        return $this->children;
+    }
+    public function addChildren( $newChild )
+    {
+        $this->children[] = $newChild;
+        return $this->children;
+    }
+    public function delParent()
+    {
+        $this->parent = null;
+        return true;
+    }
+    public function delChildren( $index )
+    {
+        unset($this->children[$index]);
+        return $this->children;
+    }
+    public function delAllChildren()
+    {
+        $this->children = [];
+        return $this->children;
+    }
+    public function isLeafe()
+    {
+        if( count($this->children) === 0 ) return true;
+        return false;
+    }
+    public function isRoot()
+    {
+        if( $this->parent === NULL ) return true;
+        return false;
+    }
+}
+
+// =============================================================================
+// =============================================================================
+// EXAMPLES=====================================================================
+// =============================================================================
+// =============================================================================
+
+
+// // AN EXAMPLE TO SHOW HOW TO USE TREE CLASS==================================
+// $tree = new Tree;
+// $root = $tree->createNode( "root" );
+// $firstDepthChild1 = $tree->createChild( [1,2] , $root["key"] );
+// $firstDepthChild2 = $tree->createChild( [0,1] , $root["key"] );
+// $firstDepthChild3 = $tree->createChild( [1,1] , $root["key"] );
+// $secondDepthChild1 = $tree->createChild( [0,0] , $firstDepthChild3["key"] );
+// $secondDepthChild2 = $tree->createChild( [2,0] , $firstDepthChild3["key"] );
+// $secondDepthChild3 = $tree->createChild( [3,3] , $secondDepthChild2["key"] );
+// $tree->printTree();
+// var_dump($tree->getAllNodesOfDepth(4));
+// // ==========================================================================
+
+
+?>
+
+```
+
+_______________________________________________
+
+### How to print a tree in PHP?
+
+And the final thing to say is the answer to the exercise I mentioned. Although this function is used in the source code, but I will provide a seprate section:
+Exercise 1: Write a function that takes a multidimensional array and visualizes it as a terminal tree (like the `tree` or `pstree` commands).
+
+**Answer to Exercise 1:**
+
+```PHP
+function printTree( array $tree , string $key = "." , string $stack = "" , $first = TRUE , $firstPadding = NULL )
+{
+    if ( gettype($tree) == "array" )
+    {
+        if($firstPadding === NULL) $firstPadding = ( count($tree)>1 ) ? "│   " : "    " ;
+        echo   $key . PHP_EOL ;
+        foreach ($tree as $key => $value) {
+            if ($key === array_key_last($tree)){
+                echo (($first) ? "" : $firstPadding ) . $stack . "└── ";
+                $padding = "    ";
+                if($first) $firstPadding = "    ";
+            }
+            else {
+                echo (($first) ? "" : "$firstPadding" ) . $stack . "├── ";
+                $padding = "│   ";
+            }
+            if( is_array($value) )printTree( $value , $key ,   $stack . (($first) ? "" : $padding ) , FALSE , $firstPadding );
+            else echo $key . " -> " . $value . PHP_EOL;
+        }
+    }
+    else echo $tree . PHP_EOL;
+}
+```
+
+_______________________________________________
+
+
+This code for visualizing the tree, along with an example and running the code on GitHub, can be found at the following link:
+
+https://gist.github.com/TadavomnisT/f83519f3503b74663c81af5d6c68dd82
+
+And also on a repository (if you have trouble loading the gist):
+
+https://github.com/TadavomnisT/My_gists/tree/main/visualize_tree
+
+And something cool, if you want to learn how to visualize trees in languages other than PHP, a group of developers has created an excellent documentation available at the following link:
+
+https://rosettacode.org/wiki/Visualize_a_tree
+
+So far, they have provided answers for 46 programming languages, including my implementation for PHP. The remaining languages are:
+
+    • 1 11l 
+    • 2 Ada 
+    • 3 ALGOL 68 
+    • 4 AppleScript 
+    • 5 Batch File 
+    • 6 BBC BASIC 
+    • 7 C 
+    • 8 C++ 
+    • 9 C# 
+    • 10 Clojure 
+    • 11 Common Lisp 
+    • 12 D 
+    • 13 Elena 
+    • 14 Erlang 
+    • 15 F# 
+    • 16 Factor 
+    • 17 Fōrmulæ 
+    • 18 Go 
+    • 18.1 JSON 
+    • 18.2 TOML 
+    • 18.3 Unicode 
+    • 19 Haskell 
+    • 20 Icon and Unicon 
+    • 21 J 
+    • 22 Java 
+    • 23 JavaScript 
+    • 23.1 HTML 
+    • 23.2 Plain text 
+    • 23.2.1 Vertically centered tree 
+    • 23.2.2 Decorated outline 
+    • 24 Julia 
+    • 25 Kotlin 
+    • 26 Lingo 
+    • 27 Maple 
+    • 28 Mathematica 
+    • 28.1 Tree graph 
+    • 28.2 Opener view 
+    • 29 Maxima 
+    • 30 Nim 
+    • 31 Perl 
+    • 32 Phix 
+    • 33 PicoLisp 
+    • 34 Prolog 
+    • 34.1 XPCE 
+    • 35 Python 
+    • 35.1 Library module 
+    • 35.2 Functional composition 
+    • 35.2.1 Vertically centered parents 
+    • 35.2.2 Simple decorated-outline tree 
+    • 36 Racket 
+    • 37 Raku 
+    • 38 REXX 
+    • 39 Ruby 
+    • 40 Rust 
+    • 41 Sidef 
+    • 42 Tcl 
+    • 43 Wren 
+    • 44 Yabasic 
+    • 45 zkl 
+    • 46 PHP 
+
+_______________________________________________
+
+And... that's it.
+
+The gist link for the backtracking file along with instructions on how to run the code:
+https://gist.github.com/TadavomnisT/d9fc6ba06dcb775b5ee8cf8baaa94588
+
+
+## Future Work
+
+You can implement backtracking in other languages or for different problems. As for future work related to this article, we can mention writing the code in a way that does not store the tree in memory(RAM).
+
+## Copyright
+
+This is a free and open-source article under the license of GFDL1-3, so permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License.
+
+## Author
+
++ Behrad B. (behroora@yahoo.com)
+
+## References
+
++ https://en.wikipedia.org/wiki/Rook_polynomial
++ https://en.wikipedia.org/wiki/Eight_queens_puzzle
++ https://rosettacode.org/wiki/Visualize_a_tree
++ https://github.com/TadavomnisT/My_gists/tree/main/visualize_tree
++ https://github.com/TadavomnisT/My_gists/tree/main/php_back_tracking
++ https://gist.github.com/TadavomnisT/f83519f3503b74663c81af5d6c68dd82
++ https://gist.github.com/TadavomnisT/d9fc6ba06dcb775b5ee8cf8baaa94588
++ https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist
+
+
+## Issues related to this Article
+
+
+This free and open-source article is available at [Free Books/Documents](https://github.com/TadavomnisT/Free_Books-Documents) repository with the following link:
+
+
+{PUT STH HERE}
+
+
+
+The Persian version of this article:
+
+https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-Pr
+
+
+**Any scientific mistakes, issues, questions, or discussions related to this article can be posted through Issues section of repository or sent by email:**
+
+* https://github.com/TadavomnisT/Free_Books-Documents/issues
+* behroora@yahoo.com
