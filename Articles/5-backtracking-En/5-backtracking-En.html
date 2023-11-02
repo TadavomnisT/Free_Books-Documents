@@ -292,4 +292,208 @@ We place the first rook in cell [0,0]:</p><br />
 <pre><code>root
 └── [0,0]
     └── [0,1]</code></pre><br />
-<p>And now... we check if it is okay. We see that it is not okay! The rooks are attacking each other. So we backtrack and take a step back (we call it backtracking). We remove the piece we placed and go back to its parent node in the tree and place the next child node - it was not our solution!</p></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
+<p>And now... we check if it is okay. We see that it is not okay! The rooks are attacking each other. So we backtrack and take a step back (we call it backtracking). We remove the piece we placed and go back to its parent node in the tree and place the next child node - it was not our solution!</p><br />
+<p><img src="Files/2_chess1.png" alt="2 chess1" /></p>
+<pre><code>10
+00</code></pre><br />
+<p>And the decision tree becomes this again:</p><br />
+<p><img src="Files/2_tree1.png" alt="2 tree1" /></p>
+<pre><code>root
+└── [0,0]</code></pre><br />
+<p>Just because I deleted the node in the figure, it doesn't mean I should delete it in the code too. It depends on how the programmer implements it; they might say that I want to keep the visited nodes if they don't have a solution so that I know I visited them later... or they might implement a whole different approach...<br />
+Anyway, I'll show you the complete tree later; Right now le'ts focus on the algorithm.</p><br />
+<p>Alright, according to the order, we place the next rook at position [1,0], so we have:</p><br />
+<p><img src="Files/2_chess3.png" alt="2 chess3" /></p>
+<pre><code>10
+10</code></pre><br />
+<p>Decision tree:</p><br />
+<p><img src="Files/2_tree3.png" alt="2 chess3" /></p>
+<pre><code>root
+└── [0,0]
+    └── [1,0]</code></pre><br />
+<p>But... they can attack each other :(<br />
+Backtracking again...</p><br />
+<p><img src="Files/2_chess1.png" alt="2 chess1" /></p>
+<pre><code>10
+00</code></pre><br />
+<p>And it the tree again:</p><br />
+<p><img src="Files/2_tree1.png" alt="2 tree1" /></p>
+<pre><code>root
+└── [0,0]</code></pre><br />
+<p>Now it's time to place the rook at position [1,1]:</p><br />
+<p><img src="Files/2_chess4.png" alt="2 chess4" /></p>
+<pre><code>10
+01✅</code></pre><br />
+<p>And here is the decision tree:</p><br />
+<p><img src="Files/2_tree4.png" alt="2 tree4" /></p>
+<pre><code>root
+└── [0,0]
+    └── [1,1]✅</code></pre><br />
+<p>We check, this is one of the possible solutions, so wooohoooo :)<br />
+We can print it or save it, whatever we want to do, let's move on to the next step.</p><br />
+<p>We backtrack until the board is empty:</p><br />
+<p><img src="Files/2chess.png" alt="2 rooks placement" /></p>
+<pre><code>00
+00</code></pre><br />
+<p>And the tree:</p><br />
+<p><img src="Files/2tree.png" alt="2 tree" /></p>
+<pre><code>root</code></pre><br />
+<hr /><br />
+<p><strong>I'll say it again!</strong> It's not like we delete the nodes! I do it this way because I'm explaining it hierarchically, so it doesn't get messy and confusing.</p>
+<ul>
+<li>Let's move on.</li>
+</ul><br />
+<p>We placed the first rook in the previous step at [0,0], this time we place it at [0,1] according to the order:</p><br />
+<p><img src="Files/2_chess6.png" alt="2 rooks placement" /></p>
+<pre><code>01
+00</code></pre><br />
+<p>And the tree:</p><br />
+<p><img src="Files/2_tree5.png" alt="2 rooks placement" /></p>
+<pre><code>root
+└── [0,1]</code></pre><br />
+<p>I'll quickly go through the steps until the end:</p><br />
+<p><img src="Files/2_4.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+11
+00
+
+Tree:
+root
+└── [0,1]
+    └── [0,0]</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_5.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+01
+10✅
+
+Tree:
+root
+└── [0,1]
+    └── [1,0]✅</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_6.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+01
+01
+
+Tree:
+root
+└── [0,1]
+    └── [1,1]</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_7.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+00
+00
+
+Tree:
+root</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_8.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+00
+10
+
+Tree:
+root
+└── [1,0]</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_9.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+10
+10
+
+Tree:
+root
+└── [1,0]
+    └── [0,0]</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_10.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+01
+10✅
+
+Tree:
+root
+└── [1,0]
+    └── [0,1]✅</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_11.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+00
+11
+
+Tree:
+root
+└── [1,0]
+    └── [1,1]</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_12.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+00
+00
+
+Tree:
+root</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_13.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+00
+01
+
+Tree:
+root
+└── [1,1]</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_14.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+10
+01✅
+
+Tree:
+root
+└── [1,1]
+    └── [0,0]✅</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_15.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+01
+01
+
+Tree:
+root
+└── [1,1]
+    └── [0,1]</code></pre><br />
+<hr /><br />
+<p><img src="Files/2_16.png" alt="2 rooks placement" /></p>
+<pre><code>Board:
+00
+11
+
+Tree:
+root
+└── [1,1]
+    └── [1,0]</code></pre><br />
+<p>And that's it :)<br />
+We found all possible solutions, 4 solutions (with differences):</p><br />
+<p><img src="Files/2_answers.png" alt="2 rooks placement" /></p>
+<pre><code>10
+02✅
+
+01
+20✅
+
+20
+01✅
+
+02
+10✅</code></pre><br />
+<p>And if we don't distinguish between the rooks, we got only:</p><br />
+<p><img src="Files/2_answers_distinguish.png" alt="answers with no distinguish" /></p>
+<pre><code>10
+01✅
+
+01
+10✅</code></pre><br />
+<hr /></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>

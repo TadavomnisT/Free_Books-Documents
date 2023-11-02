@@ -413,3 +413,321 @@ root
 ```
 
 And now... we check if it is okay. We see that it is not okay! The rooks are attacking each other. So we backtrack and take a step back (we call it backtracking). We remove the piece we placed and go back to its parent node in the tree and place the next child node - it was not our solution!
+
+
+![2 chess1](Files/2_chess1.png)
+```
+10
+00
+```
+
+And the decision tree becomes this again:
+
+![2 tree1](Files/2_tree1.png)
+```
+root
+└── [0,0]
+```
+
+Just because I deleted the node in the figure, it doesn't mean I should delete it in the code too. It depends on how the programmer implements it; they might say that I want to keep the visited nodes if they don't have a solution so that I know I visited them later... or they might implement a whole different approach...
+Anyway, I'll show you the complete tree later; Right now le'ts focus on the algorithm.
+
+Alright, according to the order, we place the next rook at position [1,0], so we have:
+
+![2 chess3](Files/2_chess3.png)
+```
+10
+10
+```
+
+Decision tree:
+
+![2 chess3](Files/2_tree3.png)
+```
+root
+└── [0,0]
+    └── [1,0]
+```
+
+But... they can attack each other :(
+Backtracking again...
+
+![2 chess1](Files/2_chess1.png)
+```
+10
+00
+```
+
+And it the tree again:
+
+![2 tree1](Files/2_tree1.png)
+```
+root
+└── [0,0]
+```
+
+Now it's time to place the rook at position [1,1]:
+
+![2 chess4](Files/2_chess4.png)
+```
+10
+01✅
+```
+
+And here is the decision tree:
+
+![2 tree4](Files/2_tree4.png)
+```
+root
+└── [0,0]
+    └── [1,1]✅
+```
+
+
+We check, this is one of the possible solutions, so wooohoooo :)
+We can print it or save it, whatever we want to do, let's move on to the next step.
+
+We backtrack until the board is empty:
+
+![2 rooks placement](Files/2chess.png)
+```
+00
+00
+```
+
+And the tree:
+
+![2 tree](Files/2tree.png)
+```
+root
+```
+
+_______________________________________________
+
+**I'll say it again!** It's not like we delete the nodes! I do it this way because I'm explaining it hierarchically, so it doesn't get messy and confusing.
+- Let's move on.
+
+We placed the first rook in the previous step at [0,0], this time we place it at [0,1] according to the order:
+
+![2 rooks placement](Files/2_chess6.png)
+```
+01
+00
+```
+
+And the tree:
+
+![2 rooks placement](Files/2_tree5.png)
+```
+root
+└── [0,1]
+```
+
+
+
+I'll quickly go through the steps until the end:
+
+![2 rooks placement](Files/2_4.png)
+```
+Board:
+11
+00
+
+Tree:
+root
+└── [0,1]
+    └── [0,0]
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_5.png)
+```
+Board:
+01
+10✅
+
+Tree:
+root
+└── [0,1]
+    └── [1,0]✅
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_6.png)
+```
+Board:
+01
+01
+
+Tree:
+root
+└── [0,1]
+    └── [1,1]
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_7.png)
+```
+Board:
+00
+00
+
+Tree:
+root
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_8.png)
+```
+Board:
+00
+10
+
+Tree:
+root
+└── [1,0]
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_9.png)
+```
+Board:
+10
+10
+
+Tree:
+root
+└── [1,0]
+    └── [0,0]
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_10.png)
+```
+Board:
+01
+10✅
+
+Tree:
+root
+└── [1,0]
+    └── [0,1]✅
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_11.png)
+```
+Board:
+00
+11
+
+Tree:
+root
+└── [1,0]
+    └── [1,1]
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_12.png)
+```
+Board:
+00
+00
+
+Tree:
+root
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_13.png)
+```
+Board:
+00
+01
+
+Tree:
+root
+└── [1,1]
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_14.png)
+```
+Board:
+10
+01✅
+
+Tree:
+root
+└── [1,1]
+    └── [0,0]✅
+```
+_______________________________________________
+
+![2 rooks placement](Files/2_15.png)
+```
+Board:
+01
+01
+
+Tree:
+root
+└── [1,1]
+    └── [0,1]
+```
+
+_______________________________________________
+
+![2 rooks placement](Files/2_16.png)
+```
+Board:
+00
+11
+
+Tree:
+root
+└── [1,1]
+    └── [1,0]
+```
+
+And that's it :)
+We found all possible solutions, 4 solutions (with differences):
+
+![2 rooks placement](Files/2_answers.png)
+```
+10
+02✅
+
+01
+20✅
+
+20
+01✅
+
+02
+10✅
+```
+
+And if we don't distinguish between the rooks, we got only:
+
+![answers with no distinguish](Files/2_answers_distinguish.png)
+```
+10
+01✅
+
+01
+10✅
+```
+
+_______________________________________________
+
