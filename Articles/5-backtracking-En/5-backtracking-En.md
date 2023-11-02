@@ -731,3 +731,265 @@ And if we don't distinguish between the rooks, we got only:
 
 _______________________________________________
 
+
+Okay, now it's time to visualize the decision tree for 2-rooks problem. It's important to observe the tree!
+
+If we distinguish between rooks (which the computer always does and you need to configure it in a way that your output is filtered):
+• The first time we have 4 choices
+• The second time we have 3 choices (because we can't put one rook on top of another... haha 😋)
+
+In total, gives use 12 different possibilities, as I explained one by one.
+
+![2 rooks whole tree](Files/2tree_whole.png)
+```
+"root"
+├── [0,0]
+│   ├── [0,1]
+│   ├── [1,0]
+│   └── [1,1]✅
+├── [0,1]
+│   ├── [0,0]
+│   ├── [1,0]✅
+│   └── [1,1]
+├── [1,0]
+│   ├── [0,0]
+│   ├── [0,1]✅
+│   └── [1,1]
+└── [1,1]
+    ├── [0,0]✅
+    ├── [0,1]
+    └── [1,0]
+```
+
+well, well, well... 
+
+That was backtracking algorithm and detailed explanations...
+But,
+But,...
+A programmer needs to consider many things... They always need to write the most optimized code, what we did before was to put a rook in a specific cell, for example:
+
+
+![2 rooks placement](Files/example0.png)
+```
+00
+01
+```
+
+To block the second rook, only the cell below was not allowed:
+
+![2 rooks placement](Files/example1.png)
+```
+00
+0X
+```
+
+And we considered the other cells as allowed, and put a rook in them and check...
+
+![2 rooks placement](Files/example2.png)
+```
+VV
+VX
+```
+
+But is this the right thing to do?
+No, ofcourse not!
+
+When we put the first rook here:
+
+![2 rooks placement](Files/example0.png)
+```
+00
+01
+```
+
+This lil-rooky can attack in its own row and column (horizontal and vertical direction) – therefore:
+
+![2 rooks placement](Files/example3.png)
+```
+VX
+XX
+```
+
+Checking the red cells (X's) is useless and pointless ^_^
+With these considerations, I extend and re-create the decision tree like this:
+
+![2 rooks tree rewised](Files/2tree_rewised.png)
+```
+"root"
+├── [0,0]
+│   └── [1,1]✅
+├── [0,1]
+│   └── [1,0]✅
+├── [1,0]
+│   └── [0,1]✅
+└── [1,1]
+    └── [0,0]✅
+```
+
+Yup...
+It's done :)
+If you didn't understand, pause for a moment and try to draw the tree on paper for yourself with the new consideration (about row and column of a rook).
++ I tell ya in secret that it seems our problem's answers for n rooks (and later n queens) are always at the n-th depth of our tree... shhhh, don't tell anyone:3
+
+Okay, now with this new consideration, I draw and analyze the decision tree for n = 1, 2, and 3:
+
+For n = 1, we have:
+
+![2 rooks tree](Files/1tree_whole.png)
+```
+"root"
+└── [0,0]✅
+```
+
+For n = 2, we have:
+
+![2 rooks tree rewised](Files/2tree_rewised.png)
+```
+"root"
+├── [0,0]
+│   └── [1,1]✅
+├── [0,1]
+│   └── [1,0]✅
+├── [1,0]
+│   └── [0,1]✅
+└── [1,1]
+    └── [0,0]✅
+```
+
+For n = 3, we have:
+
+I'm tired from drawing so many graphical trees... Although I doubt anyone will read these!
+But instead, inspired by the `tree` command in Linux, I wrote a sexy function that visualizes the tree under the terminal:
+
+```
+.
+└── "root"
+    ├── [0,0]
+    │   ├── [1,1]
+    │   │   └── [2,2]
+    │   ├── [1,2]
+    │   │   └── [2,1]
+    │   ├── [2,1]
+    │   │   └── [1,2]
+    │   └── [2,2]
+    │       └── [1,1]
+    ├── [0,1]
+    │   ├── [1,0]
+    │   │   └── [2,2]
+    │   ├── [1,2]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [1,2]
+    │   └── [2,2]
+    │       └── [1,0]
+    ├── [0,2]
+    │   ├── [1,0]
+    │   │   └── [2,1]
+    │   ├── [1,1]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [1,1]
+    │   └── [2,1]
+    │       └── [1,0]
+    ├── [1,0]
+    │   ├── [0,1]
+    │   │   └── [2,2]
+    │   ├── [0,2]
+    │   │   └── [2,1]
+    │   ├── [2,1]
+    │   │   └── [0,2]
+    │   └── [2,2]
+    │       └── [0,1]
+    ├── [1,1]
+    │   ├── [0,0]
+    │   │   └── [2,2]
+    │   ├── [0,2]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [0,2]
+    │   └── [2,2]
+    │       └── [0,0]
+    ├── [1,2]
+    │   ├── [0,0]
+    │   │   └── [2,1]
+    │   ├── [0,1]
+    │   │   └── [2,0]
+    │   ├── [2,0]
+    │   │   └── [0,1]
+    │   └── [2,1]
+    │       └── [0,0]
+    ├── [2,0]
+    │   ├── [0,1]
+    │   │   └── [1,2]
+    │   ├── [0,2]
+    │   │   └── [1,1]
+    │   ├── [1,1]
+    │   │   └── [0,2]
+    │   └── [1,2]
+    │       └── [0,1]
+    ├── [2,1]
+    │   ├── [0,0]
+    │   │   └── [1,2]
+    │   ├── [0,2]
+    │   │   └── [1,0]
+    │   ├── [1,0]
+    │   │   └── [0,2]
+    │   └── [1,2]
+    │       └── [0,0]
+    └── [2,2]
+        ├── [0,0]
+        │   └── [1,1]
+        ├── [0,1]
+        │   └── [1,0]
+        ├── [1,0]
+        │   └── [0,1]
+        └── [1,1]
+            └── [0,0]
+```
+
+_______________________________________________
+
+
+And it's done :)
+By the way, before you do anything:
+Writing this function can be a good exercise to test your programming skills.
+
+**Exercise 1:** Write a function that takes a multi-dimensional array and visualizes it as a tree under terminal (like the `tree` or `pstree` commands).
+
+Writing all the classes and functions for n_rook and n_queen took me a whole day, but writing this function to visualize the tree took me 3 days! I'm so rusy I guess... but it was challenging to write it without looking at the source code! You should try it too.
+
+[I will send you the function I wrote at the end of the article]
+
+Now let's move on to some important explanations:
+Since PHP is my favorite language, I included a PHP code that I implemented the node as a class and the tree data structure (as a class), using nodes. 
+Oh, I forgot to mention, in computer science, a tree is a "Data Structure" like a heap or hash-table or linked-list or stack, etc. (I hope we talk about these in other articles).
+Then I used the tree and found all possible solutions using a extended backtracking approach and stored them in the mentioned tree.
+This code has an educational aspect. I wanted you to see the generated decision tree. Otherwise, if someone wants to solve this problem properly:
+
+- Firstly, they probably won't use backtracking.
+- Secondly, if they do use backtracking, they definitely won't use PHP.
+- Thirdly, if they do use php, they won't store the tree in RAM at all! They can't store it! I will prove later that it's impossible! They just perform the algorithm and directly print the result in output buffer.
+
+When it comes to trees, all other languages step back and make way for languages like C and C++. Not because they are older and deserve respect, no :))
+It's because they have `pointers`...
+Pointers in C-like languages [including c++] are one of the major reason these languages survived so long. It's a very powerful feature... so powerful that along with being object-oriented like C++, allows you to implement your data structure in bitwise form, meaning in the peak of optimization.
+
+I will definitely discuss pointers in detail, in a seprate article.
+
+I did implement a tree data structure in C++ a long time ago, but unfortunately, I don't know where it is :))
+
+Another important point I want to mention here is that with a few changes in the program for n-rook, I also implemented the n-queen problem solver... (again, I emphasize it's not an optimized implementation, it has an educational aspect). Make sure to read it.
+
+Another important point is that with this heavy and unoptimized code, I was able to run it on my system and find the answers fo up to 6 rooks, but it crashed and froze on 7 rooks...! (Let me skip, the story is sad!!!)
+You might say to yourself, "Hmm :)) what's so special about 7 rooks that you couldn't handle them :))"
+Allow me to explain!
+
+In 7 rooks, we have a 7x7 chessboard so (assuming I optimize backtracking by not putting next rooks in same col/row ⚠️):
+- We can place the first rook in 49 squares
+- We can place the second rook in 36 squares
+- We can place the third rook in 25 squares
+- We can place the fourth rook in 16 squares
+- We can place the fifth rook in 9 squares
+- We can place the sixth rook in 4 squares
+- We can place the seventh rook in only one square.
+
