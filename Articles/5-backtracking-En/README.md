@@ -9306,8 +9306,13 @@ This is a free and open-source article under the license of GFDL1-3, so permissi
 
 This free and open-source article is available at [Free Books/Documents](https://github.com/TadavomnisT/Free_Books-Documents) repository with the following link:
 
-
-{PUT STH HERE}
+* [Backtracking Algorithm in Artificial Intelligence 🔥](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En)
+    * [The n-Queens and n-Rooks Problem](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#the-n-queens-and-n-rooks-problem)
+    * [What is the Backtracking Algorithm?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#what-is-the-backtracking-algorithm)
+        * [Trees: An Indispensable Concept in Computer Science](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#trees-an-indispensable-concept-in-computer-science)
+        * [What is a tree? (Simple Explanation)](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#what-is-a-tree-simple-explanation)
+        * [Solving n-rooks problem and n-queens problem using the backtracking approach](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#solving-n-rooks-problem-and-n-queens-problem-using-the-backtracking-approach)
+        * [How to print a tree in PHP?](https://github.com/TadavomnisT/Free_Books-Documents/tree/main/Articles/5-backtracking-En#how-to-print-a-tree-in-php)
 
 
 
