@@ -701,4 +701,39 @@ Allow me to explain!</p><br />
 <li>We can place the fifth rook in 9 squares</li>
 <li>We can place the sixth rook in 4 squares</li>
 <li>We can place the seventh rook in only one square.</li>
-</ul></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>
+</ul><br />
+<p>Finally, our tree has 1x4x9x16x25x36x49 leaves, which is 25401600 leaves!!!<br />
+Well, that means in the seventh depth, we have exactly 25401600 nodes!<br />
+Similarly, in the sixth depth, we also have 25401600 nodes (why? Think about it...)<br />
+In the fifth depth, we have 1x4x9x16x25x36 leaves, which is 518400 nodes.<br />
+In the fourth depth, we have 1x4x9x16x25 leaves, which is 14,400 nodes.<br />
+In the third depth, we have 1x4x9x16 leaves, which is 576 nodes.<br />
+In the second depth, we have 1x4x9 leaves, which is 36 nodes.<br />
+In the first depth, we have 1x4 leaves, which is 4 nodes.<br />
+And finally, in the zeroth depth, which is the root, we naturally have only one node.<br />
+So for 7 rooks, our tree has a total of:<br />
+25401600 +<br />
+25401600 +<br />
+518400 +<br />
+14400 +<br />
+576 +<br />
+36 +<br />
+4 +<br />
+1<br />
+nodes.</p><br />
+<p>which is 51336617 nodes..., let's say around 50 million nodes :))</p><br />
+<p>According to my calculations, in this class that I wrote, on average each empty node reserved about 80 bytes of memory from RAM. Let's assume it doesn't reserve more!! :))<br />
+51336617 x 80 equals 4106929360 bytes, which is 4010673 megabytes, which is 3916 gigabytes, which is approximately 4 terabytes :)) Do you have 4 terabytes of RAM?!.. I certainly don't!</p><br />
+<p>S to run this, you would need a supercomputer!<br />
+And that's just the RAM usage for constructing the tree :))<br />
+If you write it in optimized C++ - like really optimizing and all that stuff - and each node becomes 15 bytes... (!!!) it would still occupy 734 gigabytes of memory!!!<br />
+So you have two options there:</p><br />
+<ol><br />
+<li>Get a hard-disk and save your tree on it... hahaha! (But then you're runtime takes years and you won't be able to run it with 8 rooks anymore!!! (Why?!) )</li><br />
+<li>Skip storing the tree and just traverse and print it.</li><br />
+</ol><br />
+<p>In both cases, it will have a high runtime.<br />
+The n-rook problem is like this because it has many solutions, while the n-queen problem has much fewer solutions, and with this code, you can even run it with tree storage. I leave it up to you.</p><br />
+<p>Don't be surprised by how much resource required by the solutions is growing large...<br />
+Everything grows exponentially in these scenarios. To help you understand exponential growth, I'm republishing an old story - please please please read it:3</p><br />
+<hr /></div><script src="https://tadavomnist.github.io/assets/js/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script src="https://tadavomnist.github.io/assets/js/MathJax.js" type="text/javascript"></script><script type="text/javascript">MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});</script><script>document.addEventListener("DOMContentLoaded", ev => document.body.querySelectorAll("#container > *").forEach(elm => elm.setAttribute("dir", "auto")));</script><script>const toggleButton = document.getElementById("dark-mode-toggle");const container = document.getElementById("container");const body = document.body;if (toggleButton.checked) {enableDarkMode();}toggleButton.addEventListener("click", () => {if (!toggleButton.checked) {disableDarkMode();} else {enableDarkMode();}});function enableDarkMode() {body.classList.add("dark-mode");localStorage.setItem("darkModeEnabled", true);}function disableDarkMode() {body.classList.remove("dark-mode");localStorage.removeItem("darkModeEnabled");}</script></body></html>

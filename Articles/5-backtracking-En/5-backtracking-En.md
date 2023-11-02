@@ -993,3 +993,45 @@ In 7 rooks, we have a 7x7 chessboard so (assuming I optimize backtracking by not
 - We can place the sixth rook in 4 squares
 - We can place the seventh rook in only one square.
 
+Finally, our tree has 1x4x9x16x25x36x49 leaves, which is 25401600 leaves!!!
+Well, that means in the seventh depth, we have exactly 25401600 nodes!
+Similarly, in the sixth depth, we also have 25401600 nodes (why? Think about it...)
+In the fifth depth, we have 1x4x9x16x25x36 leaves, which is 518400 nodes.
+In the fourth depth, we have 1x4x9x16x25 leaves, which is 14,400 nodes.
+In the third depth, we have 1x4x9x16 leaves, which is 576 nodes.
+In the second depth, we have 1x4x9 leaves, which is 36 nodes.
+In the first depth, we have 1x4 leaves, which is 4 nodes.
+And finally, in the zeroth depth, which is the root, we naturally have only one node.
+So for 7 rooks, our tree has a total of:
+25401600 +
+25401600 +
+518400 +
+14400 +
+576 +
+36 +
+4 +
+1
+nodes.
+
+which is 51336617 nodes..., let's say around 50 million nodes :))
+
+According to my calculations, in this class that I wrote, on average each empty node reserved about 80 bytes of memory from RAM. Let's assume it doesn't reserve more!! :))
+51336617 x 80 equals 4106929360 bytes, which is 4010673 megabytes, which is 3916 gigabytes, which is approximately 4 terabytes :)) Do you have 4 terabytes of RAM?!.. I certainly don't!
+
+S to run this, you would need a supercomputer!
+And that's just the RAM usage for constructing the tree :))
+If you write it in optimized C++ - like really optimizing and all that stuff - and each node becomes 15 bytes... (!!!) it would still occupy 734 gigabytes of memory!!!
+So you have two options there:
+1. Get a hard-disk and save your tree on it... hahaha! (But then you're runtime takes years and you won't be able to run it with 8 rooks anymore!!! (Why?!) )
+2. Skip storing the tree and just traverse and print it.
+
+In both cases, it will have a high runtime.
+The n-rook problem is like this because it has many solutions, while the n-queen problem has much fewer solutions, and with this code, you can even run it with tree storage. I leave it up to you.
+
+Don't be surprised by how much resource required by the solutions is growing large...
+Everything grows exponentially in these scenarios. To help you understand exponential growth, I'm republishing an old story - please please please read it:3
+
+_______________________________________________
+
+
+
