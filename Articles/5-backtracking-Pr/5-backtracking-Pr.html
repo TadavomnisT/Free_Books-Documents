@@ -8096,7 +8096,7 @@ behrad@TadavomnisT:~/Desktop$ </code></pre><br />
 <hr /><br />
 <p>این پرینت درخت برای یادگیری شماست ، شما برنامه بهینه تری بنویسید.</p><br />
 <p>و البته سورسکد کلاسی که نوشتیم:</p><br />
-<p>back_tracking.php</p>
+<p><a href="./Files/back_tracking.php">back_tracking.php</a></p>
 <pre><code class="language-PHP">&lt;?php
 
 set_time_limit(0);
@@ -8582,6 +8582,213 @@ class Node
     }
     else echo $tree . PHP_EOL;
 }</code></pre><br />
+<p>استفاده از فانکشن:</p><br />
+<p><a href="./Files/visualize_tree.php">visualize_tree.php</a></p>
+<pre><code class="language-PHP">&lt;?php
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // 
+// //                                                                      // // 
+// //                                                                      // // 
+// //                    PHP print array like a Tree                       // // 
+// //                                                                      // // 
+// //                         Visualizing Tree                             // // 
+// //                                                                      // // 
+// //                     FUNCTION BY : TadavomnisT                        // // 
+// //                                                                      // // 
+// //                                                                      // // 
+// //                    GitHub gist for this script:                      // // 
+// // https://gist.github.com/TadavomnisT/f83519f3503b74663c81af5d6c68dd82 // // 
+// //                                                                      // // 
+// //                 GitHub repositpry for this script:                   // // 
+// //   https://github.com/TadavomnisT/My_gists/tree/main/visualize_tree   // //
+// //                                                                      // // 
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+
+function printTree( array $tree , string $key = "." , string $stack = "" , $first = TRUE , $firstPadding = NULL )
+{
+    if ( gettype($tree) == "array" )
+    {
+        if($firstPadding === NULL) $firstPadding = ( count($tree)&gt;1 ) ? "│   " : "    " ;
+        echo   $key . PHP_EOL ;
+        foreach ($tree as $key =&gt; $value) {
+            if ($key === array_key_last($tree)){
+                echo (($first) ? "" : $firstPadding ) . $stack . "└── ";
+                $padding = "    ";
+                if($first) $firstPadding = "    ";
+            }
+            else {
+                echo (($first) ? "" : $firstPadding ) . $stack . "├── ";
+                $padding = "│   ";
+            }
+            if( is_array($value) )printTree( $value , $key ,   $stack . (($first) ? "" : $padding ) , FALSE , $firstPadding );
+            else echo $key . " -&gt; " . $value . PHP_EOL;
+        }
+    }
+    else echo $tree . PHP_EOL;
+}
+
+
+
+// ---------------------------------------TESTING FUNCTION-------------------------------------
+
+
+$sample_array_1 = 
+[
+    0 =&gt; [
+        'item_id' =&gt; 6,
+        'price' =&gt; "2311.00",
+        'qty' =&gt; 12,
+        'discount' =&gt; 0
+    ],
+    1 =&gt; [
+        'item_id' =&gt; 7,
+        'price' =&gt; "1231.00",
+        'qty' =&gt; 1,
+        'discount' =&gt; 12
+    ],
+    2 =&gt; [
+        'item_id' =&gt; 8,
+        'price' =&gt; "123896.00",
+        'qty' =&gt; 0,
+        'discount' =&gt; 24
+    ]
+];
+$sample_array_2 = array(
+    array(
+         "name"=&gt;"John",
+        "lastname"=&gt;"Doe",
+        "country"=&gt;"Japan",
+        "nationality"=&gt;"Japanese",
+        "job"=&gt;"web developer",
+        "hobbies"=&gt;array(
+                "sports"=&gt;"soccer",
+                "others"=&gt;array(
+                        "freetime"=&gt;"watching Tv"
+                )
+        )
+
+    )
+);
+$sample_array_3 = [
+    "root" =&gt; [
+        "first_depth_node1" =&gt;[
+            "second_depth_node1",
+            "second_depth_node2" =&gt; [
+                "third_depth_node1" ,
+                "third_depth_node2" ,
+                "third_depth_node3" =&gt; [
+                    "fourth_depth_node1",
+                    "fourth_depth_node2",
+                ]
+                ],
+            "second_depth_node3",
+        ] ,
+        "first_depth_node2" =&gt; [
+            "second_depth_node4" =&gt; [ "third_depth_node3" =&gt; [1]]
+        ]
+        ]
+];
+$sample_array_4 = [];
+$sample_array_5 = ["1"];
+$sample_array_6 = [
+    "T",
+    "Ta",
+    "Tad",
+    "Tada",
+    "Tadav",
+    "Tadavo",
+    "Tadavom",
+    "Tadavomn",
+    "Tadavomni",
+    "Tadavomnis",
+    "TadavomnisT",
+];
+
+
+printTree($sample_array_1);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_2);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_3);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_4);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_5);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_6);
+
+
+?&gt;</code></pre><br />
+<p>نتیجه:</p>
+<pre><code class="language-shell">php visualize_tree.php </code></pre>
+<pre><code class="language-shell">.
+├── 0
+│   ├── item_id -&gt; 6
+│   ├── price -&gt; 2311.00
+│   ├── qty -&gt; 12
+│   └── discount -&gt; 0
+├── 1
+│   ├── item_id -&gt; 7
+│   ├── price -&gt; 1231.00
+│   ├── qty -&gt; 1
+│   └── discount -&gt; 12
+└── 2
+    ├── item_id -&gt; 8
+    ├── price -&gt; 123896.00
+    ├── qty -&gt; 0
+    └── discount -&gt; 24
+
+------------------------------
+.
+└── 0
+    ├── name -&gt; John
+    ├── lastname -&gt; Doe
+    ├── country -&gt; Japan
+    ├── nationality -&gt; Japanese
+    ├── job -&gt; web developer
+    └── hobbies
+        ├── sports -&gt; soccer
+        └── others
+            └── freetime -&gt; watching Tv
+
+------------------------------
+.
+└── root
+    ├── first_depth_node1
+    │   ├── 0 -&gt; second_depth_node1
+    │   ├── second_depth_node2
+    │   │   ├── 0 -&gt; third_depth_node1
+    │   │   ├── 1 -&gt; third_depth_node2
+    │   │   └── third_depth_node3
+    │   │       ├── 0 -&gt; fourth_depth_node1
+    │   │       └── 1 -&gt; fourth_depth_node2
+    │   └── 1 -&gt; second_depth_node3
+    └── first_depth_node2
+        └── second_depth_node4
+            └── third_depth_node3
+                └── 0 -&gt; 1
+
+------------------------------
+.
+
+------------------------------
+.
+└── 0 -&gt; 1
+
+------------------------------
+.
+├── 0 -&gt; T
+├── 1 -&gt; Ta
+├── 2 -&gt; Tad
+├── 3 -&gt; Tada
+├── 4 -&gt; Tadav
+├── 5 -&gt; Tadavo
+├── 6 -&gt; Tadavom
+├── 7 -&gt; Tadavomn
+├── 8 -&gt; Tadavomni
+├── 9 -&gt; Tadavomnis
+└── 10 -&gt; TadavomnisT</code></pre><br />
 <hr /><br />
 <p>این کد ویژوآلایز کردن درخت، همراه با مثال و اجرای کد روی گیست گیتهاب به لینک:</p><br />
 <p><a href="https://gist.github.com/TadavomnisT/f83519f3503b74663c81af5d6c68dd82">https://gist.github.com/TadavomnisT/f83519f3503b74663c81af5d6c68dd82</a></p><br />
