@@ -8694,8 +8694,8 @@ This whole printing tree thing is for teaching you, so you can write a more opti
 And of course, the class source-code:
 
 
-back_tracking.php
 
+[back_tracking.php](./Files/back_tracking.php)
 ```PHP
 <?php
 
@@ -9189,6 +9189,224 @@ function printTree( array $tree , string $key = "." , string $stack = "" , $firs
     }
     else echo $tree . PHP_EOL;
 }
+```
+
+Using the function:
+
+
+[visualize_tree.php](./Files/visualize_tree.php)
+```PHP
+<?php
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // 
+// //                                                                      // // 
+// //                                                                      // // 
+// //                    PHP print array like a Tree                       // // 
+// //                                                                      // // 
+// //                         Visualizing Tree                             // // 
+// //                                                                      // // 
+// //                     FUNCTION BY : TadavomnisT                        // // 
+// //                                                                      // // 
+// //                                                                      // // 
+// //                    GitHub gist for this script:                      // // 
+// // https://gist.github.com/TadavomnisT/f83519f3503b74663c81af5d6c68dd82 // // 
+// //                                                                      // // 
+// //                 GitHub repositpry for this script:                   // // 
+// //   https://github.com/TadavomnisT/My_gists/tree/main/visualize_tree   // //
+// //                                                                      // // 
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+
+function printTree( array $tree , string $key = "." , string $stack = "" , $first = TRUE , $firstPadding = NULL )
+{
+    if ( gettype($tree) == "array" )
+    {
+        if($firstPadding === NULL) $firstPadding = ( count($tree)>1 ) ? "│   " : "    " ;
+        echo   $key . PHP_EOL ;
+        foreach ($tree as $key => $value) {
+            if ($key === array_key_last($tree)){
+                echo (($first) ? "" : $firstPadding ) . $stack . "└── ";
+                $padding = "    ";
+                if($first) $firstPadding = "    ";
+            }
+            else {
+                echo (($first) ? "" : $firstPadding ) . $stack . "├── ";
+                $padding = "│   ";
+            }
+            if( is_array($value) )printTree( $value , $key ,   $stack . (($first) ? "" : $padding ) , FALSE , $firstPadding );
+            else echo $key . " -> " . $value . PHP_EOL;
+        }
+    }
+    else echo $tree . PHP_EOL;
+}
+
+
+
+// ---------------------------------------TESTING FUNCTION-------------------------------------
+
+
+$sample_array_1 = 
+[
+    0 => [
+        'item_id' => 6,
+        'price' => "2311.00",
+        'qty' => 12,
+        'discount' => 0
+    ],
+    1 => [
+        'item_id' => 7,
+        'price' => "1231.00",
+        'qty' => 1,
+        'discount' => 12
+    ],
+    2 => [
+        'item_id' => 8,
+        'price' => "123896.00",
+        'qty' => 0,
+        'discount' => 24
+    ]
+];
+$sample_array_2 = array(
+    array(
+         "name"=>"John",
+        "lastname"=>"Doe",
+        "country"=>"Japan",
+        "nationality"=>"Japanese",
+        "job"=>"web developer",
+        "hobbies"=>array(
+                "sports"=>"soccer",
+                "others"=>array(
+                        "freetime"=>"watching Tv"
+                )
+        )
+
+    )
+);
+$sample_array_3 = [
+    "root" => [
+        "first_depth_node1" =>[
+            "second_depth_node1",
+            "second_depth_node2" => [
+                "third_depth_node1" ,
+                "third_depth_node2" ,
+                "third_depth_node3" => [
+                    "fourth_depth_node1",
+                    "fourth_depth_node2",
+                ]
+                ],
+            "second_depth_node3",
+        ] ,
+        "first_depth_node2" => [
+            "second_depth_node4" => [ "third_depth_node3" => [1]]
+        ]
+        ]
+];
+$sample_array_4 = [];
+$sample_array_5 = ["1"];
+$sample_array_6 = [
+    "T",
+    "Ta",
+    "Tad",
+    "Tada",
+    "Tadav",
+    "Tadavo",
+    "Tadavom",
+    "Tadavomn",
+    "Tadavomni",
+    "Tadavomnis",
+    "TadavomnisT",
+];
+
+
+printTree($sample_array_1);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_2);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_3);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_4);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_5);
+echo PHP_EOL . "------------------------------" . PHP_EOL;
+printTree($sample_array_6);
+
+
+?>
+```
+
+Result:
+
+```shell
+php visualize_tree.php 
+```
+```shell
+.
+├── 0
+│   ├── item_id -> 6
+│   ├── price -> 2311.00
+│   ├── qty -> 12
+│   └── discount -> 0
+├── 1
+│   ├── item_id -> 7
+│   ├── price -> 1231.00
+│   ├── qty -> 1
+│   └── discount -> 12
+└── 2
+    ├── item_id -> 8
+    ├── price -> 123896.00
+    ├── qty -> 0
+    └── discount -> 24
+
+------------------------------
+.
+└── 0
+    ├── name -> John
+    ├── lastname -> Doe
+    ├── country -> Japan
+    ├── nationality -> Japanese
+    ├── job -> web developer
+    └── hobbies
+        ├── sports -> soccer
+        └── others
+            └── freetime -> watching Tv
+
+------------------------------
+.
+└── root
+    ├── first_depth_node1
+    │   ├── 0 -> second_depth_node1
+    │   ├── second_depth_node2
+    │   │   ├── 0 -> third_depth_node1
+    │   │   ├── 1 -> third_depth_node2
+    │   │   └── third_depth_node3
+    │   │       ├── 0 -> fourth_depth_node1
+    │   │       └── 1 -> fourth_depth_node2
+    │   └── 1 -> second_depth_node3
+    └── first_depth_node2
+        └── second_depth_node4
+            └── third_depth_node3
+                └── 0 -> 1
+
+------------------------------
+.
+
+------------------------------
+.
+└── 0 -> 1
+
+------------------------------
+.
+├── 0 -> T
+├── 1 -> Ta
+├── 2 -> Tad
+├── 3 -> Tada
+├── 4 -> Tadav
+├── 5 -> Tadavo
+├── 6 -> Tadavom
+├── 7 -> Tadavomn
+├── 8 -> Tadavomni
+├── 9 -> Tadavomnis
+└── 10 -> TadavomnisT
 ```
 
 _______________________________________________
