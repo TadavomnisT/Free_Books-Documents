@@ -1,5 +1,32 @@
 <?php
 
+
+function printTree( array $tree , string $key = "." , string $stack = "" , $first = TRUE , $firstPadding = NULL )
+{
+    if ( gettype($tree) == "array" )
+    {
+        if($firstPadding === NULL) $firstPadding = ( count($tree)>1 ) ? "│ " : " " ;
+        echo $key . PHP_EOL ;
+        foreach ($tree as $key => $value) {
+            if ($key === array_key_last($tree)){
+                echo (($first) ? "" : $firstPadding ) . $stack . "└── ";
+                $padding = " ";
+                if($first) $firstPadding = " ";
+            }
+            else {
+                echo (($first) ? "" : "$firstPadding" ) . $stack . "├── ";
+                $padding = "│ ";
+            }
+            if( is_array($value) )printTree( $value , $key , $stack . (($first) ? "" : $padding ) , FALSE , $firstPadding );
+            else echo $key . " -> " . $value . PHP_EOL;
+        }
+    }
+    else echo $tree . PHP_EOL;
+}
+
+
+die;
+
 $limit = 350;
 
 $files = explode( PHP_EOL,
