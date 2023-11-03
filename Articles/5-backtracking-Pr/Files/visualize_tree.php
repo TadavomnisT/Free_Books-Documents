@@ -105,7 +105,6 @@ $sample_array_3 = [
 ];
 $sample_array_4 = [];
 $sample_array_5 = ["1"];
-$sample_array_5 = ["1"];
 $sample_array_6 = [
     "T",
     "Ta",
