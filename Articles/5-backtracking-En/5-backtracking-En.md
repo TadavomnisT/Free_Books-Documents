@@ -70,7 +70,7 @@ Difficulty Level: Medium to Hard
 
 Note 1: We represent our chessboard as binary square matrices where 1s represent the rooks and 0s represent empty cells.
 
-Note 2: Keep in mind that a rook can only move in its row, column, and attack diagonals.
+Note 2: Keep in mind that a rook can only move in its row, column, to attack.
 _______________________________________________
 
 And the second question, which in truth is a more complex version of the first question:

@@ -1,5 +1,7 @@
+<span id="backtracking-algorithm-in-artificial-intelligence"></span>
 = Backtracking Algorithm in Artificial Intelligence =
 
+<span id="abstract"></span>
 == Abstract ==
 
 In this article, we discuss in detail a fundamental algorithm in artificial intelligence called backtracking and answer the following questions:
@@ -11,6 +13,7 @@ In this article, we discuss in detail a fundamental algorithm in artificial inte
 * How can we solve the n-queens problem using the backtracking approach?
 * How can we print an array as a tree structure in PHP?
 
+<span id="the-n-queens-and-n-rooks-problem"></span>
 == The n-Queens and n-Rooks Problem ==
 
 One of the fundamental goals in artificial intelligence is to model our problems with mathematics and solve them using appropriate algorithms. Backtracking refers to a particular type of algorithm where we can find solutions to a mathematical problem by exploring and backtracking (undoing) steps. To explain this concept, I will use two well-known examples.
@@ -58,7 +61,7 @@ I propose two questions:
 010</pre>
 Note 1: We represent our chessboard as binary square matrices where 1s represent the rooks and 0s represent empty cells.
 
-Note 2: Keep in mind that a rook can only move in its row, column, and attack diagonals. _______________________________________________
+Note 2: Keep in mind that a rook can only move in its row, column, to attack. _______________________________________________
 
 And the second question, which in truth is a more complex version of the first question:
 
@@ -161,6 +164,7 @@ Note 1: We represent our chessboard as binary square matrices where 1s represent
 
 Note 2: Keep in mind that a queen can move in its row, column, and diagonals to attack.
 
+<span id="what-is-the-backtracking-algorithm"></span>
 == What is the Backtracking Algorithm? ==
 
 Well, now it’s time to answer these questions that we’ve presented. But before that, I’ll explain a few necessary concepts:
@@ -190,6 +194,7 @@ There are two reasons why I chose this approach (backtracking):
 
 -----
 
+<span id="trees-an-indispensable-concept-in-computer-science"></span>
 === Trees: An Indispensable Concept in Computer Science ===
 
 Before talking about backtracking algorithm, I want to highlight the importance of trees:
@@ -249,6 +254,7 @@ Imagine you ask someone who is unfamiliar with mathematics and algorithms to arr
 
 In the backtracking algorithm, we create a “decision tree” and model our problem on that tree: Before I show you the tree for a few initial scenarios, let me provide a brief explanation of the tree’s structure using some illustrations. This way, you won’t get confused when I mention terms like - node - root - parent - child - leaf - depth - sibling… However, it’s important to note that describing trees comprehensively would require an extensive explanation, perhaps even exceeding a hundred books!
 
+<span id="what-is-a-tree-simple-explanation"></span>
 === What is a tree? (Simple Explanation) ===
 
 [[File:Files/tree_structure.png|thumb|none|alt=Tree structure|Tree structure]]
@@ -271,6 +277,7 @@ Explanation:
 
 -----
 
+<span id="solving-n-rooks-problem-and-n-queens-problem-using-the-backtracking-approach"></span>
 === Solving n-rooks problem and n-queens problem using the backtracking approach ===
 
 Okay, let’s model the problem using a tree (Decision-tree) and the backtracking approach:
@@ -8359,7 +8366,7 @@ And of course, the class source-code:
 
 [[./Files/back_tracking.php|back_tracking.php]]
 
-<source lang="php"><?php
+<syntaxhighlight lang="php"><?php
 
 set_time_limit(0);
 
@@ -8816,17 +8823,18 @@ class Node
 
 
 ?>
-</source>
+</syntaxhighlight>
 
 -----
 
+<span id="how-to-print-a-tree-in-php"></span>
 === How to print a tree in PHP? ===
 
 And the final thing to say is the answer to the exercise I mentioned. Although this function is used in the source code, but I will provide a seprate section: Exercise 1: Write a function that takes a multidimensional array and visualizes it as a terminal tree (like the <code>tree</code> or <code>pstree</code> commands).
 
 '''Answer to Exercise 1:'''
 
-<source lang="php">function printTree( array $tree , string $key = "." , string $stack = "" , $first = TRUE , $firstPadding = NULL )
+<syntaxhighlight lang="php">function printTree( array $tree , string $key = "." , string $stack = "" , $first = TRUE , $firstPadding = NULL )
 {
     if ( gettype($tree) == "array" )
     {
@@ -8847,12 +8855,12 @@ And the final thing to say is the answer to the exercise I mentioned. Although t
         }
     }
     else echo $tree . PHP_EOL;
-}</source>
+}</syntaxhighlight>
 Using the function:
 
 [[./Files/visualize_tree.php|visualize_tree.php]]
 
-<source lang="php"><?php
+<syntaxhighlight lang="php"><?php
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 // //                                                                      // // 
@@ -8987,11 +8995,11 @@ echo PHP_EOL . "------------------------------" . PHP_EOL;
 printTree($sample_array_6);
 
 
-?></source>
+?></syntaxhighlight>
 Result:
 
-<source lang="shell">php visualize_tree.php </source>
-<source lang="shell">.
+<syntaxhighlight lang="shell">php visualize_tree.php </syntaxhighlight>
+<syntaxhighlight lang="shell">.
 ├── 0
 │   ├── item_id -> 6
 │   ├── price -> 2311.00
@@ -9057,7 +9065,7 @@ Result:
 ├── 7 -> Tadavomn
 ├── 8 -> Tadavomni
 ├── 9 -> Tadavomnis
-└── 10 -> TadavomnisT</source>
+└── 10 -> TadavomnisT</syntaxhighlight>
 
 -----
 
@@ -9142,18 +9150,22 @@ And… that’s it.
 
 The gist link for the backtracking file along with instructions on how to run the code: https://gist.github.com/TadavomnisT/d9fc6ba06dcb775b5ee8cf8baaa94588
 
+<span id="future-work"></span>
 == Future Work ==
 
 You can implement backtracking in other languages or for different problems. As for future work related to this article, we can mention writing the code in a way that does not store the tree in memory(RAM).
 
+<span id="copyright"></span>
 == Copyright ==
 
 This is a free and open-source article under the license of GFDL1-3, so permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License.
 
+<span id="author"></span>
 == Author ==
 
 * Behrad B. (behroora@yahoo.com)
 
+<span id="references"></span>
 == References ==
 
 * https://en.wikipedia.org/wiki/Rook_polynomial
@@ -9165,6 +9177,7 @@ This is a free and open-source article under the license of GFDL1-3, so permissi
 * https://gist.github.com/TadavomnisT/d9fc6ba06dcb775b5ee8cf8baaa94588
 * https://www.npr.org/sections/krulwich/2012/09/15/160879929/that-old-rice-grains-on-the-chessboard-con-with-a-new-twist
 
+<span id="issues-related-to-this-article"></span>
 == Issues related to this Article ==
 
 This free and open-source article is available at [https://github.com/TadavomnisT/Free_Books-Documents Free Books/Documents] repository with the following link:
