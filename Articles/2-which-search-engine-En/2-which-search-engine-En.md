@@ -1,30 +1,28 @@
 # Which Search Engine Should We Use?
 
-You've probably heard people in the privacy field repeatedly express that if you use Google or similar search engines, you should switch to DuckDuckGo and others. But how much can this statement really impact privacy and security?
+### Introduction
+You've probably heard privacy activists repeatedly express that if you use Google or similar search engines, you should consider switching to DuckDuckGo and other privacy-preserving search engines. But how much can this statement really impact privacy and security?
+In this mini-article, we'll discuss this topic briefly.
 
-In this article, we'll discuss this topic briefly.
+### Part 1: Duck Duck Go!
+It has been years since I first tried DuckDuckGo.com. At first, the website had a plain white theme, and its search results and recommendations were quite basic for a search engine. In the field of Information Retrieval (IR) and Recommender Systems (RS), we refer to this problem as the "Cold Start" issue. The cold start problem in a search engine refers to the difficulties encountered when the system lacks sufficient data to provide relevant search results or recommendations. [1]
 
-It has been years since I first tried DuckDuckGo. At first, it had a plain white theme, and its query responses were very basic for beginners.
+Note 1: "Information Retrieval" and "Recommender Systems" are academic fields that discuss the underlying mechanisms of search engines and other recommender systems.
 
-In the field of Information Retrieval (IR) and Recommender Systems (RS), we refer to this as the "Cold Start" issue.
+ُSo, DuckDuckGo was impressive! https://duckduckgo.com
+However, it wasn't a fully functional search engine and struggled to effectively handle queries, particularly in non-English languages."
 
-Note 1: IR stands for Information Retrieval, and RS stands for Recommender Systems. These are scientific topics that discusses the underlying mechanisms of search engines.
-
-ُThe DuckDuckGo was great:
-https://duckduckgo.com
-But it wasn't a proper search engine, couldn't satisfy the query, specially in Persian Language.
-
-Then, after a few years, folks at the Iranian government here blocked the whole website on firewall. Lately, with the poisoning of DNS servers, they bypassed all the requests on Safe Search and unblocked the website.
-
-Nowadays, the query results have significantly improved, and it has overcome the Cold Start issue. ✅
+Nowadays, the quality of query results on DuckDuckGo has been improved, and the platform has successfully resolved the cold start issue. This improvement means that users can now expect more relevant and accurate search results, even for new users or newly added content. The advancements in its algorithms and data processing capabilities have allowed DuckDuckGo to provide a more robust search experience, catering to a wider range of queries and languages. As a result, it has become a more competitive option in the search engine landscape.
 
 ____________________________________
 
-DuckDuckGo claims to be secure, but how true is this statement? We can measure it using our basic network knowledge.
 
-I send a search query for Google and we study what information Google encapsulates in the HTTP headers and sends to its servers. Later, we repeat the same query in DuckDuckGo and test what happens there.
+### Part 2: Ducks never lie!
+DuckDuckGo claims to be more secure and respectful of user privacy than other major search engines like Google, but how true is this statement? We can assess its privacy protections to some extent using our basic knowledge of networks.
 
-In Google:
+All we need is a simple browser. Let's use Firefox, which is a simple privacy protector, open-source, and free software. I'll send a search query to Google, and we will study what information Google encapsulates in the HTTP headers and sends to its servers. Later, we will repeat the same query in DuckDuckGo and test what happens over there.
+
+#### In Google:
 
 ![Google Search picture](Files/1.jpg)
 
@@ -244,6 +242,7 @@ This is a free and open-source article under the license of GFDL1-3, so permissi
 
 ## Refrences:
 
+* [1] Wikipedia contributors. (2024, December 9). Cold start (recommender systems). In Wikipedia, The Free Encyclopedia. Retrieved 14:37, December 31, 2024, from https://en.wikipedia.org/w/index.php?title=Cold_start_(recommender_systems)&oldid=1262017058
 * https://github.com/duckduckgo
 * https://help.duckduckgo.com/privacy/t/
 * https://help.duckduckgo.com/duckduckgo-help-pages/settings/params/
